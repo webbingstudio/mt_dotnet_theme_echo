@@ -1,10 +1,10 @@
 ;(function($){
 "use strict";
-var whatsNew = window.whatsNew || {};
+var WsWhatsNew = window.WsWhatsNew || {};
 
-whatsNew = (function() {
+WsWhatsNew = (function() {
 
-    function whatsNew(element, options) {
+    function WsWhatsNew(element, options) {
         var t = this;
 
         t.initials = {
@@ -12,7 +12,7 @@ whatsNew = (function() {
             insert: 'after',
             day: 14,
             data_publish: 'publish',
-            badge: '<div class="js-whatsnew-badge"><span class="badge">NEW</span></div>',
+            badge: '<div class="js-whatsnew"><span class="js-whatsnew-badge">NEW</span></div>',
         };
         t.settings = $.extend({}, t.initials, options);
 
@@ -20,11 +20,11 @@ whatsNew = (function() {
         return false;
     }
 
-    return whatsNew;
+    return WsWhatsNew;
 
 }());
 
-whatsNew.prototype.run = function(element) {
+WsWhatsNew.prototype.run = function(element) {
     var
         t = this,
         e = $(element),
@@ -57,7 +57,7 @@ whatsNew.prototype.run = function(element) {
 
 };
 
-$.fn.whatsNew = function() {
+$.fn.WsWhatsNew = function() {
     var
         element = this,
         options = arguments[0],
@@ -65,7 +65,7 @@ $.fn.whatsNew = function() {
         i;
     for (i = 0; i < element.length; i++) {
         if (typeof options == 'object' || typeof options == 'undefined') {
-            element[i].whatsNew = new whatsNew(element[i], options);
+            element[i].WsWhatsNew = new WsWhatsNew(element[i], options);
         }
     }
     return element;
@@ -78,7 +78,9 @@ $.fn.whatsNew = function() {
 
 $(function(){
 
-    $('.js-whatsnew').whatsNew();
+    $('.js-whatsnew').WsWhatsNew({
+        badge: '<div class="js-whatsnew"><span class="m-badge m-badge-first">NEW</span></div>',
+    });
 
 });
 })(jQuery);
