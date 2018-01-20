@@ -1,0 +1,41 @@
+<mt:Ignore>
+# =======================
+# 
+# 変数-ホーム
+# 
+# ブログカスタムフィールドの、トップページに関する情報が含まれる。サイトトップページ（ホーム）テンプレートの冒頭で読み込む。
+# 
+# =======================
+</mt:Ignore>
+
+<mt:Ignore>
+# -----------------------
+# META
+# -----------------------
+</mt:Ignore>
+
+<mt:Var name="ec_blog_name" setvar="ec_meta_title" />
+<mt:CustomFieldValue identifier="EcBlogHomeTitle" setvar="__blog_home_title__" />
+<mt:If name="__blog_home_title__" note="ブログのホームのtitle要素が指定されていれば">
+    <mt:CustomFieldValue identifier="EcBlogHomeTitle" encode_html="1" setvar="ec_meta_title" note="接尾辞を除くtitle要素" />
+</mt:If>
+<mt:SetVar name="__blog_home_title__" value="" />
+
+<mt:Var name="ec_website_description" setvar="ec_meta_description" />
+<mt:CustomFieldValue identifier="EcBlogHomeDescription" setvar="__blog_home_description__" />
+<mt:If name="__blog_home_description__" note="ブログのホームの概要が指定されていれば">
+    <mt:CustomFieldValue identifier="EcBlogHomeDescription" encode_html="1" setvar="ec_meta_description" note="概要" />
+<mt:Else>
+    <mt:BlogDescription encode_html="1" setvar="ec_meta_description" note="概要" />
+</mt:If>
+<mt:SetVar name="__blog_home_description__" value="" />
+
+<mt:Var name="ec_website_url" setvar="ec_meta_permalink" note="完全なURL" />
+<mt:Date format_name="iso8601" setvar="ec_meta_publish" note="再構築された時点のタイムスタンプ" />
+
+<mt:Ignore>
+# -----------------------
+# その他
+# -----------------------
+</mt:Ignore>
+<mt:SetVarBlock name="ec_body_class" note="body要素のクラス名">home</mt:SetVarBlock>
