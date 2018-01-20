@@ -261,6 +261,9 @@ elements:
             label: パーツ-スマートフォンナビ
           parts_banner:
             label: パーツ-バナー
+          parts_home_free:
+            filename: parts_home_free.mtml
+            label: パーツ-ホーム-フリーエリア
           parts_home_blog_recent_01:
             filename: parts_home_blog_recent_01.mtml
             label: パーツ-ホーム-ブログ新着_01
