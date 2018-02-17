@@ -61,7 +61,10 @@
                 </li>
                 </mt:If>
 
-                <mt:CustomFieldValue identifier="EcBlogExHeadnav" />
+                <mt:CustomFieldValue identifier="EcBlogExHeadnav" setvar="__blog_exheadnav__" />
+                <mt:If name="__blog_exheadnav__" note="追加のヘッダナビゲーションがあれば">
+                <li class="c-list-item p-header-nav-ex"><mt:CustomFieldValue identifier="EcBlogExHeadnav" /></li>
+                </mt:If>
 
             </ul>
         </div><!-- /.p-header-sns -->
