@@ -13,69 +13,77 @@
 </mt:Ignore>
 <header class="p-header" role="banner">
     <div class="l-container">
+        <div class="l-row">
 
-        <mt:If name="__is_home__" eq="1">
-        <h1 class="p-header-brand">
-            <span class="p-header-logo"><img src="<mt:Var name="ec_static_path" />images/common/logo.svg" height="45" alt="<mt:BlogName encode_html="1" />"></span>
-        </h1>
-        <mt:Else>
-        <p class="p-header-brand">
-            <a href="<mt:Var name="ec_blog_path" />" class="p-header-logo"><img src="<mt:Var name="ec_static_path" />images/common/logo.svg" height="45" alt="<mt:BlogName encode_html="1" />"></a>
-        </p>
-        </mt:If>
+            <div class="l-col-lg-3">
 
-        <div class="p-header-nav">
-            <ul class="m-list m-list-horizontal">
-
-                <mt:If name="ec_blog_twitter" note="TwitterのアカウントIDがあれば">
-                <li class="m-list-item p-header-nav-twitter">
-                    <a href="<mt:Var name="ec_blog_twitter" />" target="_blank" class="m-btn m-btn-round m-btn-twitter">
-                        <i class="fab fa-twitter"></i><span class="sr">Twitter</span>
-                    </a>
-                </li>
+                <mt:If name="__is_home__" eq="1">
+                <h1 class="p-header-brand">
+                    <span class="p-header-logo"><img src="<mt:Var name="ec_static_path" />images/common/logo.svg" height="45" alt="<mt:BlogName encode_html="1" />"></span>
+                </h1>
+                <mt:Else>
+                <p class="p-header-brand">
+                    <a href="<mt:Var name="ec_blog_path" />" class="p-header-logo"><img src="<mt:Var name="ec_static_path" />images/common/logo.svg" height="45" alt="<mt:BlogName encode_html="1" />"></a>
+                </p>
                 </mt:If>
 
-                <mt:If name="ec_blog_fbpage" note="FacebookページのURLがあれば">
-                <li class="m-list-item p-header-nav-facebook">
-                    <a href="<mt:Var name="ec_blog_fbpage" />" target="_blank" class="m-btn m-btn-round m-btn-facebook">
-                        <i class="fab fa-facebook-f"></i><span class="sr">Facebookページ</span>
-                    </a>
-                </li>
-                </mt:If>
+            </div><!-- /.l-col -->
+            <div class="l-col-lg-9">
 
-                <mt:CustomFieldValue identifier="EcBlogInstagram" setvar="__blog_instagram__" />
-                <mt:If name="__blog_instagram__" note="InstagramのアカウントIDがあれば">
-                <li class="m-list-item p-header-nav-instagram">
-                    <a href="<mt:Var name="__blog_instagram__" />" target="_blank" class="m-btn m-btn-round m-btn-instagram">
-                        <i class="fab fa-instagram"></i><span class="sr">Instagram</span>
-                    </a>
-                </li>
-                </mt:If>
+                <div class="p-header-nav">
+                    <ul class="m-list m-list-horizontal">
 
-                <mt:CustomFieldValue identifier="EcBlogYouTube" setvar="__blog_youtube__" />
-                <mt:If name="__blog_youtube__" note="YouTubeチャンネルがあれば">
-                <li class="m-list-item p-header-nav-youtube">
-                    <a href="<mt:Var name="__blog_youtube__" />" target="_blank" class="m-btn m-btn-round m-btn-youtube">
-                        <i class="fab fa-youtube"></i><span class="sr">YouTubeチャンネル</span>
-                    </a>
-                </li>
-                </mt:If>
+                        <mt:If name="ec_blog_twitter" note="TwitterのアカウントIDがあれば">
+                        <li class="m-list-item p-header-nav-twitter">
+                            <a href="<mt:Var name="ec_blog_twitter" />" target="_blank" class="m-btn m-btn-round m-btn-twitter">
+                                <i class="fab fa-twitter"></i><span class="sr">Twitter</span>
+                            </a>
+                        </li>
+                        </mt:If>
 
-                <mt:CustomFieldValue identifier="EcBlogExHeadnav" setvar="__blog_exheadnav__" />
-                <mt:If name="__blog_exheadnav__" note="追加のヘッダナビゲーションがあれば">
-                <li class="m-list-item p-header-nav-ex"><mt:CustomFieldValue identifier="EcBlogExHeadnav" /></li>
-                </mt:If>
+                        <mt:If name="ec_blog_fbpage" note="FacebookページのURLがあれば">
+                        <li class="m-list-item p-header-nav-facebook">
+                            <a href="<mt:Var name="ec_blog_fbpage" />" target="_blank" class="m-btn m-btn-round m-btn-facebook">
+                                <i class="fab fa-facebook-f"></i><span class="sr">Facebookページ</span>
+                            </a>
+                        </li>
+                        </mt:If>
 
-            </ul>
-        </div><!-- /.p-header-sns -->
+                        <mt:CustomFieldValue identifier="EcBlogInstagram" setvar="__blog_instagram__" />
+                        <mt:If name="__blog_instagram__" note="InstagramのアカウントIDがあれば">
+                        <li class="m-list-item p-header-nav-instagram">
+                            <a href="<mt:Var name="__blog_instagram__" />" target="_blank" class="m-btn m-btn-round m-btn-instagram">
+                                <i class="fab fa-instagram"></i><span class="sr">Instagram</span>
+                            </a>
+                        </li>
+                        </mt:If>
 
-        <div class="p-header-menu hidden-lg-up">
-            <button class="m-btn m-btn-lg m-btn-outline m-btn-square hiraku-open-btn" id="offcanvas-btn-right" data-toggle-offcanvas="#js-hiraku-offcanvas-1">
-                <i class="fas fa-bars"></i>
-                <span class="p-header-menu-label sr">メニュー</span>
-            </button>
-        </div><!-- /.p-header-menu -->
+                        <mt:CustomFieldValue identifier="EcBlogYouTube" setvar="__blog_youtube__" />
+                        <mt:If name="__blog_youtube__" note="YouTubeチャンネルがあれば">
+                        <li class="m-list-item p-header-nav-youtube">
+                            <a href="<mt:Var name="__blog_youtube__" />" target="_blank" class="m-btn m-btn-round m-btn-youtube">
+                                <i class="fab fa-youtube"></i><span class="sr">YouTubeチャンネル</span>
+                            </a>
+                        </li>
+                        </mt:If>
 
+                        <mt:CustomFieldValue identifier="EcBlogExHeadnav" setvar="__blog_exheadnav__" />
+                        <mt:If name="__blog_exheadnav__" note="追加のヘッダナビゲーションがあれば">
+                        <li class="m-list-item p-header-nav-ex"><mt:CustomFieldValue identifier="EcBlogExHeadnav" /></li>
+                        </mt:If>
 
+                    </ul>
+                </div><!-- /.p-header-sns -->
+
+                <div class="p-header-menu hidden-lg-up">
+                    <button class="m-btn m-btn-lg m-btn-outline m-btn-square hiraku-open-btn" id="offcanvas-btn-right" data-toggle-offcanvas="#js-hiraku-offcanvas-1">
+                        <i class="fas fa-bars"></i>
+                        <span class="p-header-menu-label sr">メニュー</span>
+                    </button>
+                </div><!-- /.p-header-menu -->
+
+            </div><!-- /.l-col -->
+
+        </div><!-- /.l-row -->
     </div><!-- /.l-container -->
 </header><!-- /.p-header -->
