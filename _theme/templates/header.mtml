@@ -25,10 +25,10 @@
         </mt:If>
 
         <div class="p-header-nav">
-            <ul class="c-list c-list-horizontal">
+            <ul class="m-list m-list-horizontal">
 
                 <mt:If name="ec_blog_twitter" note="TwitterのアカウントIDがあれば">
-                <li class="c-list-item p-header-nav-twitter">
+                <li class="m-list-item p-header-nav-twitter">
                     <a href="<mt:Var name="ec_blog_twitter" />" target="_blank" class="m-btn m-btn-round m-btn-twitter">
                         <i class="fab fa-twitter"></i><span class="sr">Twitter</span>
                     </a>
@@ -36,7 +36,7 @@
                 </mt:If>
 
                 <mt:If name="ec_blog_fbpage" note="FacebookページのURLがあれば">
-                <li class="c-list-item p-header-nav-facebook">
+                <li class="m-list-item p-header-nav-facebook">
                     <a href="<mt:Var name="ec_blog_fbpage" />" target="_blank" class="m-btn m-btn-round m-btn-facebook">
                         <i class="fab fa-facebook-f"></i><span class="sr">Facebookページ</span>
                     </a>
@@ -45,7 +45,7 @@
 
                 <mt:CustomFieldValue identifier="EcBlogInstagram" setvar="__blog_instagram__" />
                 <mt:If name="__blog_instagram__" note="InstagramのアカウントIDがあれば">
-                <li class="c-list-item p-header-nav-instagram">
+                <li class="m-list-item p-header-nav-instagram">
                     <a href="<mt:Var name="__blog_instagram__" />" target="_blank" class="m-btn m-btn-round m-btn-instagram">
                         <i class="fab fa-instagram"></i><span class="sr">Instagram</span>
                     </a>
@@ -54,7 +54,7 @@
 
                 <mt:CustomFieldValue identifier="EcBlogYouTube" setvar="__blog_youtube__" />
                 <mt:If name="__blog_youtube__" note="YouTubeチャンネルがあれば">
-                <li class="c-list-item p-header-nav-youtube">
+                <li class="m-list-item p-header-nav-youtube">
                     <a href="<mt:Var name="__blog_youtube__" />" target="_blank" class="m-btn m-btn-round m-btn-youtube">
                         <i class="fab fa-youtube"></i><span class="sr">YouTubeチャンネル</span>
                     </a>
@@ -63,7 +63,7 @@
 
                 <mt:CustomFieldValue identifier="EcBlogExHeadnav" setvar="__blog_exheadnav__" />
                 <mt:If name="__blog_exheadnav__" note="追加のヘッダナビゲーションがあれば">
-                <li class="c-list-item p-header-nav-ex"><mt:CustomFieldValue identifier="EcBlogExHeadnav" /></li>
+                <li class="m-list-item p-header-nav-ex"><mt:CustomFieldValue identifier="EcBlogExHeadnav" /></li>
                 </mt:If>
 
             </ul>
