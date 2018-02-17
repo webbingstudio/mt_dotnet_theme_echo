@@ -23,44 +23,53 @@
 
     <mt:Include module="パーツ-ホーム-メインビジュアル" />
 
-    <mt:Pages field:EcPageShowHome="ページ上段">
-    <mt:PagesHeader>
-    <div class="l-blockarea p-blockarea-home-top">
-    </mt:PagesHeader>
-
-        <mt:Include module="パーツ-ホーム-フリーエリア" />
-
-    <mt:PagesFooter>
-    </div><!-- /.l-blockarea -->
-    </mt:PagesFooter>
+    <mt:Pages folder="home_top">
+        <mt:PagesHeader>
+        <mt:SetVar name="__i__" value="0" />
+        <div class="l-widgetarea p-widgetarea-home-top">
+        </mt:PagesHeader>
+            <mt:SetVarBlock name="__i__"><mt:Var name="__i__" op="++" /></mt:SetVarBlock>
+            <div class="c-widget c-widget-free c-widget-home-top-<mt:Var name="__i__" zero_pad="2" />">
+                <mt:PageBody />
+            </div><!-- /.c-widget -->
+        <mt:PagesFooter>
+        </div><!-- /.l-widgetarea -->
+        <mt:SetVar name="__i__" value="" />
+        </mt:PagesFooter>
     </mt:Pages>
 
     <mt:Include module="パーツ-ホーム-ブログ新着_01" />
 
-    <mt:Pages field:EcPageShowHome="ページ中段">
-    <mt:PagesHeader>
-    <div class="l-blockarea p-blockarea-home-middle">
-    </mt:PagesHeader>
-
-        <mt:Include module="パーツ-ホーム-フリーエリア" />
-
-    <mt:PagesFooter>
-    </div><!-- /.l-blockarea -->
-    </mt:PagesFooter>
+    <mt:Pages folder="home_middle">
+        <mt:PagesHeader>
+        <mt:SetVar name="__i__" value="0" />
+        <div class="l-widgetarea p-widgetarea-home-middle">
+        </mt:PagesHeader>
+            <mt:SetVarBlock name="__i__"><mt:Var name="__i__" op="++" /></mt:SetVarBlock>
+            <div class="c-widget c-widget-free c-widget-home-middle-<mt:Var name="__i__" zero_pad="2" />">
+                <mt:PageBody />
+            </div><!-- /.c-widget -->
+        <mt:PagesFooter>
+        </div><!-- /.l-widgetarea -->
+        <mt:SetVar name="__i__" value="" />
+        </mt:PagesFooter>
     </mt:Pages>
 
     <mt:Include module="パーツ-ホーム-ブログ新着_02" />
 
-    <mt:Pages field:EcPageShowHome="ページ下段">
-    <mt:PagesHeader>
-    <div class="l-blockarea p-blockarea-home-bottom">
-    </mt:PagesHeader>
-
-        <mt:Include module="パーツ-ホーム-フリーエリア" />
-
-    <mt:PagesFooter>
-    </div><!-- /.l-blockarea -->
-    </mt:PagesFooter>
+    <mt:Pages folder="home_top">
+        <mt:PagesHeader>
+        <mt:SetVar name="__i__" value="0" />
+        <div class="l-widgetarea p-widgetarea-home-bottom">
+        </mt:PagesHeader>
+            <mt:SetVarBlock name="__i__"><mt:Var name="__i__" op="++" /></mt:SetVarBlock>
+            <div class="c-widget c-widget-free c-widget-home-bottom-<mt:Var name="__i__" zero_pad="2" />">
+                <mt:PageBody />
+            </div><!-- /.c-widget -->
+        <mt:PagesFooter>
+        </div><!-- /.l-widgetarea -->
+        <mt:SetVar name="__i__" value="" />
+        </mt:PagesFooter>
     </mt:Pages>
 
 </main>
