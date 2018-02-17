@@ -41,6 +41,30 @@ elements:
         options: ''
         required: 0
         type: text
+      EcBlogInstagram:
+        default: ''
+        description: InstagramのアカウントIDがあれば入力してください。
+        name: InstagramのアカウントID
+        obj_type: blog
+        options: ''
+        required: 0
+        type: text
+      EcBlogYouTube:
+        default: ''
+        description: YouTubeチャンネルのURLがあれば入力してください。
+        name: YouTubeチャンネルのURL
+        obj_type: blog
+        options: ''
+        required: 0
+        type: text
+      EcBlogExHeadnav:
+        default: ''
+        description: ヘッダナビゲーションに追加したい内容があれば、HTMLを入力してください。li要素内に入ります。
+        name: 追加のヘッダナビゲーション
+        obj_type: blog
+        options: ''
+        required: 0
+        type: textarea
       EcBlogHomeDescription:
         default: ''
         description: ホームのMETAの概要文を変更したい場合は、ここに入力してください。
