@@ -11,15 +11,18 @@ http://opensource.org/licenses/MIT
 
 - - - - - - - - - - - - - - - - - - -
 
-## echo_とは
+## echoとは
 
-「echo」は、MovableType.net専用のテーマです。MovableType.netで、制作会社がコーポレートサイトを作成する目的に特化しています。
+"echo"は、ASP型CMSサービス「MovableType.net」専用のテーマです。制作会社が小・中規模のコーポレートサイトを制作する用途に特化しています。  
+利用にはMovable Typeとマークアップの、一定の知識が必要となります。
 
-CMSテーマ制作に特化したCSSフレームワークが含まれており、高い自由度とメンテナンス性が特徴です。
+https://movabletype.net/
 
-利用には一定のMovable Typeとマークアップの知識が必要となります。
+CSSフレームワーク「echo.css」をベースとしており、高い自由度とメンテナンス性が特徴です。
 
-echoシリーズ ポータルサイト  
+https://github.com/webbingstudio/echo-css
+
+echoプロジェクト ポータルサイト  
 [http://cms-skill.com/echo/](http://cms-skill.com/echo/)
 
 - - - - - - - - - - - - - - - - - - -
@@ -31,12 +34,6 @@ Movable Typeパッケージ版・クラウド版では、以下の仕様が大�
 ### カスタムフィールドの出力
 
 参考: [https://movabletype.net/tags/2014/11/mtcustomfieldvalue.html](https://movabletype.net/tags/2014/11/mtcustomfieldvalue.html)
-
-### 一覧ページでの移動リンク
-
-前後移動のみ提供されています。ページネーション機能はありません。
-
-参考: [https://movabletype.net/tags/2015/03/mtpaginationnexturl.html](https://movabletype.net/tags/2015/03/mtpaginationnexturl.html)
 
 ### サイト内検索
 
