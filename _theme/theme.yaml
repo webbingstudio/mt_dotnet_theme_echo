@@ -1,0 +1,27 @@
+id: "echo"
+label: "echo"
+version: "0.1.0"
+author_link: "http://webbingstudio.com/"
+author_name: "Webbingstudio"
+description: "MovableType.net framework theme - Licensed under MIT Open Source"
+class: "blog"
+elements:
+  blog_static_files:
+    component: ~
+    data:
+      - css
+      - images
+      - js
+    importer: blog_static_files
+  template_set:
+    component: core
+    data:
+      base_path: templates
+      templates:
+        index:
+          home:
+            filename: index.mtml
+            label: ホーム
+            outfile: index.html
+            rebuild_me: 1
+    importer: template_set
