@@ -1,30 +1,34 @@
-<mt:SetVarBlock name="__layout__">
 <!DOCTYPE html>
 <html lang="ja">
-<mt:Include module="変数-共通" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+<mt:Unless name="__meta-title__">
 <mt:SetVarBlock name="__meta-title__">
     <title>echo_mtdotnet</title>
     <meta property="og:title" content="echo_mtdotnet" />
 </mt:SetVarBlock>
+</mt:Unless>
 <mt:Var name="__meta-title__" />
 
     <link rel="stylesheet" href="/css/echo.min.css">
     <link rel="stylesheet" href="/plugins/toggle.css">
 
+<mt:Unless name="__meta-link__">
 <mt:SetVarBlock name="__meta-link__">
 </mt:SetVarBlock>
+</mt:Unless>
 <mt:Var name="__meta-link__" />
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="/plugins/toggle.min.js"></script>
 
+<mt:Unless name="__meta-js__">
 <mt:SetVarBlock name="__meta-js__">
 </mt:SetVarBlock>
+</mt:Unless>
 <mt:Var name="__meta-js__" />
 </head>
 <body>
@@ -39,6 +43,7 @@
     </header><!-- /.p-header -->
 
     <main class="p-main" role="main">
+<mt:Unless name="__main__">
 <mt:SetVarBlock name="__main__">
         <div class="l-container">
 
@@ -46,6 +51,7 @@
 
         </div><!-- /.l-container -->
 </mt:SetVarBlock>
+</mt:Unless>
 <mt:Var name="__main__" />
     </main><!-- /.p-main -->
 
@@ -60,4 +66,4 @@
 </div><!-- /.l-document -->
 </body>
 </html>
-</mt:SetVarBlock>
+<mt:Var name="__layout__" />
