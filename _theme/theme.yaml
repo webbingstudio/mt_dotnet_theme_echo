@@ -24,4 +24,8 @@ elements:
             label: ホーム
             outfile: index.html
             rebuild_me: 1
+        module:
+          layout_default:
+            filename: layout_default.mtml
+            label: レイアウト-基本
     importer: template_set
