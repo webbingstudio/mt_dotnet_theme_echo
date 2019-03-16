@@ -28,4 +28,7 @@ elements:
           layout_default:
             filename: layout_default.mtml
             label: レイアウト-基本
+          vars_common:
+            filename: vars_common.mtml
+            label: 変数-共通
     importer: template_set
