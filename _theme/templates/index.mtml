@@ -1,17 +1,33 @@
-<mt:Unless regex_replace="/\s*\n+/g","\n"><mt:Ignore>
+<mt:Unless strip_linefeeds="1"><mt:Ignore>
 # =======================
 # 
 # ホーム
 # 
 # =======================
-</mt:Ignore><mt:SetVarBlock name="__main__">
-<main class="p-main" role="main">
-    <div class="l-container">
+</mt:Ignore>
 
-        いええええええええい！
+<mt:SetVarBlock name="__meta__">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    </div><!-- /.l-container -->
-</main><!-- /.p-main -->
+    <title>いえええええええええい！</title>
+
+    <link rel="stylesheet" href="/css/echo.min.css">
+    <link rel="stylesheet" href="/plugins/toggle.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/plugins/toggle.min.js"></script>
+</mt:SetVarBlock>
+
+<mt:SetVarBlock name="__main__">
+    <main class="p-main" role="main">
+        <div class="l-container">
+
+            いええええええええい！
+
+        </div><!-- /.l-container -->
+    </main><!-- /.p-main -->
 </mt:SetVarBlock>
 
 <mt:Include module="レイアウト-基本" />
