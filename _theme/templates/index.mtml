@@ -1,18 +1,19 @@
-<mt:Ignore>
+<mt:Unless regex_replace="/\s*\n+/g","\n"><mt:Ignore>
 # =======================
 # 
 # ホーム
 # 
 # =======================
 </mt:Ignore><mt:SetVarBlock name="__main__">
-    <main class="p-main" role="main">
-        <div class="l-container">
+<main class="p-main" role="main">
+    <div class="l-container">
 
-            いええええええええい！
+        いええええええええい！
 
-        </div><!-- /.l-container -->
-    </main><!-- /.p-main -->
+    </div><!-- /.l-container -->
+</main><!-- /.p-main -->
 </mt:SetVarBlock>
 
 <mt:Include module="レイアウト-基本" />
 <mt:Var name="__layout__" />
+</mt:Unless>
