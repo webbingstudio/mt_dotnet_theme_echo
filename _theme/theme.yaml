@@ -33,11 +33,11 @@ elements:
             label: 変数-共通
           widget_recent_card:
             filename: widget_recent_card.mtml
-            label: ウィジェット-記事新着-画像上・日付タイトル下
+            label: ウィジェット-記事新着-card
           widget_recent_headline:
             filename: widget_recent_headline.mtml
-            label: ウィジェット-記事新着-日付左・タイトル右
+            label: ウィジェット-記事新着-headline
           widget_recent_media:
             filename: widget_recent_media.mtml
-            label: ウィジェット-記事新着-画像左・日付タイトル右
+            label: ウィジェット-記事新着-media
     importer: template_set
