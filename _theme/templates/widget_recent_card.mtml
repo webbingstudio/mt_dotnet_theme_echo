@@ -20,15 +20,15 @@
 
                 <div class="l-grid-col-12 l-grid-col-md-4">
                     <div class="c-card">
-                        <a href="<mt:EntryPermalink />" class="c-card-inner">
+                        <a href="<$mt:EntryPermalink$>" class="c-card-inner">
                             <div class="c-card-header">
-                                <h3 class="c-card-title"><mt:EntryTitle encode_html="1" /></h3>
+                                <h3 class="c-card-title"><$mt:EntryTitle encode_html="1"$></h3>
                             </div><!-- /.c-card-header -->
                             <div class="c-card-object">
                                 <figure class="m-thumbnail m-thumbnail-ogimage">
                                     <mt:If tag="EcEntryEyecatch">
                                     <mt:EcEntryEyecatchAsset>
-                                    <img alt="" src="<mt:AssetThumbnailURL width="320" />">
+                                    <img alt="" src="<$mt:AssetThumbnailURL width="320"$>">
                                     </mt:EcEntryEyecatchAsset>
                                     <mt:Else>
                                     <img alt="" src="https://placehold.jp/cccccc/ffffff/320x168.jpg">
@@ -36,7 +36,7 @@
                                 </figure><!-- /.m-thumbnail -->
                             </div><!-- /.c-card-object -->
                             <div class="c-card-contents">
-                                <p class="c-card-body"><mt:EntryExcerpt /></p>
+                                <p class="c-card-body"><$mt:EntryExcerpt$></p>
                             </div><!-- /.c-card-contents -->
                         </a><!-- /.c-card-inner -->
                     </div><!-- /.c-card -->
