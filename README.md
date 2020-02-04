@@ -5,7 +5,7 @@
 
 version 0.1.0 (under construction)
 
-Copyright 2018 WebbingStudio  
+Copyright 2020 WebbingStudio  
 Released under the MIT license  
 http://opensource.org/licenses/MIT
 
@@ -25,18 +25,3 @@ https://github.com/webbingstudio/echo-css
 echoプロジェクト ポータルサイト  
 [http://cms-skill.com/echo/](http://cms-skill.com/echo/)
 
-- - - - - - - - - - - - - - - - - - -
-
-## 重要: パッケージ版・クラウド版との違いについて
-
-Movable Typeパッケージ版・クラウド版では、以下の仕様が大きく異なるため、リポジトリのままでは利用できません。対応させたい場合は、テンプレートを任意で修正してください。
-
-### カスタムフィールドの出力
-
-参考: [https://movabletype.net/tags/2014/11/mtcustomfieldvalue.html](https://movabletype.net/tags/2014/11/mtcustomfieldvalue.html)
-
-### サイト内検索
-
-MovableType.netでは、サイト内検索の機能は提供されていません。
-Googleのサイト検索、jQueryプラグイン「flexibleSearch」の利用を検討ください。
-参考: [http://bit-part.net/blog/2015/02/movabletypenet-flexiblesearch.html](http://bit-part.net/blog/2015/02/movabletypenet-flexiblesearch.html)	
