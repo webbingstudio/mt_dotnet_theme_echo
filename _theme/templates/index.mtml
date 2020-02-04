@@ -10,8 +10,34 @@
 <mt:SetVarBlock name="__main__">
         <div class="l-container">
 
-            トピックパスの起点の名称: <mt:Var name="echo_breadcrumb_home_label" /><br>
-            <mt:Date language="en" format="$echo_entry_date" /> <mt:Date language="en" format="$echo_entry_time" />
+            トピックパスの起点の名称: <mt:Var name="echo_breadcrumb_home_label" />
+
+<mt:Pages folder="home-top" limit="100" include_subfolders="1">
+<mt:PagesHeader>
+<hr>
+</mt:PagesHeader>
+    <mt:PageBody mteval="1" />
+<mt:PagesFooter>
+</mt:PagesFooter>
+</mt:Pages>
+
+<mt:Pages folder="home-middle" limit="100" include_subfolders="1">
+<mt:PagesHeader>
+<hr>
+</mt:PagesHeader>
+    <mt:PageBody mteval="1" />
+<mt:PagesFooter>
+</mt:PagesFooter>
+</mt:Pages>
+
+<mt:Pages folder="home-bottom" limit="100" include_subfolders="1">
+<mt:PagesHeader>
+<hr>
+</mt:PagesHeader>
+    <mt:PageBody mteval="1" />
+<mt:PagesFooter>
+</mt:PagesFooter>
+</mt:Pages>
 
         </div><!-- /.l-container -->
 </mt:SetVarBlock>
