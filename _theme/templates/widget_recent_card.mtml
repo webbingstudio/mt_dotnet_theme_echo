@@ -23,13 +23,13 @@
                         <a href="<$mt:EntryPermalink$>" class="c-card-inner">
                             <div class="c-card-object">
                                 <figure class="m-thumbnail m-thumbnail-ogimage">
-                                <mt:if tag="CustomFieldValue" identifier="EcEntryEyecatch">
-                                    <mt:customfieldasset identifier="EcEntryEyecatch">
+                                <mt:If tag="CustomFieldValue" identifier="EcEntryEyecatch">
+                                    <mt:mt:CustomFieldAsset identifier="EcEntryEyecatch">
                                     <img alt="" src="<$mt:AssetThumbnailURL width="320"$>">
-                                    </mt:customfieldasset>
-                                </mt:else>
+                                    </mt:mt:CustomFieldAsset>
+                                <mt:Else>
                                     <img alt="" src="https://placehold.jp/cccccc/ffffff/320x168.jpg">
-                                </mt:if>
+                                </mt:If>
                                 </figure><!-- /.m-thumbnail -->
                             </div><!-- /.c-card-object -->
                             <div class="c-card-contents">
