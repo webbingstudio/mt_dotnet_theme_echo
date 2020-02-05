@@ -18,6 +18,11 @@
             <div class="l-grid-row">
 </mt:EntriesHeader>
 
+                <div class="l-grid-col-12 l-grid-col-md-4">
+                    <div class="c-card">
+                        <a href="<$mt:EntryPermalink$>" class="c-card-inner">
+                            <div class="c-card-object">
+                                <figure class="m-thumbnail m-thumbnail-ogimage">
                                 <mt:If tag="CustomFieldValue" identifier="EcEntryEyecatch">
                                     <mt:CustomFieldAsset identifier="EcEntryEyecatch">
                                     <img alt="" src="<$mt:AssetThumbnailURL width="480"$>">
@@ -25,13 +30,6 @@
                                 <mt:Else>
                                     <img alt="" src="https://placehold.jp/cccccc/ffffff/320x168.jpg">
                                 </mt:If>
-
-
-                <div class="l-grid-col-12 l-grid-col-md-4">
-                    <div class="c-card">
-                        <a href="<$mt:EntryPermalink$>" class="c-card-inner">
-                            <div class="c-card-object">
-                                <figure class="m-thumbnail m-thumbnail-ogimage">
                                 </figure><!-- /.m-thumbnail -->
                             </div><!-- /.c-card-object -->
                             <div class="c-card-contents">
