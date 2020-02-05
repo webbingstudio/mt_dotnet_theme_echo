@@ -16,7 +16,7 @@
     </mt:CustomFieldAsset>
 <mt:Else>
     <$mt:setVar name="__image_url__"$>
-    <mt:EntryAssets type="image" lastn="1">
+    <mt:EntryAssets type="image" limit="1" sort_order="ascend" sort_by="created_on">
         <mt:setVarBlock name="__image_url__"><$mt:AssetThumbnailURL width="$__width_small__"$></mt:setVarBlock>
     </mt:EntryAssets>
     <mt:If name="__image_url__">
