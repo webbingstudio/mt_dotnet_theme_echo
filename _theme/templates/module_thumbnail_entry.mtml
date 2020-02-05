@@ -14,5 +14,11 @@
     <img alt="" src="<$mt:AssetThumbnailURL width="$__width_small__"$>" width="<$mt:var name="__width_small__"$>">
     </mt:CustomFieldAsset>
 <mt:Else>
-    <img alt="" src="/images/common/noimage_small.jpg" width="<$mt:var name="__width_small__"$>">
+    <mt:If tag="EntryAssets">
+        <mt:EntryAssets type="image" lastn="1">
+            <img alt="" src="<$mt:AssetThumbnailURL width="$__width_small__"$>" width="<$mt:var name="__width_small__"$>">
+        </mt:EntryAssets>
+    <mt:Else>
+        <img alt="" src="/images/common/noimage_small.jpg" width="<$mt:var name="__width_small__"$>">
+    </mt:If>
 </mt:If>
