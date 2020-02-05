@@ -1,0 +1,19 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-サムネイルの生成-フィールド-大
+# 
+# vars:
+#   __fieldname__
+#   __width_small__
+#   __width_large__
+# 
+# =======================
+</mt:Ignore>
+<mt:If tag="CustomFieldValue" identifier="$__fieldname__">
+    <mt:CustomFieldAsset identifier="$__fieldname__">
+    <img alt="" src="<$mt:AssetThumbnailURL width="$__width_small__"$>" width="<$mt:var name="__width_small__"$>">
+    </mt:CustomFieldAsset>
+<mt:Else>
+    <img alt="" src="/images/common/noimage_small.jpg" width="<$mt:var name="__width_small__"$>">
+</mt:If>
