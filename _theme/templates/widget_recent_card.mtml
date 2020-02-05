@@ -3,13 +3,34 @@
 # 
 # ウィジェット-記事新着-card
 # 
+# vars:
+#   __category__
+#   __header_tag__
+#   __header_title__
+#   __widget_class__
+#   __widget_more_text__
+#   __widget_more_url__
+# 
 # =======================
 </mt:Ignore>
-<mt:Entries sort_by="authored_on" sort_order="descend" limit="6">
+<mt:Unless name="__header_tag__">
+    <$mt:SetVar name="__header_tag__" value="p"$>
+</mt:Unless>
+<mt:Unless name="__header_title__">
+    <$mt:SetVar name="__header_title__" value="ブログ"$>
+</mt:Unless>
+<mt:Unless name="__widget_more_text__">
+    <$mt:SetVar name="__widget_more_text__" value="もっと見る"$>
+</mt:Unless>
+<mt:Unless name="__widget_more_url__">
+    <mt:setVarBlock name="__widget_more_url__"><$mt:WebsiteRelativeURL$>blog/</mt:setVarBlock>
+</mt:Unless>
+
+<mt:Entries category="$__category__" sort_by="authored_on" sort_order="descend" limit="6">
 <mt:EntriesHeader>
-<div class="p-widget p-widget-lg p-widget-card">
+<div class="p-widget p-widget-card p-widget-entry <$mt:Var name="__widget_class__"$>">
     <div class="p-widget-header">
-        <h2 class="p-widget-title">ブログ</h2>
+        <<$mt:Var name="__header_tag__"$> class="p-widget-title"><$mt:Var name="__header_title__"$></<$mt:Var name="__header_tag__"$>>
     </div><!-- /.p-widget-header -->
 
     <div class="p-widget-contents">
