@@ -23,13 +23,7 @@
                         <a href="<$mt:EntryPermalink$>" class="c-card-inner">
                             <div class="c-card-object">
                                 <figure class="m-thumbnail m-thumbnail-ogimage">
-                                <mt:If tag="CustomFieldValue" identifier="EcEntryEyecatch">
-                                    <mt:CustomFieldAsset identifier="EcEntryEyecatch">
-                                    <img alt="" src="<$mt:AssetThumbnailURL width="480"$>" width="480">
-                                    </mt:CustomFieldAsset>
-                                <mt:Else>
-                                    <img alt="" src="/images/common/noimage_small.jpg" width="480">
-                                </mt:If>
+                                    <mt:Include module="モジュール-サムネイルの生成-記事" __fieldname__="EcEntryEyecatch" __width_small__="480" />
                                 </figure><!-- /.m-thumbnail -->
                             </div><!-- /.c-card-object -->
                             <div class="c-card-contents">
