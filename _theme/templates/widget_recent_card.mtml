@@ -5,19 +5,26 @@
 # 
 # vars:
 #   __category__
-#   __header_tag__
-#   __header_title__
+#   __entry_title_tag__
+#   __header_title_tag__
+#   __header_title_text__
 #   __widget_class__
 #   __widget_more_text__
 #   __widget_more_url__
 # 
 # =======================
 </mt:Ignore>
-<mt:Unless name="__header_tag__">
-    <$mt:SetVar name="__header_tag__" value="p"$>
+<mt:Unless name="__entry_title_tag__">
+    <$mt:SetVar name="__entry_title_tag__" value="p"$>
 </mt:Unless>
-<mt:Unless name="__header_title__">
-    <$mt:SetVar name="__header_title__" value="ブログ"$>
+<mt:Unless name="__header_title_tag__">
+    <$mt:SetVar name="__header_title_tag__" value="p"$>
+</mt:Unless>
+<mt:Unless name="__header_title_text__">
+    <$mt:SetVar name="__header_title_text__" value="ブログ"$>
+</mt:Unless>
+<mt:Unless name="__widget_class__">
+    <$mt:SetVar name="__widget_class__" value="p-widget-lg"$>
 </mt:Unless>
 <mt:Unless name="__widget_more_text__">
     <$mt:SetVar name="__widget_more_text__" value="もっと見る"$>
@@ -30,7 +37,7 @@
 <mt:EntriesHeader>
 <div class="p-widget p-widget-card p-widget-entry <$mt:Var name="__widget_class__"$>">
     <div class="p-widget-header">
-        <<$mt:Var name="__header_tag__"$> class="p-widget-title"><$mt:Var name="__header_title__"$></<$mt:Var name="__header_tag__"$>>
+        <<$mt:Var name="__header_title_tag__"$> class="p-widget-title"><$mt:Var name="__header_title_text__"$></<$mt:Var name="__header_title_tag__"$>>
     </div><!-- /.p-widget-header -->
 
     <div class="p-widget-contents">
@@ -49,7 +56,7 @@
                             </div><!-- /.c-card-object -->
                             <div class="c-card-contents">
                                 <time class="card-meta" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate language="en" format="$echo_entry_date"$></time>
-                                <h3 class="c-card-title"><$mt:EntryTitle encode_html="1" trim_to="32+..."$></h3>
+                                <<$mt:Var name="__entry_title_tag__"$> class="c-card-title"><$mt:EntryTitle encode_html="1" trim_to="32+..."$></<$mt:Var name="__entry_title_tag__"$>>
                                 <p class="c-card-body"><$mt:EntryExcerpt words="64" trim_to="64+..."$></p>
                             </div><!-- /.c-card-contents -->
                         </a><!-- /.c-card-inner -->
