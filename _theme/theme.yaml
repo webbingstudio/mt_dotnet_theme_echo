@@ -66,4 +66,7 @@ elements:
           widget_recent_media:
             filename: widget_recent_media.mtml
             label: ウィジェット-記事新着-media
+          widget_recent_nav:
+            filename: widget_recent_nav.mtml
+            label: ウィジェット-記事新着-nav
     importer: template_set
