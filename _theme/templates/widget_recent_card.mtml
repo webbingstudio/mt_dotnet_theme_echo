@@ -53,12 +53,12 @@
                                 <figure class="m-thumbnail m-thumbnail-ogimage">
                                     <mt:Include module="モジュール-サムネイルの生成-記事" __fieldname__="EcEntryEyecatch" __width_small__="480" />
                                 </figure><!-- /.m-thumbnail -->
+                                <mt:EntryCategories type="primary">
+                                <p class="c-card-category">
+                                    <span class="m-label m-label-<$mt:CategoryBasename separator="bar"$>"><$mt:CategoryLabel encode_html="1"$></span>
+                                </p>
+                                </mt:EntryCategories>
                             </div><!-- /.c-card-object -->
-                            <mt:EntryCategories type="primary">
-                            <p class="c-card-category">
-                                <span class="m-label m-label-<$mt:CategoryBasename separator="bar"$>"><$mt:CategoryLabel encode_html="1"$></span>
-                            </p>
-                            </mt:EntryCategories>
                             <div class="c-card-contents">
                                 <time class="card-meta" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate language="en" format="$echo_entry_date"$></time>
                                 <<$mt:Var name="__entry_title_tag__"$> class="c-card-title"><$mt:EntryTitle encode_html="1"$></<$mt:Var name="__entry_title_tag__"$>>
