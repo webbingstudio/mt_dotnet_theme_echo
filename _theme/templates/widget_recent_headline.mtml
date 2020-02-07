@@ -33,7 +33,7 @@
     <mt:setVarBlock name="__widget_more_url__"><$mt:WebsiteRelativeURL$>blog/</mt:setVarBlock>
 </mt:Unless>
 
-<mt:Entries sort_by="authored_on" sort_order="descend" limit="6">
+<mt:Entries category="$__category__" sort_by="authored_on" sort_order="descend" limit="6">
 <mt:EntriesHeader>
 <div class="p-widget p-widget-headline p-widget-entry <$mt:Var name="__widget_class__"$>">
     <div class="p-widget-header">
@@ -48,11 +48,11 @@
                 <div class="c-headline-inner">
                     <time class="c-headline-header" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate language="en" format="$echo_entry_date"$></time>
 
-                    <mt:EntryPrimaryCategory>
+                    <mt:EntryCategories type="primary">
                     <p class="c-headline-category">
                         <a href="<$mt:CategoryArchiveLink$>" class="m-label m-label-gray m-label-<$mt:CategoryBasename separator="bar"$>"><$mt:CategoryLabel encode_html="1"$></a>
                     </p>
-                    </mt:EntryPrimaryCategory>
+                    </mt:EntryCategories>
 
                     <<$mt:Var name="__entry_title_tag__"$> class="c-headline-title"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle encode_html="1"$></a></<$mt:Var name="__entry_title_tag__"$>>
                 </div><!-- /.c-headline-inner -->
