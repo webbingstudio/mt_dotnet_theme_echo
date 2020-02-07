@@ -15,7 +15,7 @@
 # =======================
 </mt:Ignore>
 <mt:Unless name="__entry_title_tag__">
-    <$mt:SetVar name="__entry_title_tag__" value="p"$>
+    <$mt:SetVar name="__entry_title_tag__" value="span"$>
 </mt:Unless>
 <mt:Unless name="__header_title_tag__">
     <$mt:SetVar name="__header_title_tag__" value="p"$>
@@ -47,9 +47,9 @@
 </mt:EntriesHeader>
 
                     <li class="m-nav-item">
-                        <a href="#" class="m-nav-label">
+                        <a href="<$mt:EntryPermalink$>" class="m-nav-label">
                             <time class="m-nav-meta" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate language="en" format="$echo_entry_date"$></time><br>
-                            <<$mt:Var name="__entry_title_tag__"$> class="c-headline-title"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle encode_html="1"$></a></<$mt:Var name="__entry_title_tag__"$>>
+                            <<$mt:Var name="__entry_title_tag__"$> class="c-nav-title"><$mt:EntryTitle encode_html="1"$></<$mt:Var name="__entry_title_tag__"$>>
                         </a>
                     </li>
 
