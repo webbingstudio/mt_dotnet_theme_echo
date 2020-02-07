@@ -48,10 +48,11 @@
                 <div class="c-headline-inner">
                     <time class="c-headline-header" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate language="en" format="$echo_entry_date"$></time>
 
+                    <mt:EntryPrimaryCategory>
                     <p class="c-headline-category">
-<$mt:EntryCategory$>
+                        <a href="<$mt:CategoryArchiveLink$>" class="m-label m-label-gray m-label-<$mt:CategoryBasename separator="bar"$>"><$mt:CategoryLabel encode_html="1"$></a>
                     </p>
-
+                    </mt:EntryPrimaryCategory>
 
                     <<$mt:Var name="__entry_title_tag__"$> class="c-headline-title"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle encode_html="1"$></a></<$mt:Var name="__entry_title_tag__"$>>
                 </div><!-- /.c-headline-inner -->
