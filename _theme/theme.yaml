@@ -24,6 +24,23 @@ elements:
             label: ホーム
             outfile: index.html
             rebuild_me: 1
+        archive:
+          archive:
+            filename: archive.mtml
+            label: アーカイブ
+            mappings:
+              category:
+                archive_type: Category
+                file_template: blog/%-c/%i
+                preferred: 1
+          archive_datebased:
+            filename: archive_datebased.mtml
+            label: アーカイブ-年月別
+            mappings:
+              monthly:
+                archive_type: Monthly
+                file_template: blog/%y/%m/%i
+                preferred: 1
         module:
           layout_default:
             filename: layout_default.mtml
