@@ -3,76 +3,80 @@
 # 
 # ウィジェット-記事新着-media
 # 
+# vars:
+#   __category__
+#   __entry_title_tag__
+#   __header_title_tag__
+#   __header_title_text__
+#   __widget_class__
+#   __widget_more_text__
+#   __widget_more_url__
+# 
 # =======================
 </mt:Ignore>
-<div class="p-widget p-widget-lg p-widget-media">
+<mt:Unless name="__entry_title_tag__">
+    <$mt:SetVar name="__entry_title_tag__" value="p"$>
+</mt:Unless>
+<mt:Unless name="__header_title_tag__">
+    <$mt:SetVar name="__header_title_tag__" value="p"$>
+</mt:Unless>
+<mt:Unless name="__header_title_text__">
+    <$mt:SetVar name="__header_title_text__" value="ブログ"$>
+</mt:Unless>
+<mt:Unless name="__widget_class__">
+    <$mt:SetVar name="__widget_class__" value="p-widget-lg"$>
+</mt:Unless>
+<mt:Unless name="__widget_more_text__">
+    <$mt:SetVar name="__widget_more_text__" value="もっと見る"$>
+</mt:Unless>
+<mt:Unless name="__widget_more_url__">
+    <mt:setVarBlock name="__widget_more_url__"><$mt:WebsiteRelativeURL$>blog/</mt:setVarBlock>
+</mt:Unless>
+
+<mt:Entries category="$__category__" sort_by="authored_on" sort_order="descend" limit="6">
+<mt:EntriesHeader>
+<section class="p-widget p-widget-media p-widget-entry <$mt:Var name="__widget_class__"$>">
     <div class="p-widget-header">
-        <h2 class="p-widget-title">ブログ</h2>
+        <<$mt:Var name="__header_title_tag__"$> class="p-widget-title"><$mt:Var name="__header_title_text__"$></<$mt:Var name="__header_title_tag__"$>>
     </div><!-- /.p-widget-header -->
 
     <div class="p-widget-contents">
         <div class="l-container">
 
             <div class="l-grid-row">
+</mt:EntriesHeader>
 
                 <div class="l-grid-col-12 l-grid-col-lg-6">
-                    <a href="#" class="c-media">
+                    <a href="<$mt:EntryPermalink$>" class="c-media">
                         <div class="c-media-object">
-                            <div class="m-thumbnail">
-                                <img alt="" src="https://placehold.jp/cccccc/ffffff/300x157.jpg?text=og%3Aimage">
-                            </div>
-                        </div>
+                            <figure class="m-thumbnail m-thumbnail-ogimage">
+                                <mt:Include module="モジュール-サムネイルの生成-記事" __fieldname__="EcEntryEyecatch" __width_small__="480" />
+                            </figure><!-- /.m-thumbnail -->
+                            <mt:EntryCategories type="primary">
+                            <p class="c-media-category">
+                                <span class="m-label m-label-<$mt:CategoryBasename separator="bar"$>"><$mt:CategoryLabel encode_html="1"$></span>
+                            </p>
+                            </mt:EntryCategories>
+                        </div><!-- /.c-media-object -->
                         <div class="c-media-contents">
-                            <h3 class="c-media-title">ブログ投稿のタイトルが入ります</h3>
-                            <p>これは.c-mediaです。オブジェクト全体がリンクになっています。</p>
+                            <time class="c-media-meta" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate language="en" format="$echo_entry_date"$></time>
+                            <<$mt:Var name="__entry_title_tag__"$> class="c-media-title"><$mt:EntryTitle encode_html="1"$></<$mt:Var name="__entry_title_tag__"$>>
+                            <p class="c-media-body"><$mt:EntryExcerpt$></p>
                         </div>
                     </a>
                 </div><!-- /.l-grid-col -->
 
-                <div class="l-grid-col-12 l-grid-col-lg-6">
-                    <a href="#" class="c-media">
-                        <div class="c-media-object">
-                            <div class="m-thumbnail">
-                                <img alt="" src="https://placehold.jp/cccccc/ffffff/300x157.jpg?text=og%3Aimage">
-                            </div>
-                        </div>
-                        <div class="c-media-contents">
-                            <h3 class="c-media-title">ブログ投稿のタイトルが入ります</h3>
-                            <p>これは.c-mediaです。オブジェクト全体がリンクになっています。</p>
-                        </div>
-                    </a>
-                </div><!-- /.l-grid-col -->
-
-                <div class="l-grid-col-12 l-grid-col-lg-6">
-                    <a href="#" class="c-media">
-                        <div class="c-media-object">
-                            <div class="m-thumbnail">
-                                <img alt="" src="https://placehold.jp/cccccc/ffffff/300x157.jpg?text=og%3Aimage">
-                            </div>
-                        </div>
-                        <div class="c-media-contents">
-                            <h3 class="c-media-title">ブログ投稿のタイトルが入ります</h3>
-                            <p>これは.c-mediaです。オブジェクト全体がリンクになっています。</p>
-                        </div>
-                    </a>
-                </div><!-- /.l-grid-col -->
-
-                <div class="l-grid-col-12 l-grid-col-lg-6">
-                    <a href="#" class="c-media">
-                        <div class="c-media-object">
-                            <div class="m-thumbnail">
-                                <img alt="" src="https://placehold.jp/cccccc/ffffff/300x157.jpg?text=og%3Aimage">
-                            </div>
-                        </div>
-                        <div class="c-media-contents">
-                            <h3 class="c-media-title">ブログ投稿のタイトルが入ります</h3>
-                            <p>これは.c-mediaです。オブジェクト全体がリンクになっています。</p>
-                        </div>
-                    </a>
-                </div><!-- /.l-grid-col -->
-
+<mt:EntriesFooter>
             </div><!-- /.l-grid-row -->
 
         </div><!-- /.l-container -->
     </div><!-- /.p-widget-contents -->
-</div><!-- /.p-widget -->
+
+<mt:If name="__widget_more_url__">
+    <div class="p-widget-footer">
+        <p class="p-widget-link"><a href="<$mt:Var name="__widget_more_url__"$>" class="m-btn m-btn-bordered m-btn-block"><$mt:Var name="__widget_more_text__"$></a></p>
+    </div><!-- /.p-widget-footer -->
+</mt:If>
+</section><!-- /.p-widget -->
+</mt:EntriesFooter>
+</mt:Entries>
