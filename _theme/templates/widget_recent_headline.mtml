@@ -3,46 +3,68 @@
 # 
 # ウィジェット-記事新着-headline
 # 
+# vars:
+#   __category__
+#   __entry_title_tag__
+#   __header_title_tag__
+#   __header_title_text__
+#   __widget_class__
+#   __widget_more_text__
+#   __widget_more_url__
+# 
 # =======================
 </mt:Ignore>
-<div class="p-widget p-widget-lg p-widget-headline">
+<mt:Unless name="__entry_title_tag__">
+    <$mt:SetVar name="__entry_title_tag__" value="p"$>
+</mt:Unless>
+<mt:Unless name="__header_title_tag__">
+    <$mt:SetVar name="__header_title_tag__" value="p"$>
+</mt:Unless>
+<mt:Unless name="__header_title_text__">
+    <$mt:SetVar name="__header_title_text__" value="ブログ"$>
+</mt:Unless>
+<mt:Unless name="__widget_class__">
+    <$mt:SetVar name="__widget_class__" value="p-widget-lg"$>
+</mt:Unless>
+<mt:Unless name="__widget_more_text__">
+    <$mt:SetVar name="__widget_more_text__" value="もっと見る"$>
+</mt:Unless>
+<mt:Unless name="__widget_more_url__">
+    <mt:setVarBlock name="__widget_more_url__"><$mt:WebsiteRelativeURL$>blog/</mt:setVarBlock>
+</mt:Unless>
+
+<mt:Entries category="$__category__" sort_by="authored_on" sort_order="descend" limit="6">
+<mt:EntriesHeader>
+<div class="p-widget p-widget-headline p-widget-entry <$mt:Var name="__widget_class__"$>">
     <div class="p-widget-header">
-        <h2 class="p-widget-title">ブログ</h2>
+        <<$mt:Var name="__header_title_tag__"$> class="p-widget-title"><$mt:Var name="__header_title_text__"$></<$mt:Var name="__header_title_tag__"$>>
     </div><!-- /.p-widget-header -->
 
     <div class="p-widget-contents">
         <div class="l-container l-container-sm">
+</mt:EntriesHeader>
 
             <article class="c-headline">
                 <div class="c-headline-inner">
-                    <time class="c-headline-header" datetime="2020-12-28T09:00:00+09:00">2020年12月28日</time>
+                    <time class="c-headline-header" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate language="en" format="$echo_entry_date"$></time>
                     <p class="c-headline-category">
                         <a href="#" class="m-label m-label-first">カテゴリー</a>
                     </p>
-                    <p class="c-headline-title"><a href="#">これは.c-headlineです。ニュースのタイトルがここに入ります</a></p>
+                    <<$mt:Var name="__entry_title_tag__"$> class="c-headline-title"><$mt:EntryTitle encode_html="1"$></<$mt:Var name="__entry_title_tag__"$>>
                 </div><!-- /.c-headline-inner -->
             </article><!-- /.c-headline -->
 
-            <article class="c-headline">
-                <div class="c-headline-inner">
-                    <time class="c-headline-header" datetime="2020-12-28T09:00:00+09:00">2020年12月28日</time>
-                    <p class="c-headline-category">
-                        <a href="#" class="m-label m-label-second">カテゴリー</a>
-                    </p>
-                    <p class="c-headline-title"><a href="#">これは.c-headlineです。ニュースのタイトルがここに入ります</a></p>
-                </div><!-- /.c-headline-inner -->
-            </article><!-- /.c-headline -->
-
-            <article class="c-headline">
-                <div class="c-headline-inner">
-                    <time class="c-headline-header" datetime="2020-12-28T09:00:00+09:00">2020年12月28日</time>
-                    <p class="c-headline-category">
-                        <a href="#" class="m-label m-label-third">カテゴリー</a>
-                    </p>
-                    <p class="c-headline-title"><a href="#">これは.c-headlineです。ニュースのタイトルがここに入ります</a></p>
-                </div><!-- /.c-headline-inner -->
-            </article><!-- /.c-headline -->
+<mt:EntriesFooter>
+            </div><!-- /.l-grid-row -->
 
         </div><!-- /.l-container -->
     </div><!-- /.p-widget-contents -->
-</div><!-- /.p-widget -->
+
+<mt:If name="__widget_more_url__">
+    <div class="p-widget-footer">
+        <p class="p-widget-link"><a href="<$mt:Var name="__widget_more_url__"$>" class="m-btn m-btn-bordered m-btn-first m-btn-block"><$mt:Var name="__widget_more_text__"$></a></p>
+    </div><!-- /.p-widget-footer -->
+</mt:If>
+</section><!-- /.p-widget -->
+</mt:EntriesFooter>
+</mt:Entries>
