@@ -19,33 +19,3 @@
     <$mt:SetVar name="__widget_more_text__" value="もっと見る"$>
 </mt:Unless>
 
-<mt:Pages id="$__page_id__">
-<mt:PagesHeader>
-<section class="p-widget p-widget-flip p-widget-page <$mt:Var name="__widget_class__"$>">
-</mt:PagesHeader>
-    <mt:Unless name="__flip_title_text__">
-        <mt:SetVarBlock name="__flip_title_text__"><$mt:PageTitle encode_html="1"$></mt:SetVarBlock>
-    </mt:Unless>
-
-    <div class="c-flip">
-        <div class="c-flip-cover" style="background-image: url()"></div>
-        <div class="c-flip-container">
-            <div class="c-flip-contents">
-                <div class="c-flip-contents-inner">
-                    <<$mt:Var name="__flip_title_tag__"$> class="c-flip-title"><$mt:Var name="__flip_title_text__"$></<$mt:Var name="__flip_title_tag__"$>>
-                    <mt:If tag="CustomFieldValue" identifier="PageLead">
-                    <p class="c-flip-body"><$mt:PageLead$></p>
-                    </mt:If>
-                    <mt:If name="__widget_more_url__">
-                    <p class="c-flip-link">
-                        <a href="<$mt:Var name="__widget_more_url__"$>" class="m-btn m-btn-bordered m-btn-block"><$mt:Var name="__widget_more_text__"$></a>
-                    </p>
-                    </mt:If>
-                </div><!-- /.c-flip-contents-inner -->
-            </div><!-- /.c-flip-contents -->
-        </div><!-- /.c-flip-container -->
-    </div><!-- /.c-flip -->
-<mt:PagesFooter>
-</section><!-- /.p-widget -->
-</mt:PagesFooter>
-</mt:Pages>
