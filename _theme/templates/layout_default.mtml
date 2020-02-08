@@ -34,13 +34,7 @@
 <body>
 <div class="l-document" id="document">
 
-    <header class="p-header" role="banner">
-        <div class="l-container">
-
-            ここはサイトのヘッダです
-
-        </div><!-- /.l-container -->
-    </header><!-- /.p-header -->
+    <$mt:Include module="モジュール-ヘッダ"$>
 
     <main class="p-main" role="main">
 <mt:Unless name="__main__">
@@ -55,13 +49,8 @@
 <mt:Var name="__main__" />
     </main><!-- /.p-main -->
 
-    <footer class="p-footer" role="contentinfo">
-        <div class="l-container">
-
-            ここはサイトのフッタです
-
-        </div><!-- /.l-container -->
-    </footer><!-- /.p-footer -->
+    <$mt:Include module="モジュール-フッタ"$>
+    <$mt:Include module="モジュール-スマートフォンメニュー"$>
 
 </div><!-- /.l-document -->
 </body>

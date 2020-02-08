@@ -48,6 +48,15 @@ elements:
           vars_common:
             filename: vars_common.mtml
             label: 変数-共通
+          module_header:
+            filename: module_header.mtml
+            label: モジュール-ヘッダ
+          module_footer:
+            filename: module_footer.mtml
+            label: モジュール-フッタ
+          module_spMenu:
+            filename: module_spMenu.mtml
+            label: モジュール-スマートフォンメニュー
           module_thumbnail_entry:
             filename: module_thumbnail_entry.mtml
             label: モジュール-サムネイルの生成-記事
