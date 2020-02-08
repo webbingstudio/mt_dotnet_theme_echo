@@ -34,12 +34,13 @@
 <mt:EntriesHeader>
 <section class="p-widget p-widget-card p-widget-entry <$mt:Var name="__widget_class__"$>">
     <div class="p-widget-header">
-        <<$mt:Var name="__header_title_tag__"$> class="p-widget-title"><$mt:Var name="__header_title_text__"$></<$mt:Var name="__header_title_tag__"$>>
+        <div class="l-container">
+            <<$mt:Var name="__header_title_tag__"$> class="p-widget-title"><$mt:Var name="__header_title_text__"$></<$mt:Var name="__header_title_tag__"$>>
+        </div><!-- /.l-container -->
     </div><!-- /.p-widget-header -->
 
     <div class="p-widget-contents">
         <div class="l-container">
-
             <div class="l-grid-row">
 </mt:EntriesHeader>
 
@@ -67,15 +68,16 @@
 
 <mt:EntriesFooter>
             </div><!-- /.l-grid-row -->
-
         </div><!-- /.l-container -->
     </div><!-- /.p-widget-contents -->
 
-<mt:If name="__widget_more_url__">
+    <mt:If name="__widget_more_url__">
     <div class="p-widget-footer">
-        <p class="p-widget-link"><a href="<$mt:Var name="__widget_more_url__"$>" class="m-btn m-btn-bordered m-btn-block"><$mt:Var name="__widget_more_text__"$></a></p>
+        <div class="l-container">
+            <p class="p-widget-link"><a href="<$mt:Var name="__widget_more_url__"$>" class="m-btn m-btn-bordered m-btn-block"><$mt:Var name="__widget_more_text__"$></a></p>
+        </div><!-- /.l-container -->
     </div><!-- /.p-widget-footer -->
-</mt:If>
+    </mt:If>
 </section><!-- /.p-widget -->
 </mt:EntriesFooter>
 </mt:Entries>
