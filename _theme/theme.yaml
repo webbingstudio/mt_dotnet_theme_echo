@@ -66,6 +66,9 @@ elements:
           module_thumbnail_field_large:
             filename: module_thumbnail_field_large.mtml
             label: モジュール-サムネイルの生成-フィールド-大
+          widget_page_flip:
+            filename: widget_page_flip.mtml
+            label: ウィジェット-ページ指定-flip
           widget_recent_card:
             filename: widget_recent_card.mtml
             label: ウィジェット-記事新着-card
