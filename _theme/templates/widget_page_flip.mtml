@@ -33,6 +33,9 @@
             <div class="c-flip-contents">
                 <div class="c-flip-contents-inner">
                     <<$mt:Var name="__flip_title_tag__"$> class="c-flip-title"><$mt:Var name="__flip_title_text__"$></<$mt:Var name="__flip_title_tag__"$>>
+                    <mt:If tag="CustomFieldValue" identifier="EcPageLead">
+                    <p class="c-flip-body"><$mt:EcPageLead$></p>
+                    </mt:If>
                     <mt:If name="__widget_more_url__">
                       <mt:If name="__widget_more_url__" neq="false">
                       <p class="c-flip-link">
