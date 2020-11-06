@@ -19,3 +19,15 @@
     <$mt:SetVar name="__widget_more_text__" value="もっと見る"$>
 </mt:Unless>
 
+<mt:Pages id="$__page_id__">
+<mt:PagesHeader>
+<section class="p-widget p-widget-flip p-widget-page <$mt:Var name="__widget_class__"$>">
+</mt:PagesHeader>
+    <mt:Unless name="__flip_title_text__">
+        <mt:SetVarBlock name="__flip_title_text__"><$mt:PageTitle encode_html="1"$></mt:SetVarBlock>
+    </mt:Unless>
+
+<mt:PagesFooter>
+</section><!-- /.p-widget -->
+</mt:PagesFooter>
+</mt:Pages>
