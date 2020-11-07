@@ -24,15 +24,6 @@ elements:
             label: ホーム
             outfile: index.html
             rebuild_me: 1
-        page:
-          page:
-            filename: page.mtml
-            label: ページ
-            mappings:
-              page:
-                archive_type: Page
-                file_template: "%-c/%-f"
-                preferred: 1
         archive:
           archive:
             filename: archive.mtml
@@ -90,4 +81,13 @@ elements:
           widget_recent_nav:
             filename: widget_recent_nav.mtml
             label: ウィジェット-記事新着-nav
+        page:
+          page:
+            filename: page.mtml
+            label: ページ
+            mappings:
+              page:
+                archive_type: Page
+                file_template: "%-c/%-f"
+                preferred: 1
     importer: template_set
