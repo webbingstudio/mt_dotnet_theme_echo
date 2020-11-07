@@ -1,0 +1,37 @@
+<mt:Unless strip_linefeeds="1"><mt:Ignore>
+# =======================
+# 
+# ページ
+# 
+# =======================
+</mt:Ignore>
+<$mt:Include module="変数-共通"$>
+
+<mt:SetVarBlock name="__main__">
+
+<mt:Pages>
+<section class="c-post c-post-page">
+
+    <mt:PagesHeader>
+        <mt:If tag="CustomFieldValue" identifier="EcPagePageHeader" neq="false">
+        </mt:If>
+        <mt:If tag="CustomFieldValue" identifier="EcPageTopicpath" neq="false">
+        </mt:If>
+        <mt:If tag="CustomFieldValue" identifier="EcPagePostTitle" neq="false">
+        <div class="c-post-header">
+            <h2 class="c-post-title"><$mt:PagesTitle$></h2>
+        </div><!-- /.c-post-header -->
+        </mt:If>
+    </mt:PagesHeader>
+
+    <div class="c-post-contents blockeditor">
+    <$mt:PagesBody$>
+    </div><!-- /.c-post-contents -->
+
+</section><!-- /.c-post -->
+</mt:Pages>
+
+</mt:SetVarBlock>
+
+<$mt:Include module="レイアウト-基本"$>
+</mt:Unless>
