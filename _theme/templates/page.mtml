@@ -13,11 +13,9 @@
 <section class="c-post c-post-page">
 
     <mt:PagesHeader>
-        <mt:If tag="CustomFieldValue" identifier="EcPagePageHeader" neq="false">
+        <mt:If tag="CustomFieldValue" identifier="EcPageHideHeader" neq="true">
         </mt:If>
-        <mt:If tag="CustomFieldValue" identifier="EcPageTopicpath" neq="false">
-        </mt:If>
-        <mt:If tag="CustomFieldValue" identifier="EcPagePostTitle" neq="false">
+        <mt:If tag="CustomFieldValue" identifier="EcPageHideTitle" neq="true">
         <div class="c-post-header">
             <h2 class="c-post-title"><$mt:PagesTitle$></h2>
         </div><!-- /.c-post-header -->
