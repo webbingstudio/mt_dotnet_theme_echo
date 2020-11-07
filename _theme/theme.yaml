@@ -1,29 +1,190 @@
 id: "echo"
 label: "echo"
 version: "0.1.0"
-author_link: "http://webbingstudio.com/"
-author_name: "Webbingstudio"
+author_link: "https://webbingstudio.com/"
+author_name: "WebbingStudio"
 description: "MovableType.net framework theme - Licensed under MIT Open Source"
 class: "blog"
 elements:
-  blog_static_files:
+  custom_fields:
+    component: commercial
+    data:
+      EcBlogCommonTitle:
+        default: ''
+        description: title要素末尾のサイト名の略称を変更したい場合は、ここに入力してください。
+        name: title要素のサイト名の略称
+        obj_type: blog
+        options: ''
+        required: 0
+        type: text
+      EcBlogExHeadnav:
+        default: ''
+        description: ヘッダナビゲーションに追加したい内容があれば、HTMLを入力してください。li要素としてマークアップされます。
+        name: 追加のヘッダナビゲーション
+        obj_type: blog
+        options: none
+        required: 0
+        type: textarea
+      EcBlogFbAppId:
+        default: ''
+        description: FacebookアプリケーションIDがあれば入力してください。
+        name: FacebookアプリケーションID
+        obj_type: blog
+        options: ''
+        required: 0
+        type: text
+      EcBlogHomeDescription:
+        default: ''
+        description: ホームのMETAの概要文を変更したい場合は、ここに入力してください。
+        name: ホームのMETAの概要文
+        obj_type: blog
+        options: ''
+        required: 0
+        type: textarea
+      EcBlogHomeTitle:
+        default: ''
+        description: ホームのtitle要素を変更したい場合は、ここに入力してください。
+        name: ホームのtitle要素
+        obj_type: blog
+        options: ''
+        required: 0
+        type: text
+      EcBlogHtmlHead:
+        default: ''
+        description: HTMLのhead要素末尾に追加したい内容があれば入力してください。
+        name: 追加のhead要素
+        obj_type: blog
+        options: ''
+        required: 0
+        type: textarea
+      EcBlogOgImage:
+        default: ''
+        description: このウェブサイトのOGP用画像(og:image)をアップロードしてください。
+        name: OGP用画像
+        obj_type: blog
+        options: ''
+        required: 0
+        type: asset_image
+      EcBlogTwitterID:
+        default: ''
+        description: TwitterのアカウントIDがあれば入力してください。
+        name: TwitterアカウントID
+        obj_type: blog
+        options: ''
+        required: 0
+        type: text
+      EcEntryEyecatch:
+        default: ''
+        description: この記事のアイキャッチ画像をアップロードしてください。SNSでシェアしたときにも引用されます。
+        name: アイキャッチ画像
+        obj_type: post
+        options: ''
+        required: 0
+        type: asset_image
+      EcEntryMetaTitle:
+        default: ''
+        description: この記事のtitle要素を変更したい場合は、ここに入力してください。
+        name: title要素
+        obj_type: post
+        options: ''
+        required: 0
+        type: text
+      EcPageEyecatch:
+        default: ''
+        description: このページのアイキャッチ画像をアップロードしてください。SNSでシェアしたときにも引用されます。
+        name: アイキャッチ画像
+        obj_type: page
+        options: ''
+        required: 0
+        type: asset_image
+      EcPageHideHeader:
+        default: 0
+        description: ヘッダの直下にフォルダタイトルを自動表示しない場合はチェックを入れてください。
+        name: フォルダタイトルを表示しない
+        obj_type: page
+        options: ''
+        required: 0
+        type: checkbox
+      EcPageHideTitle:
+        default: 0
+        description: このページがフォルダのインデックスページではない場合に、本文の上にページタイトルを自動表示しない場合はチェックを入れてください。
+        name: ページタイトルを表示しない
+        obj_type: page
+        options: ''
+        required: 0
+        type: checkbox
+      EcPageHtmlHead:
+        default: ''
+        description: この記事にCSSやJavaScriptを追加したい場合は、ここに入力してください。
+        name: 追加のhead要素
+        obj_type: page
+        options: ''
+        required: 0
+        type: textarea
+      EcPageLead:
+        default: ''
+        description: このページへ誘導するブロックなどに表示するリード文を入力してください。空欄の場合はブロックによって、概要文を自動表示／何も表示しないのいずれかとなります。
+        name: ページのリード文
+        obj_type: page
+        options: none
+        required: 0
+        type: textarea
+      EcPageMetaTitle:
+        default: ''
+        description: このページのtitle要素を変更したい場合は、ここに入力してください。
+        name: title要素
+        obj_type: page
+        options: ''
+        required: 0
+        type: text
+      EcPageShowHome:
+        default: 表示しない
+        description: このページをトップページの内容として表示する場合、エリアを指定してください。
+        name: トップページに表示
+        obj_type: page
+        options: 表示しない,ページ上段,ページ中段,ページ下段
+        required: 1
+        type: select
+      EcPageShowNav:
+        default: フッタのみ
+        description: このページへのリンクを表示するナビゲーションを選択してください。
+        name: ナビゲーションにリンクを表示する
+        obj_type: page
+        options: 表示しない,すべて,フッタのみ
+        required: 1
+        type: radio
+    importer: custom_fields
+  field_display_options:
     component: ~
     data:
-      - css
-      - images
-      - js
-    importer: blog_static_files
+      blog: {}
+
+      page:
+        excerpt:
+          display: default
+          order: 4
+        keywords:
+          display: default
+          order: 5
+        text:
+          display: default
+          order: 0
+      post:
+        excerpt:
+          display: default
+          order: 8
+        keywords:
+          display: default
+          order: 9
+        text:
+          display: default
+          order: 3
+    importer: field_display_options
   template_set:
     component: core
     data:
       base_path: templates
       templates:
-        index:
-          home:
-            filename: index.mtml
-            label: ホーム
-            outfile: index.html
-            rebuild_me: 1
         archive:
           archive:
             filename: archive.mtml
@@ -41,31 +202,37 @@ elements:
                 archive_type: Monthly
                 file_template: blog/%y/%m/%i
                 preferred: 1
+        index:
+          home:
+            filename: index.html.mtml
+            label: ホーム
+            outfile: index.html
+            rebuild_me: 1
         module:
           layout_default:
             filename: layout_default.mtml
             label: レイアウト-基本
-          vars_common:
-            filename: vars_common.mtml
-            label: 変数-共通
-          module_header:
-            filename: module_header.mtml
-            label: モジュール-ヘッダ
           module_footer:
             filename: module_footer.mtml
             label: モジュール-フッタ
-          module_spMenu:
-            filename: module_spMenu.mtml
+          module_header:
+            filename: module_header.mtml
+            label: モジュール-ヘッダ
+          module_spmenu:
+            filename: module_spmenu.mtml
             label: モジュール-スマートフォンメニュー
           module_thumbnail_entry:
             filename: module_thumbnail_entry.mtml
             label: モジュール-サムネイルの生成-記事
-          module_thumbnail_field_small:
-            filename: module_thumbnail_field_small.mtml
-            label: モジュール-サムネイルの生成-フィールド-小
           module_thumbnail_field_large:
             filename: module_thumbnail_field_large.mtml
             label: モジュール-サムネイルの生成-フィールド-大
+          module_thumbnail_field_small:
+            filename: module_thumbnail_field_small.mtml
+            label: モジュール-サムネイルの生成-フィールド-小
+          vars_common:
+            filename: vars_common.mtml
+            label: 変数-共通
           widget_page_flip:
             filename: widget_page_flip.mtml
             label: ウィジェット-ページ指定-flip
@@ -91,3 +258,4 @@ elements:
                 file_template: "%-c/%-f"
                 preferred: 1
     importer: template_set
+
