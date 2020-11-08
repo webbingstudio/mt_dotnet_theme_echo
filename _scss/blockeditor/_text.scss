@@ -1,0 +1,15 @@
+.#{$pr}#{$be} {
+
+    p {
+        line-height: $line-height-lg;
+    }
+
+    strong:not([class]) {
+    }
+
+    em:not([class]) {
+        font-style: normal;
+        color: $important;
+    }
+
+}

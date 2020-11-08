@@ -1,0 +1,20 @@
+.#{$pr}#{$be} {
+
+    hr:not([class*="#{$be}"]) {
+        position: relative;
+        clear: both;
+        height: 1px;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        border-width: 0 0 2px;
+        border-style: none none solid;
+        border-color: transparent transparent $body-color;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 3em;
+            margin-bottom: 3em;
+        }
+
+    }
+
+}
