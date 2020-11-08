@@ -1,0 +1,24 @@
+/*
+--------------------
+.#{$be}-columns
+--------------------
+*/
+
+.#{$be}-columns {
+}
+
+.#{$be}-column:not([style*="width"]) {
+    flex: 1;
+}
+
+.#{$be}-column {
+
+    &:not(:first-child) {
+        padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+    }
+
+    &:not(:last-child) {
+        padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+    }
+
+}

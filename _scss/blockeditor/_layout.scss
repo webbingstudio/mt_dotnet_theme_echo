@@ -1,0 +1,40 @@
+/*
+--------------------
+.#{$be}(layout)
+--------------------
+*/
+
+.#{$pr}#{$be} {
+
+    > *:not([class*="#{$pr}#{$be}-block-custom"]),
+    .#{$pr}#{$be}-group {
+        width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        max-width: map-get( $be-max-widths, 'md' );
+        margin-left: auto;
+        margin-right: auto;
+
+        .#{$pr}#{$be}-group {
+            width: 100%;
+            max-width: none;
+        }
+
+    }
+
+    > iframe:not([class*="#{$pr}#{$be}-block-custom"]) {
+        display: block;
+    }
+
+    > *.#{$pr}#{$be}-alignwide {
+
+        @include media-breakpoint-up(xl) {
+            max-width: map-get( $be-max-widths, 'lg' );
+        }
+
+    }
+
+    > *.#{$pr}#{$be}-alignfull {
+        width: 100%;
+        max-width: none;
+    }
+
+}
