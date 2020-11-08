@@ -1,0 +1,215 @@
+// Config: basic
+// ========================================
+
+// Prefix
+// -----------------------------------------
+
+// Common prefix
+// 他のCSSフレームワークとの衝突を回避したい場合は、接頭辞を指定する
+// Specify the prefix, if you want to avoid conflicts with other CSS frameworks
+$pr: '' !default;
+
+// Coding rules
+// "bem" を指定するとBEMとなる（デフォルトはSMACSS）。
+// When specified "bem", it becomes BEM. (default: SMACSS)
+$rule: '' !default;
+
+
+// Colors
+// -----------------------------------------
+
+// gray: greyscale color
+$gray:                      #333 !default;
+$gray-strong:               #333 !default;
+$gray-mild:                 #888 !default;
+$gray-milder:               #bbb !default;
+$gray-fade:                 #eee !default;
+
+// first: primary color
+$first:                     #1976d2 !default;
+$first-strong:              #0060c0 !default;
+$first-fade:                #e3f0ff !default;
+
+// second: secondary color
+$second:                    #138420 !default;
+$second-strong:             #138420 !default;
+$second-fade:               #edfbf3 !default;
+
+// third: tertiary(accent) color
+$third:                     #ffb510 !default;
+$third-strong:              #c05900 !default;
+$third-fade:                #fff6e3 !default;
+
+// info: information(success) color in system
+$info:                      $second !default;
+$info-strong:               $second-strong !default;
+$info-fade:                 $second-fade !default;
+
+// important: important(danger, error) color in system
+$important:                 #d20b2a !default;
+$important-strong:          #d20b2a !default;
+$important-fade:            #ffe9f0 !default;
+
+$body-bg:                   #fff !default;
+$body-color:                $gray !default;
+$body-mild-color:           $gray-mild !default;
+$body-inverse-bg:           #000 !default;
+$body-inverse-color:        #fff !default;
+$body-inverse-mild-color:   rgba( $body-inverse-color, .5 ) !default;
+
+
+// Links
+// -----------------------------------------
+
+$link-color:                $first-strong !default;
+$link-hover-color:          $link-color !default;
+
+
+// Border ( Table, Alert, Thumbnail, Box )
+// -----------------------------------------
+
+$border-width:                   1px !default;
+$border-color:                   $gray-milder !default;
+$border-inverse-color:           $gray-mild !default;
+
+$border-table-width:             $border-width !default;
+$border-table-section-width:     ( $border-width * 2 ) !default;
+$border-table-section-color:     $border-color !default;
+$border-thumbnail-width:         0 !default;
+$border-alert-width:             $border-width !default;
+$border-box-width:               ( $border-width * 2 ) !default;
+
+
+// UI ( Default Button, Nav, Pager, Form )
+// -----------------------------------------
+
+$ui-border-width:               .0625rem !default;
+$ui-btn-border-width:           ( $border-width * 2 ) !default;
+$ui-icon-color:                 $first !default;
+
+$ui-color:                      $body-color !default;
+$ui-bg:                         transparent !default;
+$ui-border-color:               $body-color !default;
+$ui-hover-color:                $body-color !default;
+$ui-hover-bg:                   rgba( $body-color, .1 ) !default;
+$ui-hover-border-color:         $body-color !default;
+$ui-current-color:              $body-inverse-color !default;
+$ui-current-bg:                 $body-color !default;
+$ui-current-border-color:       $body-color !default;
+$ui-current-hover-color:        $ui-current-color !default;
+$ui-current-hover-bg:           $ui-current-bg !default;
+$ui-current-hover-border-color: $ui-current-border-color !default;
+
+$ui-inverse-color:                      $body-inverse-color !default;
+$ui-inverse-bg:                         transparent !default;
+$ui-inverse-border-color:               $body-inverse-color !default;
+$ui-inverse-hover-color:                $body-inverse-color !default;
+$ui-inverse-hover-bg:                   rgba( $body-inverse-color, .2 ) !default;
+$ui-inverse-hover-border-color:         $body-inverse-color !default;
+$ui-inverse-current-color:              $body-color !default;
+$ui-inverse-current-bg:                 rgba( $body-inverse-color, .8 ) !default;
+$ui-inverse-current-border-color:       $body-inverse-color !default;
+$ui-inverse-current-hover-color:        $ui-inverse-current-color !default;
+$ui-inverse-current-hover-bg:           $ui-inverse-current-bg !default;
+$ui-inverse-current-hover-border-color: $ui-inverse-current-border-color !default;
+
+
+// Font mapping
+// -----------------------------------------
+
+@mixin font-face-mapping() {
+
+// font-face or webfont import
+
+}
+
+// Font family
+// -----------------------------------------
+
+$font-family-mono:             'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace !default;
+
+// root: body
+$font-family-root:             'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '-apple-system', 'BlinkMacSystemFont', 'Meiryo', sans-serif !default;
+$font-weight-root:             300 !default;
+$font-family-bold-root:        $font-family-root;
+$font-weight-bold-root:        700 !default;
+
+// first: title
+$font-family-first:            $font-family-root;
+$font-weight-first:            $font-weight-root;
+$font-family-bold-first:       $font-family-bold-root;
+$font-weight-bold-first:       $font-weight-bold-root;
+
+// second: english, date, number
+$font-family-second:           'Helvetica', 'Roboto', '-apple-system', 'Open Sans', 'Arial', sans-serif !default;
+$font-weight-second:           300 !default;
+$font-family-bold-second:      $font-family-second;
+$font-weight-bold-second:      700 !default;
+
+// third: display
+$font-family-third:            '游明朝', 'Yu Mincho', '游明朝体', 'YuMincho', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝', 'MS PMincho', 'Bookman Old Style', 'Times New Roman', '-apple-system', 'BlinkMacSystemFont', serif !default;
+$font-weight-third:            300 !default;
+$font-family-bold-third:       $font-family-third;
+$font-weight-bold-third:       700 !default;
+
+
+// Font size
+// -----------------------------------------
+
+$font-size-xxs:             .625rem !default;
+$font-size-xs:              .75rem !default;
+$font-size-sm:              .875rem !default;
+$font-size-md:              1rem !default;
+$font-size-lg:              1.125rem !default;
+$font-size-xl:              1.25rem !default;
+
+
+// Line height
+// -----------------------------------------
+
+$line-height-xs:            1.25 !default;
+$line-height-sm:            1.5 !default;
+$line-height-md:            1.75 !default;
+$line-height-lg:            2 !default;
+
+
+// Radius
+// -----------------------------------------
+
+$border-radius-sm:  3px;
+$border-radius-md:  3px;
+$border-radius-lg:  5px;
+
+
+// Buttons
+// -----------------------------------------
+
+$btn-border-radius:    $border-radius-md;
+
+$btn-font-size-md:     .875rem !default;
+$btn-padding-x-md:     1rem !default;
+$btn-padding-y-md:     .5rem !default;
+
+$btn-font-size-lg:     1rem !default;
+$btn-padding-x-lg:     1rem !default;
+$btn-padding-y-lg:     .75rem !default;
+
+$btn-font-size-xl:     1.25rem !default;
+$btn-padding-x-xl:     2rem !default;
+$btn-padding-y-xl:     1rem !default;
+
+$btn-font-size-xxl:    1.5rem !default;
+$btn-padding-x-xxl:    3rem !default;
+$btn-padding-y-xxl:    1.5rem !default;
+
+$btn-round-width-sm:   2rem !default;
+$btn-round-width-md:   2.5rem !default;
+$btn-round-width-lg:   3rem !default;
+$btn-round-width-xl:   4rem !default;
+$btn-round-width-xxl:  5rem !default;
+
+$btn-square-width-sm:  2rem !default;
+$btn-square-width-md:  2.5rem !default;
+$btn-square-width-lg:  3rem !default;
+$btn-square-width-xl:  4rem !default;
+$btn-square-width-xxl: 5rem !default;

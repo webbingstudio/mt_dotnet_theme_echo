@@ -1,0 +1,300 @@
+@import "./_grid.scss";
+@import "./_text.scss";
+
+@mixin font-family-weight($family, $weight: null) {
+
+    @if ($family == 'root') {
+
+        @if ($weight == 'bold') {
+            @if (variable-exists(font-family-bold-root)) {
+                font-family: $font-family-bold-root;
+            }
+            @if (variable-exists(font-weight-bold-root)) {
+                font-weight: $font-weight-bold-root;
+            } @else {
+                font-weight: bold;
+            }
+
+        } @else {
+            @if (variable-exists(font-family-root)) {
+                font-family: $font-family-root;
+            }
+
+        }
+
+        @if ($weight == 'normal') {
+            @if (variable-exists(font-weight-root)) {
+                font-weight: $font-weight-root;
+            } @else {
+                font-weight: normal;
+            }
+
+        }
+
+    }
+
+    @if ($family == 'first') {
+
+        @if ($weight == 'bold') {
+            @if (variable-exists(font-family-bold-first)) {
+                font-family: $font-family-bold-first;
+            }
+            @if (variable-exists(font-weight-bold-first)) {
+                font-weight: $font-weight-bold-first;
+            } @else {
+                font-weight: bold;
+            }
+
+        } @else {
+            @if (variable-exists(font-family-first)) {
+                font-family: $font-family-first;
+            }
+
+        }
+
+        @if ($weight == 'normal') {
+            @if (variable-exists(font-weight-first)) {
+                font-weight: $font-weight-first;
+            } @else {
+                font-weight: normal;
+            }
+
+        }
+
+    }
+
+    @if ($family == 'second') {
+
+        @if ($weight == 'bold') {
+            @if (variable-exists(font-family-bold-second)) {
+                font-family: $font-family-bold-second;
+            }
+            @if (variable-exists(font-weight-bold-second)) {
+                font-weight: $font-weight-bold-second;
+            } @else {
+                font-weight: bold;
+            }
+
+        } @else {
+            @if (variable-exists(font-family-second)) {
+                font-family: $font-family-second;
+            }
+
+        }
+
+        @if ($weight == 'normal') {
+            @if (variable-exists(font-weight-second)) {
+                font-weight: $font-weight-second;
+            } @else {
+                font-weight: normal;
+            }
+
+        }
+
+    }
+
+    @if ($family == 'third') {
+
+        @if ($weight == 'bold') {
+            @if (variable-exists(font-family-bold-third)) {
+                font-family: $font-family-bold-third;
+            }
+            @if (variable-exists(font-weight-bold-third)) {
+                font-weight: $font-weight-bold-third;
+            } @else {
+                font-weight: bold;
+            }
+
+        } @else {
+            @if (variable-exists(font-family-third)) {
+                font-family: $font-family-third;
+            }
+
+        }
+
+        @if ($weight == 'normal') {
+            @if (variable-exists(font-weight-third)) {
+                font-weight: $font-weight-third;
+            } @else {
+                font-weight: normal;
+            }
+
+        }
+
+    }
+
+    @if ($family == 'mono') {
+        @if (variable-exists(font-family-mono)) {
+            font-family: $font-family-mono;
+        }
+    }
+
+}
+
+@mixin chevron( $rotate: 'right', $color: $body-color, $size: .375em, $border-width: 1px ) {
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: $size;
+        height: $size;
+        border-top: $border-width solid $color;
+        border-right: $border-width solid $color;
+        transform-origin: center center;
+
+        @if ($rotate == 'up') {
+            transform: rotate(315deg);
+        }
+
+        @if ($rotate == 'right') {
+            transform: rotate(45deg);
+        }
+
+        @if ($rotate == 'down') {
+            transform: rotate(135deg);
+        }
+
+        @if ($rotate == 'left') {
+            transform: rotate(225deg);
+        }
+
+    }
+
+    @content;
+
+}
+
+
+@mixin clearfix() {
+
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+
+}
+
+
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+    $next: breakpoint-next($name, $breakpoints);
+    @return if($next, breakpoint-min($next, $breakpoints) - 0.1, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints) == null, "", "#{$c2}#{$name}");
+}
+
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+
+    @if $min {
+        @media (min-width: $min) {
+          @content;
+        }
+
+    } @else {
+        @content;
+
+    }
+
+}
+
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+
+    @if $max {
+        @media (max-width: $max) {
+        @content;
+    }
+
+    } @else {
+        @content;
+
+    }
+
+}
+
+
+@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
+
+    @include media-breakpoint-up($name, $breakpoints) {
+
+        @include media-breakpoint-down($name, $breakpoints) {
+            @content;
+        }
+
+    }
+
+}
+
+
+@mixin button-variant(
+    $color,
+    $background,
+    $border,
+    $hover-color,
+    $hover-background,
+    $hover-border
+) {
+
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: $hover-color;
+        background-color: $hover-background;
+        border-color: $hover-border;
+    }
+
+    &.disabled,
+    &:disabled,
+    fieldset[disabled] & {
+        opacity: .65;
+
+        &:hover,
+        &.hover,
+        &:focus,
+        &.focus {
+            color: $color;
+            background-color: $background;
+            border-color: $border;
+        }
+
+    }
+
+    @at-root {
+
+        a:hover &,
+        a:focus &,
+        a:active & {
+            color: $hover-color;
+            background-color: $hover-background;
+            border-color: $hover-border;
+        }
+
+    }
+
+}
+
