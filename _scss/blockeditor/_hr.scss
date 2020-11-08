@@ -10,7 +10,7 @@
         border-style: none none solid;
         border-color: transparent transparent $body-color;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
             margin-top: 3em;
             margin-bottom: 3em;
         }

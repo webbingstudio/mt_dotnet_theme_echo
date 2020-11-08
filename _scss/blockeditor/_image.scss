@@ -1,0 +1,41 @@
+.#{$pr}#{$be} {
+
+    img.asset.asset-image {
+
+        &.mt-image-center {
+            margin: 2em auto !important;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 3em !important;
+                margin-bottom: 3em !important;
+            }
+
+        }
+
+    }
+
+    .mt-figure {
+        display: table !important;
+        margin: 2em auto;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 3em;
+            margin-bottom: 3em;
+        }
+
+        img.asset.asset-image {
+            display: block !important;
+            float: none !important;
+            margin: 0 auto !important;
+        }
+
+        figcaption {
+            margin: .25em 0 0;
+            font-size: .875em;
+            color: $body-mild-color;
+            text-align: center;
+        }
+
+    }
+
+}
