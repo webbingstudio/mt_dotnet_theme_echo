@@ -9,10 +9,8 @@
 
 <mt:SetVarBlock name="__main__">
 
-<mt:Pages>
 <section class="c-post c-post-page">
 
-    <mt:PagesHeader>
         <mt:If tag="CustomFieldValue" identifier="EcPageHideHeader" neq="true">
         </mt:If>
         <mt:If tag="CustomFieldValue" identifier="EcPageHideTitle" neq="true">
@@ -20,14 +18,12 @@
             <h2 class="c-post-title"><$mt:PageTitle$></h2>
         </div><!-- /.c-post-header -->
         </mt:If>
-    </mt:PagesHeader>
 
-    <div class="c-post-contents blockeditor">
+    <div class="c-post-contents echo-mt-be">
     <$mt:PageBody$>
     </div><!-- /.c-post-contents -->
 
 </section><!-- /.c-post -->
-</mt:Pages>
 
 </mt:SetVarBlock>
 
