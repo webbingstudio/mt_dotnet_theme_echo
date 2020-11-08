@@ -8,3 +8,28 @@
 @import "_config_advance";
 @import "mixin/_mixin";
 
+@import "_config_mtdotnet";
+
+.#{$pr}#{$be} {
+
+    h1:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
+        text-align: center;
+    }
+
+    h2:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
+        text-align: center;
+    }
+
+    h3:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
+    }
+
+    h4:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
+    }
+
+    h5:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
+    }
+
+    h6:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
+    }
+
+}

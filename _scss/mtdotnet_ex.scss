@@ -11,15 +11,14 @@
 @import "_config_mtdotnet";
 
 @import "blockeditor/_layout";
-
-    @import "blockeditor/_text";
-//    @import "blockeditor/_heading";
-    @import "blockeditor/_list";
+@import "blockeditor/_text";
+@import "blockeditor/_heading";
+@import "blockeditor/_list";
 //    @import "blockeditor/_image";
 //    @import "blockeditor/_embed";
 //    @import "blockeditor/_button";
 //    @import "blockeditor/_table";
 //    @import "blockeditor/_quote";
-    @import "blockeditor/_hr";
+@import "blockeditor/_hr";
 //    @import "blockeditor/_media";
-    @import "blockeditor/_columns";
+@import "blockeditor/_columns";

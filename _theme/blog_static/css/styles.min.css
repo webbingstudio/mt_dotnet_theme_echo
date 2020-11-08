@@ -1,0 +1,1 @@
+.echo-mt-be h1:not([class*="mt-be"]):not([class*="echo-m-title"]){text-align:center}.echo-mt-be h2:not([class*="mt-be"]):not([class*="echo-m-title"]){text-align:center}

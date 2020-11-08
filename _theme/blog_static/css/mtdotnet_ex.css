@@ -45,6 +45,102 @@
   color: #d20b2a;
 }
 
+.echo-mt-be h1,
+.echo-mt-be h2,
+.echo-mt-be h3,
+.echo-mt-be h4,
+.echo-mt-be h5,
+.echo-mt-be h6 {
+  margin-top: 0;
+  line-height: 1.25;
+}
+
+.echo-mt-be h1:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+@media (min-width: 425px) {
+  .echo-mt-be h1:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+    font-size: 2.25em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be h1:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+    font-size: 2.5em;
+  }
+}
+
+.echo-mt-be h2:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+  margin-bottom: 1.25em;
+  font-size: 1.375em;
+}
+
+@media (min-width: 425px) {
+  .echo-mt-be h2:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be h2:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+    font-size: 1.75em;
+  }
+}
+
+.echo-mt-be h3:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+  margin-bottom: .75em;
+  font-size: 1.25em;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be h3:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+    font-size: 1.375em;
+  }
+}
+
+.echo-mt-be h4:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+  margin-bottom: .5em;
+  font-size: 1.125em;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be h4:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+    font-size: 1.25em;
+  }
+}
+
+.echo-mt-be h5:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+  margin-bottom: .5em;
+  font-size: 1em;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be h5:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+    font-size: 1.125em;
+  }
+}
+
+.echo-mt-be h6:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h2 {
+  margin-top: 2em;
+}
+
+.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h3,
+.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h4 {
+  margin-top: 1.5em;
+}
+
+.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h5,
+.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h6 {
+  margin-top: 1em;
+}
+
 .echo-mt-be > *:not([class*="echo-mt-be-block-custom"]) ul:not([class*="echo-"]),
 .echo-mt-be > *:not([class*="echo-mt-be-block-custom"]) ol:not([class*="echo-"]) {
   overflow: hidden;
