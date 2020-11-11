@@ -28,10 +28,21 @@ gulp.task('sassmin', function () {
 });
 
 
-// js task here -----------------
-
+// js
+gulp.task('js', function() {
+    return gulp.src('_js/**/*.js')
+    .pipe(plumber())
+    .pipe(gulp.dest(dist_dir + 'js/_uncompressed/'));
+});
+gulp.task('jsconcat', function() {
+  return gulp.src(dist_dir + 'js/_uncompressed/*.js')
+    .pipe(plumber())
+    .pipe(concat('common.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(dist_dir + 'js/'));
+});
 
 gulp.task('default', function() {
   gulp.watch( '_scss/**/*.scss', gulp.series( 'sass', 'sassmin' ) );
+  gulp.watch( '_js/**/*.js', gulp.series( 'js', 'jsconcat' ) );
 });
-
