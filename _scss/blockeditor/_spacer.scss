@@ -1,0 +1,62 @@
+/*
+--------------------
+.#{$pr}#{$be}-spacer
+--------------------
+*/
+
+.#{$pr}#{$be}-spacer {
+
+    hr {
+        margin: 0!important;
+        padding: 0!important;
+        border: 0 none!important;
+        height: 0 !important;
+        opacity: 0 !important;
+    }
+
+    &.is-size-xsmall {
+        height: $spacer;
+
+        @include media-breakpoint-up(lg) {
+            height: ( $spacer * 1.5 );
+        }
+
+    }
+
+    &.is-size-small {
+        height: ( $spacer * 2 );
+
+        @include media-breakpoint-up(lg) {
+            height: ( $spacer * 3 );
+        }
+
+    }
+
+    &.is-size-medium {
+        height: ( $spacer * 3 );
+
+        @include media-breakpoint-up(lg) {
+            height: ( $spacer * 4.5 );
+        }
+
+    }
+
+    &.is-size-large {
+        height: ( $spacer * 4 );
+
+        @include media-breakpoint-up(lg) {
+            height: ( $spacer * 6 );
+        }
+
+    }
+
+    &.is-size-xlarge {
+        height: ( $spacer * 6 );
+
+        @include media-breakpoint-up(lg) {
+            height: ( $spacer * 9 );
+        }
+
+    }
+
+}

@@ -20,8 +20,16 @@
         </mt:If>
 
     <div class="c-post-contents echo-mt-be">
-    <$mt:PageBody$>
-    </div><!-- /.c-post-contents -->
+
+<mt:BlockEditorBlocks tag="PageBody">
+    <mt:If name="type" eq="custom-echo_spacer">
+        <mt:Include module="カスタムブロック-余白" __spacer_size__="$__value__" />
+    <mt:Else>
+        <mt:Var name="__value__" />
+    </mt:If>
+</mt:BlockEditorBlocks>
+
+</div><!-- /.c-post-contents -->
 
 </section><!-- /.c-post -->
 

@@ -36,13 +36,21 @@
   max-width: none;
 }
 
-.echo-mt-be p {
-  line-height: 2;
+/*
+--------------------
+.mt-be-columns
+--------------------
+*/
+.mt-be-column:not([style*="width"]) {
+  flex: 1;
 }
 
-.echo-mt-be em:not([class]) {
-  font-style: normal;
-  color: #d20b2a;
+.mt-be-column:not(:first-child) {
+  padding-left: 10px;
+}
+
+.mt-be-column:not(:last-child) {
+  padding-right: 10px;
 }
 
 .echo-mt-be h1,
@@ -125,6 +133,60 @@
 .echo-mt-be h6:not([class*="mt-be"]):not([class*="echo-m-title"]) {
   margin-bottom: 0;
   font-size: 1em;
+}
+
+.echo-mt-be hr:not([class*="mt-be"]) {
+  position: relative;
+  clear: both;
+  height: 1px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-width: 0 0 2px;
+  border-style: none none solid;
+  border-color: transparent transparent #333;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be hr:not([class*="mt-be"]) {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+}
+
+.echo-mt-be img.asset.asset-image.mt-image-center {
+  margin: 2em auto !important;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be img.asset.asset-image.mt-image-center {
+    margin-top: 3em !important;
+    margin-bottom: 3em !important;
+  }
+}
+
+.echo-mt-be .mt-figure {
+  display: table !important;
+  margin: 2em auto;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be .mt-figure {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+}
+
+.echo-mt-be .mt-figure img.asset.asset-image {
+  display: block !important;
+  float: none !important;
+  margin: 0 auto !important;
+}
+
+.echo-mt-be .mt-figure figcaption {
+  margin: .25em 0 0;
+  font-size: .875em;
+  color: #888;
+  text-align: center;
 }
 
 .echo-mt-be > *:not([class*="echo-mt-be-block-custom"]) ul:not([class*="echo-"]),
@@ -213,73 +275,74 @@
   padding: 0 0 0 1.5em;
 }
 
-.echo-mt-be img.asset.asset-image.mt-image-center {
-  margin: 2em auto !important;
-}
-
-@media (min-width: 768px) {
-  .echo-mt-be img.asset.asset-image.mt-image-center {
-    margin-top: 3em !important;
-    margin-bottom: 3em !important;
-  }
-}
-
-.echo-mt-be .mt-figure {
-  display: table !important;
-  margin: 2em auto;
-}
-
-@media (min-width: 768px) {
-  .echo-mt-be .mt-figure {
-    margin-top: 3em;
-    margin-bottom: 3em;
-  }
-}
-
-.echo-mt-be .mt-figure img.asset.asset-image {
-  display: block !important;
-  float: none !important;
-  margin: 0 auto !important;
-}
-
-.echo-mt-be .mt-figure figcaption {
-  margin: .25em 0 0;
-  font-size: .875em;
-  color: #888;
-  text-align: center;
-}
-
-.echo-mt-be hr:not([class*="mt-be"]) {
-  position: relative;
-  clear: both;
-  height: 1px;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  border-width: 0 0 2px;
-  border-style: none none solid;
-  border-color: transparent transparent #333;
-}
-
-@media (min-width: 768px) {
-  .echo-mt-be hr:not([class*="mt-be"]) {
-    margin-top: 3em;
-    margin-bottom: 3em;
-  }
-}
-
 /*
 --------------------
-.mt-be-columns
+.echo-mt-be-spacer
 --------------------
 */
-.mt-be-column:not([style*="width"]) {
-  flex: 1;
+.echo-mt-be-spacer hr {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 none !important;
+  height: 0 !important;
+  opacity: 0 !important;
 }
 
-.mt-be-column:not(:first-child) {
-  padding-left: 10px;
+.echo-mt-be-spacer.is-size-xsmall {
+  height: 10px;
 }
 
-.mt-be-column:not(:last-child) {
-  padding-right: 10px;
+@media (min-width: 1000px) {
+  .echo-mt-be-spacer.is-size-xsmall {
+    height: 15px;
+  }
+}
+
+.echo-mt-be-spacer.is-size-small {
+  height: 20px;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-spacer.is-size-small {
+    height: 30px;
+  }
+}
+
+.echo-mt-be-spacer.is-size-medium {
+  height: 30px;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-spacer.is-size-medium {
+    height: 45px;
+  }
+}
+
+.echo-mt-be-spacer.is-size-large {
+  height: 40px;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-spacer.is-size-large {
+    height: 60px;
+  }
+}
+
+.echo-mt-be-spacer.is-size-xlarge {
+  height: 60px;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-spacer.is-size-xlarge {
+    height: 90px;
+  }
+}
+
+.echo-mt-be p {
+  line-height: 2;
+}
+
+.echo-mt-be em:not([class]) {
+  font-style: normal;
+  color: #d20b2a;
 }
