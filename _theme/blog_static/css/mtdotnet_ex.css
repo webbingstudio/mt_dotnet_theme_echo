@@ -127,20 +127,6 @@
   font-size: 1em;
 }
 
-.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h2 {
-  margin-top: 2em;
-}
-
-.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h3,
-.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h4 {
-  margin-top: 1.5em;
-}
-
-.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h5,
-.echo-mt-be > *:not(.echo-mt-be-block-spacer) + h6 {
-  margin-top: 1em;
-}
-
 .echo-mt-be > *:not([class*="echo-mt-be-block-custom"]) ul:not([class*="echo-"]),
 .echo-mt-be > *:not([class*="echo-mt-be-block-custom"]) ol:not([class*="echo-"]) {
   overflow: hidden;

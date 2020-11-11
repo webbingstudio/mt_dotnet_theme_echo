@@ -73,23 +73,4 @@
         font-size: 1em;
     }
 
-    // 余白以外の何らかの要素に続いていた場合、見出しの上を空ける
-    > *:not(.#{$pr}#{$be}-block-spacer) {
-
-        + h2 {
-            margin-top: 2em;
-        }
-
-        + h3,
-        + h4 {
-            margin-top: 1.5em;
-        }
-
-        + h5,
-        + h6 {
-            margin-top: 1em;
-        }
-
-    }
-
 }
