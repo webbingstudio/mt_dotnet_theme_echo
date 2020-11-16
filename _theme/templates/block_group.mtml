@@ -1,0 +1,53 @@
+<mt:Ignore>
+# =======================
+# 
+# カスタムブロック-グループ
+# 
+# vars:
+#   __group_html__
+#   __group_class__
+#   __group_exclass__
+#   __group_align__
+#   __group_bg__
+# 
+# =======================
+</mt:Ignore>
+<mt:Var name="__group_html__" value="" /><mt:Var name="__group_class__" value="" /><mt:Var name="__group_exclass__" value="" /><mt:Var name="__group_align__" value="" /><mt:Var name="__group_bg__" value="" />
+
+<mt:BlockEditorBlocks>
+<mt:If name="type" eq="sixapart-select">
+    <mt:If name="__value__" like="幅 :">
+        <mt:SetVarBlock name="__group_align__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    <mt:ElseIf name="__value__" like="背景 :">
+        <mt:SetVarBlock name="__group_bg__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    </mt:If>
+<mt:ElseIf name="type" eq="sixapart-input">
+    <mt:SetVarBlock name="__group_exclass__"> <mt:Var name="__value__" /></mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Var name="__value__" /></mt:SetVarBlock>
+</mt:If>
+</mt:BlockEditorBlocks>
+
+<mt:If name="__group_align__" like="広い">
+    <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-alignwide</mt:SetVarBlock>
+<mt:ElseIf name="__group_align__" like="全体">
+    <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-alignfull</mt:SetVarBlock>
+</mt:If>
+
+<mt:If name="__group_bg__" like="メイン">
+    <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-has-bg u-bg-first</mt:SetVarBlock>
+<mt:ElseIf name="__group_bg__" like="サブ1">
+    <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-has-bg u-bg-second</mt:SetVarBlock>
+<mt:ElseIf name="__group_bg__" like="サブ2">
+    <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-has-bg u-bg-third</mt:SetVarBlock>
+</mt:If>
+
+<mt:If name="__group_bg__" like="薄">
+    <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> u-bg-fade</mt:SetVarBlock>
+</mt:If>
+
+<div class="echo-mt-be-group <mt:Var name="__group_class__" /><mt:Var name="__group_exclass__" />">
+    <div class="echo-mt-be-group-inner">
+<mt:Var name="__group_html__" />
+    </div><!-- /.echo-mt-be-group-inner -->
+</div><!-- /.echo-mt-be-group -->
