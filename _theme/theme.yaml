@@ -248,6 +248,27 @@ elements:
           widget_recent_nav:
             filename: widget_recent_nav.mtml
             label: ウィジェット-記事新着-nav
+          block_button:
+            filename: block_button.mtml
+            label: カスタムブロック-ボタン
+          block_buttons:
+            filename: block_buttons.mtml
+            label: カスタムブロック-複数のボタン
+          block_spacer:
+            filename: block_spacer.mtml
+            label: カスタムブロック-余白
+          block_table:
+            filename: block_table.mtml
+            label: カスタムブロック-高度なテーブル
+          block_slider:
+            filename: block_slider.mtml
+            label: カスタムブロック-スライドショー
+          block_group:
+            filename: block_group.mtml
+            label: カスタムブロック-グループ
+          block_blog_recent:
+            filename: block_blog_recent.mtml
+            label: カスタムブロック-ブログ新着
         page:
           page:
             filename: page.mtml

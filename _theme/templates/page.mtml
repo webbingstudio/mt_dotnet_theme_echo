@@ -20,17 +20,26 @@
         </mt:If>
 
     <div class="c-post-contents echo-mt-be">
-
-<mt:BlockEditorBlocks tag="PageBody">
-    <mt:If name="type" eq="custom-echo_spacer">
-        <mt:Include module="カスタムブロック-余白" __spacer_size__="$__value__" />
-    <mt:Else>
-        <mt:Var name="__value__" />
-    </mt:If>
-</mt:BlockEditorBlocks>
-
-</div><!-- /.c-post-contents -->
-
+        <mt:BlockEditorBlocks tag="PageBody">
+            <mt:If name="type" eq="custom-echo_button">
+                <mt:Include module="カスタムブロック-ボタン" />
+            <mt:ElseIf name="type" eq="custom-echo_buttons">
+                <mt:Include module="カスタムブロック-複数のボタン" />
+            <mt:ElseIf name="type" eq="custom-echo_spacer">
+                <mt:Include module="カスタムブロック-余白" />
+            <mt:ElseIf name="type" eq="custom-echo_table">
+                <mt:Include module="カスタムブロック-高度なテーブル" />
+            <mt:ElseIf name="type" eq="custom-echo_slider">
+                <mt:Include module="カスタムブロック-スライドショー" />
+            <mt:ElseIf name="type" eq="custom-echo_group">
+                <mt:Include module="カスタムブロック-グループ" />
+            <mt:ElseIf name="type" eq="custom-echo_group">
+                <mt:Include module="カスタムブロック-ブログ新着" />
+            <mt:Else>
+                <mt:Var name="__value__" />
+            </mt:If>
+        </mt:BlockEditorBlocks>
+    </div><!-- /.c-post-contents -->
 </section><!-- /.c-post -->
 
 </mt:SetVarBlock>
