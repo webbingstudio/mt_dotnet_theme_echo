@@ -31,9 +31,37 @@
   }
 }
 
+.echo-mt-be > *.echo-mt-be-alignwide.echo-mt-be-has-bg {
+  padding: 30px 20px;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be > *.echo-mt-be-alignwide.echo-mt-be-has-bg {
+    padding: 30px 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .echo-mt-be > *.echo-mt-be-alignwide.echo-mt-be-has-bg {
+    padding: 45px 40px;
+  }
+}
+
 .echo-mt-be > *.echo-mt-be-alignfull {
   width: 100%;
   max-width: none;
+}
+
+.echo-mt-be > *.echo-mt-be-alignfull.echo-mt-be-has-bg {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media (min-width: 1280px) {
+  .echo-mt-be > *.echo-mt-be-alignfull.echo-mt-be-has-bg {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
 }
 
 /*

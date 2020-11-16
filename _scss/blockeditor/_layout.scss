@@ -30,11 +30,36 @@
             max-width: map-get( $be-max-widths, 'lg' );
         }
 
+        &.#{$pr}#{$be}-has-bg {
+            padding: ( $spacer * 3 ) map-get( $grid-gutter-widths, 'md' );
+
+            @include media-breakpoint-up(md) {
+                padding: ( $spacer * 3 ) ( map-get( $grid-gutter-widths, 'md' ) * 2 );
+            }
+
+            @include media-breakpoint-up(xl) {
+                padding: ( $spacer * 4.5 ) ( map-get( $grid-gutter-widths, 'md' ) * 2 );
+            }
+
+        }
+
     }
 
     > *.#{$pr}#{$be}-alignfull {
         width: 100%;
         max-width: none;
+
+        &.#{$pr}#{$be}-has-bg {
+            padding-top: ( $spacer * 3 );
+            padding-bottom: ( $spacer * 3 );
+
+            @include media-breakpoint-up(xl) {
+                padding-top: ( $spacer * 4.5 );
+                padding-bottom: ( $spacer * 4.5 );
+            }
+
+        }
+
     }
 
 }
