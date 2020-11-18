@@ -1,0 +1,32 @@
+<mt:Ignore>
+# =======================
+# 
+# カスタムブロック-高度なテーブル
+# 
+# vars:
+#   __table_html__
+#   __table_type__
+#   __table_class__
+# 
+# =======================
+</mt:Ignore>
+<mt:SetVar name="__table_html__" value="" /><mt:SetVar name="__table_type__" value="" /><mt:SetVar name="__table_class__" value="" />
+
+<mt:BlockEditorBlocks>
+    <mt:If name="type" eq="sixapart-select">
+        <mt:If name="__value__" like="表示 :">
+            <mt:SetVarBlock name="__table_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
+        </mt:If>
+    <mt:ElseIf name="type" eq="core-table">
+        <mt:SetVarBlock name="__table_html__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    </mt:If>
+</mt:BlockEditorBlocks>
+
+<mt:SetVar name="__table_class__" value="echo-mt-be-table-default" />
+<mt:If name="__table_type__" like="スクロール">
+    <mt:SetVar name="__table_class__" value="echo-mt-be-table-scrollable js-scrollable" />
+<mt:ElseIf name="__table_type__" like="縦並び">
+    <mt:SetVar name="__table_class__" value="echo-mt-be-table-fold" />
+</mt:If>
+
+<div class="echo-mt-be-table <mt:Var name="__table_class__" />"><mt:Var name="__table_html__" /></div>
