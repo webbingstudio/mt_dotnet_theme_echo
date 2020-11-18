@@ -1,0 +1,78 @@
+<mt:Ignore>
+# =======================
+# 
+# カスタムブロック-グループ
+# 
+# vars:
+#   __button_html__
+#   __button_class__
+#   __button_wrapclass__
+#   __button_url__
+#   __button_label__
+#   __button_type__
+#   __button_size__
+#   __button_target__
+# 
+# =======================
+</mt:Ignore>
+<mt:SetVar name="__button_html__" value="" />
+<mt:SetVar name="__button_class__" value="" />
+<mt:SetVar name="__button_wrapclass__" value="" />
+<mt:SetVar name="__button_url__" value="" />
+<mt:SetVar name="__button_label__" value="" />
+<mt:SetVar name="__button_type__" value="" />
+<mt:SetVar name="__button_size__" value="" />
+<mt:SetVar name="__button_target__" value="" />
+
+<mt:BlockEditorBlocks>
+<mt:If name="type" eq="sixapart-select">
+    <mt:If name="__value__" like="デザイン :">
+        <mt:SetVarBlock name="__button_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    <mt:ElseIf name="__value__" like="サイズ :">
+        <mt:SetVarBlock name="__button_size__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    <mt:ElseIf name="__value__" like="リンク先 :">
+        <mt:SetVarBlock name="__button_target__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    </mt:If>
+<mt:ElseIf name="type" eq="sixapart-input">
+    <mt:SetVarBlock name="__button_label__"> <mt:Var name="__value__" /></mt:SetVarBlock>
+<mt:ElseIf name="type" eq="core-text">
+    <mt:SetVarBlock name="__button_url__"> <mt:Var name="__value__" /></mt:SetVarBlock>
+</mt:If>
+</mt:BlockEditorBlocks>
+
+<mt:If name="__button_type__" like="メイン">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> m-btn-first</mt:SetVarBlock>
+<mt:ElseIf name="__button_type__" like="サブ1">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> m-btn-second</mt:SetVarBlock>
+<mt:ElseIf name="__button_type__" like="サブ2">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> m-btn-third</mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> m-btn-gray</mt:SetVarBlock>
+</mt:If>
+
+<mt:If name="__button_type__" like="（線）">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> m-btn-bordered</mt:SetVarBlock>
+</mt:If>
+
+<mt:If name="__button_size__" like="小">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> m-btn-lg</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-button-small</mt:SetVarBlock>
+<mt:ElseIf name="__button_size__" like="中">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> m-btn-xl</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-button-medium</mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> m-btn-xxl</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-button-large</mt:SetVarBlock>
+</mt:If>
+
+<mt:If name="__button_target__" like="新しいウィンドウ">
+    <mt:SetVarBlock name="__button_target__"> target="_blank"</mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVar name="__button_target__" value="" />
+</mt:If>
+
+<div class="echo-mt-be-button<mt:Var name="__button_wrapclass__" />">
+    <a href="<mt:Var name="__button_url__" strip_linefeeds="1" remove_html="1" />"<mt:Var name="__button_target__" /> class="m-btn m-btn-block<mt:Var name="__button_class__" />">
+        <mt:Var name="__button_label__" strip_linefeeds="1" />
+    </a>
+</div><!-- /.echo-mt-be-button -->
