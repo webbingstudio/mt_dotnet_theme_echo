@@ -1,9 +1,11 @@
 <mt:Ignore>
 # =======================
 # 
-# カスタムブロック-グループ
+# カスタムブロック-ボタン
 # 
 # vars:
+#   __echo__
+#   __output__
 #   __button_html__
 #   __button_class__
 #   __button_wrapclass__
@@ -15,6 +17,7 @@
 # 
 # =======================
 </mt:Ignore>
+<mt:SetVar name="__output__" value="" />
 <mt:SetVar name="__button_html__" value="" />
 <mt:SetVar name="__button_class__" value="" />
 <mt:SetVar name="__button_wrapclass__" value="" />
@@ -71,8 +74,14 @@
     <mt:SetVar name="__button_target__" value="" />
 </mt:If>
 
+<mt:SetVarBlock name="__output__">
 <div class="echo-mt-be-btn<mt:Var name="__button_wrapclass__" />">
     <a href="<mt:Var name="__button_url__" strip_linefeeds="1" remove_html="1" />"<mt:Var name="__button_target__" /> class="m-btn m-btn-block<mt:Var name="__button_class__" />">
         <mt:Var name="__button_label__" strip_linefeeds="1" remove_html="1" />
     </a>
 </div><!-- /.echo-mt-be-btn -->
+</mt:SetVarBlock>
+
+<mt:If name="__echo__" eq="true">
+    <mt:Var name="__output__" />
+</mt:If>
