@@ -1,0 +1,55 @@
+/*
+--------------------
+.#{$pr}#{$be}-btn
+--------------------
+*/
+
+.#{$pr}#{$be}-btn {
+
+    &.#{$pr}#{$be}-btn-sm {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: ( $spacer * 1.5 );
+            margin-bottom: ( $spacer * 1.5 );
+        }
+
+    }
+
+    &.#{$pr}#{$be}-btn-md {
+        margin-top: ( $spacer * 1.5 );
+        margin-bottom: ( $spacer * 1.5 );
+
+        @include media-breakpoint-up(lg) {
+            margin-top: ( $spacer * 2.25 );
+            margin-bottom: ( $spacer * 2.25 );
+        }
+
+    }
+
+    &.#{$pr}#{$be}-btn-lg {
+        margin-top: ( $spacer * 2 );
+        margin-bottom: ( $spacer * 2 );
+
+        @include media-breakpoint-up(lg) {
+            margin-top: ( $spacer * 3 );
+            margin-bottom: ( $spacer * 3 );
+        }
+
+    }
+
+    .#{$be}-column > &,
+    .#{$pr}#{$be}-group > & {
+
+        &:first-child {
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+}
