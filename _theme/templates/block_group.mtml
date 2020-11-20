@@ -15,17 +15,24 @@
 <mt:SetVar name="__group_html__" value="" /><mt:SetVar name="__group_class__" value="" /><mt:SetVar name="__group_exclass__" value="" /><mt:SetVar name="__group_align__" value="" /><mt:SetVar name="__group_bg__" value="" />
 
 <mt:BlockEditorBlocks>
-<mt:If name="type" eq="sixapart-select">
-    <mt:If name="__value__" like="幅 :">
-        <mt:SetVarBlock name="__group_align__"><mt:Var name="__value__" /></mt:SetVarBlock>
-    <mt:ElseIf name="__value__" like="背景 :">
-        <mt:SetVarBlock name="__group_bg__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    <mt:If name="type" eq="sixapart-select">
+        <mt:If name="__value__" like="幅 :">
+            <mt:SetVarBlock name="__group_align__"><mt:Var name="__value__" /></mt:SetVarBlock>
+        <mt:ElseIf name="__value__" like="背景 :">
+            <mt:SetVarBlock name="__group_bg__"><mt:Var name="__value__" /></mt:SetVarBlock>
+        </mt:If>
+    <mt:ElseIf name="type" eq="sixapart-input">
+        <mt:SetVarBlock name="__group_exclass__"> <mt:Var name="__value__" /></mt:SetVarBlock>
+
+    <mt:ElseIf name="type" eq="custom-echo_spacer">
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-余白" /></mt:SetVarBlock>
+    <mt:ElseIf name="type" eq="custom-echo_table">
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-高度なテーブル" /></mt:SetVarBlock>
+    <mt:ElseIf name="type" eq="custom-echo_button">
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-ボタン" /></mt:SetVarBlock>
+    <mt:Else>
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Var name="__value__" /></mt:SetVarBlock>
     </mt:If>
-<mt:ElseIf name="type" eq="sixapart-input">
-    <mt:SetVarBlock name="__group_exclass__"> <mt:Var name="__value__" /></mt:SetVarBlock>
-<mt:Else>
-    <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Var name="__value__" /></mt:SetVarBlock>
-</mt:If>
 </mt:BlockEditorBlocks>
 
 <mt:If name="__group_align__" like="広い">
