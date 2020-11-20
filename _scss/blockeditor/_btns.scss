@@ -1,0 +1,55 @@
+/*
+--------------------
+.#{$pr}#{$be}-btns
+--------------------
+*/
+
+.#{$pr}#{$be}-btns {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: ( $spacer * 2 );
+    margin-bottom: ( $spacer * 2 );
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        margin-top: ( $spacer * 3 );
+        margin-bottom: ( $spacer * 3 );
+        flex-direction: row;
+        align-items: center;
+    }
+
+    > .#{$pr}#{$be}-btn {
+
+        @include media-breakpoint-down(md) {
+            margin: 0 0 ( $spacer * 1.5 );
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin: 0;
+            padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+        }
+
+    }
+
+    .#{$m}btn {
+
+        @include media-breakpoint-up(lg) {
+            max-width: none;
+            min-width: 300px;
+        }
+
+        &.#{$m}btn#{$c2}xl,
+        &.#{$m}btn#{$c2}xxl {
+
+            @include media-breakpoint-up(lg) {
+                min-width: 460px;
+            }
+
+        }
+
+    }
+
+}

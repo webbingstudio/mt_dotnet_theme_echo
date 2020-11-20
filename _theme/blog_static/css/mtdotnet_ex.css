@@ -356,6 +356,57 @@
 
 /*
 --------------------
+.echo-mt-be-btns
+--------------------
+*/
+.echo-mt-be-btns {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-btns {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 999.9px) {
+  .echo-mt-be-btns > .echo-mt-be-btn {
+    margin: 0 0 15px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-btns > .echo-mt-be-btn {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-btns .m-btn {
+    max-width: none;
+    min-width: 300px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-btns .m-btn.m-btn-xl, .echo-mt-be-btns .m-btn.m-btn-xxl {
+    min-width: 460px;
+  }
+}
+
+/*
+--------------------
 .echo-mt-be-spacer
 --------------------
 */
