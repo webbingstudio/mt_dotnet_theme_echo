@@ -12,24 +12,28 @@
 
 .#{$pr}#{$be} {
 
-    h1:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
-        text-align: center;
-    }
+    > :not([class*="#{$pr}#{$m}title"]) {
 
-    h2:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
-        text-align: center;
-    }
+        h1:not([class*="#{$pr}#{$m}title"]) {
+            text-align: center;
+        }
 
-    h3:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
-    }
+        h2:not([class*="#{$pr}#{$m}title"]) {
+            text-align: center;
+        }
 
-    h4:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
-    }
+        h3:not([class*="#{$pr}#{$m}title"]) {
+        }
 
-    h5:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
-    }
+        h4:not([class*="#{$pr}#{$m}title"]) {
+        }
 
-    h6:not([class*="#{$be}"]):not([class*="#{$pr}#{$m}title"]) {
+        h5:not([class*="#{$pr}#{$m}title"]) {
+        }
+
+        h6:not([class*="#{$pr}#{$m}title"]) {
+        }
+
     }
 
 }

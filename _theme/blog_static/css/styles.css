@@ -2,10 +2,10 @@
  * styles.css
  *
  */
-.echo-mt-be h1:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+.echo-mt-be > :not([class*="echo-m-title"]) h1:not([class*="echo-m-title"]) {
   text-align: center;
 }
 
-.echo-mt-be h2:not([class*="mt-be"]):not([class*="echo-m-title"]) {
+.echo-mt-be > :not([class*="echo-m-title"]) h2:not([class*="echo-m-title"]) {
   text-align: center;
 }
