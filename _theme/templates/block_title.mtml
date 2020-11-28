@@ -1,0 +1,79 @@
+<mt:Ignore>
+# =======================
+# 
+# カスタムブロック-高度な見出し
+# 
+# vars:
+#   __title_html__
+#   __title_class__
+#   __title_label__
+#   __title_type__
+#   __title_size__
+#   __title_tag__
+#   __title_tagname__
+# 
+# =======================
+</mt:Ignore>
+<mt:SetVar name="__title_html__" value="" /><mt:SetVar name="__title_class__" value="" /><mt:SetVar name="__title_label__" value="" /><mt:SetVar name="__title_type__" value="" /><mt:SetVar name="__title_size__" value="" /><mt:SetVar name="__title_tag__" value="" /><mt:SetVar name="__title_tagname__" value="" />
+
+<mt:BlockEditorBlocks>
+<mt:If name="type" eq="sixapart-select">
+    <mt:If name="__value__" like="デザイン :">
+        <mt:SetVarBlock name="__title_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    <mt:ElseIf name="__value__" like="サイズ :">
+        <mt:SetVarBlock name="__title_size__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    <mt:ElseIf name="__value__" like="タグ :">
+        <mt:SetVarBlock name="__title_tag__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    </mt:If>
+<mt:ElseIf name="type" eq="core-text">
+    <mt:SetVarBlock name="__title_label__"> <mt:Var name="__value__" /></mt:SetVarBlock>
+</mt:If>
+</mt:BlockEditorBlocks>
+
+<mt:If name="__title_type__" like="装飾なし中央">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-style-b</mt:SetVarBlock>
+<mt:ElseIf name="__title_type__" like="下線左">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-style-d</mt:SetVarBlock>
+<mt:ElseIf name="__title_type__" like="下線中央">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-style-c</mt:SetVarBlock>
+<mt:ElseIf name="__title_type__" like="網掛け">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-style-e</mt:SetVarBlock>
+<mt:ElseIf name="__title_type__" like="マーク付き">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-style-f</mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-style-a</mt:SetVarBlock>
+</mt:If>
+
+<mt:If name="__title_size__" like="極々小">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-level-6</mt:SetVarBlock>
+<mt:ElseIf name="__title_size__" like="極小">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-level-5</mt:SetVarBlock>
+<mt:ElseIf name="__title_size__" like="小">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-level-4</mt:SetVarBlock>
+<mt:ElseIf name="__title_size__" like="極大">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-level-1</mt:SetVarBlock>
+<mt:ElseIf name="__title_size__" like="大">
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-level-2</mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> m-title-level-3</mt:SetVarBlock>
+</mt:If>
+
+<mt:If name="__title_tag__" like="h1">
+    <mt:SetVar name="__title_tagname__" value="h1">
+<mt:ElseIf name="__title_tag__" like="h2">
+    <mt:SetVar name="__title_tagname__" value="h2">
+<mt:ElseIf name="__title_tag__" like="h4">
+    <mt:SetVar name="__title_tagname__" value="h4">
+<mt:ElseIf name="__title_tag__" like="h5">
+    <mt:SetVar name="__title_tagname__" value="h5">
+<mt:ElseIf name="__title_tag__" like="h6">
+    <mt:SetVar name="__title_tagname__" value="h6">
+<mt:ElseIf name="__title_tag__" like="p">
+    <mt:SetVar name="__title_tagname__" value="p">
+<mt:Else>
+    <mt:SetVar name="__title_tagname__" value="h3">
+</mt:If>
+
+<div class="echo-mt-be-title">
+    <<mt:Var name="__title_tagname__" strip_linefeeds="1" remove_html="1" /> class="m-title<mt:Var name="__title_class__" />"><mt:Var name="__title_label__" strip_linefeeds="1" remove_html="1" /></<mt:Var name="__title_tagname__" strip_linefeeds="1" remove_html="1" />>
+</div><!-- /.echo-mt-be-title -->

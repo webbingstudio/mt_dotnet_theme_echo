@@ -269,6 +269,9 @@ elements:
           block_blog_recent:
             filename: block_blog_recent.mtml
             label: カスタムブロック-ブログ新着
+          block_table:
+            filename: block_title.mtml
+            label: カスタムブロック-高度な見出し
         page:
           page:
             filename: page.mtml
