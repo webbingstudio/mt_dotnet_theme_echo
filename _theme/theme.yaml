@@ -219,7 +219,7 @@ elements:
             filename: module_header.mtml
             label: モジュール-ヘッダ
           module_spmenu:
-            filename: module_spmenu.mtml
+            filename: module_sp_menu.mtml
             label: モジュール-スマートフォンメニュー
           module_thumbnail_entry:
             filename: module_thumbnail_entry.mtml
