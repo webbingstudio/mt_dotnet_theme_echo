@@ -12,16 +12,16 @@
 </mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="$__fieldname__">
     <mt:CustomFieldAsset identifier="$__fieldname__">
-    <img alt="" src="<$mt:AssetThumbnailURL width="$__width_small__"$>" width="<$mt:Var name="__width_small__"$>">
+    <img alt="" src="<mt:AssetThumbnailURL width="$__width_small__" />" width="<mt:Var name="__width_small__" />">
     </mt:CustomFieldAsset>
 <mt:Else>
-    <$mt:setVar name="__image_url__"$>
+    <mt:setVar name="__image_url__" />
     <mt:EntryAssets type="image" limit="1" sort_order="ascend" sort_by="created_on">
-        <mt:setVarBlock name="__image_url__"><$mt:AssetThumbnailURL width="$__width_small__"$></mt:setVarBlock>
+        <mt:setVarBlock name="__image_url__"><mt:AssetThumbnailURL width="$__width_small__" /></mt:setVarBlock>
     </mt:EntryAssets>
     <mt:If name="__image_url__">
-        <img alt="" src="<$mt:Var name="__image_url__"$>" width="<$mt:Var name="__width_small__"$>">
+        <img alt="" src="<mt:Var name="__image_url__" />" width="<mt:Var name="__width_small__" />">
     <mt:Else>
-        <img alt="" src="/images/common/noimage_small.jpg" width="<$mt:Var name="__width_small__"$>">
+        <img alt="" src="/images/common/noimage_small.jpg" width="<mt:Var name="__width_small__" />">
     </mt:If>
 </mt:If>
