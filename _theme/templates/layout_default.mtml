@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<mt:Ignore># =======================
+# 
+# レイアウト-基本
+# 
+# vars:
+#   __layout__
+#   __meta-title__
+#   __meta-link__
+#   __meta-js__
+#   __body-class__
+#   __main__
+# 
+# =======================
+</mt:Ignore><!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +33,14 @@
     <link rel="stylesheet" href="/plugins/toggle.css">
     <link rel="stylesheet" href="/lib/scroll-hint/scroll-hint.css">
 
+<style>
+.echo-mt-be-table.js-scrollable th,
+.echo-mt-be-table.js-scrollable td{
+  white-space: nowrap;
+}
+</style>
+
+
 <mt:Unless name="__meta-link__">
 <mt:SetVarBlock name="__meta-link__">
 </mt:SetVarBlock>
@@ -37,28 +58,28 @@
 </mt:Unless>
 <mt:Var name="__meta-js__" />
 </head>
-<body>
-<div class="l-document" id="document">
+<body class="<mt:Var name="__body-class__" />">
+<div class="echo-l-document" id="echo-document">
 
-    <$mt:Include module="モジュール-ヘッダ"$>
+    <mt:Include module="モジュール-ヘッダ" />
 
-    <main class="p-main" role="main">
+    <main class="echo-p-main" role="main">
 <mt:Unless name="__main__">
 <mt:SetVarBlock name="__main__">
-        <div class="l-container">
+        <div class="echo-l-container">
 
             こんにちは世界！！
 
-        </div><!-- /.l-container -->
+        </div><!-- /.echo-l-container -->
 </mt:SetVarBlock>
 </mt:Unless>
 <mt:Var name="__main__" />
-    </main><!-- /.p-main -->
+    </main><!-- /.echo-p-main -->
 
-    <$mt:Include module="モジュール-フッタ"$>
-    <$mt:Include module="モジュール-スマートフォンメニュー"$>
+    <mt:Include module="モジュール-フッタ" />
+    <mt:Include module="モジュール-スマートフォンメニュー" />
 
-</div><!-- /.l-document -->
+</div><!-- /.echo-l-document -->
 </body>
 </html>
 <mt:Var name="__layout__" />
