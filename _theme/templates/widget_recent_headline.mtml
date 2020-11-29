@@ -27,7 +27,7 @@
     <mt:SetVar name="__widget_more_text__" value="もっと見る" />
 </mt:Unless>
 <mt:Unless name="__widget_more_url__">
-    <mt:setVarBlock name="__widget_more_url__"><mt:WebsiteRelativeURL$>blog/</mt:setVarBlock>
+    <mt:setVarBlock name="__widget_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
 </mt:Unless>
 
 <mt:Entries category="$__category__" sort_by="authored_on" sort_order="descend" limit="6">
@@ -49,11 +49,11 @@
 
                     <mt:EntryCategories type="primary">
                     <p class="echo-c-headline-category">
-                        <a href="<mt:CategoryArchiveLink$>" class="echo-m-label echo-m-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></a>
+                        <a href="<mt:CategoryArchiveLink />" class="echo-m-label echo-m-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></a>
                     </p>
                     </mt:EntryCategories>
 
-                    <<mt:Var name="__entry_title_tag__" /> class="echo-c-headline-title"><a href="<mt:EntryPermalink$>"><mt:EntryTitle encode_html="1" /></a></<mt:Var name="__entry_title_tag__" />>
+                    <<mt:Var name="__entry_title_tag__" /> class="echo-c-headline-title"><a href="<mt:EntryPermalink />"><mt:EntryTitle encode_html="1" /></a></<mt:Var name="__entry_title_tag__" />>
                 </div><!-- /.echo-c-headline-inner -->
             </article><!-- /.echo-c-headline -->
 

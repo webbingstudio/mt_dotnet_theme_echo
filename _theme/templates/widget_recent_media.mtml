@@ -27,7 +27,7 @@
     <mt:SetVar name="__widget_more_text__" value="もっと見る" />
 </mt:Unless>
 <mt:Unless name="__widget_more_url__">
-    <mt:setVarBlock name="__widget_more_url__"><mt:WebsiteRelativeURL$>blog/</mt:setVarBlock>
+    <mt:setVarBlock name="__widget_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
 </mt:Unless>
 
 <mt:Entries category="$__category__" sort_by="authored_on" sort_order="descend" limit="6">
@@ -45,7 +45,7 @@
 </mt:EntriesHeader>
 
                 <div class="echo-l-grid-col-12 echo-l-grid-col-lg-6">
-                    <a href="<mt:EntryPermalink$>" class="echo-c-media echo-c-media-entry">
+                    <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">
                         <div class="echo-c-media-object">
                             <figure class="echo-m-thumbnail echo-m-thumbnail-ogimage">
                                 <mt:Include module="モジュール-サムネイルの生成-記事" __fieldname__="EcEntryEyecatch" __width_small__="480" />
@@ -59,7 +59,7 @@
                         <div class="echo-c-media-contents">
                             <time class="echo-c-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$echo_entry_date" /></time>
                             <<mt:Var name="__entry_title_tag__" /> class="echo-c-media-title echo-m-title echo-m-title-level-6  echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></<mt:Var name="__entry_title_tag__" />>
-                            <p class="echo-c-media-body"><mt:EntryExcerpt$></p>
+                            <p class="echo-c-media-body"><mt:EntryExcerpt /></p>
                         </div>
                     </a>
                 </div><!-- /.echo-l-grid-col -->
