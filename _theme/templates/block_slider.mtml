@@ -4,7 +4,6 @@
 # カスタムブロック-スライドショー
 # 
 # vars:
-#   __slider_id__(global)
 #   __slider_html__
 #   __slider_class__
 #   __slider_align__
@@ -15,12 +14,6 @@
 # 
 # =======================
 </mt:Ignore>
-<mt:If name="__slider_id__">
-    <mt:SetVarBlock name="__slider_id__"><mt:Var name="__slider_id__" op="++" /></mt:SetVarBlock>
-<mt:Else>
-    <mt:SetVar name="__slider_id__" value="1" />
-</mt:If>
-
 <mt:SetVar name="__slider_html__" value="" /><mt:SetVar name="__slider_class__" value="" /><mt:SetVar name="__slider_fade__" value="" /><mt:SetVar name="__slider_nav__" value="" /><mt:SetVar name="__slider_auto__" value="" />
 
 <mt:BlockEditorBlocks>
@@ -47,12 +40,14 @@
     <mt:SetVar name="__slider_class__" value=" echo-mt-be-alignfull" />
 </mt:If>
 
-<div class="echo-mt-be-slider js-slider<mt:Var name="__slider_class__" />" id="echo-mt-be-slider-<mt:Var name="__slider_id__" />">
+<div class="echo-mt-be-slider js-slider<mt:Var name="__slider_class__" />">
 <mt:Var name="__value__" />
 </div><!-- /.echo-mt-be-slider -->
 
 <script>
-$('.js-slider#echo-mt-be-slider-<mt:Var name="__slider_id__" />').slick({
+$('.echo-mt-be-slider.js-slider').last().attr('id', 'echo-mt-be-slider-' + echo_slider_id);
+
+$('#echo-mt-be-slider-' + echo_slider_id).slick({
     infinite: true,
 <mt:If name="__slider_fade__" like="フェード">
     fade: true,
@@ -77,7 +72,7 @@ $('.js-slider#echo-mt-be-slider-<mt:Var name="__slider_id__" />').slick({
     autoplay: false,
 </mt:If>
 <mt:If name="__slider_speed__" like="ゆったり">
-    autoplaySpeed: 6000,
+    autoplaySpeed: 5000,
     speed: 1500,
 <mt:ElseIf name="__slider_speed__" like="キビキビ">
     autoplaySpeed: 3500,
