@@ -1,7 +1,7 @@
 <mt:Ignore>
 # =======================
 # 
-# ウィジェット-記事新着-media
+# カスタムブロック-記事新着-headline
 # 
 # vars:
 #   __category__
@@ -32,7 +32,7 @@
 
 <mt:Entries category="$__category__" sort_by="authored_on" sort_order="descend" limit="6">
 <mt:EntriesHeader>
-<section class="echo-p-widget echo-p-widget-media echo-p-widget-entry <mt:Var name="__widget_class__" />">
+<section class="echo-p-widget echo-p-widget-headline echo-p-widget-entry <mt:Var name="__widget_class__" />">
     <div class="echo-p-widget-header">
         <div class="echo-l-container">
             <<mt:Var name="__header_title_tag__" /> class="echo-p-widget-title echo-m-title echo-m-title-level-2  echo-m-title-style-c"><mt:Var name="__header_title_text__" /></<mt:Var name="__header_title_tag__" />>
@@ -40,32 +40,24 @@
     </div><!-- /.echo-p-widget-header -->
 
     <div class="echo-p-widget-contents">
-        <div class="echo-l-container">
-            <div class="echo-l-grid-row">
+        <div class="echo-l-container echo-l-container-sm">
 </mt:EntriesHeader>
 
-                <div class="echo-l-grid-col-12 echo-l-grid-col-lg-6">
-                    <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">
-                        <div class="echo-c-media-object">
-                            <figure class="echo-m-thumbnail echo-m-thumbnail-ogimage">
-                                <mt:Include module="モジュール-サムネイルの生成-記事" __fieldname__="EcEntryEyecatch" __width_small__="480" />
-                            </figure><!-- /.echo-m-thumbnail -->
-                            <mt:EntryCategories type="primary">
-                            <p class="echo-c-media-category">
-                                <span class="echo-m-label echo-m-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></span>
-                            </p>
-                            </mt:EntryCategories>
-                        </div><!-- /.echo-c-media-object -->
-                        <div class="echo-c-media-contents">
-                            <time class="echo-c-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$echo_entry_date" /></time>
-                            <<mt:Var name="__entry_title_tag__" /> class="echo-c-media-title echo-m-title echo-m-title-level-6  echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></<mt:Var name="__entry_title_tag__" />>
-                            <p class="echo-c-media-body"><mt:EntryExcerpt /></p>
-                        </div>
-                    </a>
-                </div><!-- /.echo-l-grid-col -->
+            <article class="echo-c-headline echo-c-headline-entry">
+                <div class="echo-c-headline-inner">
+                    <time class="echo-c-headline-header" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$echo_entry_date" /></time>
+
+                    <mt:EntryCategories type="primary">
+                    <p class="echo-c-headline-category">
+                        <a href="<mt:CategoryArchiveLink />" class="echo-m-label echo-m-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></a>
+                    </p>
+                    </mt:EntryCategories>
+
+                    <<mt:Var name="__entry_title_tag__" /> class="echo-c-headline-title"><a href="<mt:EntryPermalink />"><mt:EntryTitle encode_html="1" /></a></<mt:Var name="__entry_title_tag__" />>
+                </div><!-- /.echo-c-headline-inner -->
+            </article><!-- /.echo-c-headline -->
 
 <mt:EntriesFooter>
-            </div><!-- /.echo-l-grid-row -->
         </div><!-- /.echo-l-container -->
     </div><!-- /.echo-p-widget-contents -->
 
