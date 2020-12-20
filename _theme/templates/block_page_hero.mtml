@@ -1,0 +1,61 @@
+<mt:Ignore>
+# =======================
+# 
+# カスタムブロック-ページ誘導-hero
+# 
+# vars:
+#   __page_id__
+#   __hero_class__
+#   __hero_title_tag__
+# 
+# =======================
+</mt:Ignore>
+<mt:Unless name="__hero_title_tag__">
+    <mt:SetVar name="__hero_title_tag__" value="p" />
+</mt:Unless>
+<mt:Pages id="$__page_id__" limit="1">
+<mt:PagesHeader>
+<section class="echo-mt-be-hero echo-mt-be-block-custom">
+</mt:PagesHeader>
+    <div class="echo-c-hero echo-c-hero-fit<mt:Var name="__hero_class__" />">
+        <div class="echo-c-hero-image">
+            <picture>
+                <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
+                    <mt:CustomFieldAsset identifier="EchoPageEyecatch">
+                        <source
+                            media="(max-width:750px)"
+                            srcset="<mt:AssetThumbnailURL width="800" /> 750w"
+                            sizes="100vw">
+                        <source
+                            srcset="<mt:AssetThumbnailURL width="1200" /> 1200w"
+                            sizes="(max-width:1200px) 100vw">
+                        <img src="<mt:AssetThumbnailURL width="1200" />" alt="">
+                    </mt:CustomFieldAsset>
+                <mt:Else>
+                    <source
+                        media="(max-width:750px)"
+                        srcset="/images/common/noimage_small.jpg 750w"
+                        sizes="100vw">
+                    <source
+                        srcset="/images/common/noimage_large.jpg 1200w"
+                        sizes="(max-width:1200px) 100vw">
+                    <img src="/images/common/noimage_large.jpg" alt="">
+                </mt:If>
+            </picture>
+        </div><!-- /.echo-c-hero-image -->
+        <div class="echo-c-hero-contents">
+            <div class="echo-c-hero-contents-inner">
+                <<mt:Var name="__hero_title_tag__" /> class="echo-c-hero-title echo-m-title echo-u-font-third"><mt:PageTitle encode_html="1" /></<mt:Var name="__hero_title_tag__" />>
+                <mt:If tag="CustomFieldValue" identifier="EchoPageSummary">
+                <div class="echo-c-hero-body"><mt:CustomFieldValue identifier="EchoPageSummary" /></div>
+                </mt:If>
+                <p class="echo-c-hero-body">
+                    <a href="<mt:PagePermalink />" class="echo-m-btn echo-m-btn-gray echo-m-btn-block">詳しくはこちら</a>
+                </p>
+            </div><!-- /.echo-c-hero-contents-inner -->
+        </div><!-- /.echo-c-hero-contents -->
+    </div><!-- /.echo-c-hero -->
+<mt:PagesFooter>
+</section><!-- /.echo-mt-be-hero -->
+</mt:PagesFooter>
+</mt:Pages>

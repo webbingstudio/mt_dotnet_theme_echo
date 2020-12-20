@@ -4,12 +4,35 @@
 # カスタムブロック-ページ誘導
 # 
 # vars:
-#   __page_html__
-#   __page_class__
-#   __page_exclass__
-#   __page_pageid__
+#   __page_id__
+#   __page_type__
 # 
 # =======================
 </mt:Ignore>
-<mt:SetVar name="__page_html__" value="" /><mt:SetVar name="__page_class__" value="" /><mt:SetVar name="__page_exclass__" value="" /><mt:SetVar name="__page_pageid__" value="" />
+<mt:SetVar name="__page_id__" value="" /><mt:SetVar name="__page_type__" value="" />
 
+<mt:BlockEditorBlocks>
+<mt:If name="type" eq="sixapart-input">
+    <mt:SetVarBlock name="__page_id__"><mt:Var name="__value__" remove_html="1"  /></mt:SetVarBlock>
+<mt:ElseIf name="type" eq="sixapart-select">
+    <mt:If name="__value__" like="タイプ:">
+        <mt:SetVarBlock name="__page_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    </mt:If>
+</mt:If>
+</mt:BlockEditorBlocks>
+
+<mt:If name="__page_type__" like="画像全面">
+    <mt:If name="__page_type__" like="テキスト左">
+        <mt:Include module="カスタムブロック-ページ誘導-hero" __hero_id__="$__page_id__" __hero_class__=" echo-c-hero-left" />
+    <mt:ElseIf name="__page_type__" like="テキスト右">
+        <mt:Include module="カスタムブロック-ページ誘導-hero" __hero_id__="$__page_id__" __hero_class__=" echo-c-hero-right" />
+    <mt:Else>
+        <mt:Include module="カスタムブロック-ページ誘導-hero" __hero_id__="$__page_id__" __hero_class__="" />
+    </mt:If>
+<mt:ElseIf name="__page_type__" like="画像左＋テキスト右">
+    <mt:Include module="カスタムブロック-ページ誘導-flip" __flip_id__="$__page_id__" __flip_class__="" />
+<mt:ElseIf name="__page_type__" like="画像右＋テキスト左">
+    <mt:Include module="カスタムブロック-ページ誘導-flip" __flip_id__="$__page_id__" __flip_class__=" echo-c-flip-reverse" />
+<mt:Else>
+    <mt:Include module="カスタムブロック-ページ誘導-card" __hero_id__="$__page_id__" />
+</mt:If>
