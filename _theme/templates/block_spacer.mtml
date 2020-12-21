@@ -13,21 +13,21 @@
 
 <mt:BlockEditorBlocks>
 <mt:If name="type" eq="sixapart-select">
-    <mt:If name="__value__" like="サイズ :">
+    <mt:If name="__value__" like="サイズ:">
         <mt:SetVarBlock name="__spacer_size__"><mt:Var name="__value__" /></mt:SetVarBlock>
     </mt:If>
 </mt:If>
 </mt:BlockEditorBlocks>
 
-<mt:SetVar name="__spacer_class__" value="md" />
+<mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-md" />
 <mt:If name="__spacer_size__" like="極小">
-    <mt:SetVar name="__spacer_class__" value="xs" />
+    <mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-xs" />
 <mt:ElseIf name="__spacer_size__" like="極大">
-    <mt:SetVar name="__spacer_class__" value="xl" />
+    <mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-xl" />
 <mt:ElseIf name="__spacer_size__" like="小">
-    <mt:SetVar name="__spacer_class__" value="sm" />
+    <mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-sm" />
 <mt:ElseIf name="__spacer_size__" like="大">
-    <mt:SetVar name="__spacer_class__" value="lg" />
+    <mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-lg" />
 </mt:If>
 
-<div class="echo-mt-be-spacer echo-mt-be-spacer-<mt:Var name="__spacer_class__" />"><hr></div>
+<div class="echo-mt-be-spacer<mt:Var name="__spacer_class__" /> echo-mt-be-block-custom"><hr></div>

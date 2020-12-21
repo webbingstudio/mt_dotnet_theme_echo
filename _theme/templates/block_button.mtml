@@ -19,11 +19,11 @@
 
 <mt:BlockEditorBlocks>
 <mt:If name="type" eq="sixapart-select">
-    <mt:If name="__value__" like="デザイン :">
+    <mt:If name="__value__" like="デザイン:">
         <mt:SetVarBlock name="__button_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
-    <mt:ElseIf name="__value__" like="サイズ :">
+    <mt:ElseIf name="__value__" like="サイズ:">
         <mt:SetVarBlock name="__button_size__"><mt:Var name="__value__" /></mt:SetVarBlock>
-    <mt:ElseIf name="__value__" like="リンク先 :">
+    <mt:ElseIf name="__value__" like="リンク先:">
         <mt:SetVarBlock name="__button_target__"><mt:Var name="__value__" /></mt:SetVarBlock>
     </mt:If>
 <mt:ElseIf name="type" eq="sixapart-input">
@@ -58,13 +58,13 @@
     <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-btn-lg</mt:SetVarBlock>
 </mt:If>
 
-<mt:If name="__button_target__" like="新しいウィンドウ">
+<mt:If name="__button_target__" like="新しい">
     <mt:SetVarBlock name="__button_target__"> target="_blank"</mt:SetVarBlock>
 <mt:Else>
     <mt:SetVar name="__button_target__" value="" />
 </mt:If>
 
-<div class="echo-mt-be-btn<mt:Var name="__button_wrapclass__" />">
+<div class="echo-mt-be-btn<mt:Var name="__button_wrapclass__" />　echo-mt-be-block-custom">
     <a href="<mt:Var name="__button_url__" strip_linefeeds="1" remove_html="1" />"<mt:Var name="__button_target__" /> class="echo-m-btn echo-m-btn-block<mt:Var name="__button_class__" />">
         <mt:Var name="__button_label__" strip_linefeeds="1" remove_html="1" />
     </a>
