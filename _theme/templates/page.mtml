@@ -5,7 +5,7 @@
 # 
 # =======================
 </mt:Ignore>
-<$mt:Include module="変数-共通"$>
+<mt:Include module="変数-共通" />
 <mt:SetVarBlock name="__meta-js__">
 <script>var echo_slider_id = 0;</script>
 </mt:SetVarBlock>
@@ -14,11 +14,11 @@
 
 <section class="c-post c-post-page">
 
-        <mt:If tag="CustomFieldValue" identifier="EcPageHideHeader" neq="true">
+        <mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="true">
         </mt:If>
-        <mt:If tag="CustomFieldValue" identifier="EcPageHideTitle" neq="true">
+        <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="true">
         <div class="c-post-header">
-            <h2 class="c-post-title"><$mt:PageTitle$></h2>
+            <h2 class="c-post-title"><mt:PageTitle /></h2>
         </div><!-- /.c-post-header -->
         </mt:If>
 
@@ -39,6 +39,10 @@
         <mt:Include module="カスタムブロック-高度な見出し" />
     <mt:ElseIf name="type" eq="custom-echo_slider">
         <mt:Include module="カスタムブロック-スライドショー" />
+    <mt:ElseIf name="type" eq="custom-echo_page">
+        <mt:Include module="カスタムブロック-ページ誘導" />
+    <mt:ElseIf name="type" eq="core-columns">
+        <mt:Include module="コアブロック-カラム" />
     <mt:Else>
         <mt:Var name="__value__" />
     </mt:If>
@@ -50,5 +54,5 @@
 
 </mt:SetVarBlock>
 
-<$mt:Include module="レイアウト-基本"$>
+<mt:Include module="レイアウト-基本" />
 </mt:Unless>

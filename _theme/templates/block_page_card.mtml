@@ -4,35 +4,47 @@
 # カスタムブロック-ページ誘導-card
 # 
 # vars:
-#   __card_id__
-#   __card_class__
+#   __page_pid__
+#   __page_tagname__
 # 
 # =======================
 </mt:Ignore>
-<mt:SetVar name="__card_id__" value="" />
+<mt:Pages id="$__page_pid__" limit="1">
+<mt:PagesHeader>
 <section class="echo-mt-be-card echo-mt-be-block-custom">
-    <div class="echo-c-card<mt:Var name="__card_class__" />">
-        <a href="#" class="echo-c-card-inner">
+</mt:PagesHeader>
+    <div class="echo-c-card">
+        <a href="<mt:PagePermalink />" class="echo-c-card-inner">
             <div class="echo-c-card-object">
-                <figure class="echo-m-thumbnail echo-m-thumbnail-ogimage">
+                <figure class="echo-m-thumbnail echo-m-thumbnail-16to9">
                     <picture>
-                    <source
-                        media="(max-width:640px)"
-                        srcset="https://cms-skill.com/echo-css/images/_dummy/image_03_s.jpg 640w"
-                        sizes="100vw">
-                    <source
-                        srcset="https://cms-skill.com/echo-css/images/_dummy/image_03.jpg 1280w"
-                        sizes="(max-width:1280px) 100vw, 1280px">
-                    <img src="https://cms-skill.com/echo-css/images/_dummy/image_03.jpg" alt="">
+                        <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
+                            <mt:CustomFieldAsset identifier="EchoPageEyecatch">
+                                <source
+                                    media="(max-width:750px)"
+                                    srcset="<mt:AssetThumbnailURL width="240" /> 750w"
+                                    sizes="100vw">
+                                <source
+                                    srcset="<mt:AssetThumbnailURL width="480" /> 1200w"
+                                    sizes="(max-width:1200px) 100vw">
+                                <img src="<mt:AssetThumbnailURL width="480" />" alt="">
+                            </mt:CustomFieldAsset>
+                        <mt:Else>
+                            <img src="/images/common/noimage_small.jpg" alt="">
+                        </mt:If>
                     </picture>
                 </figure><!-- /.echo-m-thumbnail -->
             </div><!-- /.echo-c-card-object -->
             <div class="echo-c-card-contents">
-                <p class="echo-c-card-title echo-m-title echo-m-title-level-4 echo-m-title-style-a">背景に色がついているカードの例です</p>
-                <p class="echo-c-card-body">カードの背景に u-bg-first クラスを指定して色を付けています<br>
-                リンクは指定していません</p>
-                <p class="echo-c-card-body"><span class="echo-m-btn echo-m-btn-bordered echo-m-btn-block">ボタン</span></p>
+                <<mt:Var name="__page_tagname__" /> class="echo-c-card-title echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></<mt:Var name="__page_tagname__" />>
+                <mt:If tag="CustomFieldValue" identifier="EchoPageSummary">
+                <div class="echo-c-card-body"><mt:CustomFieldValue identifier="EchoPageSummary" /></div>
+                </mt:If>
+                <p class="echo-c-card-body"><span class="echo-m-btn echo-m-btn-gray echo-m-btn-bordered echo-m-btn-block">詳しくはこちら</span></p>
             </div><!-- /.echo-c-card-contents -->
         </a><!-- /.echo-c-card-innner -->
     </div><!-- /.echo-c-card -->
-</section><!-- /.echo-mt-be-card -->
+<mt:PagesFooter>
+</section><!-- /.echo-mt-be-hero -->
+</mt:PagesFooter>
+</mt:Pages>

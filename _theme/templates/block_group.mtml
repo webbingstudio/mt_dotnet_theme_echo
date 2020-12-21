@@ -30,8 +30,15 @@
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-高度なテーブル" /></mt:SetVarBlock>
     <mt:ElseIf name="type" eq="custom-echo_button">
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-ボタン" /></mt:SetVarBlock>
+    <mt:ElseIf name="type" eq="custom-echo_buttons">
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-複数のボタン" /></mt:SetVarBlock>
     <mt:ElseIf name="type" eq="custom-echo_title">
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-高度な見出し" /></mt:SetVarBlock>
+    <mt:ElseIf name="type" eq="custom-echo_slider">
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-スライドショー" /></mt:SetVarBlock>
+    <mt:ElseIf name="type" eq="custom-echo_page">
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-ページ誘導" /></mt:SetVarBlock>
+
     <mt:Else>
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Var name="__value__" /></mt:SetVarBlock>
     </mt:If>

@@ -4,35 +4,73 @@
 # カスタムブロック-ページ誘導
 # 
 # vars:
-#   __page_id__
+#   __page_pid__
+#   __page_class__
 #   __page_type__
+#   __page_color__
+#   __page_tag__
+#   __page_tagname__
 # 
 # =======================
 </mt:Ignore>
-<mt:SetVar name="__page_id__" value="" /><mt:SetVar name="__page_type__" value="" />
+<mt:SetVar name="__page_pid__" value="" /><mt:SetVar name="__page_class__" value="" /><mt:SetVar name="__page_type__" value="" /><mt:SetVar name="__page_color__" value="" /><mt:SetVar name="__page_tag__" value="" />
 
 <mt:BlockEditorBlocks>
 <mt:If name="type" eq="sixapart-input">
-    <mt:SetVarBlock name="__page_id__"><mt:Var name="__value__" remove_html="1"  /></mt:SetVarBlock>
+    <mt:SetVarBlock name="__page_pid__"><mt:Var name="__value__" remove_html="1"  /></mt:SetVarBlock>
 <mt:ElseIf name="type" eq="sixapart-select">
     <mt:If name="__value__" like="タイプ:">
         <mt:SetVarBlock name="__page_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
     </mt:If>
+    <mt:If name="__value__" like="色:">
+        <mt:SetVarBlock name="__page_color__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    </mt:If>
+    <mt:If name="__value__" like="タグ:">
+        <mt:SetVarBlock name="__page_tag__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    </mt:If>
 </mt:If>
 </mt:BlockEditorBlocks>
 
-<mt:If name="__page_type__" like="画像全面">
-    <mt:If name="__page_type__" like="テキスト左">
-        <mt:Include module="カスタムブロック-ページ誘導-hero" __hero_id__="$__page_id__" __hero_class__=" echo-c-hero-left" />
-    <mt:ElseIf name="__page_type__" like="テキスト右">
-        <mt:Include module="カスタムブロック-ページ誘導-hero" __hero_id__="$__page_id__" __hero_class__=" echo-c-hero-right" />
-    <mt:Else>
-        <mt:Include module="カスタムブロック-ページ誘導-hero" __hero_id__="$__page_id__" __hero_class__="" />
-    </mt:If>
-<mt:ElseIf name="__page_type__" like="画像左＋テキスト右">
-    <mt:Include module="カスタムブロック-ページ誘導-flip" __flip_id__="$__page_id__" __flip_class__="" />
-<mt:ElseIf name="__page_type__" like="画像右＋テキスト左">
-    <mt:Include module="カスタムブロック-ページ誘導-flip" __flip_id__="$__page_id__" __flip_class__=" echo-c-flip-reverse" />
+<mt:If name="__page_tag__" like="h1">
+    <mt:SetVar name="__page_tagname__" value="h1">
+<mt:ElseIf name="__page_tag__" like="h2">
+    <mt:SetVar name="__page_tagname__" value="h2">
+<mt:ElseIf name="__page_tag__" like="h4">
+    <mt:SetVar name="__page_tagname__" value="h4">
+<mt:ElseIf name="__page_tag__" like="h5">
+    <mt:SetVar name="__page_tagname__" value="h5">
+<mt:ElseIf name="__page_tag__" like="h6">
+    <mt:SetVar name="__page_tagname__" value="h6">
+<mt:ElseIf name="__page_tag__" like="p">
+    <mt:SetVar name="__page_tagname__" value="p">
 <mt:Else>
-    <mt:Include module="カスタムブロック-ページ誘導-card" __hero_id__="$__page_id__" />
+    <mt:SetVar name="__page_tagname__" value="h3">
+</mt:If>
+
+<mt:If name="__page_type__" like="画像全面">
+    <mt:If name="__page_color__" like="白">
+        <mt:SetVar name="__page_class__" value=" echo-c-hero-inverse" />
+    </mt:If>
+    <mt:If name="__page_type__" like="テキスト左">
+        <mt:SetVarBlock name="__page_class__"><mt:Var name="__page_class__" /> echo-c-hero-left</mt:SetVarBlock>
+    <mt:ElseIf name="__page_type__" like="テキスト右">
+        <mt:SetVarBlock name="__page_class__"><mt:Var name="__page_class__" /> echo-c-hero-right</mt:SetVarBlock>
+    </mt:If>
+    <mt:Include module="カスタムブロック-ページ誘導-hero" __page_pid__="$__page_pid__" __page_tagname__="$__page_tagname__" __page_class__="$__page_class__" />
+
+<mt:ElseIf name="__page_type__" like="画像左＋テキスト右">
+    <mt:If name="__page_color__" like="白">
+        <mt:SetVar name="__page_class__" value=" echo-c-flip-inverse" />
+    </mt:If>
+    <mt:Include module="カスタムブロック-ページ誘導-flip" __page_pid__="$__page_pid__" __page_tagname__="$__page_tagname__" __page_class__="$__page_class__" />
+
+<mt:ElseIf name="__page_type__" like="画像右＋テキスト左">
+    <mt:SetVar name="__page_class__" value=" echo-c-flip-reverse" />
+    <mt:If name="__page_color__" like="白">
+        <mt:SetVarBlock name="__page_class__"><mt:Var name="__page_class__" /> echo-c-flip-inverse </mt:SetVarBlock>
+    </mt:If>
+    <mt:Include module="カスタムブロック-ページ誘導-flip" __page_pid__="$__page_pid__" __page_tagname__="$__page_tagname__" __page_class__="$__page_class__" />
+
+<mt:Else>
+    <mt:Include module="カスタムブロック-ページ誘導-card" __page_pid__="$__page_pid__" __page_tagname__="$__page_tagname__" />
 </mt:If>

@@ -1,0 +1,37 @@
+<mt:Ignore>
+# =======================
+# 
+# コアブロック-カラム
+# 
+# vars:
+# __columns_html__
+# 
+# =======================
+</mt:Ignore>
+<div class="mt-be-columns" style="display: flex">
+<mt:BlockEditorBlocks>
+    <mt:BlockEditorBlocks>
+        <div class="mt-be-column">
+        <mt:SetVar name="__columns_html__" value="" />
+        <mt:If name="type" eq="custom-echo_spacer">
+            <mt:SetVarBlock name="__columns_html__"><mt:Var name="__columns_html__" /><mt:Include module="カスタムブロック-余白" /></mt:SetVarBlock>
+        <mt:ElseIf name="type" eq="custom-echo_table">
+            <mt:SetVarBlock name="__columns_html__"><mt:Var name="__columns_html__" /><mt:Include module="カスタムブロック-高度なテーブル" /></mt:SetVarBlock>
+        <mt:ElseIf name="type" eq="custom-echo_button">
+            <mt:SetVarBlock name="__columns_html__"><mt:Var name="__columns_html__" /><mt:Include module="カスタムブロック-ボタン" /></mt:SetVarBlock>
+        <mt:ElseIf name="type" eq="custom-echo_buttons">
+            <mt:SetVarBlock name="__columns_html__"><mt:Var name="__columns_html__" /><mt:Include module="カスタムブロック-複数のボタン" /></mt:SetVarBlock>
+        <mt:ElseIf name="type" eq="custom-echo_title">
+            <mt:SetVarBlock name="__columns_html__"><mt:Var name="__columns_html__" /><mt:Include module="カスタムブロック-高度な見出し" /></mt:SetVarBlock>
+        <mt:ElseIf name="type" eq="custom-echo_slider">
+            <mt:SetVarBlock name="__columns_html__"><mt:Var name="__columns_html__" /><mt:Include module="カスタムブロック-スライドショー" /></mt:SetVarBlock>
+        <mt:ElseIf name="type" eq="custom-echo_page">
+            <mt:SetVarBlock name="__columns_html__"><mt:Var name="__columns_html__" /><mt:Include module="カスタムブロック-ページ誘導" /></mt:SetVarBlock>
+        <mt:Else>
+            <mt:SetVarBlock name="__columns_html__"><mt:Var name="__columns_html__" /><mt:Var name="__value__" /></mt:SetVarBlock>
+        </mt:If>
+        <mt:Var name="__columns_html__" />
+    </div><!-- /.mt-be-column -->
+    </mt:BlockEditorBlocks>
+</mt:BlockEditorBlocks>
+</div><!-- /.mt-be-columns -->
