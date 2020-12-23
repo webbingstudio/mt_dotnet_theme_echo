@@ -25,22 +25,24 @@
     <div class="c-post-contents echo-mt-be">
 <mt:BlockEditorBlocks tag="PageBody">
 <script>++echo_slider_id;</script>
-    <mt:If name="type" eq="custom-echo_spacer">
+    <mt:If name="type" eq="custom-echo_title">
+        <mt:Include module="カスタムブロック-高度な見出し" />
+    <mt:ElseIf name="type" eq="custom-echo_spacer">
         <mt:Include module="カスタムブロック-余白" />
-    <mt:ElseIf name="type" eq="custom-echo_group">
-        <mt:Include module="カスタムブロック-グループ" />
-    <mt:ElseIf name="type" eq="custom-echo_table">
-        <mt:Include module="カスタムブロック-高度なテーブル" />
     <mt:ElseIf name="type" eq="custom-echo_button">
         <mt:Include module="カスタムブロック-ボタン" />
     <mt:ElseIf name="type" eq="custom-echo_buttons">
         <mt:Include module="カスタムブロック-複数のボタン" />
-    <mt:ElseIf name="type" eq="custom-echo_title">
-        <mt:Include module="カスタムブロック-高度な見出し" />
+    <mt:ElseIf name="type" eq="custom-echo_table">
+        <mt:Include module="カスタムブロック-高度なテーブル" />
+    <mt:ElseIf name="type" eq="custom-echo_hero">
+        <mt:Include module="カスタムブロック-背景＋見出し" />
     <mt:ElseIf name="type" eq="custom-echo_slider">
         <mt:Include module="カスタムブロック-スライドショー" />
     <mt:ElseIf name="type" eq="custom-echo_page">
         <mt:Include module="カスタムブロック-ページ誘導" />
+    <mt:ElseIf name="type" eq="custom-echo_group">
+        <mt:Include module="カスタムブロック-グループ" />
     <mt:ElseIf name="type" eq="core-columns">
         <mt:Include module="コアブロック-カラム" />
     <mt:Else>

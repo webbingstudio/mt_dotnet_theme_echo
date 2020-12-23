@@ -14,7 +14,7 @@
 
 <mt:BlockEditorBlocks>
     <mt:If name="type" eq="sixapart-select">
-        <mt:If name="__value__" like="表示 :">
+        <mt:If name="__value__" like="表示:">
             <mt:SetVarBlock name="__table_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
         </mt:If>
     <mt:ElseIf name="type" eq="core-table">
@@ -23,9 +23,9 @@
 </mt:BlockEditorBlocks>
 
 <mt:SetVar name="__table_class__" value="echo-mt-be-table-default" />
-<mt:If name="__table_type__" like="スクロール">
+<mt:If name="__table_type__" like="スクロールをうながす">
     <mt:SetVar name="__table_class__" value="echo-mt-be-table-scrollable js-scrollable" />
-<mt:ElseIf name="__table_type__" like="縦並び">
+<mt:ElseIf name="__table_type__" like="縦並びになる">
     <mt:SetVar name="__table_class__" value="echo-mt-be-table-fold" />
 </mt:If>
 
