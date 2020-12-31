@@ -5,10 +5,12 @@
 # 
 # vars:
 #   __hero_class__
+#   __hero_titleclass__
 #   __hero_title__
 #   __hero_body__
 #   __hero_type__
 #   __hero_color__
+#   __hero_size__
 #   __hero_tag__
 #   __hero_tagname__
 #   __hero_image_lg_src__
@@ -17,7 +19,7 @@
 # 
 # =======================
 </mt:Ignore>
-<mt:SetVar name="__hero_class__" value="" /><mt:SetVar name="__hero_title__" value="" /><mt:SetVar name="__hero_body__" value="" /><mt:SetVar name="__hero_type__" value="" /><mt:SetVar name="__hero_color__" value="" /><mt:SetVar name="__hero_tag__" value="" /><mt:SetVar name="__hero_tagname__" value="" /><mt:SetVar name="__hero_image_lg_src__" value="" /><mt:SetVar name="__hero_image_lg_width__" value="" /><mt:SetVar name="__hero_image_sm_width__" value="" />
+<mt:SetVar name="__hero_class__" value="" /><mt:SetVar name="__hero_titleclass__" value="" /><mt:SetVar name="__hero_title__" value="" /><mt:SetVar name="__hero_body__" value="" /><mt:SetVar name="__hero_type__" value="" /><mt:SetVar name="__hero_color__" value="" /><mt:SetVar name="__hero_size__" value="" /><mt:SetVar name="__hero_tag__" value="" /><mt:SetVar name="__hero_tagname__" value="" /><mt:SetVar name="__hero_image_lg_src__" value="" /><mt:SetVar name="__hero_image_lg_width__" value="" /><mt:SetVar name="__hero_image_sm_width__" value="" />
 
 <mt:BlockEditorBlocks>
     <mt:If name="type" eq="sixapart-select">
@@ -27,18 +29,17 @@
         <mt:If name="__value__" like="文字色:">
             <mt:SetVarBlock name="__hero_color__"><mt:Var name="__value__" /></mt:SetVarBlock>
         </mt:If>
+        <mt:If name="__value__" like="サイズ:">
+            <mt:SetVarBlock name="__hero_size__"><mt:Var name="__value__" /></mt:SetVarBlock>
+        </mt:If>
         <mt:If name="__value__" like="タグ:">
             <mt:SetVarBlock name="__hero_tag__"><mt:Var name="__value__" /></mt:SetVarBlock>
         </mt:If>
     <mt:ElseIf name="type" eq="sixapart-input">
-        <mt:SetVarBlock name="__hero_title__"><mt:Var name="__value__" /></mt:SetVarBlock>
+        <mt:SetVarBlock name="__hero_title__"><mt:Var name="__value__" remove_html="1" /></mt:SetVarBlock>
     <mt:ElseIf name="type" eq="core-text">
         <mt:SetVarBlock name="__hero_body__"><mt:Var name="__value__" /></mt:SetVarBlock>
     <mt:ElseIf name="type" eq="mt-image">
-
-<p>meta{assetUrl}が取得できない</p>
-<p>[[<mt:Var name="meta{assetUrl}" />]]</p>
-
         <mt:Var name="meta{assetId}" setvar="asset_id" />
         <mt:Asset id="$asset_id">
             <mt:If name="__hero_image_lg_src__" eq="">
@@ -58,6 +59,12 @@
     <mt:SetVarBlock name="__hero_class__"><mt:Var name="__hero_class__" /> echo-c-hero-left</mt:SetVarBlock>
 <mt:ElseIf name="__hero_type__" like="テキスト右">
     <mt:SetVarBlock name="__hero_class__"><mt:Var name="__hero_class__" /> echo-c-hero-right</mt:SetVarBlock>
+</mt:If>
+
+<mt:If name="__hero_size__" like="大">
+    <mt:SetVarBlock name="__hero_titleclass__"> echo-mt-be-hero-title-lg</mt:SetVarBlock>
+<mt:ElseIf name="__hero_size__" like="小">
+    <mt:SetVarBlock name="__hero_titleclass__"> echo-mt-be-hero-title-sm</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__hero_tag__" like="h1">
@@ -92,7 +99,7 @@
         </div><!-- /.echo-c-hero-image -->
         <div class="echo-c-hero-contents">
             <div class="echo-c-hero-contents-inner">
-                <<mt:Var name="__hero_tagname__" /> class="echo-c-hero-title echo-m-title echo-u-font-third"><mt:Var name="__hero_title__" /></<mt:Var name="__hero_tagname__" />>
+                <<mt:Var name="__hero_tagname__" /> class="echo-c-hero-title echo-m-title echo-u-font-third<mt:Var name="__hero_titleclass__" />"><mt:Var name="__hero_title__" /></<mt:Var name="__hero_tagname__" />>
                 <mt:If name="__hero_body__" neq="">
                 <div class="echo-c-hero-body"><mt:Var name="__hero_body__" /></div>
                 </mt:If>
