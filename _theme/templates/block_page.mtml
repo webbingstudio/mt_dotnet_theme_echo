@@ -59,13 +59,14 @@
     <mt:Include module="カスタムブロック-ページ誘導-hero" __page_pid__="$__page_pid__" __page_tagname__="$__page_tagname__" __page_class__="$__page_class__" />
 
 <mt:ElseIf name="__page_type__" like="画像左＋テキスト右">
+    <mt:SetVar name="__page_class__" value=" echo-c-flip-left" />
     <mt:If name="__page_color__" like="白">
-        <mt:SetVar name="__page_class__" value=" echo-c-flip-inverse" />
+        <mt:SetVarBlock name="__page_class__"><mt:Var name="__page_class__" /> echo-c-flip-inverse </mt:SetVarBlock>
     </mt:If>
     <mt:Include module="カスタムブロック-ページ誘導-flip" __page_pid__="$__page_pid__" __page_tagname__="$__page_tagname__" __page_class__="$__page_class__" />
 
 <mt:ElseIf name="__page_type__" like="画像右＋テキスト左">
-    <mt:SetVar name="__page_class__" value=" echo-c-flip-reverse" />
+    <mt:SetVar name="__page_class__" value=" echo-c-flip-right" />
     <mt:If name="__page_color__" like="白">
         <mt:SetVarBlock name="__page_class__"><mt:Var name="__page_class__" /> echo-c-flip-inverse </mt:SetVarBlock>
     </mt:If>
