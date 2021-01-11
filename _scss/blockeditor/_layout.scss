@@ -24,11 +24,7 @@
         display: block;
     }
 
-    > *.#{$pr}#{$be}-alignwide {
-
-        @include media-breakpoint-up(xl) {
-            max-width: map-get( $be-max-widths, 'lg' );
-        }
+    .#{$pr}#{$be}-group:not(.#{$pr}#{$be}-alignfull) {
 
         &.#{$pr}#{$be}-has-bg {
             padding: ( $spacer * 1.5 ) map-get( $grid-gutter-widths, 'md' );
@@ -41,6 +37,29 @@
                 padding: ( $spacer * 3 ) ( map-get( $grid-gutter-widths, 'md' ) * 2 );
             }
 
+        }
+
+    }
+
+    .#{$pr}#{$be}-group.#{$pr}#{$be}-alignfull {
+
+        &.#{$pr}#{$be}-has-bg {
+            padding-top: ( $spacer * 3 );
+            padding-bottom: ( $spacer * 3 );
+
+            @include media-breakpoint-up(xl) {
+                padding-top: ( $spacer * 4.5 );
+                padding-bottom: ( $spacer * 4.5 );
+            }
+
+        }
+
+    }
+
+    > *.#{$pr}#{$be}-alignwide {
+
+        @include media-breakpoint-up(xl) {
+            max-width: map-get( $be-max-widths, 'lg' );
         }
 
     }
@@ -70,18 +89,6 @@
     > *.#{$pr}#{$be}-alignfull {
         width: 100%;
         max-width: none;
-
-        &.#{$pr}#{$be}-has-bg {
-            padding-top: ( $spacer * 3 );
-            padding-bottom: ( $spacer * 3 );
-
-            @include media-breakpoint-up(xl) {
-                padding-top: ( $spacer * 4.5 );
-                padding-bottom: ( $spacer * 4.5 );
-            }
-
-        }
-
     }
 
 }
