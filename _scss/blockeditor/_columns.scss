@@ -6,18 +6,34 @@
 
 .#{$be}-columns {
 
-    &:not(.#{$pr}#{$be}-columns-1):not(.#{$pr}#{$be}-columns-2) {
+    @include media-breakpoint-up(md) {
 
-        @include media-breakpoint-up(md) {
+        .#{$be}-column {
+
+            &:not(:first-child) {
+                padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            }
+
+            &:not(:last-child) {
+                padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            }
+
+        }
+
+    }
+
+    &:not(.#{$pr}#{$be}-columns-3):not(.#{$pr}#{$be}-columns-4) {
+
+        @include media-breakpoint-down(sm) {
 
             .#{$be}-column {
 
                 &:not(:first-child) {
-                    padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+                    padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 4 );
                 }
 
                 &:not(:last-child) {
-                    padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+                    padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 4 );
                 }
 
             }
