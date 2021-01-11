@@ -64,3 +64,63 @@
     }
 
 }
+
+.#{$pr}#{$be}-hero-cover {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgb(236,231,217);
+    background: radial-gradient(circle, rgb(255,255,255) 0%, rgb(236,231,217) 100%);
+    padding-bottom: 100%;
+    z-index: 9;
+
+    @include media-breakpoint-up(lg) {
+        padding-bottom: percentage( 9 / 16 );
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-bottom: percentage( 10 / 25 );
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: "";
+    }
+
+    &:before {
+        top: 0;
+        left: 0;
+        transform: translate( -25%, -25% );
+        width: 60vw;
+        height: 60vw;
+        border-radius: 50%;
+        z-index: 10;
+        background: rgba(236,231,217, .5);
+
+        @include media-breakpoint-up(md) {
+            width: 40vw;
+            height: 40vw;
+        }
+
+    }
+
+    &:after {
+        bottom: 0;
+        right: 0;
+        transform: translate( 25%, 25% );
+        width: 30vw;
+        height: 30vw;
+        border-radius: 50%;
+        z-index: 11;
+        background: rgba(255,255,255, .4);
+
+        @include media-breakpoint-up(md) {
+            width: 20vw;
+            height: 20vw;
+        }
+
+    }
+
+}

@@ -15,26 +15,24 @@
 </mt:PagesHeader>
     <div class="echo-c-card">
         <a href="<mt:PagePermalink />" class="echo-c-card-inner">
+            <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
             <div class="echo-c-card-object">
                 <figure class="echo-m-thumbnail echo-m-thumbnail-16to9">
                     <picture>
-                        <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
-                            <mt:CustomFieldAsset identifier="EchoPageEyecatch">
-                                <source
-                                    media="(max-width:750px)"
-                                    srcset="<mt:AssetThumbnailURL width="240" /> 750w"
-                                    sizes="100vw">
-                                <source
-                                    srcset="<mt:AssetThumbnailURL width="480" /> 1200w"
-                                    sizes="(max-width:1200px) 100vw">
-                                <img src="<mt:AssetThumbnailURL width="480" />" alt="">
-                            </mt:CustomFieldAsset>
-                        <mt:Else>
-                            <img src="/images/common/noimage_small.jpg" alt="">
-                        </mt:If>
+                        <mt:CustomFieldAsset identifier="EchoPageEyecatch">
+                            <source
+                                media="(max-width:750px)"
+                                srcset="<mt:AssetThumbnailURL width="240" /> 750w"
+                                sizes="100vw">
+                            <source
+                                srcset="<mt:AssetThumbnailURL width="480" /> 1200w"
+                                sizes="(max-width:1200px) 100vw">
+                            <img src="<mt:AssetThumbnailURL width="480" />" alt="">
+                        </mt:CustomFieldAsset>
                     </picture>
                 </figure><!-- /.echo-m-thumbnail -->
             </div><!-- /.echo-c-card-object -->
+            </mt:If>
             <div class="echo-c-card-contents">
                 <<mt:Var name="__page_tagname__" /> class="echo-c-card-title echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></<mt:Var name="__page_tagname__" />>
                 <mt:If tag="CustomFieldValue" identifier="EchoPageSummary">

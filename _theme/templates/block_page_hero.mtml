@@ -15,31 +15,24 @@
 <section class="echo-mt-be-hero echo-mt-be-block-custom">
 </mt:PagesHeader>
     <div class="echo-c-hero echo-c-hero-fit<mt:Var name="__page_class__" />">
+        <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
         <div class="echo-c-hero-image">
             <picture>
-                <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
-                    <mt:CustomFieldAsset identifier="EchoPageEyecatch">
-                        <source
-                            media="(max-width:750px)"
-                            srcset="<mt:AssetThumbnailURL width="800" /> 750w"
-                            sizes="100vw">
-                        <source
-                            srcset="<mt:AssetThumbnailURL width="1200" /> 1200w"
-                            sizes="(max-width:1200px) 100vw">
-                        <img src="<mt:AssetThumbnailURL width="1200" />" alt="">
-                    </mt:CustomFieldAsset>
-                <mt:Else>
+                <mt:CustomFieldAsset identifier="EchoPageEyecatch">
                     <source
                         media="(max-width:750px)"
-                        srcset="/images/common/noimage_small.jpg 750w"
+                        srcset="<mt:AssetThumbnailURL width="800" /> 750w"
                         sizes="100vw">
                     <source
-                        srcset="/images/common/noimage_large.jpg 1200w"
+                        srcset="<mt:AssetThumbnailURL width="1200" /> 1200w"
                         sizes="(max-width:1200px) 100vw">
-                    <img src="/images/common/noimage_large.jpg" alt="">
-                </mt:If>
+                    <img src="<mt:AssetThumbnailURL width="1200" />" alt="">
+                </mt:CustomFieldAsset>
             </picture>
         </div><!-- /.echo-c-hero-image -->
+        <mt:Else>
+        <div class="echo-mt-be-hero-cover"></div>
+        </mt:If>
         <div class="echo-c-hero-contents">
             <div class="echo-c-hero-contents-inner">
                 <<mt:Var name="__page_tagname__" /> class="echo-c-hero-title echo-m-title echo-u-font-first">
