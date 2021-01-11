@@ -16,9 +16,9 @@
 
 <mt:BlockEditorBlocks>
     <mt:If name="type" eq="sixapart-select">
-        <mt:If name="__value__" like="幅 :">
+        <mt:If name="__value__" like="幅:">
             <mt:SetVarBlock name="__group_align__"><mt:Var name="__value__" /></mt:SetVarBlock>
-        <mt:ElseIf name="__value__" like="背景 :">
+        <mt:ElseIf name="__value__" like="背景:">
             <mt:SetVarBlock name="__group_bg__"><mt:Var name="__value__" /></mt:SetVarBlock>
         </mt:If>
     <mt:ElseIf name="type" eq="sixapart-input">
@@ -38,13 +38,17 @@
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-スライドショー" /></mt:SetVarBlock>
     <mt:ElseIf name="type" eq="custom-echo_page">
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-ページ誘導" /></mt:SetVarBlock>
+    <mt:ElseIf name="type" eq="core-columns">
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="コアブロック-カラム" /></mt:SetVarBlock>
 
     <mt:Else>
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Var name="__value__" /></mt:SetVarBlock>
     </mt:If>
 </mt:BlockEditorBlocks>
 
-<mt:If name="__group_align__" like="広い">
+<mt:If name="__group_align__" like="とても広い">
+    <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-alignxwide</mt:SetVarBlock>
+<mt:ElseIf name="__group_align__" like="広い">
     <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-alignwide</mt:SetVarBlock>
 <mt:ElseIf name="__group_align__" like="全体">
     <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-alignfull</mt:SetVarBlock>
@@ -62,7 +66,7 @@
     <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-u-bg-fade</mt:SetVarBlock>
 </mt:If>
 
-<div class="echo-mt-be-group <mt:Var name="__group_class__" /><mt:Var name="__group_exclass__" />">
+<div class="echo-mt-be-group<mt:Var name="__group_class__" /><mt:Var name="__group_exclass__" />">
     <div class="echo-mt-be-group-inner">
 <mt:Var name="__group_html__" />
     </div><!-- /.echo-mt-be-group-inner -->

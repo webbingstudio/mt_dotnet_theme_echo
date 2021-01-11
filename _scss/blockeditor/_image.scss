@@ -3,13 +3,7 @@
     img.asset.asset-image {
 
         &.mt-image-center {
-            margin: 2em auto !important;
-
-            @include media-breakpoint-up(md) {
-                margin-top: 3em !important;
-                margin-bottom: 3em !important;
-            }
-
+            margin: 0 auto 2em !important;
         }
 
     }

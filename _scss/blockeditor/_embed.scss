@@ -1,0 +1,41 @@
+/*
+--------------------
+embed
+--------------------
+*/
+
+.#{$pr}#{$be} {
+
+    iframe {
+        display: block;
+        vertical-align: bottom;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    iframe[src*="youtube.com"]:not([width]),
+    iframe[src*="youtube.com"][width="200"] {
+        width: 100%;
+        height: calc( 56.25vw - #{map-get( $grid-gutter-widths, 'md' )} );
+        margin-bottom: 2em;
+
+        @include media-breakpoint-up(sm) {
+            width: 75vw;
+            height: calc( 42.1875vw - #{map-get( $grid-gutter-widths, 'md' )} );
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: 50vw;
+            height: calc( 28.125vw - #{map-get( $grid-gutter-widths, 'md' )} );
+        }
+
+    }
+
+    .twitter-tweet {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2em;
+    }
+
+}
