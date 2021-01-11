@@ -245,9 +245,6 @@ elements:
           widget_recent_media:
             filename: widget_recent_media.mtml
             label: ウィジェット-記事新着-media
-          widget_recent_nav:
-            filename: widget_recent_nav.mtml
-            label: ウィジェット-記事新着-nav
           block_button:
             filename: block_button.mtml
             label: カスタムブロック-ボタン
