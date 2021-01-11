@@ -5,20 +5,102 @@
 */
 
 .#{$be}-columns {
-}
 
-.#{$be}-column:not([style*="width"]) {
-    flex: 1;
+    &:not(.#{$pr}#{$be}-columns-1):not(.#{$pr}#{$be}-columns-2) {
+
+        @include media-breakpoint-up(md) {
+
+            .#{$be}-column {
+
+                &:not(:first-child) {
+                    padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+                }
+
+                &:not(:last-child) {
+                    padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+                }
+
+            }
+
+        }
+
+    }
+
+    &.#{$pr}#{$be}-columns-3 {
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+
+        .#{$be}-column {
+
+            @include media-breakpoint-down(sm) {
+                margin-bottom: map-get( $grid-gutter-widths, 'md' );
+            }
+
+        }
+
+    }
+
+    &.#{$pr}#{$be}-columns-4 {
+
+        @include media-breakpoint-down(sm) {
+            flex-wrap: wrap;
+        }
+
+        .#{$be}-column {
+
+            @include media-breakpoint-down(sm) {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+
+            &:nth-child(1),
+            &:nth-child(2) {
+
+                @include media-breakpoint-down(sm) {
+                    margin-bottom: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+                }
+
+            }
+
+            &:nth-child(1),
+            &:nth-child(3) {
+
+                @include media-breakpoint-down(sm) {
+                    padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+                }
+
+            }
+
+            &:nth-child(2),
+            &:nth-child(4) {
+
+                @include media-breakpoint-down(sm) {
+                    padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+                }
+
+            }
+
+        }
+
+    }
+
 }
 
 .#{$be}-column {
 
-    &:not(:first-child) {
-        padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+    &:not([style*="width"]) {
+        flex: 1;
     }
 
-    &:not(:last-child) {
-        padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+    > .#{$pr}#{$be}-card {
+        height: 100%;
+
+        > .#{$pr}#{$c}card {
+            height: 100%;
+        }
+
     }
 
 }
