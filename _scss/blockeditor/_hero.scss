@@ -7,32 +7,13 @@
 .#{$pr}#{$be}-hero {
 
     .#{$pr}#{$m}title {
-        &:not([class*="#{$pr}#{$be}-hero-title"]) {
-            font-size: 1.75rem;
-
-            @include media-breakpoint-up(sm) {
-                font-size: 2.25rem;
-            }
-
-            @include media-breakpoint-up(md) {
-                font-size: 2.75rem;
-            }
-
-            @include media-breakpoint-up(lg) {
-                font-size: 3.25rem;
-            }
-
-            @include media-breakpoint-up(xl) {
-                font-size: 3.5rem;
-            }
-
-            @include media-breakpoint-up(xxl) {
-                font-size: 4rem;
-            }
-        }
 
         &.#{$pr}#{$be}-hero-title-sm {
-            font-size: 1.5rem;
+            font-size: 1.3125rem;
+
+            @include media-breakpoint-up(xs) {
+                font-size: 1.5rem;
+            }
 
             @include media-breakpoint-up(sm) {
                 font-size: 1.75rem;
@@ -56,11 +37,28 @@
         }
 
         &.#{$pr}#{$be}-hero-title-lg {
-
-            @include media-breakpoint-down(xs) {
-                font-size: 2rem;
+            font-size: 2rem;
+ 
+            @include media-breakpoint-up(sm) {
+                font-size: 2.5rem;
             }
 
+            @include media-breakpoint-up(md) {
+                font-size: 3rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: 3.5rem;
+            }
+
+            @include media-breakpoint-up(xl) {
+                font-size: 4rem;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                font-size: 4.5rem;
+            }
+ 
         }
 
     }

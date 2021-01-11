@@ -188,42 +188,14 @@
 .echo-mt-be-hero
 --------------------
 */
-.echo-mt-be-hero .echo-m-title:not([class*="echo-mt-be-hero-title"]) {
-  font-size: 1.75rem;
-}
-
-@media (min-width: 425px) {
-  .echo-mt-be-hero .echo-m-title:not([class*="echo-mt-be-hero-title"]) {
-    font-size: 2.25rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .echo-mt-be-hero .echo-m-title:not([class*="echo-mt-be-hero-title"]) {
-    font-size: 2.75rem;
-  }
-}
-
-@media (min-width: 1000px) {
-  .echo-mt-be-hero .echo-m-title:not([class*="echo-mt-be-hero-title"]) {
-    font-size: 3.25rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .echo-mt-be-hero .echo-m-title:not([class*="echo-mt-be-hero-title"]) {
-    font-size: 3.5rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .echo-mt-be-hero .echo-m-title:not([class*="echo-mt-be-hero-title"]) {
-    font-size: 4rem;
-  }
-}
-
 .echo-mt-be-hero .echo-m-title.echo-mt-be-hero-title-sm {
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
+}
+
+@media (min-width: 360px) {
+  .echo-mt-be-hero .echo-m-title.echo-mt-be-hero-title-sm {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 425px) {
@@ -256,9 +228,37 @@
   }
 }
 
-@media (max-width: 424.9px) {
+.echo-mt-be-hero .echo-m-title.echo-mt-be-hero-title-lg {
+  font-size: 2rem;
+}
+
+@media (min-width: 425px) {
   .echo-mt-be-hero .echo-m-title.echo-mt-be-hero-title-lg {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be-hero .echo-m-title.echo-mt-be-hero-title-lg {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-hero .echo-m-title.echo-mt-be-hero-title-lg {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .echo-mt-be-hero .echo-m-title.echo-mt-be-hero-title-lg {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .echo-mt-be-hero .echo-m-title.echo-mt-be-hero-title-lg {
+    font-size: 4.5rem;
   }
 }
 
