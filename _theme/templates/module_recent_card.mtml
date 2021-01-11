@@ -1,42 +1,42 @@
 <mt:Ignore>
 # =======================
 # 
-# カスタムブロック-記事新着-card
+# モジュール-記事新着-card
 # 
 # vars:
-#   __category__
-#   __entry_title_tag__
-#   __header_title_tag__
-#   __header_title_text__
-#   __widget_class__
-#   __widget_more_text__
-#   __widget_more_url__
+#   __card_title_tag__
+#   __card_title_text__
+#   __card_limit__
+#   __card_wrapclass__
+#   __card_more_text__
+#   __card_more_url__
 # 
 # =======================
 </mt:Ignore>
-<mt:Unless name="__entry_title_tag__">
-    <mt:SetVar name="__entry_title_tag__" value="p" />
+<mt:Unless name="__card_title_tag__">
+    <mt:SetVar name="__card_title_tag__" value="h2" />
 </mt:Unless>
-<mt:Unless name="__header_title_tag__">
-    <mt:SetVar name="__header_title_tag__" value="p" />
+<mt:Unless name="__card_title_text__">
+    <mt:SetVar name="__card_title_text__" value="ブログ" />
 </mt:Unless>
-<mt:Unless name="__header_title_text__">
-    <mt:SetVar name="__header_title_text__" value="ブログ" />
+<mt:Unless name="__card_limit__">
+    <mt:SetVar name="__card_limit__" value="4" />
 </mt:Unless>
-<mt:Unless name="__widget_more_text__">
-    <mt:SetVar name="__widget_more_text__" value="もっと見る" />
+<mt:Unless name="__card_wrapclass__">
+    <mt:SetVar name="__card_wrapclass__" value="echo-p-widget echo-p-widget-card" />
 </mt:Unless>
-<mt:Unless name="__widget_more_url__">
-    <mt:setVarBlock name="__widget_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
+<mt:Unless name="__card_more_text__">
+    <mt:SetVar name="__card_more_text__" value="一覧を見る" />
+</mt:Unless>
+<mt:Unless name="__card_more_url__">
+    <mt:setVarBlock name="__card_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
 </mt:Unless>
 
-<mt:Entries category="$__category__" sort_by="authored_on" sort_order="descend" limit="6">
+<mt:Entries sort_by="authored_on" sort_order="descend" limit="$__card_limit__">
 <mt:EntriesHeader>
-<section class="echo-p-widget echo-p-widget-card echo-p-widget-entry <mt:Var name="__widget_class__" />">
+<section class="<mt:Var name="__card_wrapclass__" />">
     <div class="echo-p-widget-header">
-        <div class="echo-l-container">
-            <<mt:Var name="__header_title_tag__" /> class="echo-p-widget-title echo-m-title echo-m-title-level-2  echo-m-title-style-c"><mt:Var name="__header_title_text__" /></<mt:Var name="__header_title_tag__" />>
-        </div><!-- /.echo-l-container -->
+        <<mt:Var name="__card_title_tag__" /> class="echo-m-title echo-m-title-level-2 echo-m-title-style-c"><mt:Var name="__card_title_text__" /></<mt:Var name="__card_title_tag__" />>
     </div><!-- /.echo-p-widget-header -->
 
     <div class="echo-p-widget-contents">
@@ -44,7 +44,7 @@
             <div class="echo-l-grid-row">
 </mt:EntriesHeader>
 
-                <div class="echo-l-grid-col-12 echo-l-grid-col-xs-6 echo-l-grid-col-md-4">
+                <div class="echo-l-grid-col-6 echo-l-grid-col-md-3">
                     <article class="echo-c-card echo-c-card-entry">
                         <a href="<mt:EntryPermalink />" class="echo-c-card-inner">
                             <div class="echo-c-card-object">
@@ -58,9 +58,8 @@
                                 </mt:EntryCategories>
                             </div><!-- /.echo-c-card-object -->
                             <div class="echo-c-card-contents">
-                                <time class="card-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$echo_entry_date" /></time>
-                                <<mt:Var name="__entry_title_tag__" /> class="echo-c-card-title echo-m-title echo-m-title-level-6 echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></<mt:Var name="__entry_title_tag__" />>
-                                <p class="echo-c-card-body"><mt:EntryExcerpt /></p>
+                                <time class="echo-c-card-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$echo_entry_date" /></time>
+                                <p class="echo-c-card-title echo-m-title echo-m-title-level-6 echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></p>
                             </div><!-- /.echo-c-card-contents -->
                         </a><!-- /.echo-c-card-inner -->
                     </article><!-- /.echo-c-card -->
@@ -71,10 +70,10 @@
         </div><!-- /.echo-l-container -->
     </div><!-- /.echo-p-widget-contents -->
 
-    <mt:If name="__widget_more_url__">
+    <mt:If name="__card_more_url__">
     <div class="echo-p-widget-footer">
         <div class="echo-l-container">
-            <p class="echo-p-widget-link"><a href="<mt:Var name="__widget_more_url__" />" class="echo-m-btn echo-m-btn-gray echo-m-btn-bordered echo-m-btn-block"><mt:Var name="__widget_more_text__" /></a></p>
+            <p class="echo-p-widget-link"><a href="<mt:Var name="__card_more_url__" />" class="echo-m-btn echo-m-btn-lg echo-m-btn-gray echo-m-btn-bordered echo-m-btn-block"><mt:Var name="__card_more_text__" /></a></p>
         </div><!-- /.echo-l-container -->
     </div><!-- /.echo-p-widget-footer -->
     </mt:If>

@@ -910,7 +910,7 @@ embed
   }
 }
 
-.echo-mt-be p {
+.echo-mt-be p:not(.echo-m-title) {
   line-height: 2;
 }
 

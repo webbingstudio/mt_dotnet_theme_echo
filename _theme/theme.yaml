@@ -236,9 +236,9 @@ elements:
           widget_page_flip:
             filename: widget_page_flip.mtml
             label: ウィジェット-ページ指定-flip
-          widget_recent_card:
-            filename: widget_recent_card.mtml
-            label: ウィジェット-記事新着-card
+          module_recent_card:
+            filename: module_recent_card.mtml
+            label: モジュール-記事新着-card
           widget_recent_headline:
             filename: widget_recent_headline.mtml
             label: ウィジェット-記事新着-headline

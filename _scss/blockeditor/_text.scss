@@ -1,6 +1,6 @@
 .#{$pr}#{$be} {
 
-    p {
+    p:not(.#{$pr}#{$m}title) {
         line-height: $line-height-lg;
     }
 
