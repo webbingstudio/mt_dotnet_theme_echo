@@ -6,11 +6,12 @@
 # vars:
 #   __recent_class__
 #   __recent_type__
+#   __recent_more__
 #   __recent_title_text__
 # 
 # =======================
 </mt:Ignore>
-<mt:SetVar name="__recent_class__" value="" /><mt:SetVar name="__recent_type__" value="" /><mt:SetVar name="__recent_title_text__" value="" />
+<mt:SetVar name="__recent_class__" value="" /><mt:SetVar name="__recent_type__" value="" /><mt:SetVar name="__recent_more__" value="" /><mt:SetVar name="__recent_title_text__" value="" />
 
 <mt:BlockEditorBlocks>
 <mt:If name="type" eq="sixapart-input">
@@ -19,9 +20,14 @@
     <mt:If name="__value__" like="タイプ:">
         <mt:SetVarBlock name="__recent_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
     </mt:If>
+    <mt:If name="__value__" like="一覧:">
+        <mt:If name="__value__" like="表示する">
+            <mt:SetVar name="__recent_more__" value="true" />
+        </mt:If>
+    </mt:If>
 </mt:If>
 </mt:BlockEditorBlocks>
 
 <mt:If name="__recent_type__" like="画像上＋タイトル下">
-	<mt:Include module="モジュール-記事新着-card" __card_title_text__="$__recent_title_text__" __card_wrapclass__="echo-mt-be-recent echo-mt-be-recent-card echo-mt-be-block-custom" />
+    <mt:Include module="モジュール-記事新着-card" __card_title_text__="$__recent_title_text__" __card_wrapclass__="echo-mt-be-recent echo-mt-be-recent-card echo-mt-be-block-custom" __card_more__="$__recent_more__" />
 </mt:If>

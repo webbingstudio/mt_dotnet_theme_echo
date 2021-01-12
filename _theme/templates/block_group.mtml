@@ -38,6 +38,8 @@
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-スライドショー" /></mt:SetVarBlock>
     <mt:ElseIf name="type" eq="custom-echo_page">
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-ページ誘導" /></mt:SetVarBlock>
+    <mt:ElseIf name="type" eq="custom-echo_recent">
+        <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="カスタムブロック-記事新着" /></mt:SetVarBlock>
     <mt:ElseIf name="type" eq="core-columns">
         <mt:SetVarBlock name="__group_html__"><mt:Var name="__group_html__" /><mt:Include module="コアブロック-カラム" /></mt:SetVarBlock>
 
