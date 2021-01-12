@@ -1,0 +1,62 @@
+/*
+--------------------
+.#{$pr}#{$be} > Heading element (without .#{$pr}#{$m}title)
+--------------------
+*/
+
+.#{$pr}#{$be} {
+
+    h1:not(.#{$pr}#{$m}title) {
+        font-size: ( 28/16 ) + rem;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            font-size: ( 32/16 ) + rem;
+        }
+
+    }
+
+    h2:not(.#{$pr}#{$m}title) {
+        font-size: ( 24/16 ) + rem;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            font-size: ( 28/16 ) + rem;
+        }
+
+    }
+
+    h3:not(.#{$pr}#{$m}title) {
+        font-size: ( 20/16 ) + rem;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            font-size: ( 24/16 ) + rem;
+        }
+
+    }
+
+    h4:not(.#{$pr}#{$m}title) {
+        font-size: ( 18/16 ) + rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: ( 20/16 ) + rem;
+        }
+
+    }
+
+    h5:not(.#{$pr}#{$m}title) {
+        font-size: ( 17/16 ) + rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: ( 18/16 ) + rem;
+        }
+
+    }
+
+    h6:not(.#{$pr}#{$m}title) {
+        font-size: ( 16/16 ) + rem;
+    }
+
+}
+

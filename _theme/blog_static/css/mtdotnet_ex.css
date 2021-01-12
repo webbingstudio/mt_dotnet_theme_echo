@@ -4,6 +4,110 @@
  */
 /*
 --------------------
+.echo-c-card
+--------------------
+*/
+.echo-c-card-contents {
+  position: relative;
+}
+
+@media (max-width: 999.9px) {
+  .echo-c-card-contents {
+    font-size: 0.75rem;
+  }
+}
+
+.echo-c-card-category .echo-m-label {
+  vertical-align: bottom;
+  margin-right: 0;
+  padding-left: 10px;
+  font-size: 0.625rem;
+}
+
+@media (min-width: 1000px) {
+  .echo-c-card-category .echo-m-label {
+    font-size: 0.75rem;
+  }
+}
+
+time.echo-c-card-meta {
+  display: block;
+}
+
+/*
+--------------------
+.echo-p-widget
+--------------------
+*/
+.echo-p-widget-header,
+.echo-p-widget-footer {
+  width: calc( 100% - 20px);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.echo-p-widget-header {
+  padding-bottom: 30px;
+}
+
+.echo-p-widget-header .echo-m-title {
+  margin-bottom: 0;
+}
+
+.echo-p-widget.echo-p-widget-card .echo-p-widget-contents {
+  width: calc( 100% - 20px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 767.9px) {
+  .echo-p-widget.echo-p-widget-card .echo-l-grid-row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+}
+
+.echo-p-widget.echo-p-widget-card [class*="echo-l-grid-col"] {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767.9px) {
+  .echo-p-widget.echo-p-widget-card [class*="echo-l-grid-col"] {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+/*
+--------------------
+.echo-m-title
+--------------------
+*/
+.echo-m-title-level-7 {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 1000px) {
+  .echo-m-title-level-7 {
+    font-size: 1rem;
+  }
+}
+
+.echo-m-title-level-8 {
+  font-size: 0.8125rem;
+}
+
+@media (min-width: 1000px) {
+  .echo-m-title-level-8 {
+    font-size: 0.9375rem;
+  }
+}
+
+/*
+--------------------
 .mt-be(layout)
 --------------------
 */
@@ -502,6 +606,11 @@ embed
   text-align: center;
 }
 
+/*
+--------------------
+.echo-mt-be > list
+--------------------
+*/
 .echo-mt-be > *:not([class*="echo-mt-be-block-custom"]) ul:not([class*="echo-"]),
 .echo-mt-be > *:not([class*="echo-mt-be-block-custom"]) ol:not([class*="echo-"]) {
   overflow: hidden;
@@ -910,6 +1019,17 @@ embed
   }
 }
 
+/*
+--------------------
+.echo-mt-be > text
+--------------------
+*/
+@media (max-width: 999.9px) {
+  .echo-mt-be {
+    font-size: 0.875rem;
+  }
+}
+
 .echo-mt-be p:not(.echo-m-title) {
   line-height: 2;
 }
@@ -918,9 +1038,3 @@ embed
   font-style: normal;
   color: #d20b2a;
 }
-
-/*
---------------------
-.echo-mt-be-title
---------------------
-*/

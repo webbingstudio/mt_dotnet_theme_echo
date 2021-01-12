@@ -10,30 +10,7 @@
 
 @import "_config_mtdotnet";
 
-.#{$pr}#{$be} {
-
-    > :not([class*="#{$pr}#{$m}title"]) {
-
-        h1:not([class*="#{$pr}#{$m}title"]) {
-            text-align: center;
-        }
-
-        h2:not([class*="#{$pr}#{$m}title"]) {
-            text-align: center;
-        }
-
-        h3:not([class*="#{$pr}#{$m}title"]) {
-        }
-
-        h4:not([class*="#{$pr}#{$m}title"]) {
-        }
-
-        h5:not([class*="#{$pr}#{$m}title"]) {
-        }
-
-        h6:not([class*="#{$pr}#{$m}title"]) {
-        }
-
-    }
-
-}
+@import "styles/_card";
+@import "styles/_heading_default";
+@import "styles/_title";
+@import "styles/_widget";

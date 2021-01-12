@@ -1,0 +1,22 @@
+/*
+--------------------
+.#{$pr}#{$be} > text
+--------------------
+*/
+
+.#{$pr}#{$be} {
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-sm;
+    }
+
+    p:not(.#{$pr}#{$m}title) {
+        line-height: $line-height-lg;
+    }
+
+    em:not([class]) {
+        font-style: normal;
+        color: $important;
+    }
+
+}

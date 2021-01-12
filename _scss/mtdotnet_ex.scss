@@ -9,17 +9,23 @@
 @import "mixin/_mixin";
 
 @import "_config_mtdotnet";
-@import "blockeditor/_layout";
 
-@import "blockeditor/_btn";
-@import "blockeditor/_btns";
-@import "blockeditor/_columns";
-@import "blockeditor/_embed";
-@import "blockeditor/_hero";
-@import "blockeditor/_hr";
-@import "blockeditor/_image";
-@import "blockeditor/_list";
-@import "blockeditor/_slider";
-@import "blockeditor/_spacer";
-@import "blockeditor/_text";
-@import "blockeditor/_title";
+// extend: Additional CSS that does not depend on theme style
+@import "mtdotnet_ex/extend/_card";
+@import "mtdotnet_ex/extend/_widget";
+@import "mtdotnet_ex/extend/_title";
+
+// Include "_layout" first
+@import "mtdotnet_ex/blockeditor/_layout";
+
+@import "mtdotnet_ex/blockeditor/_btn";
+@import "mtdotnet_ex/blockeditor/_btns";
+@import "mtdotnet_ex/blockeditor/_columns";
+@import "mtdotnet_ex/blockeditor/_embed";
+@import "mtdotnet_ex/blockeditor/_hero";
+@import "mtdotnet_ex/blockeditor/_hr";
+@import "mtdotnet_ex/blockeditor/_image";
+@import "mtdotnet_ex/blockeditor/_list";
+@import "mtdotnet_ex/blockeditor/_slider";
+@import "mtdotnet_ex/blockeditor/_spacer";
+@import "mtdotnet_ex/blockeditor/_text";

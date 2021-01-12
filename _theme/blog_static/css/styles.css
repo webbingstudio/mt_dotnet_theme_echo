@@ -2,10 +2,147 @@
  * styles.css
  *
  */
-.echo-mt-be > :not([class*="echo-m-title"]) h1:not([class*="echo-m-title"]) {
+/*
+--------------------
+.echo-c-card
+--------------------
+*/
+.echo-c-card-category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0, -100%);
+  margin: 0;
+  line-height: 1;
+  z-index: 21;
+}
+
+.echo-c-card-category .echo-m-label {
+  color: #fff;
+  background-color: #333;
+}
+
+time.echo-c-card-meta {
+  font-family: "Helvetica", "Roboto", "-apple-system", "Open Sans", "Arial", sans-serif;
+  letter-spacing: .03em;
+}
+
+/*
+--------------------
+.echo-mt-be > Heading element (without .echo-m-title)
+--------------------
+*/
+.echo-mt-be h1:not(.echo-m-title) {
+  font-size: 1.75rem;
   text-align: center;
 }
 
-.echo-mt-be > :not([class*="echo-m-title"]) h2:not([class*="echo-m-title"]) {
+@media (min-width: 1000px) {
+  .echo-mt-be h1:not(.echo-m-title) {
+    font-size: 2rem;
+  }
+}
+
+.echo-mt-be h2:not(.echo-m-title) {
+  font-size: 1.5rem;
   text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be h2:not(.echo-m-title) {
+    font-size: 1.75rem;
+  }
+}
+
+.echo-mt-be h3:not(.echo-m-title) {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be h3:not(.echo-m-title) {
+    font-size: 1.5rem;
+  }
+}
+
+.echo-mt-be h4:not(.echo-m-title) {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be h4:not(.echo-m-title) {
+    font-size: 1.25rem;
+  }
+}
+
+.echo-mt-be h5:not(.echo-m-title) {
+  font-size: 1.0625rem;
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be h5:not(.echo-m-title) {
+    font-size: 1.125rem;
+  }
+}
+
+.echo-mt-be h6:not(.echo-m-title) {
+  font-size: 1rem;
+}
+
+/*
+--------------------
+.echo-p-widget
+--------------------
+*/
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-m-title-style-c:after,
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-m-title-style-f:after {
+  background-color: #fff;
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-m-title-style-d:before, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-m-title-style-d:after {
+  background-color: #fff;
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-m-title-style-e {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/*
+--------------------
+.echo-p-widget
+--------------------
+*/
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn {
+  color: #fff;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:hover, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:focus, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:active, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn.active {
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: transparent;
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn.disabled, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:disabled,
+fieldset[disabled] .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn {
+  opacity: .65;
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn.disabled:hover, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn.disabled.hover, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn.disabled:focus, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn.disabled.focus, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:disabled:hover, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:disabled.hover, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:disabled:focus, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:disabled.focus,
+fieldset[disabled] .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:hover,
+fieldset[disabled] .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn.hover,
+fieldset[disabled] .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn:focus,
+fieldset[disabled] .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn.focus {
+  color: #fff;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+a:hover .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn,
+a:focus .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn,
+a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn {
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: transparent;
 }

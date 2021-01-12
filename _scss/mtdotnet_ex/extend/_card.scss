@@ -1,0 +1,34 @@
+/*
+--------------------
+.#{$pr}#{$c}card
+--------------------
+*/
+
+.#{$pr}#{$c}card#{$c1}contents {
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-xs;
+    }
+
+}
+
+.#{$pr}#{$c}card#{$c1}category {
+
+    .#{$pr}#{$m}label {
+        vertical-align: bottom;
+        margin-right: 0;
+        padding-left: $spacer;
+        font-size: $font-size-xxs;
+
+        @include media-breakpoint-up(lg) {
+            font-size: $font-size-xs;
+        }
+
+    }
+
+}
+
+time.#{$pr}#{$c}card#{$c1}meta {
+    display: block;
+}

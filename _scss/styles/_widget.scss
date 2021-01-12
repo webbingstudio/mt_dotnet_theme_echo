@@ -1,0 +1,24 @@
+/*
+--------------------
+.#{$pr}#{$widget}
+--------------------
+*/
+
+.#{$pr}#{$be}-has-bg:not(.#{$pr}#{$u}bg-third):not(.#{$pr}#{$u}bg-fade) {
+
+    .#{$pr}#{$widget}#{$c1}footer {
+
+        .#{$pr}#{$m}btn {
+            @include button-variant(
+                $body-inverse-color,
+                transparent,
+                rgba($body-inverse-color, .8),
+                $body-color,
+                rgba($body-inverse-color, .8),
+                transparent
+            );
+        }
+
+    }
+
+}

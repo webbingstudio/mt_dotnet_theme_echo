@@ -1,0 +1,26 @@
+/*
+--------------------
+.#{$pr}#{$c}card
+--------------------
+*/
+
+.#{$pr}#{$c}card#{$c1}category {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate( 0, -100% );
+    margin: 0;
+    line-height: 1;
+    z-index: 21;
+
+    .#{$pr}#{$m}label {
+        color: $ui-inverse-color;
+        background-color: $gray;
+    }
+
+}
+
+time.#{$pr}#{$c}card#{$c1}meta {
+    font-family: $font-family-second;
+    letter-spacing: .03em;
+}

@@ -1,0 +1,31 @@
+/*
+--------------------
+.#{$pr}#{$widget}
+--------------------
+*/
+
+.#{$pr}#{$be}-has-bg:not(.#{$pr}#{$u}bg-third):not(.#{$pr}#{$u}bg-fade) {
+
+    .#{$pr}#{$m}title#{$c3}style#{$c3}c,
+    .#{$pr}#{$m}title#{$c3}style#{$c3}f {
+
+        &:after {
+            background-color: #fff;
+        }
+
+    }
+
+    .#{$pr}#{$m}title#{$c3}style#{$c3}d {
+
+        &:before,
+        &:after {
+            background-color: #fff;
+        }
+
+    }
+
+    .#{$pr}#{$m}title#{$c3}style#{$c3}e {
+        background-color: rgba( 255, 255, 255, .15 );
+    }
+
+}
