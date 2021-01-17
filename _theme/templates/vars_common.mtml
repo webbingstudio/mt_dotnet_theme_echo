@@ -2,12 +2,18 @@
 # =======================
 # 
 # 変数-共通
+#
+# vars:
+#   __blog_suffix__
+#   __blog_topicpath_home__
 # 
 # =======================
 </mt:Ignore>
 
-<mt:SetVar name="echo_breadcrumb_home_label" value="ホーム" note="トピックパスの起点の名称" />
-<mt:SetVar name="echo_entry_date" note="記事の年月日フォーマット" value="%Y.%m.%d" />
-<mt:SetVar name="echo_entry_time" note="記事の時分秒フォーマット" value="%H:%m:%S" />
+<mt:WebSiteName encode_html="1" setvar="__blog_suffix__" />
+<mt:SetVar name="__blog_topicpath_home__" value="ホーム" />
+
+<mt:SetVar name="echo_entry_date" value="%Y.%m.%d" />
+<mt:SetVar name="echo_entry_time" value="%H:%m:%S" />
 
 </mt:Unless>

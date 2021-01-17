@@ -4,35 +4,52 @@
 # 
 # vars:
 #   __layout__
-#   __meta-title__
-#   __meta-link__
-#   __meta-js__
+#
+# vars(extend):
+#   __meta-first__
+#   __meta-last__
+#   __link__
+#   __script__
+#   __head-last__
 #   __body-class__
 #   __main__
 # 
 # =======================
 </mt:Ignore><!DOCTYPE html>
+
+<mt:Unless name="__meta-first__"><mt:SetVarBlock name="__meta-first__">
+<title><mt:WebSiteName encode_html="1" /></title>
+</mt:SetVarBlock></mt:Unless>
+<mt:Unless name="__meta-last__"><mt:SetVarBlock name="__meta-last__">
+<meta property="og:title" content="<mt:WebSiteName encode_html="1" />" />
+</mt:SetVarBlock></mt:Unless>
+<mt:Unless name="__link__"><mt:SetVar name="__link__" value="" /></mt:SetVarBlock></mt:Unless>
+<mt:Unless name="__script__"><mt:SetVar name="__script__" value="" /></mt:Unless>
+<mt:Unless name="__head-last__"><mt:SetVar name="__head-last__" value="" /></mt:SetVarBlock></mt:Unless>
+<mt:Unless name="__main__">
+<mt:SetVarBlock name="__main__"><div class="echo-l-container"><h1>こんにちは世界！</h1></div></mt:SetVarBlock>
+</mt:Unless>
+
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-<mt:Unless name="__meta-title__">
-<mt:SetVarBlock name="__meta-title__">
-    <title>echo_mtdotnet</title>
-    <meta property="og:title" content="echo_mtdotnet" />
-</mt:SetVarBlock>
-</mt:Unless>
-<mt:Var name="__meta-title__" />
-
-    <link rel="stylesheet" href="/css/echo.min.css">
-    <link rel="stylesheet" href="/css/mtdotnet_ex.min.css">
-    <link rel="stylesheet" href="/css/styles.min.css">
-
-    <link rel="stylesheet" href="/plugins/toggle.css">
-    <link rel="stylesheet" href="/lib/scroll-hint/scroll-hint.css">
-    <link rel="stylesheet" href="/lib/slick/slick.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<mt:Var name="__meta-first__" />
+<mt:Var name="__meta-last__" />
+<link rel="stylesheet" href="/css/echo.min.css">
+<link rel="stylesheet" href="/css/mtdotnet_ex.min.css">
+<link rel="stylesheet" href="/css/styles.min.css">
+<link rel="stylesheet" href="/plugins/toggle.css">
+<link rel="stylesheet" href="/lib/scroll-hint/scroll-hint.css">
+<link rel="stylesheet" href="/lib/slick/slick.css">
+<mt:Var name="__link__" />
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="/plugins/toggle.min.js"></script>
+<script src="/lib/scroll-hint/scroll-hint.min.js"></script>
+<script src="/lib/slick/slick.min.js"></script>
+<script src="/js/common.min.js"></script>
+<mt:Var name="__script__" />
 
 <style>
 .echo-mt-be-table.js-scrollable th,
@@ -41,46 +58,16 @@
 }
 </style>
 
-
-<mt:Unless name="__meta-link__">
-<mt:SetVarBlock name="__meta-link__">
-</mt:SetVarBlock>
-</mt:Unless>
-<mt:Var name="__meta-link__" />
-
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="/plugins/toggle.min.js"></script>
-    <script src="/lib/scroll-hint/scroll-hint.min.js"></script>
-    <script src="/lib/slick/slick.min.js"></script>
-    <script src="/js/common.min.js"></script>
-
-<mt:Unless name="__meta-js__">
-<mt:SetVarBlock name="__meta-js__">
-</mt:SetVarBlock>
-</mt:Unless>
-<mt:Var name="__meta-js__" />
+<mt:Var name="__head-last__" />
 </head>
 <body class="<mt:Var name="__body-class__" />">
 <div class="echo-l-document" id="echo-document">
-
     <mt:Include module="モジュール-ヘッダ" />
-
     <main class="echo-p-main" role="main">
-<mt:Unless name="__main__">
-<mt:SetVarBlock name="__main__">
-        <div class="echo-l-container">
-
-            こんにちは世界！！
-
-        </div><!-- /.echo-l-container -->
-</mt:SetVarBlock>
-</mt:Unless>
 <mt:Var name="__main__" />
     </main><!-- /.echo-p-main -->
-
     <mt:Include module="モジュール-フッタ" />
     <mt:Include module="モジュール-スマートフォンメニュー" />
-
 </div><!-- /.echo-l-document -->
 </body>
 </html>

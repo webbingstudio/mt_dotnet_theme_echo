@@ -1,0 +1,87 @@
+<mt:Unless strip_linefeeds="1"><mt:Ignore>
+# =======================
+# 
+# 変数-ページ
+# 
+# vars:
+#   __folder_basename__
+#   __folder_label__
+#   __folder_path__
+#   __folder_parent_basename__
+#   __folder_parent_label__
+#   __folder_parent_path__
+#   __folder_ancestor_basename__
+#   __folder_ancestor_label__
+#   __folder_ancestor_path__
+#   __meta_title__
+#
+# vars(extend):
+#   __blog_suffix__
+# 
+# =======================
+</mt:Ignore>
+
+<mt:Ignore>
+# -----------------------
+# フォルダ
+# 
+# vars(local):
+#   __is_ancestor__
+# -----------------------
+</mt:Ignore>
+<mt:SetVar name="__is_ancestor__" value="false" /><mt:SetVar name="__folder_basename__" value="" /><mt:SetVar name="__folder_label__" value="" /><mt:SetVar name="__folder_path__" value="" />
+<mt:Ignore>現在のフォルダ情報</mt:Ignore>
+<mt:PageFolder>
+<mt:FolderBasename setvar="__folder_basename__" />
+<mt:FolderLabel encode_html="1" setvar="__folder_label__" />
+<mt:SetVarBlock name="__folder_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
+</mt:PageFolder>
+
+<mt:Ignore>親・先祖フォルダ情報を一旦現在のフォルダ情報と同一にする</mt:Ignore>
+<mt:SetVar name="__folder_parent_basename__" value="$__folder_basename__" />
+<mt:SetVar name="__folder_parent_label__" value="$__folder_label__" />
+<mt:SetVar name="__folder_parent_path__" value="$__folder_path__" />
+<mt:SetVar name="__folder_ancestor_basename__" value="$__folder_basename__" />
+<mt:SetVar name="__folder_ancestor_label__" value="$__folder_label__" />
+<mt:SetVar name="__folder_ancestor_path__" value="$__folder_path__" />
+
+<mt:Ignore>親・先祖フォルダを取得</mt:Ignore>
+<mt:ParentFolders exclude_current="1">
+<mt:If name="__is_ancestor__" eq="false">
+<mt:Ignore>先祖フォルダ情報をまだ取得していなければ</mt:Ignore>
+<mt:FolderBasename setvar="__folder_ancestor_basename__" />
+<mt:FolderLabel encode_html="1" setvar="__folder_ancestor_label__" />
+<mt:SetVarBlock name="__folder_ancestor_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
+<mt:SetVar name="__is_ancestor__" value="true" />
+</mt:If>
+<mt:FolderBasename setvar="__folder_parent_basename__" />
+<mt:FolderLabel encode_html="1" setvar="__folder_parent_label__" />
+<mt:SetVarBlock name="__folder_parent_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
+</mt:ParentFolders>
+
+<mt:Ignore>
+# -----------------------
+# META:title
+# -----------------------
+</mt:Ignore>
+
+<mt:If tag="CustomFieldValue" identifier="EchoPageMetaTitle">
+<mt:Ignore>METAのタイトルが別途指定されている場合</mt:Ignore>
+<mt:CustomFieldValue identifier="EchoPageMetaTitle" encode_html="1" setvar="__meta_title__" />
+<mt:Else>
+<mt:Ignore>インデックスページであれば: フォルダが終点となる</mt:Ignore>
+<mt:If tag="PageBaseName" eq="index">
+<mt:SetVarBlock name="__meta_title__"><mt:Var name="__folder_label__" /><mt:If name="__folder_basename__" neq="$__folder_ancestor_basename__"> | <mt:Var name="__folder_ancestor_label__" /></mt:If> | <mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
+<mt:Else>
+<mt:Ignore>インデックスページでなければ: ページが終点となる</mt:Ignore>
+<mt:SetVarBlock name="__meta_title__"><mt:PageTitle encode_html="1" /><mt:If name="__folder_basename__"> | <mt:Var name="__folder_label__" /></mt:If><mt:If name="__folder_basename__" neq="$__folder_ancestor_basename__"> | <mt:Var name="__folder_ancestor_label__" /></mt:If><mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
+</mt:If>
+</mt:If>
+
+<mt:SetVarBlock name="__meta-first__">
+<title><mt:Var name="__meta_title__" /></title>
+</mt:SetVarBlock>
+<mt:SetVarBlock name="__meta-last__">
+<meta property="og:title" content="<mt:Var name="__meta_title__" />" />
+</mt:SetVarBlock>
+</mt:Unless>

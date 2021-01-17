@@ -230,9 +230,15 @@ elements:
           module_thumbnail_field_small:
             filename: module_thumbnail_field_small.mtml
             label: モジュール-サムネイルの生成-フィールド-小
+          module_topicpath:
+            filename: module_topicpath.mtml
+            label: モジュール-パンくずリスト
           vars_common:
             filename: vars_common.mtml
             label: 変数-共通
+          vars_page:
+            filename: vars_page.mtml
+            label: 変数-ページ
           widget_page_flip:
             filename: widget_page_flip.mtml
             label: ウィジェット-ページ指定-flip

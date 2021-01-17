@@ -2,27 +2,59 @@
 # =======================
 # 
 # ページ
+#
+# vars:
+#   __link__
+#   __script__
+#   __head-last__
+#   __body-class__
+#   __main__
+#
+# vars(extend):
+#   __folder_basename__
+#   __folder_label__
+#   __folder_path__
+#   __folder_parent_basename__
+#   __folder_parent_label__
+#   __folder_parent_path__
+#   __folder_ancestor_basename__
+#   __folder_ancestor_label__
+#   __folder_ancestor_path__
 # 
 # =======================
 </mt:Ignore>
 <mt:Include module="変数-共通" />
-<mt:SetVarBlock name="__meta-js__">
+<mt:Include module="変数-ページ" />
+
+<mt:SetVarBlock name="__js__">
 <script>var echo_slider_id = 0;</script>
 </mt:SetVarBlock>
 
+<mt:SetVarBlock name="__head-last__">
+<mt:If tag="CustomFieldValue" identifier="EchoPageExHead"><mt:CustomFieldValue identifier="EchoPageExHead" /></mt:If>
+</mt:SetVarBlock>
+
 <mt:SetVarBlock name="__main__">
+<mt:If tag="CustomFieldValue" identifier="EchoPageShowTopicPath" eq="1">
+    <mt:Include module="モジュール-パンくずリスト" />
+</mt:If>
+<mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1">
+    <div class="echo-p-pagehead">
+        <h1 class="echo-p-pagehead-title"><mt:Var name="__folder_ancestor_label__" /></h1>
+        <p class="echo-p-pagehead-subtitle"><mt:Var name="__folder_ancestor_basename__" /></p>
+    </div><!-- /.echo-p-pagehead -->
+</mt:If>
 
-<section class="c-post c-post-page">
+<section class="echo-c-post echo-c-post-page">
 
-        <mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="true">
-        </mt:If>
-        <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="true">
-        <div class="c-post-header">
-            <h2 class="c-post-title"><mt:PageTitle /></h2>
-        </div><!-- /.c-post-header -->
-        </mt:If>
+    <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
+    <div class="echo-c-post-header">
+        <h2 class="echo-c-post-title echo-m-title echo-m-title-style-b echo-m-title-level-1"><mt:PageTitle /></h2>
+    </div><!-- /.echo-c-post-header -->
+    </mt:If>
 
-    <div class="c-post-contents echo-mt-be">
+    <div class="echo-c-post-contents echo-mt-be">
+
 <mt:BlockEditorBlocks tag="PageBody">
 <script>++echo_slider_id;</script>
     <mt:If name="type" eq="custom-echo_title">
@@ -52,10 +84,8 @@
     </mt:If>
 </mt:BlockEditorBlocks>
 
-</div><!-- /.c-post-contents -->
-
-</section><!-- /.c-post -->
-
+    </div><!-- /.echo-c-post-contents -->
+</section><!-- /.echo-c-post -->
 </mt:SetVarBlock>
 
 <mt:Include module="レイアウト-基本" />
