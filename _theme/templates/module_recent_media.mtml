@@ -4,6 +4,7 @@
 # モジュール-記事新着-media
 # 
 # vars:
+#   __media_widget_tag__
 #   __media_title_tag__
 #   __media_title_text__
 #   __media_limit__
@@ -16,6 +17,11 @@
 </mt:Ignore>
 <mt:Unless name="__media_title_tag__">
     <mt:SetVar name="__media_title_tag__" value="h2" />
+</mt:Unless>
+<mt:Unless name="__media_title_text__">
+    <mt:SetVar name="__media_widget_tag__" value="div" />
+<mt:Else>
+    <mt:SetVar name="__media_widget_tag__" value="section" />
 </mt:Unless>
 <mt:Unless name="__media_limit__">
     <mt:SetVar name="__media_limit__" value="4" />
@@ -32,7 +38,7 @@
 <mt:If name="__media_wrapclass__">
 <div class="<mt:Var name="__media_wrapclass__" />">
 </mt:If>
-<section class="echo-p-widget echo-p-widget-media">
+<<mt:Var name="__media_widget_tag__" /> class="echo-p-widget echo-p-widget-media">
     <mt:If name="__media_title_text__">
     <div class="echo-p-widget-header">
         <<mt:Var name="__media_title_tag__" /> class="echo-m-title echo-m-title-level-2 echo-m-title-style-c"><mt:Var name="__media_title_text__" /></<mt:Var name="__media_title_tag__" />>
@@ -44,7 +50,7 @@
 </mt:EntriesHeader>
 
             <div class="echo-l-grid-col-12 echo-l-grid-col-lg-6">
-                <article class="echo-c-media-wraper">
+                <div class="echo-c-media-wraper">
                     <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">
                         <div class="echo-c-media-object">
                             <figure class="echo-m-thumbnail echo-m-thumbnail-ogimage">
@@ -62,7 +68,7 @@
                             <p class="echo-c-media-body"><mt:EntryExcerpt /></p>
                         </div>
                     </a>
-                </article><!-- /.echo-c-media-wraper -->
+                </div><!-- /.echo-c-media-wraper -->
             </div><!-- /.echo-l-grid-col -->
 
 <mt:EntriesFooter>
@@ -78,7 +84,7 @@
     </div><!-- /.echo-p-widget-footer -->
     </mt:If>
     </mt:If>
-</section><!-- /.echo-p-widget -->
+</<mt:Var name="__media_widget_tag__" />><!-- /.echo-p-widget -->
 <mt:If name="<mt:Var name="__media_wrapclass__" />">
 </div><!-- /.<mt:Var name="__media_wrapclass__" /> -->
 </mt:If>
