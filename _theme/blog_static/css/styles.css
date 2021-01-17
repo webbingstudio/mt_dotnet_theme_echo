@@ -91,6 +91,53 @@ time.echo-c-card-meta {
 
 /*
 --------------------
+.echo-c-media
+--------------------
+*/
+@media (max-width: 767.9px) {
+  .echo-c-media {
+    position: relative;
+  }
+}
+
+@media (min-width: 768px) {
+  .echo-c-media-object {
+    position: relative;
+  }
+}
+
+.echo-c-media-category {
+  margin: 0;
+  line-height: 1 !important;
+}
+
+@media (min-width: 768px) {
+  .echo-c-media-category {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 21;
+  }
+}
+
+.echo-c-media-category .echo-m-label {
+  color: #fff;
+  background-color: #333;
+}
+
+@media (max-width: 767.9px) {
+  .echo-c-media-category .echo-m-label {
+    display: block;
+  }
+}
+
+time.echo-c-media-meta {
+  font-family: "Helvetica", "Roboto", "-apple-system", "Open Sans", "Arial", sans-serif;
+  letter-spacing: .03em;
+}
+
+/*
+--------------------
 .echo-p-widget
 --------------------
 */

@@ -21,6 +21,37 @@
 
 }
 
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
+
+    .#{$pr}#{$widget}#{$c1}contents {
+        width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        max-width: map-get( $be-max-widths, 'xl' );
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .#{$pr}#{$row} {
+
+        @include media-breakpoint-down(md) {
+            margin-left: (map-get($grid-gutter-widths, md) / -4);
+            margin-right: (map-get($grid-gutter-widths, md) / -4);
+        }
+
+    }
+
+    [class*="#{$pr}#{$col}"] {
+        margin-bottom: ( map-get($grid-gutter-widths, md) * 2 );
+
+        @include media-breakpoint-down(md) {
+            padding-left: (map-get($grid-gutter-widths, md) / 4);
+            padding-right: (map-get($grid-gutter-widths, md) / 4);
+            margin-bottom: map-get($grid-gutter-widths, md);
+        }
+
+    }
+
+}
+
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
 
     .#{$pr}#{$widget}#{$c1}contents {
@@ -32,7 +63,7 @@
 
     .#{$pr}#{$row} {
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(md) {
             margin-left: (map-get($grid-gutter-widths, md) / -4);
             margin-right: (map-get($grid-gutter-widths, md) / -4);
         }
@@ -42,7 +73,7 @@
     [class*="#{$pr}#{$col}"] {
         margin-bottom: map-get($grid-gutter-widths, md);
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(md) {
             padding-left: (map-get($grid-gutter-widths, md) / 4);
             padding-right: (map-get($grid-gutter-widths, md) / 4);
             margin-bottom: (map-get($grid-gutter-widths, md) / 2);
