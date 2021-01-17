@@ -53,8 +53,8 @@ time.#{$pr}#{$c}media#{$c1}meta {
     a.#{$pr}#{$c}media {
         color: #fff;
 
-        &:not(:hover),
-        &:not(:focus) {
+        &:hover,
+        &:focus {
             color: #fff;
         }
 

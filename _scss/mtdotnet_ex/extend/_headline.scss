@@ -1,0 +1,38 @@
+/*
+--------------------
+.#{$pr}#{$c}headline
+--------------------
+*/
+
+.#{$pr}#{$be} {
+
+    .#{$pr}#{$c}headline#{$c1}inner {
+
+        > p[class*="#{$pr}#{$c}headline#{$c1}"] {
+            line-height: $font-size-md * $line-height-sm;
+
+            @include media-breakpoint-down(md) {
+                line-height: $font-size-sm * $line-height-sm;
+            }
+
+        }
+
+    }
+
+}
+
+.#{$pr}#{$c}headline#{$c1}header {
+    min-width: auto;
+}
+
+.#{$pr}#{$c}headline#{$c1}category {
+
+    .#{$pr}#{$m}label {
+
+        @include media-breakpoint-up(md) {
+            width: 10em;
+        }
+
+    }
+
+}

@@ -91,6 +91,34 @@ time.echo-c-card-meta {
 
 /*
 --------------------
+.echo-c-headline
+--------------------
+*/
+.echo-c-headline-category .echo-m-label {
+  color: #fff;
+  background-color: #333;
+}
+
+time.echo-c-headline-header {
+  font-family: "Helvetica", "Roboto", "-apple-system", "Open Sans", "Arial", sans-serif;
+  letter-spacing: .03em;
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-headline-inner {
+  color: #fff;
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-headline-inner:hover, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-headline-inner:focus {
+  color: #fff;
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-c-headline-category .echo-m-label {
+  color: #333;
+  background-color: #fff;
+}
+
+/*
+--------------------
 .echo-c-media
 --------------------
 */
@@ -140,7 +168,7 @@ time.echo-c-media-meta {
   color: #fff;
 }
 
-.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media:not(:hover), .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media:not(:focus) {
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media:hover, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media:focus {
   color: #fff;
 }
 

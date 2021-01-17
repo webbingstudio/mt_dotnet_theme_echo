@@ -1,0 +1,42 @@
+/*
+--------------------
+.#{$pr}#{$c}headline
+--------------------
+*/
+
+.#{$pr}#{$c}headline#{$c1}category {
+
+    .#{$pr}#{$m}label {
+        color: $ui-inverse-color;
+        background-color: $gray;
+    }
+
+}
+
+time.#{$pr}#{$c}headline#{$c1}header {
+    font-family: $font-family-second;
+    letter-spacing: .03em;
+}
+
+.#{$pr}#{$be}-has-bg:not(.#{$pr}#{$u}bg-third):not(.#{$pr}#{$u}bg-fade) {
+
+    a.#{$pr}#{$c}headline#{$c1}inner {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+        }
+
+    }
+
+    .#{$pr}#{$c}headline#{$c1}category {
+
+        .#{$pr}#{$m}label {
+            color: $body-color;
+            background-color: #fff;
+        }
+
+    }
+
+}
