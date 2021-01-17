@@ -10,11 +10,6 @@
 
 @import "_config_mtdotnet";
 
-// extend: Additional CSS that does not depend on theme style
-@import "mtdotnet_ex/extend/_card";
-@import "mtdotnet_ex/extend/_widget";
-@import "mtdotnet_ex/extend/_title";
-
 // Include "_layout" first
 @import "mtdotnet_ex/blockeditor/_layout";
 
@@ -29,3 +24,9 @@
 @import "mtdotnet_ex/blockeditor/_slider";
 @import "mtdotnet_ex/blockeditor/_spacer";
 @import "mtdotnet_ex/blockeditor/_text";
+
+// extend: Additional CSS that does not depend on theme style
+@import "mtdotnet_ex/extend/_card";
+@import "mtdotnet_ex/extend/_media";
+@import "mtdotnet_ex/extend/_widget";
+@import "mtdotnet_ex/extend/_title";

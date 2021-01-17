@@ -1,0 +1,55 @@
+/*
+--------------------
+.#{$pr}#{$c}media
+--------------------
+*/
+
+.#{$pr}#{$c}media#{$c1}object {
+    width: 125px;
+    max-width: 50%;
+
+    @include media-breakpoint-up(sm) {
+        width: 165px;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 210px;
+    }
+
+}
+
+.#{$pr}#{$c}media#{$c1}contents {
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-xs;
+    }
+
+}
+
+.#{$pr}#{$c}media#{$c1}category {
+
+    .#{$pr}#{$m}label {
+        vertical-align: bottom;
+        margin-right: 0;
+        font-size: $font-size-xxs;
+
+        @include media-breakpoint-up(lg) {
+            font-size: $font-size-xs;
+        }
+
+    }
+
+}
+
+time.#{$pr}#{$c}media#{$c1}meta {
+    display: block;
+}
+
+.#{$pr}#{$be} {
+
+    p.#{$pr}#{$c}media#{$c1}body {
+        line-height: inherit;
+    }
+
+}
+
