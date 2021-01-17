@@ -6,7 +6,23 @@
 
 .#{$be}-columns {
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-only(md) {
+
+        .#{$be}-column {
+
+            &:not(:first-child) {
+                padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+            }
+
+            &:not(:last-child) {
+                padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+            }
+
+        }
+
+    }
+
+    @include media-breakpoint-up(lg) {
 
         .#{$be}-column {
 
@@ -22,7 +38,7 @@
 
     }
 
-    &:not(.#{$pr}#{$be}-columns-3):not(.#{$pr}#{$be}-columns-4) {
+    &.#{$pr}#{$be}-columns-2 {
 
         @include media-breakpoint-down(sm) {
 
