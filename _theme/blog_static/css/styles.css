@@ -136,9 +136,17 @@ time.echo-c-media-meta {
   letter-spacing: .03em;
 }
 
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media {
+  color: #fff;
+}
+
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media:not(:hover), .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media:not(:focus) {
+  color: #fff;
+}
+
 /*
 --------------------
-.echo-p-widget
+.echo-m-title
 --------------------
 */
 .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-m-title-style-c:after,
