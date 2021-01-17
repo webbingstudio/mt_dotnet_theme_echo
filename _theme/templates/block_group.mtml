@@ -56,7 +56,9 @@
     <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-alignfull</mt:SetVarBlock>
 </mt:If>
 
-<mt:If name="__group_bg__" like="メイン">
+<mt:If name="__group_bg__" like="文字色">
+    <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-has-bg echo-u-bg-gray</mt:SetVarBlock>
+<mt:ElseIf name="__group_bg__" like="メイン">
     <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-has-bg echo-u-bg-first</mt:SetVarBlock>
 <mt:ElseIf name="__group_bg__" like="サブ1">
     <mt:SetVarBlock name="__group_class__"><mt:Var name="__group_class__" /> echo-mt-be-has-bg echo-u-bg-second</mt:SetVarBlock>
