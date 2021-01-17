@@ -239,12 +239,12 @@ elements:
           module_recent_card:
             filename: module_recent_card.mtml
             label: モジュール-記事新着-card
-          widget_recent_headline:
-            filename: widget_recent_headline.mtml
-            label: ウィジェット-記事新着-headline
-          widget_recent_media:
-            filename: widget_recent_media.mtml
-            label: ウィジェット-記事新着-media
+          module_recent_headline:
+            filename: module_recent_headline.mtml
+            label: モジュール-記事新着-headline
+          module_recent_media:
+            filename: module_recent_media.mtml
+            label: モジュール-記事新着-media
           block_button:
             filename: block_button.mtml
             label: カスタムブロック-ボタン
