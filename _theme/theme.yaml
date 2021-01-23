@@ -251,6 +251,9 @@ elements:
           module_recent_media:
             filename: module_recent_media.mtml
             label: モジュール-記事新着-media
+          module_blockeditor:
+            filename: module_blockeditor.mtml
+            label: モジュール-ブロックエディタ
           block_button:
             filename: block_button.mtml
             label: カスタムブロック-ボタン
