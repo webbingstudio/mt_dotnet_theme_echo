@@ -230,9 +230,9 @@ elements:
           module_thumbnail_field_small:
             filename: module_thumbnail_field_small.mtml
             label: モジュール-サムネイルの生成-フィールド-小
-          module_topicpath:
-            filename: module_topicpath.mtml
-            label: モジュール-パンくずリスト
+          module_topicpath_page:
+            filename: module_topicpath_page.mtml
+            label: モジュール-パンくずリスト-ページ
           vars_common:
             filename: vars_common.mtml
             label: 変数-共通
