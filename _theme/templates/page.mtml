@@ -4,6 +4,8 @@
 # ページ
 #
 # vars:
+#   __meta-first__
+#   __meta-last__
 #   __link__
 #   __script__
 #   __head-last__
@@ -14,24 +16,52 @@
 #   __folder_basename__
 #   __folder_label__
 #   __folder_path__
+#   __folder_layout__
 #   __folder_parent_basename__
 #   __folder_parent_label__
 #   __folder_parent_path__
 #   __folder_ancestor_basename__
 #   __folder_ancestor_label__
 #   __folder_ancestor_path__
+#   __post_meta_title__
+#   __post_meta_description__
+#   __post_eyecatch_url__
+#   __post_eyecatch_width__
+#   __post_eyecatch_height__
 # 
 # =======================
 </mt:Ignore>
 <mt:Include module="変数-共通" />
 <mt:Include module="変数-ページ" />
 
+<mt:SetVarBlock name="__meta-first__">
+<title><mt:Var name="__post_meta_title__" /></title>
+<meta name="description" content="<mt:Var name="__post_meta_description__" />">
+<link rel="canonical" href="<mt:PagePermalink />">
+</mt:SetVarBlock>
+
+<mt:SetVarBlock name="__meta-last__">
+<meta property="og:type" content="article">
+<meta property="og:title" content="<mt:Var name="__post_meta_title__" />">
+<meta property="og:description" content="<mt:Var name="__post_meta_description__" />">
+<meta property="og:url" content="<mt:PagePermalink />">
+<mt:If name="__post_eyecatch_url__">
+<meta property="og:image" content="<mt:Var name="__post_eyecatch_url__" />">
+<meta property="og:image:width" content="<mt:Var name="__post_eyecatch_width__" />"> 
+<meta property="og:image:height" content="<mt:Var name="__post_eyecatch_height__" />">
+</mt:If>
+<mt:If tag="CustomFieldValue" identifier="EchoBlogFacebook">
+<meta property="article:publisher" content="<mt:CustomFieldValue identifier="EchoBlogFacebook" />">
+</mt:If>
+<meta property="article:modified_time" content="<mt:PageDate format_name="iso8601" />">
+</mt:SetVarBlock>
+
 <mt:SetVarBlock name="__js__">
 <script>var echo_slider_id = 0;</script>
 </mt:SetVarBlock>
 
 <mt:SetVarBlock name="__head-last__">
-<mt:If tag="CustomFieldValue" identifier="EchoPageExHead"><mt:CustomFieldValue identifier="EchoPageExHead" /></mt:If>
+<mt:CustomFieldValue identifier="EchoPageExHead" />
 </mt:SetVarBlock>
 
 <mt:SetVarBlock name="__main__">
