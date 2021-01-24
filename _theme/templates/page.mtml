@@ -17,6 +17,7 @@
 #   __folder_label__
 #   __folder_path__
 #   __folder_layout__
+#   __folder_nav_type__
 #   __folder_parent_basename__
 #   __folder_parent_label__
 #   __folder_parent_path__
@@ -67,33 +68,61 @@
 <mt:SetVarBlock name="__body-class__">page page-id-<mt:PageID /><mt:If tag="PageBasename" eq="index"> page-index</mt:If><mt:If name="__folder_parent_basename__" ne="$__folder_basename__"> <mt:Var name="__folder_parent_basename__" /></mt:If><mt:If name="__folder_ancestor_basename__" ne="$__folder_parent_basename__"> <mt:Var name="__folder_ancestor_basename__" /></mt:If><mt:If name="__folder_layout__" eq="2カラム"> layout-2col<mt:Else> layout-1col</mt:If><mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1"> layout-show-header<mt:Else> layout-hide-header</mt:If><mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1"> layout-show-title<mt:Else> layout-hide-title</mt:If></mt:SetVarBlock>
 
 <mt:SetVarBlock name="__main__">
-<mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1">
-    <div class="echo-p-pagehead">
-        <h1 class="echo-p-pagehead-title"><mt:Var name="__folder_ancestor_label__" /></h1>
-        <p class="echo-p-pagehead-subtitle"><mt:Var name="__folder_ancestor_basename__" /></p>
-    </div><!-- /.echo-p-pagehead -->
-</mt:If>
+<div class="echo-p-contents<mt:If name="__folder_layout__" eq="2カラム"> echo-p-contents-2col<mt:Else> echo-p-contents-1col</mt:If>">
 
-<section class="echo-c-post echo-c-post-page">
-    <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
-    <div class="echo-c-post-header">
-        <h2 class="echo-c-post-title echo-m-title echo-m-title-style-b echo-m-title-level-1"><mt:PageTitle /></h2>
-    </div><!-- /.echo-c-post-header -->
+    <mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1">
+        <div class="echo-p-pagehead">
+            <h1 class="echo-p-pagehead-title"><mt:Var name="__folder_ancestor_label__" /></h1>
+            <p class="echo-p-pagehead-subtitle"><mt:Var name="__folder_ancestor_basename__" /></p>
+        </div><!-- /.echo-p-pagehead -->
     </mt:If>
 
-    <div class="echo-c-post-contents echo-mt-be">
-        <mt:BlockEditorBlocks tag="PageBody">
-        <mt:Include module="モジュール-ブロックエディタ" />
-        </mt:BlockEditorBlocks>
-        <mt:BlockEditorBlocks tag="PageMore">
-        <mt:Include module="モジュール-ブロックエディタ" />
-        </mt:BlockEditorBlocks>
-    </div><!-- /.echo-c-post-contents -->
-</section><!-- /.echo-c-post -->
+    <main class="echo-p-main" role="main">
+        <section class="echo-c-post echo-c-post-page">
+            <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
+            <div class="echo-c-post-header">
+                <h2 class="echo-c-post-title echo-m-title echo-m-title-style-b echo-m-title-level-1"><mt:PageTitle /></h2>
+            </div><!-- /.echo-c-post-header -->
+            </mt:If>
 
-<mt:If tag="CustomFieldValue" identifier="EchoPageShowTopicPath" eq="1">
-    <mt:Include module="モジュール-パンくずリスト-ページ" />
-</mt:If>
+            <div class="echo-c-post-contents echo-mt-be">
+                <mt:BlockEditorBlocks tag="PageBody">
+                <mt:Include module="モジュール-ブロックエディタ" />
+                </mt:BlockEditorBlocks>
+            </div><!-- /.echo-c-post-contents -->
+        </section><!-- /.echo-c-post -->
+
+        <mt:If tag="CustomFieldValue" identifier="EchoPageShowTopicPath" eq="1">
+            <mt:Include module="モジュール-パンくずリスト-ページ" />
+        </mt:If>
+
+    </main><!-- /.echo-p-main -->
+
+    <div class="echo-p-sub">
+
+        <mt:If name="__folder_nav_type__" ne="表示しない">
+        <aside class="echo-p-widgetarea echo-p-widgetarea-sub echo-p-widgetarea-page" role="complementary">
+            <mt:If name="__folder_nav_type__" eq="番号リスト">
+                <mt:Include module="モジュール-ページ一覧-step" />
+            <mt:ElseIf name="__folder_nav_type__" eq="画像左＋タイトル右">
+                <mt:Include module="モジュール-ページ一覧-media" />
+            <mt:ElseIf name="__folder_nav_type__" eq="画像上＋タイトル下">
+                <mt:Include module="モジュール-ページ一覧-card" />
+            <mt:Else>
+                <mt:Include module="モジュール-ページ一覧-nav" />
+            </mt:If>
+        </aside><!-- /.echo-p-widgetarea -->
+        </mt:If>
+
+        <mt:BlockEditorBlocks tag="PageMore">
+        <div class="echo-p-sub-extra echo-mt-be">
+            <mt:Include module="モジュール-ブロックエディタ" />
+        </div><!-- /.echo-p-sub-extra -->
+        </mt:BlockEditorBlocks>
+
+    </div><!-- /.echo-p-sub -->
+
+</div><!-- /.echo-p-contents -->
 </mt:SetVarBlock>
 
 <mt:Include module="レイアウト-基本" />

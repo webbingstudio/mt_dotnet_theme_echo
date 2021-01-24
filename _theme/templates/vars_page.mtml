@@ -8,6 +8,7 @@
 #   __folder_label__
 #   __folder_path__
 #   __folder_layout__
+#   __folder_nav_type__
 #   __folder_parent_basename__
 #   __folder_parent_label__
 #   __folder_parent_path__
@@ -56,8 +57,9 @@
 <mt:FolderBasename setvar="__folder_ancestor_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_ancestor_label__" />
 <mt:SetVarBlock name="__folder_ancestor_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
-<mt:Ignore>レイアウトは先に先祖を参照し子孫で上書きする</mt:Ignore>
+<mt:Ignore>レイアウト・ナビゲーションは先に先祖を参照し子孫で上書きする</mt:Ignore>
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
+<mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__folder_nav_type__" />
 <mt:SetVar name="__is_ancestor__" value="true" />
 </mt:If>
 <mt:FolderBasename setvar="__folder_parent_basename__" />
@@ -66,17 +68,26 @@
 <mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
 </mt:If>
+<mt:If tag="CustomFieldValue" identifier="EchoFolderNavType" ne="自動">
+<mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__folder_nav_type__" />
+</mt:If>
 </mt:ParentFolders>
 
 <mt:PageFolder>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
 </mt:If>
+<mt:If tag="CustomFieldValue" identifier="EchoFolderNavType" ne="自動">
+<mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__folder_nav_type__" />
+</mt:If>
 </mt:PageFolder>
 
-<mt:Ignore>どのフォルダもレイアウトの設定がなければ1カラム</mt:Ignore>
+<mt:Ignore>どのフォルダもレイアウト・ナビの設定がなければ初期値</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" eq="自動">
 <mt:SetVar name="__folder_layout__" value="1カラム" />
+</mt:If>
+<mt:If tag="CustomFieldValue" identifier="EchoFolderNavType" eq="自動">
+<mt:SetVar name="__folder_nav_type__" value="表示しない" />
 </mt:If>
 
 <mt:Ignore>
