@@ -1,0 +1,52 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-ページ一覧-step
+# 
+# vars:
+#   __nav_widget_tag__
+#   __nav_title_tag__
+#   __nav_title_text__
+#   __nav_folder__
+#   __nav_current_id__
+# 
+# =======================
+</mt:Ignore>
+<mt:Unless name="__nav_title_tag__">
+    <mt:SetVar name="__nav_title_tag__" value="h2" />
+</mt:Unless>
+<mt:Unless name="__nav_title_text__">
+    <mt:SetVar name="__nav_widget_tag__" value="div" />
+<mt:Else>
+    <mt:SetVar name="__nav_widget_tag__" value="section" />
+</mt:Unless>
+
+<<mt:Var name="__nav_widget_tag__" /> class="echo-p-widget echo-p-widget-nav">
+    <mt:If name="__nav_title_text__">
+    <div class="echo-p-widget-header">
+        <<mt:Var name="__nav_title_tag__" /> class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__nav_title_text__" /></<mt:Var name="__nav_title_tag__" />>
+    </div><!-- /.echo-p-widget-header -->
+    </mt:If>
+
+    <div class="echo-p-widget-contents">
+        <div class="echo-c-step">
+            <nav class="echo-m-nav echo-m-nav-vertical">
+                <mt:Pages folders="$__nav_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+                <mt:PagesHeader>
+                <ol class="echo-m-nav-list">
+                </mt:PagesHeader>
+                <mt:If tag="PageID" eq="$__nav_current_id__">
+                    <li class="echo-m-nav-item is-current">
+                        <span class="echo-m-nav-label is-current"><mt:PageTitle encode_html="1" /></span>
+                <mt:Else>
+                    <li class="echo-m-nav-item">
+                        <a href="<mt:PagePermalink />" class="echo-m-nav-label"><mt:PageTitle encode_html="1" /></a>
+                </mt:If>
+                <mt:PagesFooter>
+                </ol>
+                </mt:PagesFooter>
+                </mt:Pages>
+            </nav><!-- /.echo-m-nav -->
+        </div><!-- /.echo-c-step -->
+    </div><!-- /.echo-p-widget-contents -->
+</<mt:Var name="__nav_widget_tag__" />><!-- /.echo-p-widget -->

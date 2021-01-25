@@ -104,11 +104,11 @@
         <mt:If name="__folder_nav_type__" ne="表示しない">
         <aside class="echo-p-widgetarea echo-p-widgetarea-sub echo-p-widgetarea-page" role="complementary">
             <mt:If name="__folder_nav_type__" eq="番号リスト">
-                <mt:Include module="モジュール-ページ一覧-step" />
+                <mt:Include module="モジュール-ページ一覧-step" __nav_folder__="$__folder_label__" __nav_title_text__="$__folder_label__" __nav_current_id__="$__post_id__" />
             <mt:ElseIf name="__folder_nav_type__" eq="画像左＋タイトル右">
-                <mt:Include module="モジュール-ページ一覧-media" />
+                <mt:Include module="モジュール-ページ一覧-media" __nav_folder__="$__folder_label__" __nav_title_text__="$__folder_label__" __nav_current_id__="$__post_id__" />
             <mt:ElseIf name="__folder_nav_type__" eq="画像上＋タイトル下">
-                <mt:Include module="モジュール-ページ一覧-card" />
+                <mt:Include module="モジュール-ページ一覧-card" __nav_folder__="$__folder_label__" __nav_title_text__="$__folder_label__" __nav_current_id__="$__post_id__" />
             <mt:Else>
                 <mt:Include module="モジュール-ページ一覧-nav" __nav_ancestor__="$__folder_ancestor_basename__" __nav_title_text__="$__folder_ancestor_label__" __nav_current_id__="$__post_id__" />
             </mt:If>
