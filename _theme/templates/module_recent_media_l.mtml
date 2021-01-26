@@ -1,7 +1,7 @@
 <mt:Ignore>
 # =======================
 # 
-# モジュール-記事新着-media
+# モジュール-記事新着-media-大
 # 
 # vars:
 #   __media_widget_tag__
@@ -12,6 +12,9 @@
 #   __media_more__
 #   __media_more_text__
 #   __media_more_url__
+# 
+# vars(local):
+#   __image_url__
 # 
 # =======================
 </mt:Ignore>
@@ -32,6 +35,7 @@
 <mt:Unless name="__media_more_url__">
     <mt:setVarBlock name="__media_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
 </mt:Unless>
+<mt:setVar name="__image_url__" value="" />
 
 <mt:Entries sort_by="authored_on" sort_order="descend" limit="$__media_limit__">
 <mt:EntriesHeader>
@@ -54,7 +58,20 @@
                     <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">
                         <div class="echo-c-media-object">
                             <figure class="echo-m-thumbnail echo-m-thumbnail-ogimage">
-                                <mt:Include module="モジュール-サムネイルの生成-記事" __fieldname__="EcEntryEyecatch" __width_small__="480" />
+                                <mt:If tag="CustomFieldValue" identifier="EcEntryEyecatch">
+                                    <mt:CustomFieldAsset identifier="EcEntryEyecatch">
+                                    <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
+                                    </mt:CustomFieldAsset>
+                                <mt:Else>
+                                    <mt:EntryAssets type="image" limit="1" sort_order="ascend" sort_by="created_on">
+                                    <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
+                                    </mt:EntryAssets>
+                                </mt:If>
+                                <mt:If name="__image_url__">
+                                    <img alt="" src="<mt:Var name="__image_url__" />" width="480">
+                                <mt:Else>
+                                    <img alt="" src="/images/common/noimage_small.jpg" width="480" height="480">
+                                </mt:If>
                             </figure><!-- /.echo-m-thumbnail -->
                             <mt:EntryCategories type="primary">
                             <p class="echo-c-media-category">
@@ -65,7 +82,7 @@
                         <div class="echo-c-media-contents">
                             <time class="echo-c-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$echo_entry_date" /></time>
                             <p class="echo-c-media-title echo-m-title echo-m-title-level-7 echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></p>
-                            <p class="echo-c-media-body"><mt:EntryExcerpt /></p>
+                            <p class="echo-c-media-body"><mt:EntryExcerpt words="58" /></p>
                         </div>
                     </a>
                 </div><!-- /.echo-c-media-wraper -->

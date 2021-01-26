@@ -221,15 +221,6 @@ elements:
           module_spmenu:
             filename: module_sp_menu.mtml
             label: モジュール-スマートフォンメニュー
-          module_thumbnail_entry:
-            filename: module_thumbnail_entry.mtml
-            label: モジュール-サムネイルの生成-記事
-          module_thumbnail_field_large:
-            filename: module_thumbnail_field_large.mtml
-            label: モジュール-サムネイルの生成-フィールド-大
-          module_thumbnail_field_small:
-            filename: module_thumbnail_field_small.mtml
-            label: モジュール-サムネイルの生成-フィールド-小
           module_topicpath_page:
             filename: module_topicpath_page.mtml
             label: モジュール-パンくずリスト-ページ
@@ -248,9 +239,9 @@ elements:
           module_recent_headline:
             filename: module_recent_headline.mtml
             label: モジュール-記事新着-headline
-          module_recent_media:
-            filename: module_recent_media.mtml
-            label: モジュール-記事新着-media
+          module_recent_media_l:
+            filename: module_recent_media_l.mtml
+            label: モジュール-記事新着-media_大
           module_pages_card_s:
             filename: module_pages_card_s.mtml
             label: モジュール-ページ一覧-card-小
@@ -284,8 +275,8 @@ elements:
           block_group:
             filename: block_group.mtml
             label: カスタムブロック-グループ
-          block_blog_recent:
-            filename: block_blog_recent.mtml
+          block_recent:
+            filename: block_recent.mtml
             label: カスタムブロック-ブログ新着
           block_table:
             filename: block_title.mtml

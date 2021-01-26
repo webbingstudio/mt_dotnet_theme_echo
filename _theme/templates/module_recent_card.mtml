@@ -13,6 +13,9 @@
 #   __card_more_text__
 #   __card_more_url__
 # 
+# vars(local):
+#   __image_url__
+# 
 # =======================
 </mt:Ignore>
 <mt:Unless name="__card_title_tag__">
@@ -32,6 +35,7 @@
 <mt:Unless name="__card_more_url__">
     <mt:setVarBlock name="__card_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
 </mt:Unless>
+<mt:setVar name="__image_url__" value="" />
 
 <mt:Entries sort_by="authored_on" sort_order="descend" limit="$__card_limit__">
 <mt:EntriesHeader>
@@ -54,7 +58,20 @@
                     <a href="<mt:EntryPermalink />" class="echo-c-card-inner">
                         <div class="echo-c-card-object">
                             <figure class="echo-m-thumbnail echo-m-thumbnail-ogimage">
-                                <mt:Include module="モジュール-サムネイルの生成-記事" __fieldname__="EcEntryEyecatch" __width_small__="480" />
+                                <mt:If tag="CustomFieldValue" identifier="EcEntryEyecatch">
+                                    <mt:CustomFieldAsset identifier="EcEntryEyecatch">
+                                    <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
+                                    </mt:CustomFieldAsset>
+                                <mt:Else>
+                                    <mt:EntryAssets type="image" limit="1" sort_order="ascend" sort_by="created_on">
+                                    <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
+                                    </mt:EntryAssets>
+                                </mt:If>
+                                <mt:If name="__image_url__">
+                                    <img alt="" src="<mt:Var name="__image_url__" />" width="480">
+                                <mt:Else>
+                                    <img alt="" src="/images/common/noimage_small.jpg" width="480" height="480">
+                                </mt:If>
                             </figure><!-- /.echo-m-thumbnail -->
                         </div><!-- /.echo-c-card-object -->
                         <div class="echo-c-card-contents">
