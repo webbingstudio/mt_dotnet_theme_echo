@@ -7,6 +7,7 @@
 #   __nav_widget_tag__
 #   __nav_title_tag__
 #   __nav_title_text__
+#   __nav_layout__
 #   __nav_folder__
 #   __nav_current_id__
 # 
@@ -20,6 +21,9 @@
 <mt:Else>
     <mt:SetVar name="__nav_widget_tag__" value="section" />
 </mt:Unless>
+<mt:Unless name="__nav_layout__">
+    <mt:SetVar name="__nav_layout__" value="1カラム" />
+</mt:Unless>
 
 <<mt:Var name="__nav_widget_tag__" /> class="echo-p-widget echo-p-widget-card">
     <mt:If name="__nav_title_text__">
@@ -31,10 +35,14 @@
     <div class="echo-p-widget-contents">
         <mt:Pages folders="$__nav_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
         <mt:PagesHeader>
+        <mt:If name="__nav_layout__" ne="2カラム">
         <div class="echo-l-grid-row">
+        </mt:If>
         </mt:PagesHeader>
 
+            <mt:If name="__nav_layout__" ne="2カラム">
             <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4 echo-l-grid-col-xl-3">
+            </mt:If>
                 <div class="echo-c-card">
                     <a href="<mt:PagePermalink />" class="echo-c-card-inner">
                         <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
@@ -51,10 +59,14 @@
                         </div><!-- /.echo-c-card-contents -->
                     </a><!-- /.echo-c-card-innner -->
                 </div><!-- /.echo-c-card -->
+            <mt:If name="__nav_layout__" ne="2カラム">
             </div><!-- /.echo-l-grid-col -->
+            </mt:If>
 
         <mt:PagesFooter>
+        <mt:If name="__nav_layout__" ne="2カラム">
         </div><!-- /.echo-l-grid-row -->
+        </mt:If>
         </mt:PagesFooter>
         </mt:Pages>
     </div><!-- /.echo-p-widget-contents -->
