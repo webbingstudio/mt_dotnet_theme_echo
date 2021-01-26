@@ -1,49 +1,39 @@
 <mt:Ignore>
 # =======================
 # 
-# モジュール-ページ一覧-card
+# モジュール-ページ一覧-card-小
 # 
 # vars:
-#   __nav_widget_tag__
-#   __nav_title_tag__
-#   __nav_title_text__
-#   __nav_layout__
-#   __nav_folder__
-#   __nav_current_id__
+#   __pages_folder__(require)
+#   __pages_title_text__
+#   __pages_layout__
 # 
 # =======================
 </mt:Ignore>
-<mt:Unless name="__nav_title_tag__">
-    <mt:SetVar name="__nav_title_tag__" value="h2" />
+<mt:Unless name="__pages_title_text__">
+    <mt:SetVar name="__pages_title_text__" value="$__pages_folder__" />
 </mt:Unless>
-<mt:Unless name="__nav_title_text__">
-    <mt:SetVar name="__nav_widget_tag__" value="div" />
-<mt:Else>
-    <mt:SetVar name="__nav_widget_tag__" value="section" />
-</mt:Unless>
-<mt:Unless name="__nav_layout__">
-    <mt:SetVar name="__nav_layout__" value="1カラム" />
+<mt:Unless name="__pages_layout__">
+    <mt:SetVar name="__pages_layout__" value="1カラム" />
 </mt:Unless>
 
-<<mt:Var name="__nav_widget_tag__" /> class="echo-p-widget echo-p-widget-card">
-    <mt:If name="__nav_title_text__">
+<section class="echo-p-widget echo-p-widget-sm echo-p-widget-card">
     <div class="echo-p-widget-header">
-        <<mt:Var name="__nav_title_tag__" /> class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__nav_title_text__" /></<mt:Var name="__nav_title_tag__" />>
+        <h2 class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__pages_title_text__" /></h2>
     </div><!-- /.echo-p-widget-header -->
-    </mt:If>
 
     <div class="echo-p-widget-contents">
-        <mt:Pages folders="$__nav_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+        <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
         <mt:PagesHeader>
-        <mt:If name="__nav_layout__" ne="2カラム">
+        <mt:If name="__pages_layout__" ne="2カラム">
         <div class="echo-l-grid-row">
         </mt:If>
         </mt:PagesHeader>
 
-            <mt:If name="__nav_layout__" ne="2カラム">
+            <mt:If name="__pages_layout__" ne="2カラム">
             <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4 echo-l-grid-col-xl-3">
             </mt:If>
-                <div class="echo-c-card">
+                <article class="echo-c-card">
                     <a href="<mt:PagePermalink />" class="echo-c-card-inner">
                         <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
                         <div class="echo-c-card-object">
@@ -55,19 +45,19 @@
                         </div><!-- /.echo-c-card-object -->
                         </mt:If>
                         <div class="echo-c-card-contents">
-                            <p class="echo-c-card-title echo-m-title echo-m-title-level-7 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></p>
+                            <h3 class="echo-c-card-title echo-m-title echo-m-title-level-7 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></h3>
                         </div><!-- /.echo-c-card-contents -->
                     </a><!-- /.echo-c-card-innner -->
-                </div><!-- /.echo-c-card -->
-            <mt:If name="__nav_layout__" ne="2カラム">
+                </article><!-- /.echo-c-card -->
+            <mt:If name="__pages_layout__" ne="2カラム">
             </div><!-- /.echo-l-grid-col -->
             </mt:If>
 
         <mt:PagesFooter>
-        <mt:If name="__nav_layout__" ne="2カラム">
+        <mt:If name="__pages_layout__" ne="2カラム">
         </div><!-- /.echo-l-grid-row -->
         </mt:If>
         </mt:PagesFooter>
         </mt:Pages>
     </div><!-- /.echo-p-widget-contents -->
-</<mt:Var name="__nav_widget_tag__" />><!-- /.echo-p-widget -->
+</section><!-- /.echo-p-widget -->

@@ -251,18 +251,18 @@ elements:
           module_recent_media:
             filename: module_recent_media.mtml
             label: モジュール-記事新着-media
-          module_pages_card:
-            filename: module_pages_card.mtml
-            label: モジュール-ページ一覧-card
-          module_pages_media:
-            filename: module_pages_media.mtml
-            label: モジュール-ページ一覧-media
-          module_pages_nav:
-            filename: module_pages_nav.mtml
-            label: モジュール-ページ一覧-nav
-          module_pages_step:
-            filename: module_pages_step.mtml
-            label: モジュール-ページ一覧-step
+          module_pages_card_s:
+            filename: module_pages_card_s.mtml
+            label: モジュール-ページ一覧-card-小
+          module_pages_media_s:
+            filename: module_pages_media_s.mtml
+            label: モジュール-ページ一覧-media-小
+          module_pages_nav_s:
+            filename: module_pages_nav_s.mtml
+            label: モジュール-ページ一覧-nav-小
+          module_pages_step_s:
+            filename: module_pages_step_s.mtml
+            label: モジュール-ページ一覧-step-小
           module_blockeditor:
             filename: module_blockeditor.mtml
             label: モジュール-ブロックエディタ
