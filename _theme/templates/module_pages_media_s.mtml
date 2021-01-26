@@ -1,0 +1,67 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-ページ一覧-media-小
+# 
+# vars:
+#   __pages_folder__(require)
+#   __pages_title_text__
+#   __pages_layout__
+# 
+# =======================
+</mt:Ignore>
+<mt:Unless name="__pages_title_text__">
+    <mt:SetVar name="__pages_title_text__" value="$__pages_folder__" />
+</mt:Unless>
+<mt:Unless name="__pages_layout__">
+    <mt:SetVar name="__pages_layout__" value="1カラム" />
+</mt:Unless>
+
+<section class="echo-p-widget echo-p-widget-sm echo-p-widget-media">
+    <div class="echo-p-widget-header">
+        <h2 class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__pages_title_text__" /></h2>
+    </div><!-- /.echo-p-widget-header -->
+
+    <div class="echo-p-widget-contents">
+        <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+        <mt:PagesHeader>
+        <mt:If name="__pages_layout__" ne="2カラム">
+        <div class="echo-l-grid-row">
+        </mt:If>
+        </mt:PagesHeader>
+
+            <mt:If name="__pages_layout__" ne="2カラム">
+            <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4">
+            </mt:If>
+
+                <div class="echo-c-media-wraper">
+                    <a href="<mt:PagePermalink />" class="echo-c-media echo-c-media-middle echo-c-media-entry">
+                        <div class="echo-c-media-object">
+                            <figure class="echo-m-thumbnail echo-m-thumbnail-square">
+                                <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
+                                <mt:CustomFieldAsset identifier="EchoPageEyecatch">
+                                <img src="<mt:AssetThumbnailURL width="240" square="1" />" alt="" width="240" height="240">
+                                </mt:CustomFieldAsset>
+                                <mt:Else>
+                                <img alt="" src="/images/common/noimage_small.jpg" width="240" height="240">
+                                </mt:If>
+                            </figure><!-- /.echo-m-thumbnail -->
+                        </div><!-- /.echo-c-media-object -->
+                        <div class="echo-c-media-contents">
+                            <p class="echo-c-media-title echo-m-title echo-m-title-level-8 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></p>
+                        </div>
+                    </a>
+                </div><!-- /.echo-c-media-wraper -->
+
+            <mt:If name="__pages_layout__" ne="2カラム">
+            </div><!-- /.echo-l-grid-col -->
+            </mt:If>
+
+        <mt:PagesFooter>
+        <mt:If name="__pages_layout__" ne="2カラム">
+        </div><!-- /.echo-l-grid-row -->
+        </mt:If>
+        </mt:PagesFooter>
+        </mt:Pages>
+    </div><!-- /.echo-p-widget-contents -->
+</section><!-- /.echo-p-widget -->
