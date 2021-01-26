@@ -10,17 +10,20 @@
 #   __button_url__
 #   __button_label__
 #   __button_type__
+#   __button_arrow__
 #   __button_size__
 #   __button_target__
 # 
 # =======================
 </mt:Ignore>
-<mt:SetVar name="__button_html__" value="" /><mt:SetVar name="__button_class__" value="" /><mt:SetVar name="__button_wrapclass__" value="" /><mt:SetVar name="__button_url__" value="" /><mt:SetVar name="__button_label__" value="" /><mt:SetVar name="__button_type__" value="" /><mt:SetVar name="__button_size__" value="" /><mt:SetVar name="__button_target__" value="" />
+<mt:SetVar name="__button_html__" value="" /><mt:SetVar name="__button_class__" value="" /><mt:SetVar name="__button_wrapclass__" value="" /><mt:SetVar name="__button_url__" value="" /><mt:SetVar name="__button_label__" value="" /><mt:SetVar name="__button_type__" value="" /><mt:SetVar name="__button_arrow__" value="" /><mt:SetVar name="__button_size__" value="" /><mt:SetVar name="__button_target__" value="" />
 
 <mt:BlockEditorBlocks>
 <mt:If name="type" eq="sixapart-select">
     <mt:If name="__value__" like="デザイン:">
         <mt:SetVarBlock name="__button_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
+    <mt:ElseIf name="__value__" like="矢印:">
+        <mt:SetVarBlock name="__button_arrow__"><mt:Var name="__value__" /></mt:SetVarBlock>
     <mt:ElseIf name="__value__" like="サイズ:">
         <mt:SetVarBlock name="__button_size__"><mt:Var name="__value__" /></mt:SetVarBlock>
     <mt:ElseIf name="__value__" like="リンク先:">
@@ -47,6 +50,12 @@
     <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-bordered</mt:SetVarBlock>
 </mt:If>
 
+<mt:If name="__button_arrow__" like="右">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-arrowed-right</mt:SetVarBlock>
+<mt:ElseIf name="__button_arrow__" like="左">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-arrowed-left</mt:SetVarBlock>
+</mt:If>
+
 <mt:If name="__button_size__" like="小">
     <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-lg</mt:SetVarBlock>
     <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-btn-sm</mt:SetVarBlock>
@@ -64,7 +73,7 @@
     <mt:SetVar name="__button_target__" value="" />
 </mt:If>
 
-<div class="echo-mt-be-btn<mt:Var name="__button_wrapclass__" />　echo-mt-be-block-custom">
+<div class="echo-mt-be-btn<mt:Var name="__button_wrapclass__" />">
     <a href="<mt:Var name="__button_url__" strip_linefeeds="1" remove_html="1" />"<mt:Var name="__button_target__" /> class="echo-m-btn echo-m-btn-block<mt:Var name="__button_class__" />">
         <mt:Var name="__button_label__" strip_linefeeds="1" remove_html="1" />
     </a>
