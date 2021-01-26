@@ -1,20 +1,24 @@
 <mt:Ignore>
 # =======================
 # 
-# モジュール-ページ一覧-step
+# モジュール-ページ一覧-step-小
 # 
 # vars:
 #   __pages_folder__(require)
 #   __pages_title_text__
 #   __pages_current_id__
+#   __pages_layout__
 # 
 # =======================
 </mt:Ignore>
 <mt:Unless name="__pages_title_text__">
     <mt:SetVar name="__pages_title_text__" value="$__pages_folder__" />
 </mt:Unless>
+<mt:Unless name="__pages_layout__">
+    <mt:SetVar name="__pages_layout__" value="1カラム" />
+</mt:Unless>
 
-<section class="echo-p-widget echo-p-widget-step">
+<section class="echo-p-widget<mt:If name="__pages_layout__" eq="2カラム"> echo-p-widget-sm</mt:If> echo-p-widget-step">
     <mt:If name="__pages_title_text__">
     <div class="echo-p-widget-header">
         <h2 class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__pages_title_text__" /></h2>
