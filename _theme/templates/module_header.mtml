@@ -15,7 +15,6 @@
 # 
 # =======================
 </mt:Ignore>
-
 <header class="echo-p-header" role="banner">
     <div class="echo-p-header-contents">
 
@@ -32,6 +31,17 @@
         <mt:Ignore>ナビゲーション2階層</mt:Ignore>
         <nav class="echo-p-header-nav echo-m-nav" role="navigation">
             <ul class="echo-m-nav-list">
+
+            <mt:If name="__is_home__">
+                <li class="echo-m-nav-item is-current">
+                    <span class="echo-m-nav-label is-current" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></span>
+                </li>
+            <mt:Else>
+                <li class="echo-m-nav-item">
+                    <a class="echo-m-nav-label" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></a>
+                </li>
+            </mt:If>
+
             <mt:SubFolders top="1">
             <mt:HasNoParentFolder>
 
@@ -68,7 +78,7 @@
 
                 <mt:If tag="PageBasename" ne="index">
                     <mt:If tag="CustomFieldValue" identifier="EchoPageShowGlNav">
-                        <mt:Ignore>子ページを取得</mt:Ignore>
+                        <mt:Ignore>表示する子ページを取得</mt:Ignore>
                         <mt:SetVarBlock name="__hnav_children__">
                         <mt:Var name="__hnav_children__" />
                         <mt:If tag="PageID" eq="$__post_id__">
@@ -102,24 +112,22 @@
 
         <div class="echo-p-header-btn">
             <ul class="echo-m-list echo-m-list-horizontal">
-                <li class="echo-m-list-item">
-                    <a href="#" class="echo-m-btn echo-m-btn-gray echo-m-btn-round">
-                        <img src="/images/common/icon_mail.svg" width="18" height="18" alt="お問い合わせ" class="echo-p-header-icon echo-p-header-icon-mail">
-                    </a><!-- /.echo-m-btn -->
-                </li><!-- /.echo-m-list-item -->
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogTel">
-                <li class="echo-m-list-item">
-                    <a href="tel:<mt:CustomFieldValue identifier="EchoBlogTel" />" class="echo-m-btn echo-m-btn-gray echo-m-btn-round">
-                        <img src="/images/common/icon_tel.svg" width="18" height="18" alt="<mt:CustomFieldValue identifier="EchoBlogTel" /> に電話をかける" class="echo-p-header-icon echo-p-header-icon-tel">
+                <li class="echo-m-list-item echo-p-header-btn-tel">
+                    <a href="tel:<mt:CustomFieldValue identifier="EchoBlogTel" />" class="echo-m-btn">
+                        <mt:Var name="__svg_tel__">
+                        <span class="echo-u-sr"><mt:CustomFieldValue identifier="EchoBlogTel" /> に電話をかける</span>
                     </a><!-- /.echo-m-btn -->
                 </li><!-- /.echo-m-list-item -->
                 </mt:If>
+                <li class="echo-m-list-item echo-p-header-btn-mail">
+                    <a href="#" class="echo-m-btn">
+                        <mt:Var name="__svg_mail__">
+                        <span class="echo-u-sr">お問い合わせ</span>
+                    </a><!-- /.echo-m-btn -->
+                </li><!-- /.echo-m-list-item -->
             </ul><!-- /.echo-m-list -->
         </div><!-- /.echo-p-header-btn -->
-
-        <div class="echo-p-header-menu">
-            <button class="echo-m-toggle js-toggle" data-toggle-target="#echo-spmenu" data-toggle-sync=".js-toggle-sync-01" aria-expanded="false" aria-label="Menu"><span class="echo-m-toggle-line"></span><span class="echo-u-sr">メニュー</span></button>
-        </div><!-- /.echo-p-header-menu -->
 
     </div><!-- /.echo-p-header-contents -->
 </header><!-- /.echo-p-header -->
