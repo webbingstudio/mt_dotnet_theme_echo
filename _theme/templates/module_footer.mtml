@@ -9,8 +9,6 @@
 # 
 # vars(local):
 #   __is_home__
-#   __fnav_has_index__
-#   __fnav_is_index__
 #   __fnav_children__
 # 
 # =======================
@@ -35,26 +33,10 @@
             <mt:SubFolders top="1">
             <mt:HasNoParentFolder>
                 <mt:If tag="FolderCount">
-                    <mt:SetVar name="__fnav_has_index__" value="false" />
-                    <mt:SetVar name="__fnav_is_index__" value="false" />
-                    <mt:Pages sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
-                    <mt:If tag="PageBasename" eq="index">
-                        <mt:If tag="CustomFieldValue" identifier="EchoPageShowFoNav">
-                            <mt:Ignore>フォルダにインデックスページがあるか確認</mt:Ignore>
-                            <mt:SetVar name="__fnav_has_index__" value="true" />
-                            <mt:If tag="PageID" eq="$__post_id__">
-                            <mt:SetVar name="__fnav_is_index__" value="true" />
-                            </mt:If>
-                        </mt:If>
-                    </mt:If>
-                    </mt:Pages>
-
-                    <mt:If name="__fnav_has_index__" eq="true">
-                        <mt:Ignore>インデックスページがあれば：インデックスページのリンクを表示</mt:Ignore>
-                        <li class="echo-m-nav-item<mt:If name="__fnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If>">
-                            <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-m-nav-label<mt:If name="__fnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If>"><mt:FolderLabel encode_html="1" /></a>
-                        </li>
-                    </mt:If>
+                    <mt:Ignore>インデックスページのリンクを表示</mt:Ignore>
+                    <li class="echo-m-nav-item<mt:If name="__fnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If>">
+                        <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-m-nav-label<mt:If name="__fnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If>"><mt:FolderLabel encode_html="1" /></a>
+                    </li>
                 </mt:If>
             </mt:HasNoParentFolder>
             </mt:SubFolders>
