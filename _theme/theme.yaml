@@ -254,6 +254,9 @@ elements:
           module_pages_step_s:
             filename: module_pages_step_s.mtml
             label: モジュール-ページ一覧-step-小
+          module_folders_related:
+            filename: module_folders_related.mtml
+            label: モジュール-関連フォルダ一覧
           module_blockeditor:
             filename: module_blockeditor.mtml
             label: モジュール-ブロックエディタ

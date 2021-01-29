@@ -4,15 +4,10 @@
 # モジュール-ページ一覧-nav-小
 # 
 # vars:
-#   __pages_ancestor_basename__(require)
+#   __pages_folder__(require)
 #   __pages_title_text__
 #   __pages_current_id__
 #   __pages_layout__
-# 
-# vars(local):
-#   __has_index__
-#   __is_index__
-#   __is_ancestor__
 # 
 # =======================
 </mt:Ignore>
@@ -29,68 +24,18 @@
 
     <div class="echo-p-widget-contents">
         <nav class="echo-m-nav echo-m-nav-vertical">
-            <mt:SubFolders top="1">
-            <mt:FolderHeader>
-            <ul class="echo-m-nav-list<mt:HasParentFolder> echo-m-nav-children</mt:HasParentFolder>">
-            <mt:SetVar name="__has_index__" value="false" /><mt:SetVar name="__is_index__" value="false" />
-            </mt:FolderHeader>
-            <mt:HasNoParentFolder>
-            <mt:If tag="FolderBasename" eq="$__pages_ancestor_basename__">
-            <mt:SetVar name="__is_ancestor__" value="true" />
+        <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+            <mt:PagesHeader>
+            <ul class="echo-m-nav-list">
+            </mt:PagesHeader>
+            <mt:If tag="PageID" eq="$__pages_current_id__">
+                <li class="echo-m-nav-item is-current">
+                    <span class="echo-m-nav-label is-current"><mt:PageTitle encode_html="1" /></span>
             <mt:Else>
-            <mt:SetVar name="__is_ancestor__" value="false" />
+                <li class="echo-m-nav-item">
+                    <a href="<mt:PagePermalink />" class="echo-m-nav-label"><mt:PageTitle encode_html="1" /></a>
             </mt:If>
-            </mt:HasNoParentFolder>
-
-            <mt:If name="__is_ancestor__" eq="true">
-            <mt:If tag="FolderCount">
-
-                <mt:Pages sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
-                <mt:If tag="PageBasename" eq="index">
-                    <mt:Ignore>フォルダにインデックスページがあるか確認</mt:Ignore>
-                    <mt:SetVar name="__has_index__" value="true" />
-                    <mt:If tag="PageID" eq="$__pages_current_id__">
-                        <mt:SetVar name="__is_index__" value="true" />
-                    </mt:If>
-                </mt:If>
-                </mt:Pages>
-
-                <mt:If name="__has_index__" eq="true">
-                    <mt:Ignore>インデックスページがあれば：インデックスページのリンクを表示</mt:Ignore>
-                    <li class="echo-m-nav-item<mt:If name="__is_index__" eq="true"> is-current</mt:If>">
-                        <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-m-nav-label<mt:If name="__is_index__" eq="true"> is-current</mt:If>"><mt:FolderLabel encode_html="1" /></a>
-                <mt:Else>
-                    <mt:Ignore>インデックスページがなければ：フォルダ名のみ</mt:Ignore>
-                    <li class="echo-m-nav-item"><span class="echo-m-nav-label"><mt:FolderLabel encode_html="1" /></span>
-                </mt:If>
-
-                <mt:Ignore>インデックス以外のページ一覧</mt:Ignore>
-                <mt:Pages sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
-                    <mt:Ignore>リストを閉じる</mt:Ignore>
-                    </li>
-                <mt:If tag="PageBasename" ne="index">
-                    <mt:If tag="PageID" eq="$__pages_current_id__">
-                        <li class="echo-m-nav-item is-current">
-                            <span class="echo-m-nav-label is-current"><mt:PageTitle encode_html="1" /></span>
-                    <mt:Else>
-                        <li class="echo-m-nav-item">
-                            <a href="<mt:PagePermalink />" class="echo-m-nav-label"><mt:PageTitle encode_html="1" /></a>
-                    </mt:If>
-                </mt:If>
-                </mt:Pages>
-
-                <mt:Else>
-                    <li class="echo-m-nav-item"><span class="echo-m-nav-label<mt:If tag="FolderBasename" eq="$__folder_basename__"> is-current</mt:If>"><mt:FolderLabel encode_html="1" /></span>
-                </mt:If>
-
-            </mt:If>
-
-            <mt:SubFolderRecurse />
-            <mt:FolderFooter>
-                </li>
-            </ul>
-            </mt:FolderFooter>
-            </mt:SubFolders>
+        </mt:Pages>
         </nav><!-- /.echo-m-nav -->
     </div><!-- /.echo-p-widget-contents -->
 </section><!-- /.echo-p-widget -->

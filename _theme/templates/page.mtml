@@ -111,8 +111,9 @@
             <mt:ElseIf name="__folder_nav_type__" eq="画像上＋タイトル下">
                 <mt:Include module="モジュール-ページ一覧-card-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" />
             <mt:Else>
-                <mt:Include module="モジュール-ページ一覧-nav-小" __pages_layout__="$__folder_layout__" __pages_ancestor_basename__="$__folder_ancestor_basename__" __pages_title_text__="$__folder_ancestor_label__" __pages_current_id__="$__post_id__" />
+                <mt:Include module="モジュール-ページ一覧-nav-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_title_text__="$__folder_ancestor_label__" __pages_current_id__="$__post_id__" />
             </mt:If>
+            <mt:Include module="モジュール-関連フォルダ一覧" __pages_layout__="$__folder_layout__" __pages_folder_basename__="$__folder_basename__" __pages_ancestor_basename__="$__folder_ancestor_basename__" />
         </aside><!-- /.echo-p-widgetarea -->
         </mt:If>
         </mt:If>
