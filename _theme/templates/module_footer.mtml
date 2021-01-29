@@ -3,37 +3,151 @@
 # 
 # モジュール-フッタ
 # 
-# vars:
+# vars(extend):
+#   __folder_label__
+#   __post_id__
+# 
+# vars(local):
+#   __is_home__
+#   __fnav_has_index__
+#   __fnav_is_index__
+#   __fnav_children__
 # 
 # =======================
 </mt:Ignore>
 <footer class="echo-p-footer" role="contentinfo">
+    <div class="echo-p-footer-contents">
 
-    <div class="echo-p-footer-nav" role="navigation">
-        <nav class="echo-m-nav echo-m-nav-inverse">
+        <mt:Ignore>ナビゲーション1階層</mt:Ignore>
+        <nav class="echo-p-footer-nav echo-m-nav" role="navigation">
             <ul class="echo-m-nav-list">
-                <li class="echo-m-nav-item">
-                    <a href="#" class="echo-m-nav-label">ホーム</a>
-                </li>
-                <li class="echo-m-nav-item">
-                    <a href="#" class="echo-m-nav-label">ページ</a>
-                </li>
-                <li class="echo-m-nav-item">
-                    <a href="#" class="echo-m-nav-label">ページ</a>
-                </li>
-                <li class="echo-m-nav-item">
-                    <a href="#" class="echo-m-nav-label">ページ</a>
-                </li>
-                <li class="echo-m-nav-item">
-                    <a href="#" class="echo-m-nav-label">ページ</a>
-                </li>
-                <li class="echo-m-nav-item">
-                    <a href="#" class="echo-m-nav-label">ブログ</a>
-                </li>
-            </ul><!-- /.echo-m-nav-list -->
-        </nav><!-- /.echo-m-nav -->
-    </div><!-- /.echo-p-footer-nav -->
 
-    <p class="echo-p-footer-copyright">&copy; <mt:WebsiteName encode_html="1" /> All Rights Reserved.</p>
+            <mt:If name="__is_home__">
+                <li class="echo-m-nav-item is-current">
+                    <span class="echo-m-nav-label is-current" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></span>
+                </li>
+            <mt:Else>
+                <li class="echo-m-nav-item">
+                    <a class="echo-m-nav-label" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></a>
+                </li>
+            </mt:If>
 
+            <mt:SubFolders top="1">
+            <mt:HasNoParentFolder>
+                <mt:If tag="FolderCount">
+                    <mt:SetVar name="__fnav_has_index__" value="false" />
+                    <mt:SetVar name="__fnav_is_index__" value="false" />
+                    <mt:Pages sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+                    <mt:If tag="PageBasename" eq="index">
+                        <mt:If tag="CustomFieldValue" identifier="EchoPageShowFoNav">
+                            <mt:Ignore>フォルダにインデックスページがあるか確認</mt:Ignore>
+                            <mt:SetVar name="__fnav_has_index__" value="true" />
+                            <mt:If tag="PageID" eq="$__post_id__">
+                            <mt:SetVar name="__fnav_is_index__" value="true" />
+                            </mt:If>
+                        </mt:If>
+                    </mt:If>
+                    </mt:Pages>
+
+                    <mt:If name="__fnav_has_index__" eq="true">
+                        <mt:Ignore>インデックスページがあれば：インデックスページのリンクを表示</mt:Ignore>
+                        <li class="echo-m-nav-item<mt:If name="__fnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If>">
+                            <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-m-nav-label<mt:If name="__fnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If>"><mt:FolderLabel encode_html="1" /></a>
+                        </li>
+                    </mt:If>
+                </mt:If>
+            </mt:HasNoParentFolder>
+            </mt:SubFolders>
+
+            <mt:Ignore>フォルダに含まれないページ一覧</mt:Ignore>
+            <mt:Pages no_folder="1" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+            <mt:If tag="CustomFieldValue" identifier="EchoPageShowFoNav">
+                <mt:If tag="PageID" eq="$__post_id__">
+                    <li class="echo-m-nav-item is-current"><span class="echo-m-nav-label is-current"><mt:PageTitle encode_html="1" /></span></li>
+                <mt:Else>
+                    <li class="echo-m-nav-item"><a href="<mt:PagePermalink />" class="echo-m-nav-label"><mt:PageTitle encode_html="1" /></a></li>
+                </mt:If>
+            </mt:If>
+            </mt:Pages>
+
+            </ul>
+        </nav><!-- /.echo-p-footer-nav -->
+
+        <p class="echo-p-footer-title echo-m-title">
+            <a href="<mt:WebsiteUrl />">
+            <mt:If tag="CustomFieldValue" identifier="EchoBlogLogo">
+            <mt:CustomFieldAsset identifier="EchoBlogLogo">
+                <img src="<mt:AssetURL />" width="<mt:AssetProperty property="image_width" />" height="<mt:AssetProperty property="image_height" />" alt="<mt:WebsiteName encode_html="1" />">
+            </mt:CustomFieldAsset>
+            <mt:Else>
+                <img src="/images/common/logo.svg" width="182" height="36" alt="<mt:WebsiteName encode_html="1" />">
+            </mt:If>
+            </a>
+        </p><!-- /.echo-p-footer-title -->
+
+        <address class="echo-p-footer-address">
+            <span class="echo-p-footer-address-name"><mt:WebsiteName encode_html="1" /></span>
+            <mt:If tag="CustomFieldValue" identifier="EchoBlogAddress">
+                <br><span class="echo-p-footer-address-street"><mt:CustomFieldValue identifier="EchoBlogAddress"></span>
+            </mt:If>
+            <mt:If tag="CustomFieldValue" identifier="EchoBlogTel">
+                <br><span class="echo-p-footer-address-tel">Tel: <a href="tel:<mt:CustomFieldValue identifier="EchoBlogTel" />"><mt:CustomFieldValue identifier="EchoBlogTel"></a></span>
+            </mt:If>
+        </address><!-- /.echo-p-footer-address -->
+
+        <div class="echo-p-footer-btn">
+            <ul class="echo-m-list echo-m-list-horizontal">
+                <li class="echo-m-list-item echo-p-footer-btn-mail">
+                    <a href="#" class="echo-m-btn echo-m-btn-gray">
+                        <mt:Var name="__svg_mail__">お問い合わせ
+                    </a><!-- /.echo-m-btn -->
+                </li><!-- /.echo-m-list-item -->
+
+                <mt:If tag="CustomFieldValue" identifier="EchoBlogTwitter">
+                    <li class="echo-m-list-item echo-p-footer-btn-twitter">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-round">
+                            <mt:Var name="__svg_twitter__">
+                            <span class="echo-u-sr">Twitter</span>
+                        </a><!-- /.echo-m-btn -->
+                    </li><!-- /.echo-m-list-item -->
+                </mt:If>
+                <mt:If tag="CustomFieldValue" identifier="EchoBlogFacebook">
+                    <li class="echo-m-list-item echo-p-footer-btn-facebook">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-round">
+                            <mt:Var name="__svg_facebook__">
+                            <span class="echo-u-sr">Facebookページ</span>
+                        </a><!-- /.echo-m-btn -->
+                    </li><!-- /.echo-m-list-item -->
+                </mt:If>
+                <mt:If tag="CustomFieldValue" identifier="EchoBlogInstagram">
+                    <li class="echo-m-list-item echo-p-footer-btn-instagram">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-round">
+                            <mt:Var name="__svg_instagram__">
+                            <span class="echo-u-sr">Instagram</span>
+                        </a><!-- /.echo-m-btn -->
+                    </li><!-- /.echo-m-list-item -->
+                </mt:If>
+                <mt:If tag="CustomFieldValue" identifier="EchoBlogLine">
+                    <li class="echo-m-list-item echo-p-footer-btn-facebook">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-line">
+                            <mt:Var name="__svg_line__">
+                            <span class="echo-u-sr">LINE @</span>
+                    </a><!-- /.echo-m-btn -->
+                    </li><!-- /.echo-m-list-item -->
+                </mt:If>
+                <mt:If tag="CustomFieldValue" identifier="EchoBlogYouTube">
+                    <li class="echo-m-list-item echo-p-footer-btn-youtube">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-round">
+                            <mt:Var name="__svg_youtube__">
+                            <span class="echo-u-sr">YouTubeチャンネル</span>
+                        </a><!-- /.echo-m-btn -->
+                    </li><!-- /.echo-m-list-item -->
+                </mt:If>
+
+            </ul><!-- /.echo-m-list -->
+        </div><!-- /.echo-p-footer-btn -->
+
+        <p class="echo-p-footer-copyright">&copy; <mt:WebsiteName encode_html="1" /> All Rights Reserved.</p>
+
+    </div><!-- /.echo-p-footer-contents -->
 </footer><!-- /.echo-p-footer -->
