@@ -69,16 +69,16 @@
 <mt:SetVarBlock name="__body-class__">page page-id-<mt:Var name="__post_id__" /><mt:If tag="PageBasename" eq="index"> page-index</mt:If><mt:If name="__folder_parent_basename__" ne="$__folder_basename__"> <mt:Var name="__folder_parent_basename__" /></mt:If><mt:If name="__folder_ancestor_basename__" ne="$__folder_parent_basename__"> <mt:Var name="__folder_ancestor_basename__" /></mt:If><mt:If name="__folder_layout__" eq="2カラム"> layout-2col<mt:Else> layout-1col</mt:If><mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1"> layout-show-header<mt:Else> layout-hide-header</mt:If><mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1"> layout-show-title<mt:Else> layout-hide-title</mt:If></mt:SetVarBlock>
 
 <mt:SetVarBlock name="__main__">
-<div class="echo-p-contents<mt:If name="__folder_layout__" eq="2カラム"> echo-p-contents-2col<mt:Else> echo-p-contents-1col</mt:If>">
+<mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1">
+    <div class="echo-p-pagehead">
+        <h1 class="echo-p-pagehead-title"><mt:Var name="__folder_ancestor_label__" /></h1>
+        <p class="echo-p-pagehead-subtitle"><mt:Var name="__folder_ancestor_basename__" /></p>
+    </div><!-- /.echo-p-pagehead -->
+</mt:If>
 
-    <mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1">
-        <div class="echo-p-pagehead">
-            <h1 class="echo-p-pagehead-title"><mt:Var name="__folder_ancestor_label__" /></h1>
-            <p class="echo-p-pagehead-subtitle"><mt:Var name="__folder_ancestor_basename__" /></p>
-        </div><!-- /.echo-p-pagehead -->
-    </mt:If>
+<div class="echo-p-content<mt:If name="__folder_layout__" eq="2カラム"> echo-p-content-2col<mt:Else> echo-p-content-1col</mt:If>">
 
-    <main class="echo-p-main" role="main">
+    <main class="echo-p-main echo-p-content-main" role="main">
         <section class="echo-c-post echo-c-post-page">
             <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
             <div class="echo-c-post-header">
@@ -99,7 +99,7 @@
 
     </main><!-- /.echo-p-main -->
 
-    <div class="echo-p-sub">
+    <div class="echo-p-sub echo-p-content-sub">
 
         <mt:If name="__folder_basename__">
         <mt:If name="__folder_nav_type__" ne="表示しない">
@@ -126,7 +126,7 @@
 
     </div><!-- /.echo-p-sub -->
 
-</div><!-- /.echo-p-contents -->
+</div><!-- /.echo-p-content -->
 </mt:SetVarBlock>
 
 <mt:Include module="レイアウト-基本" />

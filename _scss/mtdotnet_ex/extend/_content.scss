@@ -1,0 +1,64 @@
+/*
+--------------------
+#{$pr}#{$l}content
+--------------------
+*/
+
+.#{$pr}#{$p}content {
+
+    .#{$pr}#{$p}content#{$c1}main {
+    }
+
+    .#{$pr}#{$p}content#{$c1}sub {
+    }
+
+    &.#{$pr}#{$p}content#{$c3}1col {
+
+        .#{$pr}#{$p}content#{$c1}main {
+        }
+
+        .#{$pr}#{$p}content#{$c1}sub {
+        }
+
+    }
+
+    &.#{$pr}#{$p}content#{$c3}2col {
+
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .#{$pr}#{$p}content#{$c1}main {
+
+            @include media-breakpoint-up(lg) {
+                flex-grow: 0;
+                width: 100%;
+                min-height: 100vh;
+                width: map-get( $be-max-widths, 'md' ) + map-get( $grid-gutter-widths, 'md' );
+                margin-right: ( $spacer * 3 ) - ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            }
+
+            @include media-breakpoint-up(xl) {
+                margin-right: ( $spacer * 6 ) - ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            }
+
+        }
+
+        .#{$pr}#{$p}content#{$c1}sub {
+
+            @include media-breakpoint-up(lg) {
+                flex-grow: 1;
+                position: sticky;
+                top: map-get( $grid-gutter-widths, 'md' );
+                max-width: $sub-width;
+                z-index: 51;
+            }
+
+        }
+
+    }
+
+}
