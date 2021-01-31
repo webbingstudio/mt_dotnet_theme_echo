@@ -4,6 +4,77 @@
  */
 /*
 --------------------
+.echo-p-header
+--------------------
+*/
+.echo-p-header {
+  position: relative;
+  width: 100%;
+  transition: padding .3s;
+}
+
+@media (min-width: 768px) {
+  .echo-p-header.js-scrollswitch-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 52;
+  }
+}
+
+@media (min-width: 768px) {
+  .echo-p-header.js-scrollswitch-active .echo-p-header-title img {
+    height: 30px;
+  }
+}
+
+.echo-p-header-contents {
+  width: calc( 100% - 20px);
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.echo-p-header-title {
+  flex-grow: 1;
+}
+
+.echo-p-header-title a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.echo-p-header-title img {
+  width: auto;
+  height: 36px;
+  vertical-align: bottom;
+  transition: height .6s;
+}
+
+.echo-p-header-nav {
+  flex-grow: 0;
+}
+
+.echo-p-header-nav .echo-m-nav-children {
+  display: none;
+}
+
+/*
+--------------------
+echo-l-content
+--------------------
+*/
+@media (min-width: 1000px) {
+  .echo-p-content.echo-p-content-2col .echo-p-content-sub {
+    top: 72px;
+  }
+}
+
+/*
+--------------------
 .echo-c-card
 --------------------
 */

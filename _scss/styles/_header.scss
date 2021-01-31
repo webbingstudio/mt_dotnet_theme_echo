@@ -1,0 +1,83 @@
+/*
+--------------------
+.#{$pr}#{$p}header
+--------------------
+*/
+
+.#{$pr}#{$p}header {
+    position: relative;
+    width: 100%;
+    transition: padding .3s;
+
+    &:not(.js-scrollswitch-active) {
+    }
+
+    &.js-scrollswitch-active {
+        @include media-breakpoint-up(md) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            box-shadow: 0 2px 5px rgba( 0, 0, 0, 0.3 );
+            z-index: 52;
+        }
+
+        .#{$pr}#{$p}header#{$c1}title {
+
+            img {
+
+                @include media-breakpoint-up(md) {
+                    height: 30px;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.#{$pr}#{$p}header#{$c1}contents {
+    width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+    max-width: map-get( $container-max-widths-lg, 'xl' );
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.#{$pr}#{$p}header#{$c1}title {
+    flex-grow: 1;
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    img {
+        width: auto;
+        height: 36px;
+        vertical-align: bottom;
+        transition: height .6s;
+    }
+
+}
+
+.#{$pr}#{$p}header#{$c1}nav {
+    flex-grow: 0;
+
+    .#{$pr}#{$m}nav#{$c1}list {
+
+        .#{$pr}#{$m}nav#{$c1}list {
+        }
+
+    }
+
+    .#{$pr}#{$m}nav#{$c1}item {
+    }
+
+    .#{$pr}#{$m}nav#{$c1}children {
+        display: none;
+    }
+
+}
