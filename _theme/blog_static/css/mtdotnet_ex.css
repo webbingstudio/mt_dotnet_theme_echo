@@ -949,6 +949,11 @@ embed
 .echo-p-header
 --------------------
 */
+.echo-p-header {
+  position: relative;
+  z-index: 62;
+}
+
 .echo-p-header-contents {
   max-width: 1200px;
   margin-left: auto;
@@ -977,7 +982,34 @@ embed
 }
 
 .echo-p-header-nav .echo-m-nav-children {
-  display: none;
+  flex-direction: column;
+}
+
+.echo-p-header-nav .echo-m-nav-children .echo-m-nav-label {
+  padding-left: 1em;
+}
+
+.echo-p-header-nav .echo-m-nav-item {
+  position: relative;
+}
+
+.echo-p-header-nav .echo-m-nav-item > .echo-m-nav-children {
+  position: absolute;
+  width: 100vw;
+  max-width: 10em;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transform-origin: top center;
+  z-index: 61;
+}
+
+.echo-p-header-nav .echo-m-nav-item:not(:hover) > .echo-m-nav-children {
+  opacity: 0;
+}
+
+.echo-p-header-nav .echo-m-nav-item:hover .echo-m-nav-children {
+  opacity: 1;
 }
 
 .echo-p-header-btn {

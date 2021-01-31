@@ -14,7 +14,6 @@
 }
 
 .#{$pr}#{$p}header {
-    position: relative;
     width: 100%;
     transition: padding .3s;
 
@@ -22,7 +21,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 52;
     }
 
     &:not(.js-scrollswitch-active) {
@@ -91,4 +89,93 @@
 
     }
 
+}
+
+.#{$pr}#{$p}header#{$c1}nav {
+
+    .#{$pr}#{$m}nav#{$c1}item {
+
+        > .#{$pr}#{$m}nav#{$c1}children {
+            background-color: $body-bg;
+            z-index: 61;
+        }
+
+        &:not(:hover) {
+            // Do not use animation "reverse" for mouseout
+            // (Because it play when the document loads).
+
+            > .#{$pr}#{$m}nav#{$c1}children {
+                transform:
+                    translate( -50%, 0 )
+                    scale( 1, 0 );
+
+                > .#{$pr}#{$m}nav#{$c1}item {
+                    opacity: 0;
+                }
+
+            }
+
+        }
+
+        &:hover {
+
+            .#{$pr}#{$m}nav#{$c1}children {
+                animation: headerNavChildrenListIn .3s ease-in 1 forwards;
+                box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.3 );
+
+                > .#{$pr}#{$m}nav#{$c1}item {
+                    animation: headerNavChildrenItemIn .6s ease-in 1 forwards;
+                }
+
+            }
+
+        }
+
+        &.is-parent {
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 4px;
+                bottom: 0;
+                left: 0;
+                background-color: $ui-current-bg;
+                z-index: 62;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+@keyframes headerNavChildrenListIn {
+    0% {
+        transform:
+            scale( 1, 0 )
+            translate( -50%, 0 );
+    }
+    100% {
+        transform:
+            scale( 1, 1 )
+            translate( -50%, 0 );
+    }
+}
+
+@keyframes headerNavChildrenItemIn {
+    0% {
+        opacity: 0;
+        transform: translate( 0, -10% );
+    }
+    50% {
+        opacity: .5;
+        transform: translate( 0, 0 );
+    }
+    100% {
+        opacity: 1;
+        transform: translate( 0, 0 );
+    }
 }
