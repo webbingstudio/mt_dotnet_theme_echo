@@ -1,0 +1,148 @@
+/*
+--------------------
+.#{$pr}#{$p}header
+--------------------
+*/
+
+.#{$pr}#{$p}header#{$c1}contents {
+    max-width: ( map-get( $container-max-widths-lg, 'xl' ) - map-get( $grid-gutter-widths, 'md' ) );
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.#{$pr}#{$p}header#{$c1}title {
+    flex-grow: 1;
+    padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    img {
+        width: auto;
+        height: 36px;
+        vertical-align: bottom;
+    }
+
+}
+
+.#{$pr}#{$p}header#{$c1}nav {
+    flex-grow: 0;
+    padding-right: 0;
+
+    .#{$pr}#{$m}nav#{$c1}list {
+
+        .#{$pr}#{$m}nav#{$c1}list {
+        }
+
+    }
+
+    .#{$pr}#{$m}nav#{$c1}item {
+    }
+
+    .#{$pr}#{$m}nav#{$c1}children {
+        display: none;
+    }
+
+}
+
+.#{$pr}#{$p}header#{$c1}btn {
+    flex-grow: 0;
+
+    @include media-breakpoint-up(md) {
+        padding-right: 0;
+    }
+
+    .#{$pr}#{$m}nav#{$c1}label {
+        position: relative;
+        font-size: $font-size-sm;
+
+        @include media-breakpoint-down(md) {
+            padding: 0 .5em;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding-left: .25em;
+            padding-right: .25em;
+        }
+
+        svg {
+            width: auto;
+            height: 1.4em;
+            margin-top: -.2em;
+            margin-bottom: -.2em;
+        }
+
+    }
+
+    .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+        margin-left: .5em;
+    }
+
+    .#{$pr}#{$m}nav#{$c1}item {
+
+        &.#{$pr}#{$p}header#{$c1}btn#{$c3}xs {
+
+            .#{$pr}#{$m}nav#{$c1}label {
+
+                @include media-breakpoint-down(sm) {
+                    padding-left: .5em;
+                    padding-right: .5em;
+                }
+
+            }
+
+            .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+                overflow: hidden;
+                width: 1px;
+                margin-left: -1px;
+                text-indent: -999em;
+            }
+
+        }
+
+        &.#{$pr}#{$p}header#{$c1}btn#{$c3}sm {
+
+            .#{$pr}#{$m}nav#{$c1}label {
+
+                @include media-breakpoint-down(sm) {
+                    padding-left: .5em;
+                    padding-right: .5em;
+                }
+
+            }
+
+            .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+                font-size: ( 12 / 14 ) + em;
+
+                @include media-breakpoint-up(lg) {
+                    font-size: ( 13 / 14 ) + em;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    overflow: hidden;
+                    width: 1px;
+                    margin-left: -1px;
+                    text-indent: -999em;
+                }
+
+            }
+
+        }
+
+        &.#{$pr}#{$p}header#{$c1}btn#{$c3}lg {
+
+            .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+
+                @include media-breakpoint-up(lg) {
+                    font-size: ( 15 / 14 ) + em;
+                }
+
+            }
+
+        }
+
+    }
+
+}

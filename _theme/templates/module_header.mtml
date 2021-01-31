@@ -100,23 +100,23 @@
             </ul>
         </nav><!-- /.echo-p-header-nav -->
 
-        <div class="echo-p-header-btn">
-            <ul class="echo-m-list echo-m-list-horizontal">
+        <div class="echo-p-header-btn echo-m-nav">
+            <ul class="echo-m-nav-list">
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogTel">
-                <li class="echo-m-list-item echo-p-header-btn-tel">
-                    <a href="tel:<mt:CustomFieldValue identifier="EchoBlogTel" />" class="echo-m-btn">
+                <li class="echo-m-nav-item echo-p-header-btn-lg echo-p-header-btn-tel">
+                    <a href="tel:<mt:CustomFieldValue identifier="EchoBlogTel" />" class="echo-m-nav-label">
                         <mt:Var name="__svg_tel__">
-                        <span class="echo-u-sr"><mt:CustomFieldValue identifier="EchoBlogTel" /> に電話をかける</span>
-                    </a><!-- /.echo-m-btn -->
-                </li><!-- /.echo-m-list-item -->
+                        <span class="echo-p-header-btn-text"><mt:CustomFieldValue identifier="EchoBlogTel" /></span>
+                    </a><!-- /.echo-m-nav-label -->
+                </li><!-- /.echo-m-nav-item -->
                 </mt:If>
-                <li class="echo-m-list-item echo-p-header-btn-mail">
-                    <a href="#" class="echo-m-btn">
+                <li class="echo-m-nav-item echo-p-header-btn-sm echo-p-header-btn-mail">
+                    <a href="#" class="echo-m-nav-label">
                         <mt:Var name="__svg_mail__">
-                        <span class="echo-u-sr">お問い合わせ</span>
-                    </a><!-- /.echo-m-btn -->
-                </li><!-- /.echo-m-list-item -->
-            </ul><!-- /.echo-m-list -->
+                        <span class="echo-p-header-btn-text">お問い合わせ</span>
+                    </a><!-- /.echo-m-nav-label -->
+                </li><!-- /.echo-m-nav-item -->
+            </ul><!-- /.echo-m-nav -->
         </div><!-- /.echo-p-header-btn -->
 
     </div><!-- /.echo-p-header-contents -->
