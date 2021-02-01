@@ -19,6 +19,7 @@ EchoHoverSwitch = (function() {
             t = this;
 
         t.initials = {
+            ready_class: 'js-hoverswitch-ready',
             in_class: 'js-hoverswitch-in',
             out_class: 'js-hoverswitch-out'
         };
@@ -26,14 +27,14 @@ EchoHoverSwitch = (function() {
 
         t.target;
 
-        $(element).addClass( t.settings.out_class );
+        $(element).addClass( t.settings.ready_class );
 
-        $(element).on('mouseover', function() {
+        $(element).on('mouseenter', function() {
             $(this)
                 .removeClass( t.settings.out_class )
                 .addClass( t.settings.in_class );
         });
-        $(element).on('mouseout', function() {
+        $(element).on('mouseleave', function() {
             $(this)
                 .removeClass( t.settings.in_class )
                 .addClass( t.settings.out_class );

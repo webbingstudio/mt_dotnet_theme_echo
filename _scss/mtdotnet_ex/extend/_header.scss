@@ -49,31 +49,36 @@
         position: relative;
 
         > .#{$pr}#{$m}nav#{$c1}children {
+            overflow: hidden;
             position: absolute;
-            width: 100vw;
-            max-width: 10em;
+            width: 10em;
             top: 100%;
             left: 50%;
             transform: translate( -50%, 0 );
             transform-origin: top center;
-            z-index: 61;
         }
 
-        &:not(:hover) {
-            // Do not use animation "reverse" for mouseout
+        &.js-hoverswitch-ready {
+            // Do not use animation "reverse" for :not(:hover)
             // (Because it play when the document loads).
 
             > .#{$pr}#{$m}nav#{$c1}children {
                 opacity: 0;
+                height: 0;
             }
 
         }
 
-        &:hover {
+        &.js-hoverswitch-in {
 
-            .#{$pr}#{$m}nav#{$c1}children {
+            > .#{$pr}#{$m}nav#{$c1}children {
                 opacity: 1;
+                height: auto;
             }
+
+        }
+
+        &.js-hoverswitch-out {
 
         }
 
