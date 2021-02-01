@@ -1,0 +1,214 @@
+/*
+--------------------
+.#{$pr}#{$p}footer
+--------------------
+*/
+
+.#{$pr}#{$p}footer {
+}
+
+.#{$pr}#{$p}footer#{$c1}contents {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+    max-width: ( map-get( $container-max-widths-lg, 'xl' ) - map-get( $grid-gutter-widths, 'md' ) );
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+}
+
+.#{$pr}#{$p}footer#{$c1}nav {
+    flex-grow: 1;
+    width: 100%;
+    padding-bottom: ( $spacer * 4.5 );
+
+    .#{$pr}#{$m}list#{$c1}item {
+        display: inline-block;
+        font-size: $font-size-xs;
+
+        @include media-breakpoint-up(lg) {
+            font-size: $font-size-sm;
+        }
+
+    }
+
+    a {
+        color: $ui-color;
+
+        &:hover,
+        &:focus {
+            color: $nav-hover-color;
+            text-decoration: none;
+        }
+
+    }
+
+}
+
+.#{$pr}#{$p}footer#{$c1}title {
+    flex-grow: 0;
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    img,
+    svg {
+        width: auto;
+        height: 36px;
+        vertical-align: bottom;
+
+        @include media-breakpoint-up(lg) {
+            height: 44px;
+        }
+
+    }
+
+}
+
+.#{$pr}#{$p}footer#{$c1}address {
+    flex-grow: 0;
+    font-size: $font-size-xs;
+    font-style: normal;
+    line-height: $line-height-lg;
+
+    @include media-breakpoint-down(md) {
+        margin: ( $spacer * 3 ) auto 0;
+        text-align: center;
+    }
+
+    @include media-breakpoint-down(sm) {
+        max-width: ( 14 * 20 ) + px;
+    }
+
+    @include media-breakpoint-only(md) {
+        max-width: ( 14 * 40 ) + px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-sm;
+        margin-left: ( $spacer * 6 );
+    }
+
+    a {
+        color: $ui-color;
+
+        &:hover,
+        &:focus {
+            color: $nav-hover-color;
+            text-decoration: none;
+        }
+
+    }
+
+    svg {
+        display: inline-block;
+        width: auto;
+        height: 1.4em;
+        margin-top: -.2em;
+        margin-bottom: -.2em;
+        margin-right: .25em;
+        vertical-align: middle;
+    }
+
+}
+
+.#{$pr}#{$p}footer#{$c1}address#{$c2}name {
+    display: block;
+}
+
+.#{$pr}#{$p}footer#{$c1}address#{$c2}street {
+    display: block;
+
+    br {
+        display: none;
+    }
+
+}
+
+.#{$pr}#{$p}footer#{$c1}address#{$c2}tel {
+    margin-right: 2em;
+
+    br {
+        display: none;
+    }
+
+}
+
+.#{$pr}#{$p}footer#{$c1}address#{$c2}mail {
+
+    br {
+        display: none;
+    }
+
+}
+
+.#{$pr}#{$p}footer#{$c1}btn {
+    flex-grow: 0;
+
+    @include media-breakpoint-down(md) {
+        margin-top: ( $spacer * 3 );
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-left: ( $spacer * 6 );
+    }
+
+    .#{$pr}#{$m}btn {
+        position: relative;
+        border: 0 none;
+
+        svg {
+            display: inline-block;
+            width: auto;
+            height: 2em;
+            margin-top: -.5em;
+            margin-bottom: -.5em;
+            vertical-align: middle;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $body-inverse-color;
+            background-color: $body-color;
+
+            svg {
+                fill: $body-inverse-color;
+            }
+
+        }
+
+    }
+
+    .#{$pr}#{$p}footer#{$c1}btn#{$c1}text {
+        display: inline-block;
+        overflow: hidden;
+        width: 1px;
+        margin-left: -1px;
+        text-indent: -999em;
+        float: right;
+    }
+
+    .#{$pr}#{$m}list#{$c1}item {
+        padding-left: .5em;
+        padding-right: .5em;
+    }
+
+}
+
+.#{$pr}#{$p}footer#{$c1}copyright {
+    flex-grow: 1;
+    width: 100%;
+    margin: 0;
+    padding-top: ( $spacer * 4.5 );
+}

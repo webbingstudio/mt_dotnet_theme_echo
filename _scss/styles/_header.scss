@@ -122,10 +122,10 @@
         &.js-hoverswitch-in {
 
             > .#{$pr}#{$m}nav#{$c1}children {
-                animation: headerNavChildrenListIn .3s ease-in 1 forwards;
+                animation: headerNavChildrenListIn .3s linear 1 forwards;
 
                 > .#{$pr}#{$m}nav#{$c1}item {
-                    animation: headerNavChildrenItemIn .6s ease-in 1 forwards;
+                    animation: headerNavChildrenItemIn .6s linear 1 forwards;
                 }
 
             }
@@ -138,10 +138,10 @@
                 transform:
                     scale( 1, 1 )
                     translate( -50%, 0 );
-                animation: headerNavChildrenListOut .2s .2s ease-out 1 forwards;
+                animation: headerNavChildrenListOut .2s .1s linear 1 forwards;
 
                 > .#{$pr}#{$m}nav#{$c1}item {
-                    animation: headerNavChildrenItemOut .2s ease-out 1 forwards;
+                    animation: headerNavChildrenItemOut .3s linear 1 forwards;
                 }
 
             }
@@ -215,8 +215,12 @@
         opacity: 1;
         transform: translate( 0, 0 );
     }
+    50% {
+        opacity: .5;
+        transform: translate( 0, -50% );
+    }
     100% {
         opacity: 0;
-        transform: translate( 0, -100% );
+        transform: translate( 0, -50% );
     }
 }

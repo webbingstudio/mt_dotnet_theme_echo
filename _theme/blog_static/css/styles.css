@@ -71,20 +71,20 @@
 }
 
 .echo-p-header-nav .echo-m-nav-item.js-hoverswitch-in > .echo-m-nav-children {
-  animation: headerNavChildrenListIn .3s ease-in 1 forwards;
+  animation: headerNavChildrenListIn .3s linear 1 forwards;
 }
 
 .echo-p-header-nav .echo-m-nav-item.js-hoverswitch-in > .echo-m-nav-children > .echo-m-nav-item {
-  animation: headerNavChildrenItemIn .6s ease-in 1 forwards;
+  animation: headerNavChildrenItemIn .6s linear 1 forwards;
 }
 
 .echo-p-header-nav .echo-m-nav-item.js-hoverswitch-out > .echo-m-nav-children {
   transform: scale(1, 1) translate(-50%, 0);
-  animation: headerNavChildrenListOut .2s .2s ease-out 1 forwards;
+  animation: headerNavChildrenListOut .2s .1s linear 1 forwards;
 }
 
 .echo-p-header-nav .echo-m-nav-item.js-hoverswitch-out > .echo-m-nav-children > .echo-m-nav-item {
-  animation: headerNavChildrenItemOut .2s ease-out 1 forwards;
+  animation: headerNavChildrenItemOut .3s linear 1 forwards;
 }
 
 .echo-p-header-nav .echo-m-nav-item.is-parent:after {
@@ -136,10 +136,44 @@
     opacity: 1;
     transform: translate(0, 0);
   }
+  50% {
+    opacity: .5;
+    transform: translate(0, -50%);
+  }
   100% {
     opacity: 0;
-    transform: translate(0, -100%);
+    transform: translate(0, -50%);
   }
+}
+
+/*
+--------------------
+.echo-p-footer
+--------------------
+*/
+.echo-p-footer {
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.echo-p-footer-btn .echo-p-footer-btn-twitter .echo-m-btn:hover, .echo-p-footer-btn .echo-p-footer-btn-twitter .echo-m-btn:focus, .echo-p-footer-btn .echo-p-footer-btn-twitter .echo-m-btn:active {
+  background-color: #1d9bf0;
+}
+
+.echo-p-footer-btn .echo-p-footer-btn-facebook .echo-m-btn:hover, .echo-p-footer-btn .echo-p-footer-btn-facebook .echo-m-btn:focus, .echo-p-footer-btn .echo-p-footer-btn-facebook .echo-m-btn:active {
+  background-color: #1878f2;
+}
+
+.echo-p-footer-btn .echo-p-footer-btn-instagram .echo-m-btn:hover, .echo-p-footer-btn .echo-p-footer-btn-instagram .echo-m-btn:focus, .echo-p-footer-btn .echo-p-footer-btn-instagram .echo-m-btn:active {
+  background-color: #b53f9e;
+  background-image: linear-gradient(49deg, #fee331 0%, #b53f9e 50%);
+}
+
+.echo-p-footer-btn .echo-p-footer-btn-line .echo-m-btn:hover, .echo-p-footer-btn .echo-p-footer-btn-line .echo-m-btn:focus, .echo-p-footer-btn .echo-p-footer-btn-line .echo-m-btn:active {
+  background-color: #00b900;
+}
+
+.echo-p-footer-btn .echo-p-footer-btn-youtube .echo-m-btn:hover, .echo-p-footer-btn .echo-p-footer-btn-youtube .echo-m-btn:focus, .echo-p-footer-btn .echo-p-footer-btn-youtube .echo-m-btn:active {
+  background-color: #ee0000;
 }
 
 /*

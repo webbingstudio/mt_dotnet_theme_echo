@@ -67,60 +67,57 @@
             </a>
         </p><!-- /.echo-p-footer-title -->
 
+        <mt:Ignore>住所が未入力であれば何も表示しない</mt:Ignore>
+        <mt:If tag="CustomFieldValue" identifier="EchoBlogAddress">
         <address class="echo-p-footer-address">
             <span class="echo-p-footer-address-name"><mt:WebsiteName encode_html="1" /></span>
-            <mt:If tag="CustomFieldValue" identifier="EchoBlogAddress">
-                <br><span class="echo-p-footer-address-street"><mt:CustomFieldValue identifier="EchoBlogAddress"></span>
-            </mt:If>
+                <span class="echo-p-footer-address-street"><br><mt:CustomFieldValue identifier="EchoBlogAddress"></span>
             <mt:If tag="CustomFieldValue" identifier="EchoBlogTel">
-                <br><span class="echo-p-footer-address-tel">Tel: <a href="tel:<mt:CustomFieldValue identifier="EchoBlogTel" />"><mt:CustomFieldValue identifier="EchoBlogTel"></a></span>
+                <span class="echo-p-footer-address-tel"><br><mt:Var name="__svg_tel__"><a href="tel:<mt:CustomFieldValue identifier="EchoBlogTel" />"><mt:CustomFieldValue identifier="EchoBlogTel"></a></span>
             </mt:If>
+                <span class="echo-p-footer-address-mail"><br><a href="#"><mt:Var name="__svg_mail__">お問い合わせ</a></span>
+
         </address><!-- /.echo-p-footer-address -->
+        </mt:If>
 
         <div class="echo-p-footer-btn">
             <ul class="echo-m-list echo-m-list-horizontal">
-                <li class="echo-m-list-item echo-p-footer-btn-sm echo-p-footer-btn-mail">
-                    <a href="#" class="echo-m-btn">
-                        <mt:Var name="__svg_mail__">
-                        <span class="echo-p-footer-btn-text">お問い合わせ</span>
-                    </a><!-- /.echo-m-btn -->
-                </li><!-- /.echo-m-list-item -->
 
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogTwitter">
-                    <li class="echo-m-list-item echo-p-footer-btn-xs echo-p-footer-btn-twitter">
-                        <a href="#" target="_blank" class="echo-m-btn">
+                    <li class="echo-m-list-item echo-p-footer-btn-twitter">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_twitter__">
                             <span class="echo-p-footer-btn-text">Twitter</span>
                         </a><!-- /.echo-m-btn -->
                     </li><!-- /.echo-m-list-item -->
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogFacebook">
-                    <li class="echo-m-list-item echo-p-footer-btn-xs echo-p-footer-btn-facebook">
-                        <a href="#" target="_blank" class="echo-m-btn">
+                    <li class="echo-m-list-item echo-p-footer-btn-facebook">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_facebook__">
                             <span class="echo-p-footer-btn-text">Facebookページ</span>
                         </a><!-- /.echo-m-btn -->
                     </li><!-- /.echo-m-list-item -->
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogInstagram">
-                    <li class="echo-m-list-item echo-p-footer-btn-xs echo-p-footer-btn-instagram">
-                        <a href="#" target="_blank" class="echo-m-btn">
+                    <li class="echo-m-list-item echo-p-footer-btn-instagram">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_instagram__">
                             <span class="echo-p-footer-btn-text">Instagram</span>
                         </a><!-- /.echo-m-btn -->
                     </li><!-- /.echo-m-list-item -->
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogLine">
-                    <li class="echo-m-list-item echo-p-footer-btn-xs echo-p-footer-btn-facebook">
-                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-line">
+                    <li class="echo-m-list-item echo-p-footer-btn-facebook">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_line__">
                             <span class="echo-p-footer-btn-text">LINE @</span>
                     </a><!-- /.echo-m-btn -->
                     </li><!-- /.echo-m-list-item -->
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogYouTube">
-                    <li class="echo-m-list-item echo-p-footer-btn-xs echo-p-footer-btn-youtube">
-                        <a href="#" target="_blank" class="echo-m-btn">
+                    <li class="echo-m-list-item echo-p-footer-btn-youtube">
+                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_youtube__">
                             <span class="echo-p-footer-btn-text">YouTubeチャンネル</span>
                         </a><!-- /.echo-m-btn -->
