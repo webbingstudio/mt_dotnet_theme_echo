@@ -85,7 +85,7 @@
 
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogTwitter">
                     <li class="echo-m-list-item echo-p-footer-btn-twitter">
-                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
+                        <a href="https://twitter.com/<mt:CustomFieldValue identifier="EchoBlogTwitter" />" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_twitter__">
                             <span class="echo-p-footer-btn-text">Twitter</span>
                         </a><!-- /.echo-m-btn -->
@@ -93,7 +93,7 @@
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogFacebook">
                     <li class="echo-m-list-item echo-p-footer-btn-facebook">
-                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
+                        <a href="<mt:CustomFieldValue identifier="EchoBlogFacebook" />" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_facebook__">
                             <span class="echo-p-footer-btn-text">Facebookページ</span>
                         </a><!-- /.echo-m-btn -->
@@ -101,23 +101,15 @@
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogInstagram">
                     <li class="echo-m-list-item echo-p-footer-btn-instagram">
-                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
+                        <a href="https://www.instagram.com/<mt:CustomFieldValue identifier="EchoBlogInstagram" />/" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_instagram__">
                             <span class="echo-p-footer-btn-text">Instagram</span>
                         </a><!-- /.echo-m-btn -->
                     </li><!-- /.echo-m-list-item -->
                 </mt:If>
-                <mt:If tag="CustomFieldValue" identifier="EchoBlogLine">
-                    <li class="echo-m-list-item echo-p-footer-btn-facebook">
-                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
-                            <mt:Var name="__svg_line__">
-                            <span class="echo-p-footer-btn-text">LINE @</span>
-                    </a><!-- /.echo-m-btn -->
-                    </li><!-- /.echo-m-list-item -->
-                </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogYouTube">
                     <li class="echo-m-list-item echo-p-footer-btn-youtube">
-                        <a href="#" target="_blank" class="echo-m-btn echo-m-btn-square">
+                        <a href="<mt:CustomFieldValue identifier="EchoBlogYouTube" />" target="_blank" class="echo-m-btn echo-m-btn-square">
                             <mt:Var name="__svg_youtube__">
                             <span class="echo-p-footer-btn-text">YouTubeチャンネル</span>
                         </a><!-- /.echo-m-btn -->
