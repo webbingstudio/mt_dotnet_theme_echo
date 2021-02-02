@@ -23,6 +23,80 @@
 
 }
 
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
+
+    .#{$pr}#{$c}media {
+
+        &.#{$nav-current} {
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                left: 0;
+                top: 0;
+                background-color: $body-bg;
+                z-index: 11;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                left: 0;
+                top: 0;
+                background-color: $ui-current-bg;
+                z-index: 12;
+            }
+
+        }
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$c}media#{$c1}wrapper {
+            margin-bottom: $spacer;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+        }
+
+        .#{$pr}#{$c}media {
+
+            &.#{$nav-current} {
+
+                &:before {
+                    width: 8px;
+                    height: 8px;
+                }
+
+                &:after {
+                    width: 6px;
+                    height: 6px;
+                }
+
+            }
+
+        }
+
+        .#{$pr}#{$c}media#{$c1}object {
+            width: ( 480px / 6 );
+        }
+
+    }
+
+}
+
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}nav {
 
     .#{$pr}#{$m}nav#{$c1}label {

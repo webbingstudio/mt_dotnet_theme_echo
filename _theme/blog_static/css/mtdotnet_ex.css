@@ -1551,6 +1551,10 @@ time.echo-c-media-meta {
   }
 }
 
+.echo-p-widget.echo-p-widget-media .echo-c-media {
+  position: relative;
+}
+
 .echo-p-widget.echo-p-widget-headline .echo-p-widget-contents {
   max-width: 720px;
   margin-left: auto;

@@ -34,8 +34,13 @@
             <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4">
             </mt:If>
 
-                <div class="echo-c-media-wraper">
+                <div class="echo-c-media-wrapper<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
+
+                    <mt:If tag="PageID" eq="$__pages_current_id__">
+                    <span class="echo-c-media echo-c-media-middle echo-c-media-entry<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
+                    <mt:Else>
                     <a href="<mt:PagePermalink />" class="echo-c-media echo-c-media-middle echo-c-media-entry">
+                    </mt:If>
                         <div class="echo-c-media-object">
                             <figure class="echo-m-thumbnail echo-m-thumbnail-square">
                                 <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
@@ -50,8 +55,12 @@
                         <div class="echo-c-media-contents">
                             <p class="echo-c-media-title echo-m-title echo-m-title-level-8 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></p>
                         </div>
-                    </a>
-                </div><!-- /.echo-c-media-wraper -->
+                    <mt:If tag="PageID" eq="$__pages_current_id__">
+                    </span><!-- /.echo-c-media -->
+                    <mt:Else>
+                    </a><!-- /.echo-c-media -->
+                    </mt:If>
+                </div><!-- /.echo-c-media-wrapper -->
 
             <mt:If name="__pages_layout__" ne="2カラム">
             </div><!-- /.echo-l-grid-col -->

@@ -123,6 +123,10 @@
 
     }
 
+    .#{$pr}#{$c}media {
+        position: relative;
+    }
+
 }
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}headline {
