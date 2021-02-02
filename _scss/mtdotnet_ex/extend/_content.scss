@@ -10,6 +10,12 @@
     }
 
     .#{$pr}#{$p}content#{$c1}sub {
+        padding-bottom: ( $spacer * 3 );
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: ( $spacer * 6 );
+        }
+
     }
 
     &.#{$pr}#{$p}content#{$c3}1col {
@@ -39,7 +45,6 @@
             @include media-breakpoint-up(lg) {
                 flex-grow: 0;
                 width: 100%;
-                min-height: 1000px;
                 width: map-get( $be-max-widths, 'md' ) + map-get( $grid-gutter-widths, 'md' );
             }
 

@@ -10,6 +10,10 @@
         margin-bottom: 0;
     }
 
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+    }
+
 }
 
 .#{$pr}#{$widget}#{$c1}header,
@@ -66,6 +70,18 @@
             padding-right: (map-get($grid-gutter-widths, md) / 4);
             margin-bottom: (map-get($grid-gutter-widths, md) / 2);
         }
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+    }
+
+    &.#{$pr}#{$widget}#{$c3}sm {
 
     }
 
@@ -127,4 +143,97 @@
 
 }
 
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}nav {
 
+    .#{$pr}#{$widget}#{$c1}contents {
+        max-width: map-get( $be-max-widths, 'md' );
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+    }
+
+    &.#{$pr}#{$widget}#{$c3}sm {
+
+        .#{$pr}#{$m}nav#{$c1}label {
+            font-size: ( 15 / 16 ) + rem;
+        }
+
+        .#{$pr}#{$m}nav#{$c1}children {
+
+            .#{$pr}#{$m}nav#{$c1}label {
+                font-size: $font-size-sm;
+            }
+
+            .#{$pr}#{$m}nav#{$c1}children {
+
+                .#{$pr}#{$m}nav#{$c1}label {
+                    font-size: ( 13 / 16 ) + rem;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}step {
+
+    .#{$pr}#{$c}step {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$c}step {
+
+            .#{$pr}#{$m}nav-vertical {
+
+                .#{$pr}#{$m}nav#{$c1}label {
+                    justify-content: flex-start;
+                }
+
+            }
+
+        }
+
+    }
+
+    &.#{$pr}#{$widget}#{$c3}sm {
+
+        .#{$pr}#{$m}nav#{$c1}label {
+            font-size: $font-size-sm;
+        }
+
+    }
+
+}
+
+
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}pages {
+}
+
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}folders {
+
+    .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}pages + & {
+        margin-top: ( $spacer * -1.5 );
+        padding-top: ( $spacer * 1.5 );
+        border-top: 1px solid $gray-mild;
+    }
+
+}

@@ -414,3 +414,32 @@ a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-w
   background-color: rgba(255, 255, 255, 0.8);
   border-color: transparent;
 }
+
+.echo-p-widget.echo-p-widget-nav .echo-m-nav-label {
+  position: relative;
+}
+
+.echo-p-widget.echo-p-widget-nav .echo-m-nav-label.is-current {
+  color: #333;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.echo-p-widget.echo-p-widget-nav .echo-m-nav-label.is-current:before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 0;
+  top: 50%;
+  margin-top: -3px;
+  background-color: #333;
+}
+
+.echo-p-widget.echo-p-widget-nav .echo-m-nav-children .echo-m-nav-label.is-current:before {
+  left: 2em;
+}
+
+.echo-p-widget.echo-p-widget-nav .echo-m-nav-children .echo-m-nav-children .echo-m-nav-label.is-current:before {
+  left: 4em;
+}
