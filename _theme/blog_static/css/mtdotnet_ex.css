@@ -4,6 +4,22 @@
  */
 /*
 --------------------
+object-fit-images
+--------------------
+*/
+.echo-m-thumbnail-round img,
+.echo-m-thumbnail-square img,
+.echo-m-thumbnail-3to2 img,
+.echo-m-thumbnail-4to3 img,
+.echo-m-thumbnail-16to9 img,
+.echo-m-thumbnail-ogimage img,
+.echo-m-thumbnail-21to9 img,
+.echo-c-hero-fit .echo-c-hero-image img {
+  font-family: 'object-fit: cover;';
+}
+
+/*
+--------------------
 .mt-be(layout)
 --------------------
 */
