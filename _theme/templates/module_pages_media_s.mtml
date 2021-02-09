@@ -11,17 +11,16 @@
 # 
 # =======================
 </mt:Ignore>
-<mt:Unless name="__pages_title_text__">
-    <mt:SetVar name="__pages_title_text__" value="$__pages_folder__" />
-</mt:Unless>
 <mt:Unless name="__pages_layout__">
     <mt:SetVar name="__pages_layout__" value="1カラム" />
 </mt:Unless>
 
-<section class="echo-p-widget<mt:If name="__pages_layout__" eq="2カラム"> echo-p-widget-sm</mt:If> echo-p-widget-pages echo-p-widget-media">
+<section class="echo-p-widget echo-p-widget-sm echo-p-widget-pages echo-p-widget-media">
+    <mt:If name="__pages_title_text__">
     <div class="echo-p-widget-header">
         <h2 class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__pages_title_text__" /></h2>
     </div><!-- /.echo-p-widget-header -->
+    </mt:If>
 
     <div class="echo-p-widget-contents">
         <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
@@ -32,7 +31,7 @@
         </mt:PagesHeader>
 
             <mt:If name="__pages_layout__" ne="2カラム">
-            <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4">
+            <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-lg-4">
             </mt:If>
 
                 <div class="echo-c-media-wrapper<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">

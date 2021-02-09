@@ -11,17 +11,16 @@
 # 
 # =======================
 </mt:Ignore>
-<mt:Unless name="__pages_title_text__">
-    <mt:SetVar name="__pages_title_text__" value="$__pages_folder__" />
-</mt:Unless>
 <mt:Unless name="__pages_layout__">
     <mt:SetVar name="__pages_layout__" value="1カラム" />
 </mt:Unless>
 
-<section class="echo-p-widget<mt:If name="__pages_layout__" eq="2カラム"> echo-p-widget-sm</mt:If> echo-p-widget-pages echo-p-widget-card">
+<section class="echo-p-widget echo-p-widget-sm echo-p-widget-pages echo-p-widget-card">
+    <mt:If name="__pages_title_text__">
     <div class="echo-p-widget-header">
         <h2 class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__pages_title_text__" /></h2>
     </div><!-- /.echo-p-widget-header -->
+    </mt:If>
 
     <div class="echo-p-widget-contents">
         <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
@@ -29,7 +28,7 @@
         <div class="echo-l-grid-row">
         </mt:PagesHeader>
 
-            <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4<mt:If name="__pages_layout__" eq="2カラム"> echo-l-grid-col-lg-12<mt:Else> echo-l-grid-col-xl-3</mt:If>">
+            <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4<mt:If name="__pages_layout__" eq="2カラム"> echo-l-grid-col-lg-12</mt:If>">
             
                 <article class="echo-c-card<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
                     <mt:If tag="PageID" eq="$__pages_current_id__">
@@ -39,7 +38,8 @@
                     </mt:If>
                         <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
                         <div class="echo-c-card-object">
-                            <figure class="echo-m-thumbnail echo-m-thumbnail-16to9">
+                            <mt:Ignore>サムネイルの縦横比は可変（レイアウトにより変動する）</mt:Ignore>
+                            <figure class="echo-m-thumbnail">
                                 <mt:CustomFieldAsset identifier="EchoPageEyecatch">
                                     <img src="<mt:AssetThumbnailURL width="480" />" alt="">
                                 </mt:CustomFieldAsset>

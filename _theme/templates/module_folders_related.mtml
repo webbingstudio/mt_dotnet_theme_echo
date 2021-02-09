@@ -31,10 +31,10 @@
 <mt:If name="__has_hierarchy__" eq="true">
     <section class="echo-p-widget<mt:If name="__pages_layout__" eq="2カラム"> echo-p-widget-sm</mt:If> echo-p-widget-nav echo-p-widget-folders">
         <div class="echo-p-widget-contents">
-            <nav class="echo-m-nav<mt:If name="__pages_layout__" eq="2カラム">  echo-m-nav-vertical</mt:If>">
+            <nav class="echo-m-nav  echo-m-nav-vertical">
                 <mt:SubFolders top="1">
                 <mt:FolderHeader>
-                <ul class="echo-m-nav-list<mt:If name="__pages_layout__" eq="2カラム"><mt:HasParentFolder> echo-m-nav-children</mt:HasParentFolder></mt:If>">
+                <ul class="echo-m-nav-list<mt:HasParentFolder> echo-m-nav-children</mt:HasParentFolder>">
                 </mt:FolderHeader>
                 <mt:HasNoParentFolder>
                 <mt:If tag="FolderBasename" eq="$__pages_ancestor_basename__">
