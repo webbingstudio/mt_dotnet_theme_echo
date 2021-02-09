@@ -26,6 +26,18 @@
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
     }
 
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+        width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+        @include media-breakpoint-down(md) {
+            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        }
+
+    }
+
 }
 
 .#{$pr}#{$widget}#{$c1}header {
@@ -38,6 +50,26 @@
 }
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
+
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        }
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+
+            @include media-breakpoint-down(md) {
+                width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+            }
+
+        }
+
+    }
 
     .#{$pr}#{$widget}#{$c1}contents {
         max-width: map-get( $be-max-widths, 'xl' );
@@ -73,21 +105,45 @@
 
     }
 
-    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
-
-    }
-
-    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
-
-    }
-
     &.#{$pr}#{$widget}#{$c3}sm {
+
+        [class*="#{$pr}#{$col}"] {
+            margin-bottom: ( map-get($grid-gutter-widths, md) / 2 );
+        }
+
+        .#{$pr}#{$c}card#{$c1}object + .#{$pr}#{$c}card#{$c1}contents {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: 12;
+        }
 
     }
 
 }
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
+
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        }
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+
+            @include media-breakpoint-down(md) {
+                width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+            }
+
+        }
+
+    }
 
     .#{$pr}#{$widget}#{$c1}contents {
         max-width: map-get( $be-max-widths, 'xl' );
@@ -131,6 +187,26 @@
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}headline {
 
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        }
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+
+            @include media-breakpoint-down(md) {
+                width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+            }
+
+        }
+
+    }
+
     .#{$pr}#{$widget}#{$c1}contents {
         max-width: map-get( $be-max-widths, 'md' );
         margin-left: auto;
@@ -149,18 +225,18 @@
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}nav {
 
-    .#{$pr}#{$widget}#{$c1}contents {
-        max-width: map-get( $be-max-widths, 'md' );
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
 
     }
 
     .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
 
+    }
+
+    .#{$pr}#{$widget}#{$c1}contents {
+        max-width: map-get( $be-max-widths, 'md' );
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &.#{$pr}#{$widget}#{$c3}sm {
@@ -235,9 +311,26 @@
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}folders {
 
     .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}pages + & {
-        margin-top: ( $spacer * -1.5 );
-        padding-top: ( $spacer * 1.5 );
-        border-top: 1px solid $gray-mild;
+        position: relative;
+        margin-top: ( $spacer * -.5 );
+        padding-top: ( $spacer * 2 );
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+            height: 1px;
+            background-color: $gray-milder;
+
+            @include media-breakpoint-up(lg) {
+                left: 0;
+                width: 100%;
+            }
+
+        }
+
     }
 
 }

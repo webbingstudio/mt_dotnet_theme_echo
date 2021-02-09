@@ -6,6 +6,7 @@
 # vars:
 #   __pages_folder__(require)
 #   __pages_title_text__
+#   __pages_current_id__
 #   __pages_layout__
 # 
 # =======================
@@ -25,16 +26,17 @@
     <div class="echo-p-widget-contents">
         <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
         <mt:PagesHeader>
-        <mt:If name="__pages_layout__" ne="2カラム">
         <div class="echo-l-grid-row">
-        </mt:If>
         </mt:PagesHeader>
 
-            <mt:If name="__pages_layout__" ne="2カラム">
-            <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4 echo-l-grid-col-xl-3">
-            </mt:If>
-                <article class="echo-c-card">
+            <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-md-4<mt:If name="__pages_layout__" eq="2カラム"> echo-l-grid-col-lg-12<mt:Else> echo-l-grid-col-xl-3</mt:If>">
+            
+                <article class="echo-c-card<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
+                    <mt:If tag="PageID" eq="$__pages_current_id__">
+                    <span class="echo-c-card-inner is-current">
+                    <mt:Else>
                     <a href="<mt:PagePermalink />" class="echo-c-card-inner">
+                    </mt:If>
                         <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
                         <div class="echo-c-card-object">
                             <figure class="echo-m-thumbnail echo-m-thumbnail-16to9">
@@ -45,18 +47,18 @@
                         </div><!-- /.echo-c-card-object -->
                         </mt:If>
                         <div class="echo-c-card-contents">
-                            <h3 class="echo-c-card-title echo-m-title echo-m-title-level-7 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></h3>
+                            <h3 class="echo-c-card-title echo-m-title echo-m-title-level-8 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></h3>
                         </div><!-- /.echo-c-card-contents -->
+                    <mt:If tag="PageID" eq="$__pages_current_id__">
+                    </span><!-- /.echo-c-card-innner -->
+                    <mt:Else>
                     </a><!-- /.echo-c-card-innner -->
+                    </mt:If>
                 </article><!-- /.echo-c-card -->
-            <mt:If name="__pages_layout__" ne="2カラム">
             </div><!-- /.echo-l-grid-col -->
-            </mt:If>
 
         <mt:PagesFooter>
-        <mt:If name="__pages_layout__" ne="2カラム">
         </div><!-- /.echo-l-grid-row -->
-        </mt:If>
         </mt:PagesFooter>
         </mt:Pages>
     </div><!-- /.echo-p-widget-contents -->
