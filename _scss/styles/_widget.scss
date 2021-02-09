@@ -77,6 +77,19 @@
 
     }
 
+    &.#{$pr}#{$widget}#{$c3}sm {
+
+        .#{$pr}#{$c}media#{$c1}object {
+            width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+
+            @include media-breakpoint-up(lg) {
+                width: 80px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            }
+
+        }
+
+    }
+
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
 
     }
@@ -110,10 +123,6 @@
 
         }
 
-        .#{$pr}#{$c}media#{$c1}object {
-            width: ( 480px / 6 );
-        }
-
     }
 
 }
@@ -131,11 +140,11 @@
             &:before {
                 content: "";
                 position: absolute;
-                width: 6px;
-                height: 6px;
+                width: 3px;
+                height: 1em;
                 left: 0;
                 top: 50%;
-                margin-top: -3px;
+                margin-top: -.5em;
                 background-color: $ui-current-bg;
             }
 

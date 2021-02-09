@@ -26,6 +26,10 @@
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
     }
 
+    .#{$pr}#{$p}content#{$c1}sub & {
+        max-width: map-get( $be-max-widths, 'md' );
+    }
+
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
     }
@@ -51,6 +55,20 @@
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
 
+    .#{$pr}#{$widget}#{$c1}contents {
+        max-width: map-get( $be-max-widths, 'xl' );
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+            max-width: map-get( $be-max-widths, 'md' );
+        }
+
+    }
+
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
 
         .#{$pr}#{$widget}#{$c1}contents {
@@ -71,12 +89,6 @@
 
     }
 
-    .#{$pr}#{$widget}#{$c1}contents {
-        max-width: map-get( $be-max-widths, 'xl' );
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .#{$pr}#{$be}-group.#{$pr}#{$be}-alignfull & {
 
         .#{$pr}#{$widget}#{$c1}contents {
@@ -86,6 +98,7 @@
     }
 
     .#{$pr}#{$row} {
+        margin-bottom: ( map-get($grid-gutter-widths, md) * -1 );
 
         @include media-breakpoint-down(md) {
             margin-left: (map-get($grid-gutter-widths, md) / -4);
@@ -107,6 +120,10 @@
 
     &.#{$pr}#{$widget}#{$c3}sm {
 
+        [class*="#{$pr}#{$row}"] {
+            margin-bottom: ( map-get($grid-gutter-widths, md) / -2 );
+        }
+
         [class*="#{$pr}#{$col}"] {
             margin-bottom: ( map-get($grid-gutter-widths, md) / 2 );
         }
@@ -124,6 +141,20 @@
 }
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
+
+    .#{$pr}#{$widget}#{$c1}contents {
+        max-width: map-get( $be-max-widths, 'xl' );
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+            max-width: map-get( $be-max-widths, 'md' );
+        }
+
+    }
 
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
 
@@ -145,12 +176,6 @@
 
     }
 
-    .#{$pr}#{$widget}#{$c1}contents {
-        max-width: map-get( $be-max-widths, 'xl' );
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .#{$pr}#{$be}-group.#{$pr}#{$be}-alignfull & {
 
         .#{$pr}#{$widget}#{$c1}contents {
@@ -160,6 +185,7 @@
     }
 
     .#{$pr}#{$row} {
+        margin-bottom: ( map-get($grid-gutter-widths, md) * -1 );
 
         @include media-breakpoint-down(md) {
             margin-left: (map-get($grid-gutter-widths, md) / -4);
@@ -169,7 +195,7 @@
     }
 
     [class*="#{$pr}#{$col}"] {
-        margin-bottom: ( map-get($grid-gutter-widths, md) * 2 );
+        margin-bottom: ( map-get($grid-gutter-widths, md) * 1 );
 
         @include media-breakpoint-down(md) {
             padding-left: (map-get($grid-gutter-widths, md) / 4);
@@ -225,18 +251,30 @@
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}nav {
 
+    .#{$pr}#{$widget}#{$c1}contents {
+        max-width: map-get( $be-max-widths, 'md' );
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        }
 
     }
 
     .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
 
-    }
+        .#{$pr}#{$widget}#{$c1}contents {
 
-    .#{$pr}#{$widget}#{$c1}contents {
-        max-width: map-get( $be-max-widths, 'md' );
-        margin-left: auto;
-        margin-right: auto;
+            @include media-breakpoint-down(md) {
+                width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+            }
+
+        }
+
     }
 
     &.#{$pr}#{$widget}#{$c3}sm {
@@ -302,33 +340,22 @@
 
 }
 
-
-
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}pages {
-}
-
-
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}folders {
 
     .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}pages + & {
         position: relative;
-        margin-top: ( $spacer * -.5 );
-        padding-top: ( $spacer * 2 );
+        padding-top: ( $spacer * 1.5 );
 
         &:before {
             position: absolute;
             content: "";
             top: 0;
-            left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+            left: 50%;
+            width: 100%;
+            max-width: map-get( $be-max-widths, 'md' );
             height: 1px;
             background-color: $gray-milder;
-
-            @include media-breakpoint-up(lg) {
-                left: 0;
-                width: 100%;
-            }
-
+            transform: translate( -50%, 0 );
         }
 
     }
