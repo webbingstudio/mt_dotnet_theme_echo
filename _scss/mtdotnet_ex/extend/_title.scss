@@ -15,6 +15,7 @@
 
 .#{$pr}#{$m}title#{$c3}level#{$c3}8 {
     font-size: ( 13/16 ) + rem;
+    font-weight: normal;
 
     @include media-breakpoint-up(lg) {
         font-size: ( 15/16 ) + rem;
