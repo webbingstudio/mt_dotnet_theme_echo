@@ -305,18 +305,45 @@
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}step {
 
+    .#{$pr}#{$widget}#{$c1}contents {
+        max-width: map-get( $be-max-widths, 'xl' );
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .#{$pr}#{$c}step {
         padding-top: 0;
         padding-bottom: 0;
+
+        @include media-breakpoint-down(sm) {
+
+            .#{$pr}#{$m}nav#{$c1}label {
+                font-size: $font-size-sm;
+            }
+
+        }
+
     }
 
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$c}step {
+
+            @include media-breakpoint-down(md) {
+                width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+            }
+
+        }
 
     }
 
     .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
 
         .#{$pr}#{$c}step {
+
+            @include media-breakpoint-down(md) {
+                width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+            }
 
             .#{$pr}#{$m}nav-vertical {
 
@@ -331,9 +358,12 @@
     }
 
     &.#{$pr}#{$widget}#{$c3}sm {
+    }
 
-        .#{$pr}#{$m}nav#{$c1}label {
-            font-size: $font-size-sm;
+    .#{$pr}#{$be}-group.#{$pr}#{$be}-alignfull & {
+
+        .#{$pr}#{$c}step {
+            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
         }
 
     }
