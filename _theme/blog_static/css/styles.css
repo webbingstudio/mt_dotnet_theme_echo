@@ -307,32 +307,6 @@ time.echo-c-headline-header {
 .echo-c-media
 --------------------
 */
-@media (max-width: 767.9px) {
-  .echo-c-media {
-    position: relative;
-  }
-}
-
-@media (min-width: 768px) {
-  .echo-c-media-object {
-    position: relative;
-  }
-}
-
-.echo-c-media-category {
-  margin: 0;
-  line-height: 1 !important;
-}
-
-@media (min-width: 768px) {
-  .echo-c-media-category {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 21;
-  }
-}
-
 .echo-c-media-category .echo-m-label {
   color: #fff;
   background-color: #333;
@@ -511,6 +485,12 @@ card > thumbnail
   object-fit: cover;
 }
 
+@media (min-width: 768px) {
+  .echo-p-content-2col .echo-p-content-main .echo-p-widget.echo-p-widget-card .echo-m-thumbnail {
+    padding-bottom: 50%;
+  }
+}
+
 @media (min-width: 1000px) {
   .echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-card .echo-m-thumbnail {
     padding-bottom: 56.25%;
@@ -534,6 +514,28 @@ media > thumbnail
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.echo-p-content-main .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+  width: 65px;
+}
+
+@media (min-width: 768px) {
+  .echo-p-content-main .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+    width: 130px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-p-content-main .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+    width: 190px;
+  }
+}
+
+@media (min-width: 768px) {
+  .echo-p-content-main .echo-p-widget.echo-p-widget-media .echo-m-thumbnail {
+    padding-bottom: 66.66667%;
+  }
 }
 
 .echo-p-content-1col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
@@ -571,6 +573,18 @@ media > thumbnail
 @media (min-width: 768px) and (max-width: 999.9px) {
   .echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-m-thumbnail {
     padding-bottom: 66.66667%;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .echo-p-widget.echo-p-widget-media.echo-p-widget-recent .echo-c-media-object {
+    width: 105px;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .echo-p-widget.echo-p-widget-media.echo-p-widget-recent .echo-m-thumbnail {
+    padding-bottom: 100%;
   }
 }
 

@@ -33,6 +33,18 @@ card > thumbnail
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
     @include thumbnail-clip( 2 / 3 );
 
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}main & {
+
+        .#{$pr}#{$m}thumbnail {
+
+            @include media-breakpoint-up(md) {
+                padding-bottom: percentage( 1 / 2 );
+            }
+
+        }
+
+    }
+
     .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
 
         .#{$pr}#{$m}thumbnail {
@@ -54,6 +66,31 @@ media > thumbnail
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
     @include thumbnail-clip( 1 / 1 );
+
+    .#{$pr}#{$p}content#{$c1}main & {
+
+        .#{$pr}#{$c}media#{$c1}object {
+            width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+
+            @include media-breakpoint-up(md) {
+                width: 120px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            }
+
+            @include media-breakpoint-up(lg) {
+                width: 180px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+            }
+
+        }
+
+        .#{$pr}#{$m}thumbnail {
+
+            @include media-breakpoint-up(md) {
+                padding-bottom: percentage( 2 / 3 );
+            }
+
+        }
+
+    }
 
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
 
@@ -95,6 +132,27 @@ media > thumbnail
 
             @include media-breakpoint-only(md) {
                 padding-bottom: percentage( 2 / 3 );
+            }
+
+        }
+
+    }
+
+    // recent: large sm-down
+    &.#{$pr}#{$widget}#{$c3}recent {
+
+        .#{$pr}#{$c}media#{$c1}object {
+
+            @include media-breakpoint-down(sm) {
+                width: 100px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+            }
+
+        }
+
+        .#{$pr}#{$m}thumbnail {
+
+            @include media-breakpoint-down(sm) {
+                padding-bottom: percentage( 1 / 1 );
             }
 
         }

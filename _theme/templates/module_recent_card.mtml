@@ -12,6 +12,7 @@
 #   __card_more__
 #   __card_more_text__
 #   __card_more_url__
+#   __card_layout__
 # 
 # vars(local):
 #   __image_url__
@@ -35,6 +36,9 @@
 <mt:Unless name="__card_more_url__">
     <mt:setVarBlock name="__card_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
 </mt:Unless>
+<mt:Unless name="__card_layout__">
+    <mt:SetVar name="__card_layout__" value="1カラム" />
+</mt:Unless>
 <mt:setVar name="__image_url__" value="" />
 
 <mt:Entries sort_by="authored_on" sort_order="descend" limit="$__card_limit__">
@@ -42,7 +46,7 @@
 <mt:If name="__card_wrapclass__">
 <div class="<mt:Var name="__card_wrapclass__" />">
 </mt:If>
-<<mt:Var name="__card_widget_tag__" /> class="echo-p-widget echo-p-widget-card">
+<<mt:Var name="__card_widget_tag__" /> class="echo-p-widget echo-p-widget-card echo-p-widget-recent">
     <mt:If name="__card_title_text__">
     <div class="echo-p-widget-header">
         <<mt:Var name="__card_title_tag__" /> class="echo-m-title echo-m-title-level-2 echo-m-title-style-c"><mt:Var name="__card_title_text__" /></<mt:Var name="__card_title_tag__" />>
@@ -53,7 +57,7 @@
         <div class="echo-l-grid-row">
 </mt:EntriesHeader>
 
-            <div class="echo-l-grid-col-6 echo-l-grid-col-md-3">
+            <div class="echo-l-grid-col-6<mt:If name="__card_layout__" eq="1カラム"> echo-l-grid-col-lg-3</mt:If>">
                 <div class="echo-c-card echo-c-card-entry">
                     <a href="<mt:EntryPermalink />" class="echo-c-card-inner">
                         <div class="echo-c-card-object">
