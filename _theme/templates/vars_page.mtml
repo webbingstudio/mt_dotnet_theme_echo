@@ -9,6 +9,10 @@
 #   __folder_path__
 #   __folder_layout__
 #   __folder_nav_type__
+#   __folder_header_image_lg__
+#   __folder_header_image_sm__
+#   __folder_header_effect__
+#   __folder_header_blend__
 #   __folder_parent_basename__
 #   __folder_parent_label__
 #   __folder_parent_path__
@@ -58,7 +62,7 @@
 <mt:FolderBasename setvar="__folder_ancestor_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_ancestor_label__" />
 <mt:SetVarBlock name="__folder_ancestor_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
-<mt:Ignore>レイアウト・ナビゲーションは先に先祖を参照し子孫で上書きする</mt:Ignore>
+<mt:Ignore>レイアウト・ナビゲーション:先祖を優先する</mt:Ignore>
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
 <mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__folder_nav_type__" />
 <mt:SetVar name="__is_ancestor__" value="true" />
@@ -66,24 +70,42 @@
 <mt:FolderBasename setvar="__folder_parent_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_parent_label__" />
 <mt:SetVarBlock name="__folder_parent_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
+<mt:Ignore>レイアウト・ナビゲーション:子孫が自動でなければ上書き</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
 </mt:If>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderNavType" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__folder_nav_type__" />
 </mt:If>
+<mt:Ignore>ページタイトル:先祖から子孫へ未定義でなければ上書き</mt:Ignore>
+<mt:If tag="CustomFieldValue" identifier="EchoFolderHeaderImage">
+<mt:CustomFieldAsset identifier="EchoFolderHeaderImage">
+<mt:AssetThumbnailURL width="1200" setvar="__folder_header_image_lg__" />
+<mt:AssetThumbnailURL width="800" setvar="__folder_header_image_sm__" />
+</mt:CustomFieldAsset>
+</mt:If>
+<mt:CustomFieldValue identifier="EchoFolderHeaderEffect" setvar="__folder_header_effect__" />
+<mt:CustomFieldValue identifier="EchoFolderHeaderBlend" setvar="__folder_header_blend__" />
 </mt:ParentFolders>
-
 <mt:PageFolder>
+<mt:Ignore>レイアウト・ナビゲーション・ページタイトル:現在のフォルダが未定義でなければ上書き</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
 </mt:If>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderNavType" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__folder_nav_type__" />
 </mt:If>
+<mt:If tag="CustomFieldValue" identifier="EchoFolderHeaderImage">
+<mt:CustomFieldAsset identifier="EchoFolderHeaderImage">
+<mt:AssetThumbnailURL width="1200" setvar="__folder_header_image_lg__" />
+<mt:AssetThumbnailURL width="800" setvar="__folder_header_image_sm__" />
+</mt:CustomFieldAsset>
+</mt:If>
+<mt:CustomFieldValue identifier="EchoFolderHeaderEffect" setvar="__folder_header_effect__" />
+<mt:CustomFieldValue identifier="EchoFolderHeaderBlend" setvar="__folder_header_blend__" />
 </mt:PageFolder>
 
-<mt:Ignore>どのフォルダもレイアウト・ナビの設定がなければ初期値</mt:Ignore>
+<mt:Ignore>レイアウト・ナビゲーション:どのフォルダも自動なら初期値</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" eq="自動">
 <mt:SetVar name="__folder_layout__" value="1カラム" />
 </mt:If>

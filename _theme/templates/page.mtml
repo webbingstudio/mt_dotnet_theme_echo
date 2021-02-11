@@ -18,6 +18,10 @@
 #   __folder_path__
 #   __folder_layout__
 #   __folder_nav_type__
+#   __folder_header_image_lg__
+#   __folder_header_image_sm__
+#   __folder_header_effect__
+#   __folder_header_blend__
 #   __folder_parent_basename__
 #   __folder_parent_label__
 #   __folder_parent_path__
@@ -70,10 +74,7 @@
 
 <mt:SetVarBlock name="__main__">
 <mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1">
-    <div class="echo-p-pagehead">
-        <h1 class="echo-p-pagehead-title"><mt:Var name="__folder_ancestor_label__" /></h1>
-        <p class="echo-p-pagehead-subtitle"><mt:Var name="__folder_ancestor_basename__" /></p>
-    </div><!-- /.echo-p-pagehead -->
+    <mt:Include module="モジュール-ページタイトル" __pagehead_title__="$__folder_ancestor_label__" __pagehead_caption__="$__folder_ancestor_basename__" __pagehead_image_lg__="$__folder_header_image_lg__" __pagehead_image_sm__="$__folder_header_image_sm__" __pagehead_effect__="$__folder_header_effect__" __pagehead_blend__="$__folder_header_blend__" />
 </mt:If>
 
 <div class="echo-p-content<mt:If name="__folder_layout__" eq="2カラム"> echo-p-content-2col<mt:Else> echo-p-content-1col</mt:If>">

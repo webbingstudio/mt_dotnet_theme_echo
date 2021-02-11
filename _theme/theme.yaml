@@ -221,6 +221,9 @@ elements:
           module_spmenu:
             filename: module_sp_menu.mtml
             label: モジュール-スマートフォンメニュー
+          module_pagehead:
+            filename: module_pagehead.mtml
+            label: モジュール-ページタイトル
           module_topicpath_page:
             filename: module_topicpath_page.mtml
             label: モジュール-パンくずリスト-ページ

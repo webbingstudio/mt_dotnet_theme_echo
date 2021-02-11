@@ -1,0 +1,48 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-ページタイトル
+# 
+# vars:
+#   __pagehead_title__(require)
+#   __pagehead_caption__
+#   __pagehead_image_lg__
+#   __pagehead_image_sm__
+#   __pagehead_effect__
+#   __pagehead_blend__
+# 
+# =======================
+</mt:Ignore>
+<mt:If name="__pagehead_blend__">
+<style>.echo-p-pagehead .echo-c-hero-image:after {background-color: <mt:Var name="__pagehead_blend__" />}</style>
+</mt:If>
+<div class="echo-p-pagehead<mt:If name="__pagehead_effect__" like="明るく"> echo-p-pagehead-lighten</mt:If><mt:If name="__pagehead_effect__" like="暗く"> echo-p-pagehead-darken</mt:If><mt:If name="__pagehead_effect__" like="ぼかす"> echo-p-pagehead-blur</mt:If>">
+    <div class="echo-c-hero echo-c-hero-fit">
+        <mt:If name="__pagehead_image_lg__">
+        <div class="echo-c-hero-image">
+        <mt:If name="__pagehead_image_sm__">
+            <picture>
+                <source
+                    media="(max-width:750px)"
+                    srcset="<mt:Var name="__pagehead_image_sm__" /> 750w"
+                    sizes="100vw">
+                <source
+                    srcset="<mt:Var name="__pagehead_image_lg__" /> 1200w"
+                    sizes="(max-width:1200px) 100vw">
+                <img src="<mt:Var name="__pagehead_image_lg__" />" alt="">
+            </picture>
+        </mt:Else>
+            <img src="<mt:Var name="__pagehead_image_lg__" />" alt="">
+        </mt:If>
+        </div><!-- /.echo-c-hero-image -->
+        </mt:If>
+        <div class="echo-c-hero-contents">
+            <div class="echo-c-hero-contents-inner">
+                <h1 class="echo-c-hero-title echo-m-title echo-u-font-first"><mt:Var name="__pagehead_title__" /></h1>
+            <mt:If name="__pagehead_caption__">
+                <div class="echo-c-hero-body"><mt:Var name="__pagehead_caption__" /></div>
+            </mt:If>
+            </div><!-- /.echo-c-hero-contents-inner -->
+        </div><!-- /.echo-c-hero-contents -->
+    </div><!-- /.echo-c-hero -->
+</div><!-- /.echo-p-pagehead -->
