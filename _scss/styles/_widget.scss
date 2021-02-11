@@ -78,20 +78,9 @@
     }
 
     &.#{$pr}#{$widget}#{$c3}sm {
-
-        .#{$pr}#{$c}media#{$c1}object {
-            width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
-
-            @include media-breakpoint-up(lg) {
-                width: 80px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-            }
-
-        }
-
     }
 
     .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
-
     }
 
     .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {

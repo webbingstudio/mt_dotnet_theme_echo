@@ -9,4 +9,7 @@ $be-max-widths: (
     xl:  1200px,
 ) !default;
 
-$sub-width: 300px;
+$sub-widths: (
+    lg:  270px,
+    xl:  300px,
+) !default;

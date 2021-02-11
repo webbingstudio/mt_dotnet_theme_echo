@@ -25,15 +25,10 @@
     <div class="echo-p-widget-contents">
         <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
         <mt:PagesHeader>
-        <mt:If name="__pages_layout__" ne="2カラム">
         <div class="echo-l-grid-row">
-        </mt:If>
         </mt:PagesHeader>
 
-            <mt:If name="__pages_layout__" ne="2カラム">
-            <div class="echo-l-grid-col echo-l-grid-col-xxs-6 echo-l-grid-col-lg-4">
-            </mt:If>
-
+            <div class="echo-l-grid-col echo-l-grid-col-xxs-12 echo-l-grid-col-sm-6<mt:If name="__pages_layout__" eq="2カラム"> echo-l-grid-col-lg-12</mt:If>">
                 <div class="echo-c-media-wrapper<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
 
                     <mt:If tag="PageID" eq="$__pages_current_id__">
@@ -42,7 +37,7 @@
                     <a href="<mt:PagePermalink />" class="echo-c-media echo-c-media-middle echo-c-media-entry">
                     </mt:If>
                         <div class="echo-c-media-object">
-                            <figure class="echo-m-thumbnail echo-m-thumbnail-square">
+                            <figure class="echo-m-thumbnail">
                                 <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
                                 <mt:CustomFieldAsset identifier="EchoPageEyecatch">
                                 <img src="<mt:AssetThumbnailURL width="240" square="1" />" alt="" width="240" height="240">
@@ -61,15 +56,10 @@
                     </a><!-- /.echo-c-media -->
                     </mt:If>
                 </div><!-- /.echo-c-media-wrapper -->
-
-            <mt:If name="__pages_layout__" ne="2カラム">
             </div><!-- /.echo-l-grid-col -->
-            </mt:If>
 
         <mt:PagesFooter>
-        <mt:If name="__pages_layout__" ne="2カラム">
         </div><!-- /.echo-l-grid-row -->
-        </mt:If>
         </mt:PagesFooter>
         </mt:Pages>
     </div><!-- /.echo-p-widget-contents -->

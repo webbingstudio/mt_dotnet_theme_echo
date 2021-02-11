@@ -1,0 +1,18 @@
+/*
+--------------------
+object-fit-images
+--------------------
+*/
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card,
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
+
+    .#{$pr}#{$m}thumbnail {
+
+        img {
+            font-family: 'object-fit: cover;';
+        }
+
+    }
+
+}
