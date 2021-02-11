@@ -217,10 +217,10 @@
     }
     50% {
         opacity: .5;
-        transform: translate( 0, -50% );
+        transform: translate( 0, -25% );
     }
     100% {
         opacity: 0;
-        transform: translate( 0, -50% );
+        transform: translate( 0, -25% );
     }
 }
