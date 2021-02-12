@@ -1,0 +1,63 @@
+/*
+--------------------
+#{$pr}#{$p}pagehead
+--------------------
+*/
+
+.#{$pr}#{$p}pagehead {
+
+    .#{$pr}#{$c}hero#{$c1}contents#{$c1}inner {
+        flex-basis: auto;
+    }
+
+    .#{$pr}#{$c}hero#{$c1}title {
+
+        &.#{$pr}#{$m}title {
+            font-size: 1.75rem;
+
+            @include media-breakpoint-up(md) {
+                font-size: 2.25rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: 2.5rem;
+            }
+
+            @include media-breakpoint-up(xl) {
+                font-size: 2.75rem;
+            }
+
+        }
+
+    }
+
+    .#{$pr}#{$c}hero#{$c1}title#{$c1}text {
+        display: block;
+        padding: .2em 1em;
+        color: #000;
+        background-color: rgba( 255, 255, 255, .8 );
+    }
+
+    .#{$pr}#{$c}hero#{$c1}caption {
+        margin: 0 auto;
+        padding: .5em 1em;
+        color: #fff;
+        font-size: .75rem;
+        background-color: rgba( 0, 0, 0, .5 );
+        letter-spacing: .1em;
+
+        @include media-breakpoint-up(md) {
+            font-size: .875rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: 1.125rem;
+        }
+
+    }
+
+}

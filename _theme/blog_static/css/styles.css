@@ -178,7 +178,72 @@
 
 /*
 --------------------
-echo-l-content
+echo-p-pagehead
+--------------------
+*/
+.echo-p-pagehead .echo-c-hero-contents-inner {
+  flex-basis: auto;
+}
+
+.echo-p-pagehead .echo-c-hero-title.echo-m-title {
+  font-size: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .echo-p-pagehead .echo-c-hero-title.echo-m-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-p-pagehead .echo-c-hero-title.echo-m-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .echo-p-pagehead .echo-c-hero-title.echo-m-title {
+    font-size: 2.75rem;
+  }
+}
+
+.echo-p-pagehead .echo-c-hero-title-text {
+  display: block;
+  padding: .2em 1em;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.echo-p-pagehead .echo-c-hero-caption {
+  margin: 0 auto;
+  padding: .5em 1em;
+  color: #fff;
+  font-size: .75rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  letter-spacing: .1em;
+}
+
+@media (min-width: 768px) {
+  .echo-p-pagehead .echo-c-hero-caption {
+    font-size: .875rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-p-pagehead .echo-c-hero-caption {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .echo-p-pagehead .echo-c-hero-caption {
+    font-size: 1.125rem;
+  }
+}
+
+/*
+--------------------
+echo-p-content
 --------------------
 */
 @media (min-width: 1000px) {
