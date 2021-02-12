@@ -22,7 +22,10 @@
 
     .#{$pr}#{$c}hero-image {
         overflow: hidden;
-        animation: pageHeadImageLazy 2s linear 1 forwards;
+
+        img {
+            animation: pageHeadImageLazy 2s linear 1 forwards;
+        }
 
         &:after {
             content: "";
@@ -53,7 +56,6 @@
     }
 
     &.#{$pr}#{$p}pagehead#{$c3}darken {
-        background-color: #000;
 
         .#{$pr}#{$c}hero-image {
 

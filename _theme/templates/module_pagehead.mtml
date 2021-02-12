@@ -16,26 +16,26 @@
 <mt:If name="__pagehead_blend__">
 <style>.echo-p-pagehead .echo-c-hero-image:after {background-color: <mt:Var name="__pagehead_blend__" />}</style>
 </mt:If>
-<div class="echo-p-pagehead<mt:If name="__pagehead_effect__" like="明るく"> echo-p-pagehead-lighten</mt:If><mt:If name="__pagehead_effect__" like="暗く"> echo-p-pagehead-darken</mt:If><mt:If name="__pagehead_effect__" like="ぼかす"> echo-p-pagehead-blur</mt:If>">
+<div class="echo-p-pagehead<mt:If name="__pagehead_image_lg__"> echo-p-pagehead-displayed</mt:If><mt:If name="__pagehead_effect__" like="明るく"> echo-p-pagehead-lighten</mt:If><mt:If name="__pagehead_effect__" like="暗く"> echo-p-pagehead-darken</mt:If><mt:If name="__pagehead_effect__" like="ぼかす"> echo-p-pagehead-blur</mt:If><mt:If name="__pagehead_blend__"> echo-p-pagehead-blended</mt:If>">
     <div class="echo-c-hero echo-c-hero-fit<mt:If name="__pagehead_effect__" like="暗く"> echo-c-hero-inverse</mt:If>">
-        <mt:If name="__pagehead_image_lg__">
         <div class="echo-c-hero-image">
-        <mt:If name="__pagehead_image_sm__">
-            <picture>
-                <source
-                    media="(max-width:750px)"
-                    srcset="<mt:Var name="__pagehead_image_sm__" /> 750w"
-                    sizes="100vw">
-                <source
-                    srcset="<mt:Var name="__pagehead_image_lg__" /> 1200w"
-                    sizes="(max-width:1200px) 100vw">
+        <mt:If name="__pagehead_image_lg__">
+            <mt:If name="__pagehead_image_sm__">
+                <picture>
+                    <source
+                        media="(max-width:750px)"
+                        srcset="<mt:Var name="__pagehead_image_sm__" /> 750w"
+                        sizes="100vw">
+                    <source
+                        srcset="<mt:Var name="__pagehead_image_lg__" /> 1200w"
+                        sizes="(max-width:1200px) 100vw">
+                    <img src="<mt:Var name="__pagehead_image_lg__" />" alt="">
+                </picture>
+            </mt:Else>
                 <img src="<mt:Var name="__pagehead_image_lg__" />" alt="">
-            </picture>
-        </mt:Else>
-            <img src="<mt:Var name="__pagehead_image_lg__" />" alt="">
+            </mt:If>
         </mt:If>
         </div><!-- /.echo-c-hero-image -->
-        </mt:If>
         <div class="echo-c-hero-contents">
             <div class="echo-c-hero-contents-inner">
                 <h1 class="echo-c-hero-title echo-m-title echo-u-font-first"><span class="echo-c-hero-title-text"><mt:Var name="__pagehead_title__" /></span></h1>

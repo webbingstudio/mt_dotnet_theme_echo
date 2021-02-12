@@ -210,16 +210,12 @@ echo-p-pagehead
 .echo-p-pagehead .echo-c-hero-title-text {
   display: block;
   padding: .2em 1em;
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .echo-p-pagehead .echo-c-hero-caption {
   margin: 0 auto;
   padding: .5em 1em;
-  color: #fff;
   font-size: .75rem;
-  background-color: rgba(0, 0, 0, 0.5);
   letter-spacing: .1em;
 }
 
@@ -239,6 +235,26 @@ echo-p-pagehead
   .echo-p-pagehead .echo-c-hero-caption {
     font-size: 1.125rem;
   }
+}
+
+.echo-p-pagehead.echo-p-pagehead-blended .echo-c-hero-title-text {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.echo-p-pagehead.echo-p-pagehead-blended .echo-c-hero-caption {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.echo-p-pagehead.echo-p-pagehead-displayed .echo-c-hero-title-text {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.echo-p-pagehead.echo-p-pagehead-displayed .echo-c-hero-caption {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 /*

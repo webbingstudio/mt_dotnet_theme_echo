@@ -34,16 +34,12 @@
     .#{$pr}#{$c}hero#{$c1}title#{$c1}text {
         display: block;
         padding: .2em 1em;
-        color: #000;
-        background-color: rgba( 255, 255, 255, .8 );
     }
 
     .#{$pr}#{$c}hero#{$c1}caption {
         margin: 0 auto;
         padding: .5em 1em;
-        color: #fff;
         font-size: .75rem;
-        background-color: rgba( 0, 0, 0, .5 );
         letter-spacing: .1em;
 
         @include media-breakpoint-up(md) {
@@ -56,6 +52,34 @@
 
         @include media-breakpoint-up(xl) {
             font-size: 1.125rem;
+        }
+
+    }
+
+    &.#{$pr}#{$p}pagehead#{$c3}blended {
+
+        .#{$pr}#{$c}hero#{$c1}title#{$c1}text {
+            color: #000;
+            background-color: rgba( 255, 255, 255, .6 );
+        }
+
+        .#{$pr}#{$c}hero#{$c1}caption {
+            color: #000;
+            background-color: rgba( 255, 255, 255, .2 );
+        }
+
+    }
+
+    &.#{$pr}#{$p}pagehead#{$c3}displayed {
+
+        .#{$pr}#{$c}hero#{$c1}title#{$c1}text {
+            color: #000;
+            background-color: rgba( 255, 255, 255, .8 );
+        }
+
+        .#{$pr}#{$c}hero#{$c1}caption {
+            color: #000;
+            background-color: rgba( 255, 255, 255, .4 );
         }
 
     }

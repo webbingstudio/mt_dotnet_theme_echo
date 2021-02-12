@@ -1433,6 +1433,9 @@ echo-p-pagehead
 
 .echo-p-pagehead .echo-c-hero-image {
   overflow: hidden;
+}
+
+.echo-p-pagehead .echo-c-hero-image img {
   animation: pageHeadImageLazy 2s linear 1 forwards;
 }
 
@@ -1452,10 +1455,6 @@ echo-p-pagehead
 .echo-p-pagehead.echo-p-pagehead-lighten .echo-c-hero-image img {
   mix-blend-mode: screen;
   opacity: .75;
-}
-
-.echo-p-pagehead.echo-p-pagehead-darken {
-  background-color: #000;
 }
 
 .echo-p-pagehead.echo-p-pagehead-darken .echo-c-hero-image img {
