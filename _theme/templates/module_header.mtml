@@ -4,11 +4,13 @@
 # モジュール-ヘッダ
 # 
 # vars(extend):
+#   __is_home__
 #   __folder_label__
+#   __folder_parent_label__
+#   __folder_ancestor_label__
 #   __post_id__
 # 
 # vars(local):
-#   __is_home__
 #   __hnav_children__
 # 
 # =======================
@@ -32,7 +34,7 @@
 
             <mt:If name="__is_home__">
                 <li class="echo-m-nav-item is-parent">
-                    <span class="echo-m-nav-label is-current" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></span>
+                    <span class="echo-m-nav-label is-parent" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></span>
                 </li>
             <mt:Else>
                 <li class="echo-m-nav-item">
@@ -45,11 +47,11 @@
 
             <mt:If tag="FolderCount">
                 <mt:Ignore>インデックスページのリンクを表示</mt:Ignore>
-                <li class="echo-m-nav-item<mt:If name="__hnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If> js-hoverswitch">
-                    <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-m-nav-label<mt:If name="__hnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If>"><mt:FolderLabel encode_html="1" /></a>
+                <li class="echo-m-nav-item<mt:If tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_parent_label__"> is-parent<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_ancestor_label__"> is-parent</mt:If> js-hoverswitch">
+                    <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-m-nav-label<mt:If tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_parent_label__"> is-parent<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_ancestor_label__"> is-parent</mt:If>"><mt:FolderLabel encode_html="1" /></a>
 
                 <mt:Ignore>インデックス以外の子ページ一覧</mt:Ignore>
-                <mt:Pages sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+                <mt:Pages sort_order="ascend" limit="100">
                 <mt:PagesHeader>
                 <mt:SetVar name="__hnav_children__" value="" />
                 </mt:PagesHeader>
@@ -61,25 +63,68 @@
                         <mt:Var name="__hnav_children__" />
                         <mt:If tag="PageID" eq="$__post_id__">
                             <li class="echo-m-nav-item is-current">
-                                <span class="echo-m-nav-label is-current"><mt:PageTitle encode_html="1" /></span></li>
+                                <span class="echo-m-nav-label is-current">
+                                <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                    <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                <mt:Else>
+                                    <mt:PageTitle encode_html="1" />
+                                </mt:If>
+                                </span></li>
                         <mt:Else>
                             <mt:Ignore>キーボード操作の障害になるためtabindexから除外する</mt:Ignore>
                             <li class="echo-m-nav-item">
-                                <a href="<mt:PagePermalink />" class="echo-m-nav-label" tabindex="-1"><mt:PageTitle encode_html="1" /></a></li>
+                                <a href="<mt:PagePermalink />" class="echo-m-nav-label" tabindex="-1">
+                                <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                    <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                <mt:Else>
+                                    <mt:PageTitle encode_html="1" />
+                                </mt:If>
+                                </a></li>
                         </mt:If>
                         </mt:SetVarBlock>
                     </mt:If>
                 </mt:If>
+                </mt:Pages>
 
-                <mt:PagesFooter>
+                <mt:Ignore>子フォルダのインデックスページ一覧</mt:Ignore>
+                <mt:SubFolders>
+                <mt:Pages sort_order="ascend" limit="100">
+                <mt:If tag="PageBasename" eq="index">
+                    <mt:If tag="CustomFieldValue" identifier="EchoPageShowGlNav">
+                        <mt:SetVarBlock name="__hnav_children__">
+                        <mt:Var name="__hnav_children__" />
+                        <mt:If tag="PageID" eq="$__post_id__">
+                            <li class="echo-m-nav-item is-current">
+                                <span class="echo-m-nav-label is-current">
+                                <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                    <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                <mt:Else>
+                                    <mt:FolderLabel encode_html="1" />
+                                </mt:If>
+                                </span></li>
+                        <mt:Else>
+                            <li class="echo-m-nav-item">
+                                <a href="<mt:PagePermalink />" class="echo-m-nav-label" tabindex="-1">
+                                <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                    <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                <mt:Else>
+                                    <mt:FolderLabel encode_html="1" />
+                                </mt:If>
+                                </a></li>
+                        </mt:If>
+                        </mt:SetVarBlock>
+                    </mt:If>
+                </mt:If>
+                </mt:Pages>
+                <mt:SubFolderRecurse />
+                </mt:SubFolders>
+
                 <mt:If name="__hnav_children__">
                     <mt:Ignore>子ページが1件でもあれば表示</mt:Ignore>
                     <ul class="echo-m-nav-list echo-m-nav-children">
                         <mt:Var name="__hnav_children__" />
                     </ul>
                 </mt:If>
-                </mt:PagesFooter>
-                </mt:Pages>
 
             </li>
             </mt:If>
@@ -88,10 +133,10 @@
             </mt:SubFolders>
 
             <mt:Ignore>フォルダに含まれないページ一覧</mt:Ignore>
-            <mt:Pages no_folder="1" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+            <mt:Pages no_folder="1" sort_order="ascend" limit="100">
             <mt:If tag="CustomFieldValue" identifier="EchoPageShowGlNav">
                 <mt:If tag="PageID" eq="$__post_id__">
-                    <li class="echo-m-nav-item is-current js-hoverswitch"><span class="echo-m-nav-label is-current"><mt:PageTitle encode_html="1" /></span></li>
+                    <li class="echo-m-nav-item is-parent js-hoverswitch"><span class="echo-m-nav-label is-parent"><mt:PageTitle encode_html="1" /></span></li>
                 <mt:Else>
                     <li class="echo-m-nav-item js-hoverswitch"><a href="<mt:PagePermalink />" class="echo-m-nav-label"><mt:PageTitle encode_html="1" /></a></li>
                 </mt:If>

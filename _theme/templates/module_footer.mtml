@@ -4,11 +4,11 @@
 # モジュール-フッタ
 # 
 # vars(extend):
+#   __is_home__
 #   __folder_label__
 #   __post_id__
 # 
 # vars(local):
-#   __is_home__
 #   __fnav_children__
 # 
 # =======================
@@ -33,16 +33,40 @@
             <mt:SubFolders top="1">
             <mt:HasNoParentFolder>
                 <mt:If tag="FolderCount">
-                    <mt:Ignore>インデックスページのリンクを表示</mt:Ignore>
-                    <li class="echo-m-list-item<mt:If name="__fnav_is_index__" eq="true"> is-current<mt:ElseIf tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-parent</mt:If>">
-                        <a href="<mt:BlogRelativeURL /><mt:FolderPath />/"><mt:FolderLabel encode_html="1" /></a>
-                    </li>
+                    <mt:Ignore>フッタナビゲーションに追加するインデックスページがあれば表示</mt:Ignore>
+                    <mt:Pages sort_order="ascend" limit="100">
+                    <mt:If tag="PageBasename" eq="index">
+                        <mt:If tag="CustomFieldValue" identifier="EchoPageShowFoNav">
+                            <mt:If tag="PageID" eq="$__post_id__">
+                                <li class="echo-m-list-item is-current">
+                                    <span class="echo-m-list-label is-current">
+                                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                    <mt:Else>
+                                        <mt:FolderLabel encode_html="1" />
+                                    </mt:If>
+                                    </span>
+                                </li>
+                            <mt:Else>
+                                <li class="echo-m-list-item">
+                                    <a href="<mt:PagePermalink />" class="echo-m-list-label">
+                                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                    <mt:Else>
+                                        <mt:FolderLabel encode_html="1" />
+                                    </mt:If>
+                                    </a>
+                                </li>
+                            </mt:If>
+                        </mt:If>
+                    </mt:If>
+                    </mt:Pages>
                 </mt:If>
             </mt:HasNoParentFolder>
             </mt:SubFolders>
 
             <mt:Ignore>フォルダに含まれないページ一覧</mt:Ignore>
-            <mt:Pages no_folder="1" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
+            <mt:Pages no_folder="1" sort_order="ascend" limit="100">
             <mt:If tag="CustomFieldValue" identifier="EchoPageShowFoNav">
                 <mt:If tag="PageID" eq="$__post_id__">
                     <li class="echo-m-list-item is-current"><mt:PageTitle encode_html="1" /></li>
