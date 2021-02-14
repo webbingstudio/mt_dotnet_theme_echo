@@ -9,17 +9,17 @@
 # =======================
 </mt:Ignore>
 <mt:SetVar name="__topicpath_count__" value="1" />
-<nav class="echo-p-topicpath echo-m-nav">
-<ol class="echo-m-nav-list" itemscope itemtype="http://schema.org/BreadcrumbList">
-<li class="echo-m-nav-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <a class="echo-m-nav-label" href="<mt:BlogRelativeURL />" itemprop="item"><span class="echo-m-nav-name" itemprop="name"><mt:var name="__blog_topicpath_home__" /></span></a>
+<nav class="echo-p-topicpath">
+<ol class="echo-m-list echo-m-list-horizontal" itemscope itemtype="http://schema.org/BreadcrumbList">
+<li class="echo-m-list-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a href="<mt:BlogRelativeURL />" class="echo-p-topicpath-label" itemprop="item"><span class="echo-p-topicpath-name" itemprop="name"><mt:var name="__blog_topicpath_home__" /></span></a>
     <meta itemprop="position" content="<mt:Var name="__topicpath_count__" />">
     <mt:SetVar name="__topicpath_count__" value="1" op="+" />
 </li>
 
 <mt:ParentFolders exclude_current="1">
-<li class="echo-m-nav-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <a class="echo-m-nav-label" href="<mt:BlogRelativeURL /><mt:FolderPath />/" itemprop="item"><span class="echo-m-nav-name" itemprop="name"><mt:FolderLabel encode_html="1" /></span></a>
+<li class="echo-m-list-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-p-topicpath-label" itemprop="item"><span class="echo-p-topicpath-name" class="echo-p-topicpath-name" itemprop="name"><mt:FolderLabel encode_html="1" /></span></a>
     <meta itemprop="position" content="<mt:Var name="__topicpath_count__" />">
     <mt:SetVar name="__topicpath_count__" value="1" op="+" />
 </li>
@@ -28,21 +28,21 @@
 <mt:If tag="PageBasename" eq="index">
 <mt:Ignore>インデックスページであれば: フォルダが終点となる</mt:Ignore>
 <mt:PageFolder>
-<li class="echo-m-nav-item is-current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span class="echo-m-nav-label is-current"><span class="echo-m-nav-name" itemprop="name"><mt:FolderLabel encode_html="1" /></span></span>
+<li class="echo-m-list-item is-current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span class="echo-p-topicpath-label is-current"><span class="echo-p-topicpath-name" itemprop="name"><mt:FolderLabel encode_html="1" /></span></span>
 </li>
 </mt:PageFolder>
 <mt:Else>
 <mt:Ignore>インデックスページでなければ: ページが終点となる</mt:Ignore>
 <mt:PageFolder>
-<li class="echo-m-nav-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <a class="echo-m-nav-label" href="<mt:BlogRelativeURL /><mt:FolderPath />/" itemprop="item"><span class="echo-m-nav-name" itemprop="name"><mt:FolderLabel encode_html="1" /></span></a>
+<li class="echo-m-list-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-p-topicpath-label" itemprop="item"><span class="echo-p-topicpath-name" itemprop="name"><mt:FolderLabel encode_html="1" /></span></a>
     <meta itemprop="position" content="<mt:Var name="__topicpath_count__" />">
     <mt:SetVar name="__topicpath_count__" value="1" op="+" />
 </li>
 </mt:PageFolder>
-<li class="echo-m-nav-item is-current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span class="echo-m-nav-label is-current"><span class="echo-m-nav-name" itemprop="name"><mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel"><mt:CustomFieldValue identifier="EchoPageNavLabel" encode_html="1" /><mt:Else><mt:PageTitle encode_html="1" /></mt:If></span></span>
+<li class="echo-m-list-item is-current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span class="echo-p-topicpath-label is-current"><span class="echo-p-topicpath-name" itemprop="name"><mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel"><mt:CustomFieldValue identifier="EchoPageNavLabel" encode_html="1" /><mt:Else><mt:PageTitle encode_html="1" /></mt:If></span></span>
 </li>
 </mt:If>
 <meta itemprop="position" content="<mt:Var name="__topicpath_count__" />">

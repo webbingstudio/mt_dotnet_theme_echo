@@ -80,6 +80,11 @@
 <div class="echo-p-content<mt:If name="__folder_layout__" eq="2カラム"> echo-p-content-2col<mt:Else> echo-p-content-1col</mt:If>">
 
     <main class="echo-p-main echo-p-content-main" role="main">
+
+        <mt:If tag="CustomFieldValue" identifier="EchoPageShowTopicPath" eq="1">
+            <mt:Include module="モジュール-パンくずリスト-ページ" />
+        </mt:If>
+
         <section class="echo-c-post echo-c-post-page">
             <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
             <div class="echo-c-post-header">
@@ -95,10 +100,6 @@
                 </mt:BlockEditorBlocks>
             </div><!-- /.echo-c-post-contents -->
         </section><!-- /.echo-c-post -->
-
-        <mt:If tag="CustomFieldValue" identifier="EchoPageShowTopicPath" eq="1">
-            <mt:Include module="モジュール-パンくずリスト-ページ" />
-        </mt:If>
 
     </main><!-- /.echo-p-main -->
 
