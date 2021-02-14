@@ -4,7 +4,7 @@
 # カスタムブロック-ページ誘導-card
 # 
 # vars:
-#   __page_pid__
+#   __page_pid__(require)
 #   __page_tagname__
 # 
 # =======================
@@ -34,7 +34,19 @@
             </div><!-- /.echo-c-card-object -->
             </mt:If>
             <div class="echo-c-card-contents">
-                <<mt:Var name="__page_tagname__" /> class="echo-c-card-title echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></<mt:Var name="__page_tagname__" />>
+                <<mt:Var name="__page_tagname__" /> class="echo-c-card-title echo-m-title echo-m-title-level-5 echo-m-title-style-a">
+                <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                    <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                <mt:Else>
+                    <mt:If tag="PageBasename" eq="index">
+                        <mt:PageFolder>
+                        <mt:FolderLabel encode_html="1" />
+                        </mt:PageFolder>
+                    <mt:Else>
+                        <mt:PageTitle encode_html="1" />
+                    </mt:If>
+                </mt:If>
+                </<mt:Var name="__page_tagname__" />>
                 <mt:If tag="CustomFieldValue" identifier="EchoPageSummary">
                 <div class="echo-c-card-body"><mt:CustomFieldValue identifier="EchoPageSummary" /></div>
                 </mt:If>

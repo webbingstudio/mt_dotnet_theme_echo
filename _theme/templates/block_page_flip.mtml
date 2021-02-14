@@ -31,7 +31,13 @@
                     <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                         <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                     <mt:Else>
-                        <mt:PageTitle encode_html="1" />
+                        <mt:If tag="PageBasename" eq="index">
+                            <mt:PageFolder>
+                            <mt:FolderLabel encode_html="1" />
+                            </mt:PageFolder>
+                        <mt:Else>
+                            <mt:PageTitle encode_html="1" />
+                        </mt:If>
                     </mt:If>
                     </<mt:Var name="__page_tagname__" />>
 
