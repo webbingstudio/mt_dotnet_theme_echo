@@ -47,7 +47,17 @@
                         </div><!-- /.echo-c-card-object -->
                         </mt:If>
                         <div class="echo-c-card-contents">
-                            <h3 class="echo-c-card-title echo-m-title echo-m-title-level-8 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></h3>
+                            <p class="echo-c-card-title echo-m-title echo-m-title-level-8 echo-m-title-style-a">
+                            <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                            <mt:Else>
+                                <mt:If tag="PageBasename" eq="index">
+                                    <mt:Var name="__pages_folder__" />
+                                <mt:Else>
+                                    <mt:PageTitle encode_html="1" />
+                                </mt:If>
+                            </mt:If>
+                            </p>
                         </div><!-- /.echo-c-card-contents -->
                     <mt:If tag="PageID" eq="$__pages_current_id__">
                     </span><!-- /.echo-c-card-innner -->

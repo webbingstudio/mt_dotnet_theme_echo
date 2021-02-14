@@ -48,7 +48,17 @@
                             </figure><!-- /.echo-m-thumbnail -->
                         </div><!-- /.echo-c-media-object -->
                         <div class="echo-c-media-contents">
-                            <p class="echo-c-media-title echo-m-title echo-m-title-level-8 echo-m-title-style-a"><mt:PageTitle encode_html="1" /></p>
+                            <p class="echo-c-media-title echo-m-title echo-m-title-level-8 echo-m-title-style-a">
+                            <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                            <mt:Else>
+                                <mt:If tag="PageBasename" eq="index">
+                                    <mt:Var name="__pages_folder__" />
+                                <mt:Else>
+                                    <mt:PageTitle encode_html="1" />
+                                </mt:If>
+                            </mt:If>
+                            </p>
                         </div>
                     <mt:If tag="PageID" eq="$__pages_current_id__">
                     </span><!-- /.echo-c-media -->

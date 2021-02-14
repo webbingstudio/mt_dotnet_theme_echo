@@ -30,10 +30,30 @@
             </mt:PagesHeader>
             <mt:If tag="PageID" eq="$__pages_current_id__">
                 <li class="echo-m-nav-item is-current">
-                    <span class="echo-m-nav-label is-current"><mt:PageTitle encode_html="1" /></span>
+                    <span class="echo-m-nav-label is-current">
+                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                    <mt:Else>
+                        <mt:If tag="PageBasename" eq="index">
+                            <mt:Var name="__pages_folder__" />
+                        <mt:Else>
+                            <mt:PageTitle encode_html="1" />
+                        </mt:If>
+                    </mt:If>
+                    </span>
             <mt:Else>
                 <li class="echo-m-nav-item">
-                    <a href="<mt:PagePermalink />" class="echo-m-nav-label"><mt:PageTitle encode_html="1" /></a>
+                    <a href="<mt:PagePermalink />" class="echo-m-nav-label">
+                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                    <mt:Else>
+                        <mt:If tag="PageBasename" eq="index">
+                            <mt:Var name="__pages_folder__" />
+                        <mt:Else>
+                            <mt:PageTitle encode_html="1" />
+                        </mt:If>
+                    </mt:If>
+                    </a>
             </mt:If>
         </mt:Pages>
         </nav><!-- /.echo-m-nav -->
