@@ -35,19 +35,14 @@
 <mt:Ignore>
 # -----------------------
 # folders
-# 
-# vars(local):
-#   __is_ancestor__
 # -----------------------
 </mt:Ignore>
 
-<mt:SetVar name="__is_ancestor__" value="false" /><mt:SetVar name="__folder_basename__" value="" /><mt:SetVar name="__folder_label__" value="" /><mt:SetVar name="__folder_path__" value="" />
-<mt:Ignore>現在のフォルダ情報</mt:Ignore>
-<mt:PageFolder>
+<mt:PageFolder><mt:Ignore>現在のフォルダ情報(1)</mt:Ignore>
 <mt:FolderBasename setvar="__folder_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_label__" />
 <mt:SetVarBlock name="__folder_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
-<mt:Ignore>ページタイトル:現在フォルダの設定を初期値とする</mt:Ignore>
+<mt:Ignore>ページタイトル:現在の設定を初期値とする</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderHeaderImage">
 <mt:CustomFieldAsset identifier="EchoFolderHeaderImage">
 <mt:AssetThumbnailURL width="1200" setvar="__folder_header_image_lg__" />
@@ -57,19 +52,19 @@
 <mt:CustomFieldValue identifier="EchoFolderHeaderEffect" setvar="__folder_header_effect__" />
 <mt:CustomFieldValue identifier="EchoFolderHeaderBlend" setvar="__folder_header_blend__" />
 </mt:PageFolder>
-<mt:Ignore>親・先祖フォルダ情報を一旦現在のフォルダ情報と同一にする</mt:Ignore>
+
+<mt:Ignore>親・先祖フォルダ情報を一旦現在の情報と同一にする</mt:Ignore>
 <mt:SetVar name="__folder_parent_basename__" value="$__folder_basename__" /><mt:SetVar name="__folder_parent_label__" value="$__folder_label__" /><mt:SetVar name="__folder_parent_path__" value="$__folder_path__" /><mt:SetVar name="__folder_ancestor_basename__" value="$__folder_basename__" /><mt:SetVar name="__folder_ancestor_label__" value="$__folder_label__" /><mt:SetVar name="__folder_ancestor_path__" value="$__folder_path__" />
-<mt:ParentFolders exclude_current="1">
-<mt:Ignore>親・先祖フォルダ情報</mt:Ignore>
-<mt:If name="__is_ancestor__" eq="false">
-<mt:Ignore>先祖フォルダ情報をまだ取得していなければ</mt:Ignore>
+
+<mt:TopLevelFolder><mt:Ignore>先祖のフォルダ情報</mt:Ignore>
+<mt:Ignore>フォルダ情報を取得</mt:Ignore>
 <mt:FolderBasename setvar="__folder_ancestor_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_ancestor_label__" />
 <mt:SetVarBlock name="__folder_ancestor_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
 <mt:Ignore>レイアウト・ナビゲーション:先祖の設定を初期値とする</mt:Ignore>
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
 <mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__folder_nav_type__" />
-<mt:Ignore>ページタイトル:先祖が定義済みの場合のみ上書き</mt:Ignore>
+<mt:Ignore>ページタイトル:先祖に設定されている場合は現在を上書き</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderHeaderImage">
 <mt:CustomFieldAsset identifier="EchoFolderHeaderImage">
 <mt:AssetThumbnailURL width="1200" setvar="__folder_header_image_lg__" />
@@ -78,22 +73,24 @@
 </mt:If>
 <mt:CustomFieldValue identifier="EchoFolderHeaderEffect" setvar="__folder_header_effect__" />
 <mt:CustomFieldValue identifier="EchoFolderHeaderBlend" setvar="__folder_header_blend__" />
-<mt:SetVar name="__is_ancestor__" value="true" />
-</mt:If>
+</mt:TopLevelFolder>
+
+<mt:ParentFolder><mt:Ignore>親のフォルダ情報</mt:Ignore>
+<mt:Ignore>フォルダ情報を取得</mt:Ignore>
 <mt:FolderBasename setvar="__folder_parent_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_parent_label__" />
 <mt:SetVarBlock name="__folder_parent_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
-<mt:Ignore>レイアウト・ナビゲーション:子孫が自動でなければ上書き</mt:Ignore>
+<mt:Ignore>レイアウト・ナビゲーション:親が自動でなければ先祖を上書き</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
 </mt:If>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderNavType" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__folder_nav_type__" />
 </mt:If>
-</mt:ParentFolders>
-<mt:PageFolder>
-<mt:Ignore>現在のフォルダ情報（再度）</mt:Ignore>
-<mt:Ignore>レイアウト・ナビゲーション:現在のフォルダが未定義でなければ上書き</mt:Ignore>
+</mt:ParentFolder>
+
+<mt:PageFolder><mt:Ignore>現在のフォルダ情報(2)</mt:Ignore>
+<mt:Ignore>レイアウト・ナビゲーション:現在が自動でなければ親・先祖を上書き</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" ne="自動">
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__folder_layout__" />
 </mt:If>
@@ -136,9 +133,7 @@
 </mt:Ignore>
 
 <mt:PageID setvar="__post_id__" />
-
 <mt:PageExcerpt encode_html="1" strip_linefeeds="1" words="120" setvar="__post_meta_description__" />
-
 <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
 <mt:CustomFieldAsset identifier="EchoPageEyecatch"><mt:AssetURL setvar="__post_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__post_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__post_eyecatch_height__" /></mt:CustomFieldAsset>
 <mt:Else>
