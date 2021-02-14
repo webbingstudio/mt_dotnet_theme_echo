@@ -972,7 +972,14 @@ embed
 */
 .echo-p-header {
   position: relative;
-  z-index: 62;
+  z-index: 998;
+  transition: padding .3s;
+}
+
+.echo-p-header.js-scrollswitch-active {
+  position: fixed;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .echo-p-header-contents {
@@ -1353,6 +1360,51 @@ embed
 
 /*
 --------------------
+.echo-p-spmenu
+--------------------
+*/
+body.js-toggle-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
+@media (min-width: 1000px) {
+  .echo-p-spmenu {
+    display: none;
+    content-visibility: hidden;
+    contain-intrinsic-size: 0;
+  }
+}
+
+.echo-p-spmenu-nav-main {
+  position: fixed;
+  width: 100%;
+  height: 44px;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 1001;
+}
+
+.echo-p-spmenu-more.js-toggle-ready {
+  display: block;
+  height: 0;
+  top: auto;
+  transition: height .6s;
+}
+
+.echo-p-spmenu-more.js-toggle-open {
+  display: block;
+  height: 100%;
+}
+
+.echo-p-spmenu-nav-sub {
+  padding-top: 30px;
+  padding-bottom: 74px;
+}
+
+/*
+--------------------
 echo-p-content
 --------------------
 */
@@ -1452,7 +1504,7 @@ echo-p-pagehead
 }
 
 .echo-p-pagehead .echo-c-hero-image img {
-  animation: pageHeadImageLazy 2s linear 1 forwards;
+  animation: pageHeadImageLazy 3s linear 1 forwards;
 }
 
 .echo-p-pagehead .echo-c-hero-image:after {
@@ -1492,7 +1544,7 @@ echo-p-pagehead
   0% {
     opacity: 0;
   }
-  25% {
+  50% {
     opacity: 0;
   }
   100% {

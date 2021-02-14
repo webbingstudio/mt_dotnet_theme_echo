@@ -24,7 +24,7 @@
         overflow: hidden;
 
         img {
-            animation: pageHeadImageLazy 2s linear 1 forwards;
+            animation: pageHeadImageLazy 3s linear 1 forwards;
         }
 
         &:after {
@@ -91,7 +91,7 @@
     0% {
         opacity: 0;
     }
-    25% {
+    50% {
         opacity: 0;
     }
     100% {

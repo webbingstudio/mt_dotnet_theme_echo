@@ -15,7 +15,6 @@
 
 .echo-p-header {
   width: 100%;
-  transition: padding .3s;
 }
 
 @media (min-width: 768px) {
@@ -26,19 +25,12 @@
   }
 }
 
-@media (min-width: 768px) {
-  .echo-p-header.js-scrollswitch-active {
-    position: fixed;
-    padding-top: 0;
-    padding-bottom: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  }
+.echo-p-header.js-scrollswitch-active {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 768px) {
-  .echo-p-header.js-scrollswitch-active .echo-p-header-title img {
-    height: 30px;
-  }
+.echo-p-header.js-scrollswitch-active .echo-p-header-title img {
+  height: 30px;
 }
 
 .echo-p-header-title img {
@@ -174,6 +166,19 @@
 
 .echo-p-footer-btn .echo-p-footer-btn-youtube .echo-m-btn:hover, .echo-p-footer-btn .echo-p-footer-btn-youtube .echo-m-btn:focus, .echo-p-footer-btn .echo-p-footer-btn-youtube .echo-m-btn:active {
   background-color: #ee0000;
+}
+
+/*
+--------------------
+.echo-p-spmenu
+--------------------
+*/
+.echo-p-spmenu-nav-main {
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.echo-p-spmenu-more .echo-c-overlay-bg {
+  background-color: #fff;
 }
 
 /*

@@ -6,7 +6,18 @@
 
 .#{$pr}#{$p}header {
     position: relative;
-    z-index: 62;
+    z-index: 998;
+    transition: padding .3s;
+
+    &:not(.js-scrollswitch-active) {
+    }
+
+    &.js-scrollswitch-active {
+        position: fixed;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
 }
 
 .#{$pr}#{$p}header#{$c1}contents {

@@ -1,0 +1,17 @@
+/*
+--------------------
+.#{$pr}#{$p}spmenu
+--------------------
+*/
+
+.#{$pr}#{$p}spmenu#{$c1}nav#{$c3}main {
+    box-shadow: 0 -2px 5px rgba( 0, 0, 0, 0.3 );
+}
+
+.#{$pr}#{$p}spmenu#{$c1}more {
+
+    .#{$pr}#{$c}overlay#{$c1}bg {
+        background-color: $body-bg;
+    }
+
+}
