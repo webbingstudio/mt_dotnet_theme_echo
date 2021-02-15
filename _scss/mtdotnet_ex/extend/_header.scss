@@ -48,50 +48,20 @@
     flex-grow: 0;
     padding-right: 0;
 
+    .#{$pr}#{$m}nav#{$c1}item {
+        position: relative;
+    }
+
     .#{$pr}#{$m}nav#{$c1}children {
         flex-direction: column;
+        position: absolute;
+        width: 10em;
+        top: 100%;
+        left: 50%;
+        transform: translate( -50%, 0 );
 
         .#{$pr}#{$m}nav#{$c1}label {
             padding-left: 1em;
-        }
-
-    }
-
-    .#{$pr}#{$m}nav#{$c1}item {
-        position: relative;
-
-        > .#{$pr}#{$m}nav#{$c1}children {
-            overflow: hidden;
-            position: absolute;
-            width: 10em;
-            top: 100%;
-            left: 50%;
-            transform: translate( -50%, 0 );
-            transform-origin: top center;
-        }
-
-        &.js-hoverswitch-ready {
-            // Do not use animation "reverse" for :not(:hover)
-            // (Because it play when the document loads).
-
-            > .#{$pr}#{$m}nav#{$c1}children {
-                opacity: 0;
-                height: 0;
-            }
-
-        }
-
-        &.js-hoverswitch-in {
-
-            > .#{$pr}#{$m}nav#{$c1}children {
-                opacity: 1;
-                height: auto;
-            }
-
-        }
-
-        &.js-hoverswitch-out {
-
         }
 
     }

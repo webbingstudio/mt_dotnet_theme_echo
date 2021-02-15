@@ -80,6 +80,85 @@
 
     }
 
+    .#{$pr}#{$c}hero#{$c1}image {
+        overflow: hidden;
+
+        img {
+            animation: pageHeadImageLazy 3s linear 1 forwards;
+        }
+
+    }
+
+    .#{$pr}#{$be}-hero#{$c1}blend {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: color;
+        z-index: 12;
+    }
+
+    .#{$pr}#{$c}hero#{$c1}contents {
+        z-index: 13;
+    }
+
+    .#{$pr}#{$c}hero#{$c1}contents#{$c1}inner {
+        padding: ( $spacer * 2 );
+        background-color: rgba( 255, 255, 255, .3 );
+
+        @include media-breakpoint-down(sm) {
+            padding: $spacer;
+            max-width: 270px;
+        }
+
+    }
+
+    &.#{$pr}#{$be}-hero#{$c3}lighten {
+
+        .#{$pr}#{$c}hero-image {
+
+            img {
+                mix-blend-mode: screen;
+                opacity: .75;
+            }
+
+        }
+
+    }
+
+    &.#{$pr}#{$be}-hero#{$c3}darken {
+
+        .#{$pr}#{$c}hero-image {
+
+            img {
+                mix-blend-mode: multiply;
+                opacity: .75;
+            }
+
+        }
+
+        .#{$pr}#{$c}hero#{$c1}contents#{$c1}inner {
+            background-color: rgba( 0, 0, 0, .3 );
+        }
+
+    }
+
+    &.#{$pr}#{$be}-hero#{$c3}blur {
+
+        .#{$pr}#{$c}hero-image {
+
+            img {
+                filter: blur( 5px );
+
+                @include media-breakpoint-up(lg) {
+                    filter: blur( 8px );
+                }
+
+            }
+
+        }
+
+    }
+
 }
 
 .#{$pr}#{$be}-hero-cover {
@@ -140,4 +219,16 @@
 
     }
 
+}
+
+@keyframes pageHeadImageLazy {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
