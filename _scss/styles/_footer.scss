@@ -5,7 +5,7 @@
 */
 
 .#{$pr}#{$p}footer {
-    box-shadow: 0 -2px 5px rgba( 0, 0, 0, 0.2 );
+    border-top: 1px solid $border-color;
 }
 
 .#{$pr}#{$p}footer#{$c1}btn {

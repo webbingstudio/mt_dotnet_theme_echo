@@ -48,38 +48,6 @@
 
 }
 
-.#{$pr}#{$p}header#{$c1}btn {
-
-    .#{$pr}#{$m}nav#{$c1}label {
-
-        &:hover,
-        &:focus,
-        &:active {
-            color: $body-inverse-color;
-            background-color: $body-color;
-
-            svg {
-                fill: $body-inverse-color;
-            }
-
-        }
-
-    }
-
-    .#{$pr}#{$m}nav#{$c1}item {
-
-        &.#{$pr}#{$p}header#{$c1}btn#{$c3}lg {
-
-            .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
-                font-weight: bold;
-            }
-
-        }
-
-    }
-
-}
-
 .#{$pr}#{$p}header#{$c1}nav {
 
     .#{$pr}#{$m}nav#{$c1}item {
@@ -143,11 +111,43 @@
                 position: absolute;
                 content: "";
                 width: 100%;
-                height: 4px;
+                height: 3px;
                 bottom: 0;
                 left: 0;
                 background-color: $ui-current-bg;
                 z-index: 62;
+            }
+
+        }
+
+    }
+
+}
+
+.#{$pr}#{$p}header#{$c1}btn {
+
+    .#{$pr}#{$m}nav#{$c1}label {
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $body-inverse-color;
+            background-color: $body-color;
+
+            svg {
+                fill: $body-inverse-color;
+            }
+
+        }
+
+    }
+
+    .#{$pr}#{$m}nav#{$c1}item {
+
+        &.#{$pr}#{$p}header#{$c1}btn#{$c3}lg {
+
+            .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+                font-weight: bold;
             }
 
         }

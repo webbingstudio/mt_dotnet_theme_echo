@@ -63,6 +63,23 @@
 
     }
 
+    .#{$pr}#{$c}hero#{$c1}body {
+        font-size: .75rem;
+
+        @include media-breakpoint-up(sm) {
+            font-size: .875rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1rem;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            font-size: 1.125rem;
+        }
+
+    }
+
 }
 
 .#{$pr}#{$be}-hero-cover {

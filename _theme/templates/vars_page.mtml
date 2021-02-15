@@ -20,6 +20,7 @@
 #   __folder_ancestor_label__
 #   __folder_ancestor_path__
 #   __post_id__
+#   __post_basename__
 #   __post_meta_title__
 #   __post_meta_description__
 #   __post_eyecatch_url__
@@ -133,6 +134,7 @@
 </mt:Ignore>
 
 <mt:PageID setvar="__post_id__" />
+<mt:PageBasename setvar="__post_basename__" />
 <mt:PageExcerpt encode_html="1" strip_linefeeds="1" words="120" setvar="__post_meta_description__" />
 <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
 <mt:CustomFieldAsset identifier="EchoPageEyecatch"><mt:AssetURL setvar="__post_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__post_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__post_eyecatch_height__" /></mt:CustomFieldAsset>

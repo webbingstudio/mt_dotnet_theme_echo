@@ -416,6 +416,28 @@ embed
   }
 }
 
+.echo-mt-be-hero .echo-c-hero-body {
+  font-size: .75rem;
+}
+
+@media (min-width: 425px) {
+  .echo-mt-be-hero .echo-c-hero-body {
+    font-size: .875rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-mt-be-hero .echo-c-hero-body {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .echo-mt-be-hero .echo-c-hero-body {
+    font-size: 1.125rem;
+  }
+}
+
 .echo-mt-be-hero-cover {
   overflow: hidden;
   position: relative;
@@ -1382,15 +1404,37 @@ body.js-toggle-active {
   height: 44px;
   left: 0;
   bottom: 0;
-  background-color: #fff;
   z-index: 1001;
 }
 
+.echo-p-spmenu-nav-main .echo-m-nav-item:not(.echo-p-spmenu-toggle) {
+  flex-grow: 1;
+}
+
+.echo-p-spmenu-nav-main .echo-m-nav-item.echo-p-spmenu-toggle {
+  flex-grow: 0;
+}
+
+.echo-p-spmenu-nav-main .echo-m-nav-label {
+  font-size: 0.75rem;
+  padding: 0;
+}
+
+.echo-p-spmenu-more .echo-c-overlay-bg {
+  opacity: 0;
+}
+
+.echo-p-spmenu-more .echo-c-overlay-contents {
+  top: auto;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+
 .echo-p-spmenu-more.js-toggle-ready {
+  overflow: hidden;
   display: block;
   height: 0;
   top: auto;
-  transition: height .6s;
 }
 
 .echo-p-spmenu-more.js-toggle-open {
@@ -1398,9 +1442,57 @@ body.js-toggle-active {
   height: 100%;
 }
 
+.echo-p-spmenu-more.js-toggle-open .echo-c-overlay-bg {
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.echo-p-spmenu-more.js-toggle-open .echo-c-overlay-contents {
+  transform: translate(0, 0);
+  transition: transform .6s;
+}
+
+.echo-p-spmenu-more.js-toggle-close {
+  transition: height 0s .6s;
+}
+
+.echo-p-spmenu-more.js-toggle-close .echo-c-overlay-bg {
+  transition: opacity .3s .3s;
+}
+
+.echo-p-spmenu-more.js-toggle-close .echo-c-overlay-contents {
+  transition: transform .3s;
+}
+
 .echo-p-spmenu-nav-sub {
-  padding-top: 30px;
-  padding-bottom: 74px;
+  width: 100%;
+}
+
+.echo-p-spmenu-nav-sub .echo-m-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.echo-p-spmenu-nav-sub .echo-m-nav-label {
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.echo-p-spmenu-nav-sub .echo-m-nav-children {
+  flex-direction: row;
+  padding-left: 20px;
+}
+
+.echo-p-spmenu-nav-sub .echo-m-nav-children .echo-m-nav-item {
+  flex-grow: 0;
+  width: 50%;
+}
+
+.echo-p-spmenu-nav-sub .echo-m-nav-children .echo-m-nav-label {
+  font-size: 0.75rem;
 }
 
 /*
