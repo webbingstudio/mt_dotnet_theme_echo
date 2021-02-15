@@ -123,6 +123,14 @@ object-fit-images
   }
 }
 
+@media (max-width: 999.9px) {
+  .echo-mt-be-btn.echo-mt-be-btn-sm .echo-m-btn {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    max-width: 270px;
+  }
+}
+
 .echo-mt-be-btn.echo-mt-be-btn-md {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -189,6 +197,7 @@ object-fit-images
 
 @media (min-width: 1000px) {
   .echo-mt-be-btns > .echo-mt-be-btn {
+    flex-grow: 1;
     margin: 0;
     padding-left: 10px;
     padding-right: 10px;
@@ -196,15 +205,8 @@ object-fit-images
 }
 
 @media (min-width: 1000px) {
-  .echo-mt-be-btns .m-btn {
+  .echo-mt-be-btns .echo-m-btn {
     max-width: none;
-    min-width: 300px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .echo-mt-be-btns .m-btn.m-btn-xl, .echo-mt-be-btns .m-btn.m-btn-xxl {
-    min-width: 460px;
   }
 }
 
@@ -1779,6 +1781,31 @@ echo-p-topicpath
 
 .echo-p-topicpath .echo-m-list a.echo-p-topicpath-label:hover, .echo-p-topicpath .echo-m-list a.echo-p-topicpath-label:focus {
   color: #333;
+}
+
+/*
+--------------------
+.echo-m-btn
+--------------------
+*/
+.echo-m-btn[class*="echo-m-btn-arrowed"] {
+  position: relative;
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"]:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transform-origin: center center;
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-arrowed-left:after {
+  left: 15px;
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-arrowed-right:after {
+  right: 15px;
 }
 
 /*

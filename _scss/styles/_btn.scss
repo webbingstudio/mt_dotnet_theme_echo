@@ -1,0 +1,83 @@
+/*
+--------------------
+.#{$pr}#{$c}btn
+--------------------
+*/
+
+.#{$pr}#{$m}btn[class*="#{$pr}#{$m}btn#{$c2}arrowed"] {
+
+    &:after {
+        width: 7px;
+        height: 7px;
+        border-top: 2px solid $body-color;
+        border-left: 2px solid $body-color;
+        border-radius: 2px;
+    }
+
+    &.#{$pr}#{$m}btn#{$c2}arrowed#{$c3}left {
+
+        &:after {
+            transform:
+                translate( 0, -50% )
+                rotate( -45deg );
+        }
+
+    }
+
+    &.#{$pr}#{$m}btn#{$c2}arrowed#{$c3}right {
+
+        &:after {
+            transform:
+                translate( 0, -50% )
+                rotate( 135deg );
+        }
+
+    }
+
+    &.#{$pr}#{$m}btn#{$c3}xl {
+
+        &:after {
+            width: 9px;
+            height: 9px;
+        }
+
+    }
+
+    &.#{$pr}#{$m}btn#{$c3}xxl {
+
+        &:after {
+            width: 11px;
+            height: 11px;
+        }
+
+    }
+
+    &.#{$pr}#{$m}btn:not(.#{$pr}#{$m}btn#{$c3}bordered) {
+
+        &:not(:hover):not(:focus):not(:active) {
+
+            &:after {
+                border-top-color: $body-inverse-color;
+                border-left-color: $body-inverse-color;
+            }
+
+        }
+
+    }
+
+    &.#{$pr}#{$m}btn#{$c3}bordered {
+
+        &:hover,
+        &:focus,
+        &:active {
+
+            &:after {
+                border-top-color: $body-inverse-color;
+                border-left-color: $body-inverse-color;
+            }
+
+        }
+
+    }
+
+}

@@ -358,6 +358,47 @@ echo-p-content
 
 /*
 --------------------
+.echo-c-btn
+--------------------
+*/
+.echo-m-btn[class*="echo-m-btn-arrowed"]:after {
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #333;
+  border-left: 2px solid #333;
+  border-radius: 2px;
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-arrowed-left:after {
+  transform: translate(0, -50%) rotate(-45deg);
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-arrowed-right:after {
+  transform: translate(0, -50%) rotate(135deg);
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-xl:after {
+  width: 9px;
+  height: 9px;
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-xxl:after {
+  width: 11px;
+  height: 11px;
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn:not(.echo-m-btn-bordered):not(:hover):not(:focus):not(:active):after {
+  border-top-color: #fff;
+  border-left-color: #fff;
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-bordered:hover:after, .echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-bordered:focus:after, .echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-bordered:active:after {
+  border-top-color: #fff;
+  border-left-color: #fff;
+}
+
+/*
+--------------------
 .echo-c-card
 --------------------
 */

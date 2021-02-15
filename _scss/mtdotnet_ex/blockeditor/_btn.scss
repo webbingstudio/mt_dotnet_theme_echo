@@ -15,6 +15,16 @@
             margin-bottom: ( $spacer * 1.5 );
         }
 
+        .#{$pr}#{$m}btn {
+
+            @include media-breakpoint-down(md) {
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+                max-width: 270px;
+            }
+
+        }
+
     }
 
     &.#{$pr}#{$be}-btn-md {

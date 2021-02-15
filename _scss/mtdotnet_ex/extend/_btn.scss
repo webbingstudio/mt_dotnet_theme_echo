@@ -1,0 +1,35 @@
+/*
+--------------------
+.#{$pr}#{$m}btn
+--------------------
+*/
+
+.#{$pr}#{$m}btn[class*="#{$pr}#{$m}btn#{$c2}arrowed"] {
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translate( 0, -50% );
+        transform-origin: center center;
+    }
+
+    &.#{$pr}#{$m}btn#{$c2}arrowed#{$c3}left {
+
+        &:after {
+            left: 15px;
+        }
+
+    }
+
+    &.#{$pr}#{$m}btn#{$c2}arrowed#{$c3}right {
+
+        &:after {
+            right: 15px;
+
+        }
+
+    }
+
+}

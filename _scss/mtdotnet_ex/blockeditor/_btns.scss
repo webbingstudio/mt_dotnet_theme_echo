@@ -27,6 +27,7 @@
         }
 
         @include media-breakpoint-up(lg) {
+            flex-grow: 1;
             margin: 0;
             padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
             padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
@@ -34,20 +35,10 @@
 
     }
 
-    .#{$m}btn {
+    .#{$pr}#{$m}btn {
 
         @include media-breakpoint-up(lg) {
             max-width: none;
-            min-width: 300px;
-        }
-
-        &.#{$m}btn#{$c2}xl,
-        &.#{$m}btn#{$c2}xxl {
-
-            @include media-breakpoint-up(lg) {
-                min-width: 460px;
-            }
-
         }
 
     }
