@@ -80,4 +80,24 @@
 
     }
 
+    &.#{$pr}#{$m}btn.#{$pr}#{$m}btn#{$c3}inverse {
+
+        &:after {
+            border-top-color: $body-inverse-color;
+            border-left-color: $body-inverse-color;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+
+            &:after {
+                border-top-color: $body-color;
+                border-left-color: $body-color;
+            }
+
+        }
+
+    }
+
 }

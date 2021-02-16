@@ -102,19 +102,39 @@
     }
 
     .#{$pr}#{$c}hero#{$c1}contents#{$c1}inner {
-        padding: ( $spacer * 2 );
         background-color: rgba( 255, 255, 255, .3 );
+        padding: $spacer;
+
+        @include media-breakpoint-up(md) {
+            padding: ( $spacer * 2 );
+        }
+
+        @include media-breakpoint-down(md) {
+            flex-basis: 480px;
+        }
 
         @include media-breakpoint-down(sm) {
-            padding: $spacer;
-            max-width: 270px;
+            flex-basis: 360px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            flex-basis: 270px;
         }
 
     }
 
+    .#{$pr}#{$c}hero.#{$pr}#{$c}hero#{$c3}inverse {
+
+        .#{$pr}#{$c}hero#{$c1}contents#{$c1}inner {
+            background-color: rgba( 0, 0, 0, .3 );
+        }
+
+    }
+
+
     &.#{$pr}#{$be}-hero#{$c3}lighten {
 
-        .#{$pr}#{$c}hero-image {
+        .#{$pr}#{$c}hero#{$c1}image {
 
             img {
                 mix-blend-mode: screen;
@@ -127,7 +147,7 @@
 
     &.#{$pr}#{$be}-hero#{$c3}darken {
 
-        .#{$pr}#{$c}hero-image {
+        .#{$pr}#{$c}hero#{$c1}image {
 
             img {
                 mix-blend-mode: multiply;
@@ -136,15 +156,11 @@
 
         }
 
-        .#{$pr}#{$c}hero#{$c1}contents#{$c1}inner {
-            background-color: rgba( 0, 0, 0, .3 );
-        }
-
     }
 
     &.#{$pr}#{$be}-hero#{$c3}blur {
 
-        .#{$pr}#{$c}hero-image {
+        .#{$pr}#{$c}hero#{$c1}image {
 
             img {
                 filter: blur( 5px );
@@ -166,10 +182,17 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: rgb(236,231,217);
-    background: radial-gradient(circle, rgb(255,255,255) 0%, rgb(236,231,217) 100%);
+    background: radial-gradient(circle, rgb( 255, 255, 255 ) 0%, rgb( 236, 231, 217 ) 100%);
     padding-bottom: 100%;
     z-index: 9;
+
+    .#{$pr}#{$c}hero#{$c3}inverse & {
+        background: radial-gradient(circle, rgb( 76, 115, 189 ) 0%, rgb( 46, 50, 58 ) 100%);
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: percentage( 2 / 3 );
+    }
 
     @include media-breakpoint-up(lg) {
         padding-bottom: percentage( 9 / 16 );
@@ -177,46 +200,6 @@
 
     @include media-breakpoint-up(xl) {
         padding-bottom: percentage( 10 / 25 );
-    }
-
-    &:before,
-    &:after {
-        position: absolute;
-        content: "";
-    }
-
-    &:before {
-        top: 0;
-        left: 0;
-        transform: translate( -25%, -25% );
-        width: 60vw;
-        height: 60vw;
-        border-radius: 50%;
-        z-index: 10;
-        background: rgba(236,231,217, .5);
-
-        @include media-breakpoint-up(md) {
-            width: 40vw;
-            height: 40vw;
-        }
-
-    }
-
-    &:after {
-        bottom: 0;
-        right: 0;
-        transform: translate( 25%, 25% );
-        width: 30vw;
-        height: 30vw;
-        border-radius: 50%;
-        z-index: 11;
-        background: rgba(255,255,255, .4);
-
-        @include media-breakpoint-up(md) {
-            width: 20vw;
-            height: 20vw;
-        }
-
     }
 
 }

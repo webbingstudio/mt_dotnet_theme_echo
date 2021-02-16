@@ -397,6 +397,16 @@ echo-p-content
   border-left-color: #fff;
 }
 
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn.echo-m-btn-inverse:after {
+  border-top-color: #fff;
+  border-left-color: #fff;
+}
+
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn.echo-m-btn-inverse:hover:after, .echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn.echo-m-btn-inverse:focus:after, .echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn.echo-m-btn-inverse:active:after {
+  border-top-color: #333;
+  border-left-color: #333;
+}
+
 /*
 --------------------
 .echo-c-card
