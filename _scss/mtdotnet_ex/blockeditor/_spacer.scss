@@ -7,64 +7,64 @@
 .#{$pr}#{$be}-spacer {
 
     hr {
-        margin: 0!important;
-        padding: 0!important;
-        border: 0 none!important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 none !important;
         height: 0 !important;
         opacity: 0 !important;
     }
 
     &.#{$pr}#{$be}-spacer-xs {
-        margin-top: ( $spacer / 2 );
-        margin-bottom: ( $spacer / 2 );
+        margin-top: ( 10 / 2 ) + px;
+        margin-bottom: ( 10 / 2 ) + px;
 
         @include media-breakpoint-up(lg) {
-            margin-top: ( $spacer * .75 );
-            margin-bottom: ( $spacer * .75 );
+            margin-top: ( 16 / 2 ) + px;
+            margin-bottom: ( 14 / 2 ) + px;
         }
 
     }
 
     &.#{$pr}#{$be}-spacer-sm {
-        margin-top: $spacer;
-        margin-bottom: $spacer;
+        margin-top: ( 16 / 2 ) + px;
+        margin-bottom: ( 14 / 2 ) + px;
 
         @include media-breakpoint-up(lg) {
-            margin-top: ( $spacer * 1.5 );
-            margin-bottom: ( $spacer * 1.5 );
+            margin-top: ( 30 / 2 ) + px;
+            margin-bottom: ( 30 / 2 ) + px;
         }
 
     }
 
     &.#{$pr}#{$be}-spacer-md {
-        margin-top: ( $spacer * 1.5 );
-        margin-bottom: ( $spacer * 1.5 );
+        margin-top: ( 30 / 2 ) + px;
+        margin-bottom: ( 30 / 2 ) + px;
 
         @include media-breakpoint-up(lg) {
-            margin-top: ( $spacer * 2.25 );
-            margin-bottom: ( $spacer * 2.25 );
+            margin-top: ( 46 / 2 ) + px;
+            margin-bottom: ( 44 / 2 ) + px;
         }
 
     }
 
     &.#{$pr}#{$be}-spacer-lg {
-        margin-top: ( $spacer * 2 );
-        margin-bottom: ( $spacer * 2 );
+        margin-top: ( 46 / 2 ) + px;
+        margin-bottom: ( 44 / 2 ) + px;
 
         @include media-breakpoint-up(lg) {
-            margin-top: ( $spacer * 3 );
-            margin-bottom: ( $spacer * 3 );
+            margin-top: ( 60 / 2 ) + px;
+            margin-bottom: ( 60 / 2 ) + px;
         }
 
     }
 
     &.#{$pr}#{$be}-spacer-xl {
-        margin-top: ( $spacer * 3 );
-        margin-bottom: ( $spacer * 3 );
+        margin-top: ( 60 / 2 ) + px;
+        margin-bottom: ( 60 / 2 ) + px;
 
         @include media-breakpoint-up(lg) {
-            margin-top: ( $spacer * 4.5 );
-            margin-bottom: ( $spacer * 4.5 );
+            margin-top: ( 90 / 2 ) + px;
+            margin-bottom: ( 90 / 2 ) + px;
         }
 
     }
