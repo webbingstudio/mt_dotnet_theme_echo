@@ -1,0 +1,65 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-CTA
+# 
+# vars:
+#   __cta_wrapclass__
+#   __cta_image_lg__
+#   __cta_image_sm__
+# 
+# =======================
+</mt:Ignore>
+<mt:If tag="CustomFieldValue" identifier="EchoBlogCtaImage">
+<mt:CustomFieldAsset identifier="EchoBlogCtaImage">
+<mt:AssetThumbnailURL width="800" setvar="__cta_image_lg__" />
+<mt:AssetThumbnailURL width="480" setvar="__cta_image_sm__" />
+</mt:CustomFieldAsset>
+</mt:If>
+
+<mt:If tag="CustomFieldValue" identifier="EchoBlogCtaUrl">
+<mt:If name="__cta_wrapclass__">
+<section class="<mt:Var name="__cta_wrapclass__" />">
+</mt:If>
+    <div class="echo-p-cta">
+        <div class="echo-p-cta-inner">
+        <mt:If tag="CustomFieldValue" identifier="EchoBlogCtaTitle">
+            <div class="echo-p-cta-header">
+                <p class="echo-p-cta-title echo-m-title echo-m-title-level-3 echo-m-title-style-b"><mt:CustomFieldValue identifier="EchoBlogCtaTitle" /></p>
+            </div><!-- /.echo-p-cta-header -->
+        </mt:If>
+        <mt:If name="__cta_image_lg__">
+            <figure class="echo-p-cta-image">
+                <picture>
+                    <source
+                        media="(max-width:750px)"
+                        srcset="<mt:Var name="__cta_image_sm__" /> 750w"
+                        sizes="100vw">
+                    <source
+                        srcset="<mt:Var name="__cta_image_lg__" /> 1200w"
+                        sizes="(max-width:1200px) 100vw">
+                    <img src="<mt:Var name="__cta_image_lg__" />" width="400" alt="">
+                </picture>
+            </figure><!-- /.echo-p-cta-image -->
+        </mt:If>
+            <div class="echo-p-cta-contents">
+                <div class="echo-p-cta-body">
+                    <mt:CustomFieldValue identifier="EchoBlogCtaBody" />
+                </div><!-- /.echo-p-cta-body -->
+                <p class="echo-p-cta-link">
+                    <a href="<mt:If tag="CustomFieldValue" identifier="EchoBlogCtaUrl"><mt:CustomFieldValue identifier="EchoBlogCtaUrl" /><mt:Else><mt:BlogRelativeURL />/contact/</mt:If>" class="echo-m-btn echo-m-btn-lg echo-m-btn-oval echo-m-btn-block echo-m-btn-arrowed-right">
+                    <mt:If tag="CustomFieldValue" identifier="EchoBlogCtaButton">
+                        <mt:CustomFieldValue identifier="EchoBlogCtaButton" />
+                    <mt:Else>
+                        メールで問い合わせる
+                    </mt:If>
+                    </a>
+                </p>
+            </div><!-- /.echo-p-cta-contents -->
+        </div><!-- /.echo-p-cta-inner -->
+    </div><!-- /.echo-p-cta -->
+<mt:If name="__cta_wrapclass__">
+</section>
+</mt:If>
+
+</mt:If>

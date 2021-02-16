@@ -5,7 +5,6 @@
 # 
 # =======================
 </mt:Ignore>
-<script>++echo_slider_id;</script>
 <mt:If name="type" eq="custom-echo_title">
 <mt:Include module="カスタムブロック-高度な見出し" />
 <mt:ElseIf name="type" eq="custom-echo_spacer">
@@ -19,6 +18,7 @@
 <mt:ElseIf name="type" eq="custom-echo_hero">
 <mt:Include module="カスタムブロック-背景＋見出し" />
 <mt:ElseIf name="type" eq="custom-echo_slider">
+<script>++echo_slider_id;</script>
 <mt:Include module="カスタムブロック-スライドショー" />
 <mt:ElseIf name="type" eq="custom-echo_page">
 <mt:Include module="カスタムブロック-ページ誘導" />
@@ -26,6 +26,8 @@
 <mt:Include module="カスタムブロック-グループ" />
 <mt:ElseIf name="type" eq="custom-echo_recent">
 <mt:Include module="カスタムブロック-記事新着" />
+<mt:ElseIf name="type" eq="custom-echo_cta">
+<mt:Include module="モジュール-CTA" __cta_wrapclass__="echo-mt-be-cta echo-mt-be-block-custom" />
 <mt:ElseIf name="type" eq="core-columns">
 <mt:Include module="コアブロック-カラム" />
 <mt:Else>

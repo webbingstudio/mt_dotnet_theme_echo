@@ -260,6 +260,9 @@ elements:
           module_folders_related:
             filename: module_folders_related.mtml
             label: モジュール-関連フォルダ一覧
+          module_cta:
+            filename: module_cta.mtml
+            label: モジュール-CTA
           module_blockeditor:
             filename: module_blockeditor.mtml
             label: モジュール-ブロックエディタ
