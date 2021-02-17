@@ -8,47 +8,6 @@
     background-color: #fff;
     box-shadow: 0 -2px 5px rgba( 0, 0, 0, 0.3 );
 
-    .#{$pr}#{$m}toggle {
-        width: 44px;
-        height: 44px;
-
-        .#{$pr}#{$m}toggle#{$c1}line {
-            width: 20px;
-            height: 3px;
-
-            &:before,
-            &:after {
-                height: 3px;
-            }
-
-        }
-
-        &:not([aria-expanded="true"]) {
-
-            .#{$pr}#{$m}toggle#{$c1}line {
-
-                &:before {
-                    top: -9px;
-                }
-
-                &:after {
-                    bottom: -9px;
-                }
-
-            }
-
-        }
-
-        &[aria-expanded="true"] {
-
-            .#{$pr}#{$m}toggle#{$c1}line {
-                width: 26px;
-            }
-
-        }
-
-    }
-
     .#{$pr}#{$m}nav#{$c1}label {
         position: relative;
 
