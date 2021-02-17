@@ -1,0 +1,32 @@
+<mt:Ignore>
+# =======================
+# 
+# サブカラム-ページ
+#
+# vars(extend):
+#   __folder_basename__
+#   __folder_label__
+#   __folder_layout__
+#   __folder_nav_type__
+#   __folder_ancestor_basename__
+#   __folder_ancestor_label__
+#   __post_id__
+# 
+# =======================
+</mt:Ignore>
+<mt:If name="__folder_basename__">
+<mt:If name="__folder_nav_type__" ne="表示しない">
+    <aside class="echo-p-widgetarea echo-p-widgetarea-sub echo-p-widgetarea-page" role="complementary">
+    <mt:If name="__folder_nav_type__" eq="番号リスト">
+        <mt:Include module="モジュール-ページ一覧-step-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_current_id__="$__post_id__" />
+    <mt:ElseIf name="__folder_nav_type__" eq="画像左＋タイトル右">
+        <mt:Include module="モジュール-ページ一覧-media-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_current_id__="$__post_id__" />
+    <mt:ElseIf name="__folder_nav_type__" eq="画像上＋タイトル下">
+        <mt:Include module="モジュール-ページ一覧-card-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_current_id__="$__post_id__" />
+    <mt:Else>
+        <mt:Include module="モジュール-ページ一覧-nav-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_folder_ancestor__="$__folder_ancestor_label__" __pages_current_id__="$__post_id__" />
+    </mt:If>
+        <mt:Include module="モジュール-関連フォルダ一覧" __pages_layout__="$__folder_layout__" __pages_folder_basename__="$__folder_basename__" __pages_ancestor_basename__="$__folder_ancestor_basename__" />
+    </aside><!-- /.echo-p-widgetarea -->
+</mt:If>
+</mt:If>

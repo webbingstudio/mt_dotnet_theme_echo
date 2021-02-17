@@ -40,6 +40,9 @@
 <mt:CanonicalLink />
 <meta property="og:site_name" content="<mt:WebsiteName encode_html="1" />">
 <mt:Var name="__meta-last__" />
+<mt:If tag="CustomFieldValue" identifier="EchoBlogFacebook">
+<meta property="article:publisher" content="<mt:CustomFieldValue identifier="EchoBlogFacebook" />">
+</mt:If>
 <meta name="twitter:card" content="summary_large_image">
 <mt:If tag="CustomFieldValue" identifier="EchoBlogTwitter">
 <meta name="twitter:site" content="@<mt:CustomFieldValue identifier="EchoBlogTwitter" />">

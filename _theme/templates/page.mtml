@@ -13,6 +13,7 @@
 #   __main__
 #
 # vars(extend):
+#   __is_blog__
 #   __folder_basename__
 #   __folder_label__
 #   __folder_path__
@@ -56,9 +57,6 @@
 <meta property="og:image:width" content="<mt:Var name="__post_eyecatch_width__" />"> 
 <meta property="og:image:height" content="<mt:Var name="__post_eyecatch_height__" />">
 </mt:If>
-<mt:If tag="CustomFieldValue" identifier="EchoBlogFacebook">
-<meta property="article:publisher" content="<mt:CustomFieldValue identifier="EchoBlogFacebook" />">
-</mt:If>
 <meta property="article:modified_time" content="<mt:PageDate format_name="iso8601" />">
 </mt:SetVarBlock>
 
@@ -80,47 +78,22 @@
 <div class="echo-p-content<mt:If name="__folder_layout__" eq="2カラム"> echo-p-content-2col<mt:Else> echo-p-content-1col</mt:If>">
 
     <main class="echo-p-main echo-p-content-main" role="main">
-
-        <mt:If tag="CustomFieldValue" identifier="EchoPageShowTopicPath" eq="1">
-            <mt:Include module="モジュール-パンくずリスト-ページ" />
-        </mt:If>
-
-        <section class="echo-c-post echo-c-post-page">
-            <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
-            <div class="echo-c-post-header">
-                <h1 class="echo-c-post-title echo-m-title echo-m-title-style-b echo-m-title-level-1">
-                    <mt:PageTitle encode_html="1" />
-                </h1>
-            </div><!-- /.echo-c-post-header -->
-            </mt:If>
-
-            <div class="echo-c-post-contents echo-mt-be">
-                <mt:BlockEditorBlocks tag="PageBody">
-                <mt:Include module="モジュール-ブロックエディタ" />
-                </mt:BlockEditorBlocks>
-            </div><!-- /.echo-c-post-contents -->
-        </section><!-- /.echo-c-post -->
-
+    <mt:If tag="CustomFieldValue" identifier="EchoPageShowTopicPath" eq="1">
+        <mt:Include module="モジュール-パンくずリスト-ページ" />
+    </mt:If>
+    <mt:If name="__is_blog__" eq="true">
+        <mt:Include module="メインカラム-ページ-ブログ一覧" />
+    <mt:Else>
+        <mt:Include module="メインカラム-ページ-通常" />
+    </mt:If>
     </main><!-- /.echo-p-main -->
 
     <div class="echo-p-sub echo-p-content-sub">
-
-        <mt:If name="__folder_basename__">
-        <mt:If name="__folder_nav_type__" ne="表示しない">
-        <aside class="echo-p-widgetarea echo-p-widgetarea-sub echo-p-widgetarea-page" role="complementary">
-            <mt:If name="__folder_nav_type__" eq="番号リスト">
-                <mt:Include module="モジュール-ページ一覧-step-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_current_id__="$__post_id__" />
-            <mt:ElseIf name="__folder_nav_type__" eq="画像左＋タイトル右">
-                <mt:Include module="モジュール-ページ一覧-media-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_current_id__="$__post_id__" />
-            <mt:ElseIf name="__folder_nav_type__" eq="画像上＋タイトル下">
-                <mt:Include module="モジュール-ページ一覧-card-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_current_id__="$__post_id__" />
-            <mt:Else>
-                <mt:Include module="モジュール-ページ一覧-nav-小" __pages_layout__="$__folder_layout__" __pages_folder__="$__folder_label__" __pages_folder_ancestor__="$__folder_ancestor_label__" __pages_current_id__="$__post_id__" />
-            </mt:If>
-            <mt:Include module="モジュール-関連フォルダ一覧" __pages_layout__="$__folder_layout__" __pages_folder_basename__="$__folder_basename__" __pages_ancestor_basename__="$__folder_ancestor_basename__" />
-        </aside><!-- /.echo-p-widgetarea -->
-        </mt:If>
-        </mt:If>
+    <mt:If name="__is_blog__" eq="true">
+        <mt:Include module="サブカラム-ブログ" />
+    <mt:Else>
+        <mt:Include module="サブカラム-ページ" />
+    </mt:If>
 
         <mt:BlockEditorBlocks tag="PageMore">
         <div class="echo-p-sub-extra echo-mt-be">

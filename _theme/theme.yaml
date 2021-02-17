@@ -212,6 +212,18 @@ elements:
           layout_default:
             filename: layout_default.mtml
             label: レイアウト-基本
+          main_page_default:
+            filename: main_page_default.mtml
+            label: メインカラム-ページ-通常
+          main_page_blog_index:
+            filename: main_page_blog_index.mtml
+            label: メインカラム-ページ-ブログ一覧
+          sub_page:
+            filename: sub_page.mtml
+            label: サブカラム-ページ
+          sub_blog:
+            filename: sub_blog.mtml
+            label: サブカラム-ブログ
           module_footer:
             filename: module_footer.mtml
             label: モジュール-フッタ

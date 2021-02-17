@@ -4,6 +4,7 @@
 # 変数-ページ
 # 
 # vars:
+#   __is_blog__
 #   __folder_basename__
 #   __folder_label__
 #   __folder_path__
@@ -40,6 +41,7 @@
 </mt:Ignore>
 
 <mt:PageFolder><mt:Ignore>現在のフォルダ情報(1)</mt:Ignore>
+<mt:If tag="CustomFieldValue" identifier="EchoFolderIsBlog"><mt:SetVar name="__is_blog__" value="true" /></mt:If>
 <mt:FolderBasename setvar="__folder_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_label__" />
 <mt:SetVarBlock name="__folder_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>

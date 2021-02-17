@@ -1,0 +1,22 @@
+<mt:Ignore>
+# =======================
+# 
+# メインカラム-ページ-通常
+# 
+# =======================
+</mt:Ignore>
+<section class="echo-c-post echo-c-post-page">
+    <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
+    <div class="echo-c-post-header">
+        <h1 class="echo-c-post-title echo-m-title echo-m-title-style-b echo-m-title-level-1">
+            <mt:PageTitle encode_html="1" />
+        </h1>
+    </div><!-- /.echo-c-post-header -->
+    </mt:If>
+
+    <div class="echo-c-post-contents echo-mt-be">
+        <mt:BlockEditorBlocks tag="PageBody">
+        <mt:Include module="モジュール-ブロックエディタ" />
+        </mt:BlockEditorBlocks>
+    </div><!-- /.echo-c-post-contents -->
+</section><!-- /.echo-c-post -->
