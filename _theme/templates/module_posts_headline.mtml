@@ -4,11 +4,41 @@
 # モジュール-記事一覧-headline
 # 
 # vars:
-#   __posts_widget_tag__
-#   __posts_title_tag__
-#   __posts_title_text__
 #   __posts_pagenate__
-#   __posts_wrapclass__
 # 
 # =======================
 </mt:Ignore>
+<mt:Unless name="__posts_pagenate__">
+    <mt:SetVar name="__posts_pagenate__" value="10" />
+</mt:Unless>
+
+<mt:Entries sort_by="authored_on" sort_order="descend" paginate_by="$__posts_pagenate__">
+<mt:EntriesHeader>
+<section class="echo-p-widget echo-p-widget-headline echo-p-widget-posts">
+    <div class="echo-p-widget-contents">
+</mt:EntriesHeader>
+
+        <article class="echo-c-headline echo-c-headline-entry">
+            <a href="<mt:EntryPermalink />" class="echo-c-headline-inner">
+                <time class="echo-c-headline-header" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$echo_entry_date" /></time>
+
+                <mt:EntryCategories type="primary">
+                <p class="echo-c-headline-category">
+                    <span class="echo-m-label echo-m-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></span>
+                </p>
+                </mt:EntryCategories>
+
+                <h2 class="echo-c-headline-title echo-m-title echo-m-title-level-7 echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></h2>
+            </a><!-- /.echo-c-headline-inner -->
+        </article><!-- /.echo-c-headline -->
+
+<mt:EntriesFooter>
+    </div><!-- /.echo-p-widget-contents -->
+
+    <div class="echo-p-widget-footer">
+        <mt:Include module="モジュール-ページ送り" />
+    </div><!-- /.echo-p-widget-footer -->
+
+</section><!-- /.echo-p-widget -->
+</mt:EntriesFooter>
+</mt:Entries>
