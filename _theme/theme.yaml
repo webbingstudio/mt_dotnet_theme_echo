@@ -239,6 +239,9 @@ elements:
           module_topicpath_page:
             filename: module_topicpath_page.mtml
             label: モジュール-パンくずリスト-ページ
+          module_pagenate:
+            filename: module_pagenate.mtml
+            label: モジュール-ページ送り
           vars_common:
             filename: vars_common.mtml
             label: 変数-共通
@@ -263,9 +266,9 @@ elements:
           module_posts_headline:
             filename: module_posts_headline.mtml
             label: モジュール-記事一覧-headline
-          module_posts_media_l:
-            filename: module_posts_media_l.mtml
-            label: モジュール-記事一覧-media_大
+          module_posts_media:
+            filename: module_posts_media.mtml
+            label: モジュール-記事一覧-media
           module_pages_card_s:
             filename: module_pages_card_s.mtml
             label: モジュール-ページ一覧-card-小
