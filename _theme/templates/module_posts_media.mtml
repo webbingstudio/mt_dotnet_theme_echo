@@ -1,64 +1,34 @@
 <mt:Ignore>
 # =======================
 # 
-# モジュール-記事新着-media-大
+# モジュール-記事一覧-media
 # 
 # vars:
-#   __media_widget_tag__
-#   __media_title_tag__
-#   __media_title_text__
-#   __media_limit__
-#   __media_wrapclass__
-#   __media_more__
-#   __media_more_text__
-#   __media_more_url__
-#   __media_layout__
+#   __posts_pagenate__
+#   __posts_layout__
 # 
 # vars(local):
 #   __image_url__
 # 
 # =======================
 </mt:Ignore>
-<mt:Unless name="__media_title_tag__">
-    <mt:SetVar name="__media_title_tag__" value="h2" />
+<mt:Unless name="__posts_pagenate__">
+    <mt:SetVar name="__posts_pagenate__" value="10" />
 </mt:Unless>
-<mt:Unless name="__media_title_text__">
-    <mt:SetVar name="__media_widget_tag__" value="div" />
-<mt:Else>
-    <mt:SetVar name="__media_widget_tag__" value="section" />
-</mt:Unless>
-<mt:Unless name="__media_limit__">
-    <mt:SetVar name="__media_limit__" value="4" />
-</mt:Unless>
-<mt:Unless name="__media_more_text__">
-    <mt:SetVar name="__media_more_text__" value="一覧を見る" />
-</mt:Unless>
-<mt:Unless name="__media_more_url__">
-    <mt:setVarBlock name="__media_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
-</mt:Unless>
-<mt:Unless name="__media_layout__">
-    <mt:SetVar name="__media_layout__" value="1カラム" />
+<mt:Unless name="__posts_layout__">
+    <mt:SetVar name="__posts_layout__" value="1カラム" />
 </mt:Unless>
 <mt:setVar name="__image_url__" value="" />
 
-<mt:Entries sort_by="authored_on" sort_order="descend" limit="$__media_limit__">
+<mt:Entries sort_by="authored_on" sort_order="descend" paginate_by="$__posts_pagenate__">
 <mt:EntriesHeader>
-<mt:If name="__media_wrapclass__">
-<div class="<mt:Var name="__media_wrapclass__" />">
-</mt:If>
-<<mt:Var name="__media_widget_tag__" /> class="echo-p-widget echo-p-widget-media echo-p-widget-recent">
-    <mt:If name="__media_title_text__">
-    <div class="echo-p-widget-header">
-        <<mt:Var name="__media_title_tag__" /> class="echo-m-title echo-m-title-level-2 echo-m-title-style-c"><mt:Var name="__media_title_text__" /></<mt:Var name="__media_title_tag__" />>
-    </div><!-- /.echo-p-widget-header -->
-    </mt:If>
-
+<section class="echo-p-widget echo-p-widget-media echo-p-widget-posts">
     <div class="echo-p-widget-contents">
         <div class="echo-l-grid-row">
 </mt:EntriesHeader>
 
-            <div class="echo-l-grid-col echo-l-grid-col-xxs-12<mt:If name="__media_layout__" eq="1カラム"> echo-l-grid-col-lg-6</mt:If>">
-                <div class="echo-c-media-wraper">
+            <div class="echo-l-grid-col echo-l-grid-col-xxs-12<mt:If name="__posts_layout__" eq="1カラム"> echo-l-grid-col-lg-6</mt:If>">
+                <article class="echo-c-media-wraper">
                     <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">
                         <div class="echo-c-media-object">
                             <figure class="echo-m-thumbnail">
@@ -85,29 +55,21 @@
                         </div><!-- /.echo-c-media-object -->
                         <div class="echo-c-media-contents">
                             <time class="echo-c-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$echo_entry_date" /></time>
-                            <p class="echo-c-media-title echo-m-title echo-m-title-level-7 echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></p>
+                            <h2 class="echo-c-media-title echo-m-title echo-m-title-level-7 echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></h2>
                             <p class="echo-c-media-body"><mt:EntryExcerpt words="58" /></p>
                         </div>
                     </a>
-                </div><!-- /.echo-c-media-wraper -->
+                </article><!-- /.echo-c-media-wraper -->
             </div><!-- /.echo-l-grid-col -->
 
 <mt:EntriesFooter>
         </div><!-- /.echo-l-grid-row -->
     </div><!-- /.echo-p-widget-contents -->
 
-    <mt:If name="__media_more__" eq="true">
-    <mt:If name="__media_more_url__">
     <div class="echo-p-widget-footer">
-        <p class="echo-p-widget-link">
-            <a href="<mt:Var name="__media_more_url__" />" class="echo-m-btn echo-m-btn-lg echo-m-btn-gray echo-m-btn-bordered echo-m-btn-block"><mt:Var name="__media_more_text__" /></a>
-        </p>
+        <mt:Include module="モジュール-ページ送り" />
     </div><!-- /.echo-p-widget-footer -->
-    </mt:If>
-    </mt:If>
-</<mt:Var name="__media_widget_tag__" />><!-- /.echo-p-widget -->
-<mt:If name="__media_wrapclass__">
-</div><!-- /.<mt:Var name="__media_wrapclass__" /> -->
-</mt:If>
+
+</section><!-- /.echo-p-widget -->
 </mt:EntriesFooter>
 </mt:Entries>
