@@ -14,6 +14,9 @@
 #   __media_more_url__
 #   __media_layout__
 # 
+# vars(extend):
+#   __blog_noimage_url__
+# 
 # vars(local):
 #   __image_url__
 # 
@@ -74,7 +77,7 @@
                                 <mt:If name="__image_url__">
                                     <img alt="" src="<mt:Var name="__image_url__" />" width="480">
                                 <mt:Else>
-                                    <img alt="" src="/images/common/noimage_small.jpg" width="480" height="480">
+                                    <img alt="" src="<mt:Var name="__blog_noimage_url__" />" width="480">
                                 </mt:If>
                             </figure><!-- /.echo-m-thumbnail -->
                             <mt:EntryCategories type="primary">
