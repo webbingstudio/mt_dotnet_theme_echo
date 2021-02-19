@@ -18,7 +18,6 @@
 <mt:Unless name="__posts_layout__">
     <mt:SetVar name="__posts_layout__" value="1カラム" />
 </mt:Unless>
-<mt:setVar name="__image_url__" value="" />
 
 <mt:Entries sort_by="authored_on" sort_order="descend" paginate_by="$__posts_pagenate__">
 <mt:EntriesHeader>
@@ -27,6 +26,7 @@
         <div class="echo-l-grid-row">
 </mt:EntriesHeader>
 
+            <mt:setVar name="__image_url__" value="" />
             <div class="echo-l-grid-col echo-l-grid-col-xxs-12<mt:If name="__posts_layout__" eq="1カラム"> echo-l-grid-col-lg-6</mt:If>">
                 <article class="echo-c-media-wraper">
                     <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">

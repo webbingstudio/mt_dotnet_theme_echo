@@ -39,7 +39,6 @@
 <mt:Unless name="__card_layout__">
     <mt:SetVar name="__card_layout__" value="1カラム" />
 </mt:Unless>
-<mt:setVar name="__image_url__" value="" />
 
 <mt:Entries sort_by="authored_on" sort_order="descend" limit="$__card_limit__">
 <mt:EntriesHeader>
@@ -57,6 +56,7 @@
         <div class="echo-l-grid-row">
 </mt:EntriesHeader>
 
+            <mt:setVar name="__image_url__" value="" />
             <div class="echo-l-grid-col-6<mt:If name="__card_layout__" eq="2カラム"> echo-l-grid-col-lg-4<mt:Else> echo-l-grid-col-lg-3</mt:If>">
                 <div class="echo-c-card echo-c-card-entry">
                     <a href="<mt:EntryPermalink />" class="echo-c-card-inner">
