@@ -13,7 +13,7 @@
 #   __main__
 #
 # vars(extend):
-#   __is_blog__
+#   __is_posts__
 #   __folder_basename__
 #   __folder_label__
 #   __folder_path__
@@ -71,7 +71,7 @@
 <mt:CustomFieldValue identifier="EchoPageExHead" />
 </mt:SetVarBlock>
 
-<mt:SetVarBlock name="__body-class__">page page-id-<mt:Var name="__post_id__" /><mt:If tag="PageBasename" eq="index"> page-index</mt:If> <mt:Var name="__folder_basename__" /><mt:If name="__folder_parent_basename__" ne="$__folder_basename__"> <mt:Var name="__folder_parent_basename__" /></mt:If><mt:If name="__folder_ancestor_basename__" ne="$__folder_parent_basename__"> <mt:Var name="__folder_ancestor_basename__" /></mt:If><mt:If name="__folder_layout__" eq="2カラム"> layout-2col<mt:Else> layout-1col</mt:If><mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1"> layout-show-header<mt:Else> layout-hide-header</mt:If><mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1"> layout-show-title<mt:Else> layout-hide-title</mt:If></mt:SetVarBlock>
+<mt:SetVarBlock name="__body-class__">page page-id-<mt:Var name="__post_id__" /><mt:If tag="PageBasename" eq="index"> page-index</mt:If><mt:If name="__is_posts__" eq="true"> page-type-posts<mt:Else>  page-type-page</mt:If> <mt:Var name="__folder_basename__" /><mt:If name="__folder_parent_basename__" ne="$__folder_basename__"> <mt:Var name="__folder_parent_basename__" /></mt:If><mt:If name="__folder_ancestor_basename__" ne="$__folder_parent_basename__"> <mt:Var name="__folder_ancestor_basename__" /></mt:If><mt:If name="__folder_layout__" eq="2カラム"> layout-2col<mt:Else> layout-1col</mt:If><mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1"> layout-show-header<mt:Else> layout-hide-header</mt:If><mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1"> layout-show-title<mt:Else> layout-hide-title</mt:If></mt:SetVarBlock>
 
 <mt:SetVarBlock name="__main__">
 <mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1">
@@ -90,7 +90,7 @@
     <mt:If tag="CustomFieldValue" identifier="EchoPageShowTopicPath" eq="1">
         <mt:Include module="モジュール-パンくずリスト-ページ" />
     </mt:If>
-    <mt:If name="__is_blog__" eq="true">
+    <mt:If name="__is_posts__" eq="true">
         <mt:Include module="メインカラム-ページ-ブログ一覧" />
     <mt:Else>
         <mt:Include module="メインカラム-ページ-通常" />
@@ -98,7 +98,7 @@
     </main><!-- /.echo-p-main -->
 
     <div class="echo-p-sub echo-p-content-sub">
-    <mt:If name="__is_blog__" eq="true">
+    <mt:If name="__is_posts__" eq="true">
         <mt:Include module="サブカラム-ブログ" />
     <mt:Else>
         <mt:Include module="サブカラム-ページ" />
