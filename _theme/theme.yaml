@@ -257,6 +257,15 @@ elements:
           module_recent_media_l:
             filename: module_recent_media_l.mtml
             label: モジュール-記事新着-media_大
+          module_posts_card:
+            filename: module_posts_card.mtml
+            label: モジュール-記事一覧-card
+          module_posts_headline:
+            filename: module_posts_headline.mtml
+            label: モジュール-記事一覧-headline
+          module_posts_media_l:
+            filename: module_posts_media_l.mtml
+            label: モジュール-記事一覧-media_大
           module_pages_card_s:
             filename: module_pages_card_s.mtml
             label: モジュール-ページ一覧-card-小

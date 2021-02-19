@@ -35,6 +35,9 @@
 #   __post_eyecatch_url__
 #   __post_eyecatch_width__
 #   __post_eyecatch_height__
+#
+# vars(local):
+#   __pagehead_tag__
 # 
 # =======================
 </mt:Ignore>
@@ -72,7 +75,13 @@
 
 <mt:SetVarBlock name="__main__">
 <mt:If tag="CustomFieldValue" identifier="EchoPageShowHeader" eq="1">
-    <mt:Include module="モジュール-ページタイトル" __pagehead_title__="$__folder_ancestor_label__" __pagehead_caption__="$__folder_ancestor_basename__" __pagehead_image_lg__="$__folder_header_image_lg__" __pagehead_image_sm__="$__folder_header_image_sm__" __pagehead_effect__="$__folder_header_effect__" __pagehead_blend__="$__folder_header_blend__" />
+    <mt:Ignore>先祖フォルダのインデックスページはページタイトルがh1</mt:Ignore>
+    <mt:If name="__folder_basename__" eq="$__folder_ancestor_basename__">
+        <mt:If tag="PageBasename" eq="index">
+            <mt:SetVar name="__pagehead_tag__" value="h1" />
+        </mt:If>
+    </mt:If>
+    <mt:Include module="モジュール-ページタイトル" __pagehead_tag__="$__pagehead_tag__" __pagehead_title__="$__folder_ancestor_label__" __pagehead_caption__="$__folder_ancestor_basename__" __pagehead_image_lg__="$__folder_header_image_lg__" __pagehead_image_sm__="$__folder_header_image_sm__" __pagehead_effect__="$__folder_header_effect__" __pagehead_blend__="$__folder_header_blend__" />
 </mt:If>
 
 <div class="echo-p-content<mt:If name="__folder_layout__" eq="2カラム"> echo-p-content-2col<mt:Else> echo-p-content-1col</mt:If>">

@@ -103,10 +103,10 @@
 </mt:PageFolder>
 
 <mt:Ignore>レイアウト・ナビゲーション:どのフォルダも自動なら初期値</mt:Ignore>
-<mt:If tag="CustomFieldValue" identifier="EchoFolderLayout" eq="自動">
+<mt:If name="__folder_layout__" eq="自動">
 <mt:SetVar name="__folder_layout__" value="1カラム" />
 </mt:If>
-<mt:If tag="CustomFieldValue" identifier="EchoFolderNavType" eq="自動">
+<mt:If name="__folder_nav_type__" eq="自動">
 <mt:SetVar name="__folder_nav_type__" value="表示しない" />
 </mt:If>
 

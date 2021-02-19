@@ -50,7 +50,6 @@
             @include media-breakpoint-up(lg) {
                 flex-grow: 0;
                 width: 100%;
-                width: map-get( $be-max-widths, 'md' ) + map-get( $grid-gutter-widths, 'md' );
                 padding-bottom: ( $spacer * 6 );
             }
 
@@ -67,12 +66,13 @@
                 flex-grow: 1;
                 position: sticky;
                 top: map-get( $grid-gutter-widths, 'md' );
-                max-width: map-get( $sub-widths, 'lg' );
+                width: map-get( $sub-widths, 'lg' );
+                padding-top: ( $spacer * 3 );
                 z-index: 51;
             }
 
             @include media-breakpoint-up(xl) {
-                max-width: map-get( $sub-widths, 'xl' );
+                width: map-get( $sub-widths, 'xl' );
             }
 
         }

@@ -6,6 +6,10 @@
 
 .#{$pr}#{$p}pagehead {
 
+    .#{$pr}#{$c}hero:not(.#{$pr}#{$c}hero#{$c1}inverse) {
+        background-color: #f6f5f3;
+    }
+
     .#{$pr}#{$c}hero#{$c1}contents#{$c1}inner {
         flex-basis: auto;
     }
@@ -52,20 +56,6 @@
 
         @include media-breakpoint-up(xl) {
             font-size: 1.125rem;
-        }
-
-    }
-
-    &.#{$pr}#{$p}pagehead#{$c3}blended {
-
-        .#{$pr}#{$c}hero#{$c1}title#{$c1}text {
-            color: #000;
-            background-color: rgba( 255, 255, 255, .6 );
-        }
-
-        .#{$pr}#{$c}hero#{$c1}caption {
-            color: #000;
-            background-color: rgba( 255, 255, 255, .2 );
         }
 
     }

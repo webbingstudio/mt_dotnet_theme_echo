@@ -2,15 +2,25 @@
 # =======================
 # 
 # メインカラム-ページ-通常
+#
+# vars(local):
+#   __post_title_tag__
 # 
 # =======================
 </mt:Ignore>
 <section class="echo-c-post echo-c-post-page">
     <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
+    <mt:Ignore>先祖フォルダのインデックスページはページタイトルがh2</mt:Ignore>
+    <mt:SetVar name="__post_title_tag__" value="h1" />
+    <mt:If name="__folder_basename__" eq="$__folder_ancestor_basename__">
+        <mt:If tag="PageBasename" eq="index">
+            <mt:SetVar name="__post_title_tag__" value="h2" />
+        </mt:If>
+    </mt:If>
     <div class="echo-c-post-header">
-        <h1 class="echo-c-post-title echo-m-title echo-m-title-style-b echo-m-title-level-1">
+        <<mt:Var name="__post_title_tag__" /> class="echo-c-post-title echo-m-title echo-m-title-style-b echo-m-title-level-1">
             <mt:PageTitle encode_html="1" />
-        </h1>
+        </<mt:Var name="__post_title_tag__" />>
     </div><!-- /.echo-c-post-header -->
     </mt:If>
 
