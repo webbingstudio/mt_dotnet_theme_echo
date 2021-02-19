@@ -215,14 +215,14 @@ elements:
           main_page_default:
             filename: main_page_default.mtml
             label: メインカラム-ページ-通常
-          main_page_blog_index:
-            filename: main_page_blog_index.mtml
-            label: メインカラム-ページ-ブログ一覧
+          main_page_posts:
+            filename: main_page_posts.mtml
+            label: メインカラム-ページ-記事一覧
           sub_page:
             filename: sub_page.mtml
             label: サブカラム-ページ
-          sub_blog:
-            filename: sub_blog.mtml
+          sub_post:
+            filename: sub_post.mtml
             label: サブカラム-ブログ
           module_footer:
             filename: module_footer.mtml

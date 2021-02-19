@@ -91,7 +91,7 @@
         <mt:Include module="モジュール-パンくずリスト-ページ" />
     </mt:If>
     <mt:If name="__is_posts__" eq="true">
-        <mt:Include module="メインカラム-ページ-ブログ一覧" />
+        <mt:Include module="メインカラム-ページ-記事一覧" />
     <mt:Else>
         <mt:Include module="メインカラム-ページ-通常" />
     </mt:If>
@@ -99,7 +99,7 @@
 
     <div class="echo-p-sub echo-p-content-sub">
     <mt:If name="__is_posts__" eq="true">
-        <mt:Include module="サブカラム-ブログ" />
+        <mt:Include module="サブカラム-記事" />
     <mt:Else>
         <mt:Include module="サブカラム-ページ" />
     </mt:If>
