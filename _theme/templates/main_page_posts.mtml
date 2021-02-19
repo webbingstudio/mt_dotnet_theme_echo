@@ -8,26 +8,29 @@
 # 
 # =======================
 </mt:Ignore>
-<section class="echo-c-post echo-c-post-page">
-    <mt:Ignore>ページタイトルを表示しない</mt:Ignore>
-    <div class="echo-c-post-contents echo-mt-be">
-
-        <mt:BlockEditorBlocks tag="PageBody">
-        <mt:Include module="モジュール-ブロックエディタ" />
-        </mt:BlockEditorBlocks>
+<div class="echo-p-widgetarea echo-p-widgetarea-main echo-p-widgetarea-page">
 
     <mt:If tag="CustomFieldValue" identifier="EchoBlogPostsNavType" like="日付＋タイトル">
-        <mt:Include module="モジュール-記事一覧-headline" __posts_pagenate__="15" __posts_layout__="$__folder_layout__" __posts_wrapclass__="echo-mt-be-recent echo-mt-be-recent-headline echo-mt-be-block-custom" />
+        <mt:Include module="モジュール-記事一覧-headline" __posts_pagenate__="15" />
     <mt:ElseIf tag="CustomFieldValue" identifier="EchoBlogPostsNavType" like="画像上＋タイトル下">
-        <mt:Include module="モジュール-記事一覧-card" __posts_pagenate__="12" __posts_layout__="$__folder_layout__" __posts_wrapclass__="echo-mt-be-recent echo-mt-be-recent-card echo-mt-be-block-custom" />
+        <mt:Include module="モジュール-記事一覧-card" __posts_pagenate__="12" __posts_layout__="$__folder_layout__" />
     <mt:Else>
         <mt:If name="__folder_layout__" eq="2カラム">
             <mt:SetVar name="__posts_pagenate__" value="8" />
         <mt:Else>
             <mt:SetVar name="__posts_pagenate__" value="12" />
         </mt:If>
-        <mt:Include module="モジュール-記事一覧-media-大" __posts_limit__="$__posts_pagenate__" __posts_layout__="$__folder_layout__" __posts_wrapclass__="echo-mt-be-recent echo-mt-be-recent-media echo-mt-be-block-custom" />
+        <mt:Include module="モジュール-記事一覧-media" __posts_pagenate__="$__posts_pagenate__" __posts_layout__="$__folder_layout__" />
     </mt:If>
+
+</div><!-- /.echo-p-widgetarea -->
+
+<section class="echo-c-post echo-c-post-page">
+    <div class="echo-c-post-contents echo-mt-be">
+
+        <mt:BlockEditorBlocks tag="PageBody">
+        <mt:Include module="モジュール-ブロックエディタ" />
+        </mt:BlockEditorBlocks>
 
     </div><!-- /.echo-c-post-contents -->
 </section><!-- /.echo-c-post -->
