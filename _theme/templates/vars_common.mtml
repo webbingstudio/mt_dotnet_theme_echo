@@ -9,6 +9,7 @@
 #   __blog_entry_date__
 #   __blog_entry_time__
 #   __blog_noimage_url__
+#   __blog_posts_url__
 # 
 #   __svg_mail__
 #   __svg_tel__
@@ -26,6 +27,14 @@
 
 <mt:SetVar name="__blog_entry_date__" value="%Y.%m.%d" />
 <mt:SetVar name="__blog_entry_time__" value="%H:%m:%S" />
+
+<mt:Ignore>記事一覧に指定されているフォルダ:なければ初期値</mt:Ignore>
+<mt:SetVarBlock name="__blog_posts_url__"><mt:WebsiteRelativeURL />blog/</mt:SetVarBlock>
+<mt:Folders>
+<mt:If tag="CustomFieldValue" identifier="EchoFolderIsPosts" value="1">
+<mt:SetVarBlock name="__blog_posts_url__"><mt:BlogRelativeURL /><mt:FolderPath />/</mt:SetVarBlock>
+</mt:If>
+</mt:Folders>
 
 <mt:If tag="CustomFieldValue" identifier="EchoBlogNoImage">
 <mt:CustomFieldAsset identifier="EchoBlogNoImage"><mt:AssetThumbnailURL width="480" setvar="__blog_noimage_url__" /></mt:CustomFieldAsset>

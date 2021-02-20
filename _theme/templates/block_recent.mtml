@@ -4,7 +4,6 @@
 # カスタムブロック-記事新着
 # 
 # vars:
-#   __recent_class__
 #   __recent_type__
 #   __recent_more__
 #   __recent_title_text__
@@ -14,7 +13,7 @@
 # 
 # =======================
 </mt:Ignore>
-<mt:SetVar name="__recent_class__" value="" /><mt:SetVar name="__recent_type__" value="" /><mt:SetVar name="__recent_more__" value="" /><mt:SetVar name="__recent_title_text__" value="" />
+<mt:SetVar name="__recent_type__" value="" /><mt:SetVar name="__recent_more__" value="" /><mt:SetVar name="__recent_title_text__" value="" />
 
 <mt:BlockEditorBlocks>
 <mt:If name="type" eq="sixapart-input">
@@ -26,15 +25,17 @@
     <mt:If name="__value__" like="一覧:">
         <mt:If name="__value__" like="表示する">
             <mt:SetVar name="__recent_more__" value="true" />
+        <mt:Else>
+            <mt:SetVar name="__recent_more__" value="false" />
         </mt:If>
     </mt:If>
 </mt:If>
 </mt:BlockEditorBlocks>
 
 <mt:If name="__recent_type__" like="画像左＋タイトル右">
-    <mt:Include module="モジュール-記事新着-media-大" __media_layout__="$__folder_layout__" __media_title_text__="$__recent_title_text__" __media_wrapclass__="echo-mt-be-recent echo-mt-be-recent-media echo-mt-be-block-custom" __media_more__="$__recent_more__" />
+    <mt:Include module="モジュール-記事新着-media-大" __recent_layout__="$__folder_layout__" __recent_title_text__="$__recent_title_text__" __recent_wrapclass__="echo-mt-be-recent echo-mt-be-recent-media echo-mt-be-block-custom" __recent_more__="$__recent_more__" />
 <mt:ElseIf name="__recent_type__" like="画像上＋タイトル下">
-    <mt:Include module="モジュール-記事新着-card" __card_layout__="$__folder_layout__" __card_title_text__="$__recent_title_text__" __card_wrapclass__="echo-mt-be-recent echo-mt-be-recent-card echo-mt-be-block-custom" __card_more__="$__recent_more__" />
+    <mt:Include module="モジュール-記事新着-card" __recent_layout__="$__folder_layout__" __recent_title_text__="$__recent_title_text__" __recent_wrapclass__="echo-mt-be-recent echo-mt-be-recent-card echo-mt-be-block-custom" __recent_more__="$__recent_more__" />
 <mt:Else>
-    <mt:Include module="モジュール-記事新着-headline" __headline_layout__="$__folder_layout__" __headline_title_text__="$__recent_title_text__" __headline_wrapclass__="echo-mt-be-recent echo-mt-be-recent-headline echo-mt-be-block-custom" __headline_more__="$__recent_more__" />
+    <mt:Include module="モジュール-記事新着-headline" __recent_layout__="$__folder_layout__" __recent_title_text__="$__recent_title_text__" __recent_wrapclass__="echo-mt-be-recent echo-mt-be-recent-headline echo-mt-be-block-custom" __recent_more__="$__recent_more__" />
 </mt:If>
