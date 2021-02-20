@@ -4,44 +4,38 @@
 # モジュール-記事新着-headline
 # 
 # vars:
-#   __headline_widget_tag__
-#   __headline_title_tag__
-#   __headline_title_text__
-#   __headline_limit__
-#   __headline_wrapclass__
-#   __headline_more__
-#   __headline_more_text__
-#   __headline_more_url__
+#   __recent_title_tag__
+#   __recent_title_text__
+#   __recent_wrapclass__
+#   __recent_more__
+#   __recent_more_text__
+#   __recent_more_url__
+# 
+# vars(extend):
+#   __blog_noimage_url__
+#   __blog_posts_url__
+# 
+# vars(local):
+#   __image_url__
 # 
 # =======================
 </mt:Ignore>
-<mt:Unless name="__headline_title_tag__">
-    <mt:SetVar name="__headline_title_tag__" value="h2" />
+<mt:Unless name="__recent_title_tag__">
+    <mt:SetVar name="__recent_title_tag__" value="h2" />
 </mt:Unless>
-<mt:Unless name="__headline_title_text__">
-    <mt:SetVar name="__headline_widget_tag__" value="div" />
-<mt:Else>
-    <mt:SetVar name="__headline_widget_tag__" value="section" />
-</mt:Unless>
-<mt:Unless name="__headline_limit__">
-    <mt:SetVar name="__headline_limit__" value="5" />
-</mt:Unless>
-<mt:Unless name="__headline_more_text__">
-    <mt:SetVar name="__headline_more_text__" value="一覧を見る" />
-</mt:Unless>
-<mt:Unless name="__headline_more_url__">
-    <mt:setVarBlock name="__headline_more_url__"><mt:WebsiteRelativeURL />blog/</mt:setVarBlock>
+<mt:Unless name="__recent_more_text__">
+    <mt:SetVar name="__recent_more_text__" value="一覧を見る" />
 </mt:Unless>
 
-<mt:Entries sort_by="authored_on" sort_order="descend" limit="$__headline_limit__">
+<mt:Entries sort_by="authored_on" sort_order="descend" limit="5">
 <mt:EntriesHeader>
-<mt:If name="__headline_wrapclass__">
-<div class="<mt:Var name="__headline_wrapclass__" />">
+<mt:If name="__recent_wrapclass__">
+<div class="<mt:Var name="__recent_wrapclass__" />">
 </mt:If>
-<<mt:Var name="__headline_widget_tag__" /> class="echo-p-widget echo-p-widget-headline echo-p-widget-recent">
-    <mt:If name="__headline_title_text__">
+<section class="echo-p-widget echo-p-widget-headline echo-p-widget-recent">
+    <mt:If name="__recent_title_text__">
     <div class="echo-p-widget-header">
-        <<mt:Var name="__headline_title_tag__" /> class="echo-m-title echo-m-title-level-2 echo-m-title-style-c"><mt:Var name="__headline_title_text__" /></<mt:Var name="__headline_title_tag__" />>
+        <<mt:Var name="__recent_title_tag__" /> class="echo-m-title echo-m-title-level-2 echo-m-title-style-c"><mt:Var name="__recent_title_text__" /></<mt:Var name="__recent_title_tag__" />>
     </div><!-- /.echo-p-widget-header -->
     </mt:If>
 
@@ -65,18 +59,17 @@
 <mt:EntriesFooter>
     </div><!-- /.echo-p-widget-contents -->
 
-    <mt:If name="__headline_more__" eq="true">
-    <mt:If name="__headline_more_url__">
+    <mt:If name="__recent_more__" eq="true">
     <div class="echo-p-widget-footer">
         <p class="echo-p-widget-link">
-            <a href="<mt:Var name="__headline_more_url__" />" class="echo-m-btn echo-m-btn-lg echo-m-btn-gray echo-m-btn-bordered echo-m-btn-block"><mt:Var name="__headline_more_text__" /></a>
+            <a href="<mt:Var name="__blog_posts_url__" />" class="echo-m-btn echo-m-btn-lg echo-m-btn-block echo-m-btn-gray echo-m-btn-bordered echo-m-btn-arrowed-right"><mt:Var name="__recent_more_text__" /></a>
         </p>
     </div><!-- /.echo-p-widget-footer -->
     </mt:If>
-    </mt:If>
-</<mt:Var name="__headline_widget_tag__" />><!-- /.echo-p-widget -->
-<mt:If name="__headline_wrapclass__">
-</div><!-- /.<mt:Var name="__headline_wrapclass__" /> -->
+
+</section><!-- /.echo-p-widget -->
+<mt:If name="__recent_wrapclass__">
+</div><!-- /.<mt:Var name="__recent_wrapclass__" /> -->
 </mt:If>
 </mt:EntriesFooter>
 </mt:Entries>
