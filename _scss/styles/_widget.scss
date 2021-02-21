@@ -66,7 +66,7 @@
     position: relative;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: ( 15 / 14 ) + em;
+    font-size: ( 16 / 14 ) + em;
     @include font-family-weight( 'first', 'normal' );
 }
 
@@ -154,43 +154,6 @@
 
             .#{$pr}#{$c}media#{$c1}title {
                 font-weight: bold;
-            }
-
-        }
-
-    }
-
-    &.#{$pr}#{$widget}#{$c3}sm {
-    }
-
-    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
-    }
-
-    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
-
-        .#{$pr}#{$c}media#{$c1}wrapper {
-            margin-bottom: $spacer;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-        }
-
-        .#{$pr}#{$c}media {
-
-            &.#{$nav-current} {
-
-                &:before {
-                    width: 8px;
-                    height: 8px;
-                }
-
-                &:after {
-                    width: 6px;
-                    height: 6px;
-                }
-
             }
 
         }

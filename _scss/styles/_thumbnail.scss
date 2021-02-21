@@ -33,7 +33,7 @@ card > thumbnail
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
     @include thumbnail-clip( 2 / 3 );
 
-    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}main & {
+    &:not(.#{$pr}#{$widget}#{$c3}sm) {
 
         .#{$pr}#{$m}thumbnail {
 
@@ -45,7 +45,7 @@ card > thumbnail
 
     }
 
-    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+    &.#{$pr}#{$widget}#{$c3}sm {
 
         .#{$pr}#{$m}thumbnail {
 
@@ -67,7 +67,7 @@ media > thumbnail
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
     @include thumbnail-clip( 1 / 1 );
 
-    .#{$pr}#{$p}content#{$c1}main & {
+    &:not(.#{$pr}#{$widget}#{$c3}sm) {
 
         .#{$pr}#{$c}media#{$c1}object {
             width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
@@ -92,28 +92,7 @@ media > thumbnail
 
     }
 
-    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
-
-        .#{$pr}#{$c}media#{$c1}object {
-            width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
-
-            @include media-breakpoint-up(md) {
-                width: 120px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-            }
-
-        }
-
-        .#{$pr}#{$m}thumbnail {
-
-            @include media-breakpoint-up(md) {
-                padding-bottom: percentage( 2 / 3 );
-            }
-
-        }
-
-    }
-
-    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+    &.#{$pr}#{$widget}#{$c3}sm {
 
         .#{$pr}#{$c}media#{$c1}object {
             width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
@@ -128,14 +107,6 @@ media > thumbnail
 
         }
 
-        .#{$pr}#{$m}thumbnail {
-
-            @include media-breakpoint-only(md) {
-                padding-bottom: percentage( 2 / 3 );
-            }
-
-        }
-
     }
 
     // recent: large sm-down
@@ -145,14 +116,6 @@ media > thumbnail
 
             @include media-breakpoint-down(sm) {
                 width: 100px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
-            }
-
-        }
-
-        .#{$pr}#{$m}thumbnail {
-
-            @include media-breakpoint-down(sm) {
-                padding-bottom: percentage( 1 / 1 );
             }
 
         }

@@ -605,7 +605,7 @@ time.echo-c-media-meta {
   position: relative;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.07143em;
+  font-size: 1.14286em;
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
   font-weight: 300;
 }
@@ -676,24 +676,6 @@ a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-w
   font-weight: bold;
 }
 
-.echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media-wrapper {
-  margin-bottom: 10px;
-}
-
-.echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media-wrapper:last-child {
-  margin-bottom: 0;
-}
-
-.echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media.is-current:before {
-  width: 8px;
-  height: 8px;
-}
-
-.echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media.is-current:after {
-  width: 6px;
-  height: 6px;
-}
-
 .echo-p-widget.echo-p-widget-nav .echo-m-nav-label {
   position: relative;
 }
@@ -753,13 +735,13 @@ card > thumbnail
 }
 
 @media (min-width: 768px) {
-  .echo-p-content-2col .echo-p-content-main .echo-p-widget.echo-p-widget-card .echo-m-thumbnail {
+  .echo-p-widget.echo-p-widget-card:not(.echo-p-widget-sm) .echo-m-thumbnail {
     padding-bottom: 50%;
   }
 }
 
 @media (min-width: 1000px) {
-  .echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-card .echo-m-thumbnail {
+  .echo-p-widget.echo-p-widget-card.echo-p-widget-sm .echo-m-thumbnail {
     padding-bottom: 56.25%;
   }
 }
@@ -783,75 +765,47 @@ media > thumbnail
   object-fit: cover;
 }
 
-.echo-p-content-main .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+.echo-p-widget.echo-p-widget-media:not(.echo-p-widget-sm) .echo-c-media-object {
   width: 65px;
 }
 
 @media (min-width: 768px) {
-  .echo-p-content-main .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+  .echo-p-widget.echo-p-widget-media:not(.echo-p-widget-sm) .echo-c-media-object {
     width: 130px;
   }
 }
 
 @media (min-width: 1000px) {
-  .echo-p-content-main .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+  .echo-p-widget.echo-p-widget-media:not(.echo-p-widget-sm) .echo-c-media-object {
     width: 190px;
   }
 }
 
 @media (min-width: 768px) {
-  .echo-p-content-main .echo-p-widget.echo-p-widget-media .echo-m-thumbnail {
+  .echo-p-widget.echo-p-widget-media:not(.echo-p-widget-sm) .echo-m-thumbnail {
     padding-bottom: 66.66667%;
   }
 }
 
-.echo-p-content-1col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
-  width: 65px;
-}
-
-@media (min-width: 768px) {
-  .echo-p-content-1col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
-    width: 130px;
-  }
-}
-
-@media (min-width: 768px) {
-  .echo-p-content-1col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-m-thumbnail {
-    padding-bottom: 66.66667%;
-  }
-}
-
-.echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+.echo-p-widget.echo-p-widget-media.echo-p-widget-sm .echo-c-media-object {
   width: 65px;
 }
 
 @media (min-width: 768px) and (max-width: 999.9px) {
-  .echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+  .echo-p-widget.echo-p-widget-media.echo-p-widget-sm .echo-c-media-object {
     width: 130px;
   }
 }
 
 @media (min-width: 1000px) {
-  .echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+  .echo-p-widget.echo-p-widget-media.echo-p-widget-sm .echo-c-media-object {
     width: 90px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 999.9px) {
-  .echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-media .echo-m-thumbnail {
-    padding-bottom: 66.66667%;
   }
 }
 
 @media (max-width: 767.9px) {
   .echo-p-widget.echo-p-widget-media.echo-p-widget-recent .echo-c-media-object {
     width: 105px;
-  }
-}
-
-@media (max-width: 767.9px) {
-  .echo-p-widget.echo-p-widget-media.echo-p-widget-recent .echo-m-thumbnail {
-    padding-bottom: 100%;
   }
 }
 
