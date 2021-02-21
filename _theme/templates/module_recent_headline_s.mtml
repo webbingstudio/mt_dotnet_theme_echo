@@ -5,14 +5,8 @@
 # 
 # vars:
 #   __recent_title_tag__
-#   __recent_title_text__
+#   __recent_title_text__(require)
 #   __recent_layout__
-# 
-# vars(extend):
-#   __blog_noimage_url__
-# 
-# vars(local):
-#   __image_url__
 # 
 # =======================
 </mt:Ignore>
@@ -26,11 +20,10 @@
 <mt:Entries sort_by="authored_on" sort_order="descend" limit="5">
 <mt:EntriesHeader>
 <section class="echo-p-widget<mt:If name="__recent_layout__" eq="2カラム"> echo-p-widget-sm</mt:If> echo-p-widget-headline echo-p-widget-recent">
-    <mt:If name="__recent_title_text__">
     <div class="echo-p-widget-header">
         <<mt:Var name="__recent_title_tag__" /> class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__recent_title_text__" /></<mt:Var name="__recent_title_tag__" />>
     </div><!-- /.echo-p-widget-header -->
-    </mt:If>
+
     <div class="echo-p-widget-contents">
 </mt:EntriesHeader>
 
@@ -44,7 +37,7 @@
                 </p>
                 </mt:EntryCategories>
 
-                <p class="echo-c-headline-title echo-m-title echo-m-title-level-8 echo-m-title-style-a"><mt:EntryTitle encode_html="1" /></p>
+                <h3 class="echo-c-headline-title"><mt:EntryTitle encode_html="1" /></h3>
             </a><!-- /.echo-c-headline-inner -->
         </div><!-- /.echo-c-headline -->
 
