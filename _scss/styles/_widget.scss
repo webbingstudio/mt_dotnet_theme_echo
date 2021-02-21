@@ -14,7 +14,7 @@
     .#{$pr}#{$widget}:not(.#{$pr}#{$widget}#{$c3}sm) & {
         // .echo-m-title-level-2.echo-m-title-style-c
         text-align: center;
-        margin-bottom: 2em;
+        margin-bottom: 1.5em;
         padding-bottom: 1em;
         font-size: ( 24/16 ) + rem;
 
@@ -52,18 +52,36 @@
     position: relative;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.125em;
-    @include font-family-weight( 'first', 'bold' );
-    line-height: $line-height-xs;
+    font-size: 1em;
+    @include font-family-weight( 'first', 'normal' );
+}
+
+.#{$pr}#{$widget}#{$c3}card a:hover .#{$pr}#{$c}card#{$c3}title,
+.#{$pr}#{$widget}#{$c3}card a:focus .#{$pr}#{$c}card#{$c3}title,
+.#{$pr}#{$widget}#{$c3}card a:active .#{$pr}#{$c}card#{$c3}title {
+    text-decoration: underline;
 }
 
 .#{$pr}#{$widget}#{$c3}media .#{$pr}#{$c}media#{$c3}title {
     position: relative;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.125em;
-    @include font-family-weight( 'first', 'bold' );
-    line-height: $line-height-xs;
+    font-size: ( 15 / 14 ) + em;
+    @include font-family-weight( 'first', 'normal' );
+}
+
+.#{$pr}#{$widget}#{$c3}media.#{$pr}#{$widget}#{$c3}recent .#{$pr}#{$c}media#{$c3}title {
+    font-weight: $font-weight-bold-first;
+}
+
+.#{$pr}#{$widget}#{$c3}media a .#{$pr}#{$c}media#{$c3}title {
+    text-decoration: underline;
+}
+
+.#{$pr}#{$widget}#{$c3}media a:hover .#{$pr}#{$c}media#{$c3}title,
+.#{$pr}#{$widget}#{$c3}media a:focus .#{$pr}#{$c}media#{$c3}title,
+.#{$pr}#{$widget}#{$c3}media a:active .#{$pr}#{$c}media#{$c3}title {
+    text-decoration: none;
 }
 
 
@@ -117,11 +135,6 @@
     .#{$pr}#{$c}card {
 
         &.#{$nav-current} {
-            box-shadow: 1px 2px 5px rgba( 0, 0, 0, .2 );
-
-            .#{$pr}#{$c}card#{$c1}contents {
-                background-color: $body-bg;
-            }
 
             .#{$pr}#{$c}card#{$c1}title {
                 font-weight: bold;

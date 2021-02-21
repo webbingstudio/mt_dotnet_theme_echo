@@ -553,7 +553,7 @@ time.echo-c-media-meta {
 
 .echo-p-widget:not(.echo-p-widget-sm) .echo-p-widget-title {
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   padding-bottom: 1em;
   font-size: 1.5rem;
 }
@@ -590,20 +590,38 @@ time.echo-c-media-meta {
   position: relative;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.125em;
+  font-size: 1em;
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 300;
+}
+
+.echo-p-widget-card a:hover .echo-c-card-title,
+.echo-p-widget-card a:focus .echo-c-card-title,
+.echo-p-widget-card a:active .echo-c-card-title {
+  text-decoration: underline;
 }
 
 .echo-p-widget-media .echo-c-media-title {
   position: relative;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.125em;
+  font-size: 1.07143em;
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
+  font-weight: 300;
+}
+
+.echo-p-widget-media.echo-p-widget-recent .echo-c-media-title {
   font-weight: 600;
-  line-height: 1.25;
+}
+
+.echo-p-widget-media a .echo-c-media-title {
+  text-decoration: underline;
+}
+
+.echo-p-widget-media a:hover .echo-c-media-title,
+.echo-p-widget-media a:focus .echo-c-media-title,
+.echo-p-widget-media a:active .echo-c-media-title {
+  text-decoration: none;
 }
 
 .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn {
@@ -648,14 +666,6 @@ a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-w
 
 .echo-p-widget.echo-p-widget-card a.echo-c-card-inner:hover .echo-c-card-contents, .echo-p-widget.echo-p-widget-card a.echo-c-card-inner:focus .echo-c-card-contents, .echo-p-widget.echo-p-widget-card a.echo-c-card-inner:active .echo-c-card-contents {
   background-color: white;
-}
-
-.echo-p-widget.echo-p-widget-card .echo-c-card.is-current {
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.echo-p-widget.echo-p-widget-card .echo-c-card.is-current .echo-c-card-contents {
-  background-color: #fff;
 }
 
 .echo-p-widget.echo-p-widget-card .echo-c-card.is-current .echo-c-card-title {

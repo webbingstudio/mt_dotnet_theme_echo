@@ -1802,12 +1802,6 @@ echo-p-topicpath
   position: relative;
 }
 
-@media (max-width: 999.9px) {
-  .echo-c-card-contents {
-    font-size: 0.75rem;
-  }
-}
-
 .echo-c-card-category .echo-m-label {
   vertical-align: bottom;
   margin-right: 0;
@@ -2041,7 +2035,7 @@ time.echo-c-media-meta {
 }
 
 .echo-p-widget-header {
-  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /*

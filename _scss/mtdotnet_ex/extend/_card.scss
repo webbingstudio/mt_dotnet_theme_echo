@@ -6,11 +6,6 @@
 
 .#{$pr}#{$c}card#{$c1}contents {
     position: relative;
-
-    @include media-breakpoint-down(md) {
-        font-size: $font-size-xs;
-    }
-
 }
 
 .#{$pr}#{$c}card#{$c1}category {
