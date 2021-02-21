@@ -44,6 +44,10 @@
 
     }
 
+    .#{$pr}#{$c}media#{$c1}contents {
+        font-size: $font-size-xs;
+    }
+
     &:not(.#{$pr}#{$widget}#{$c3}sm) {
 
         .#{$pr}#{$row} {
@@ -63,7 +67,6 @@
         }
 
         .#{$pr}#{$c}media#{$c1}contents {
-            font-size: $font-size-xs;
 
             @include media-breakpoint-up(lg) {
                 font-size: $font-size-sm;
@@ -85,14 +88,6 @@
     }
 
     &.#{$pr}#{$widget}#{$c3}sm {
-
-        .#{$pr}#{$c}media#{$c1}contents {
-
-            @include media-breakpoint-up(lg) {
-                font-size: $font-size-xs;
-            }
-
-        }
 
         .#{$pr}#{$c}media#{$c1}meta {
             margin-right: .5em;
