@@ -29,9 +29,9 @@
 </mt:PageFolder>
 
 <mt:If name="__has_hierarchy__" eq="true">
-    <section class="echo-p-widget<mt:If name="__pages_layout__" eq="2カラム"> echo-p-widget-sm</mt:If> echo-p-widget-nav echo-p-widget-folders">
+    <section class="echo-p-widget echo-p-widget-sm echo-p-widget-nav echo-p-widget-folders">
         <div class="echo-p-widget-contents">
-            <nav class="echo-m-nav  echo-m-nav-vertical">
+            <nav class="echo-m-nav echo-m-nav-vertical">
                 <mt:SubFolders top="1">
                 <mt:FolderHeader>
                 <ul class="echo-m-nav-list<mt:HasParentFolder> echo-m-nav-children</mt:HasParentFolder>">
@@ -53,15 +53,10 @@
                     </mt:If>
                 </mt:If>
 
-                <mt:If name="__pages_layout__" ne="2カラム">
-                    </li>
-                </mt:If>
+                </li>
 
                 <mt:SubFolderRecurse />
                 <mt:FolderFooter>
-                <mt:If name="__pages_layout__" eq="2カラム">
-                    </li>
-                </mt:If>
                 </ul>
                 </mt:FolderFooter>
                 </mt:SubFolders>
