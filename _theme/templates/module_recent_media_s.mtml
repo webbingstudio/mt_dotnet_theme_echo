@@ -37,7 +37,7 @@
 </mt:EntriesHeader>
 
             <mt:setVar name="__image_url__" value="" />
-            <div class="echo-l-grid-col echo-l-grid-col-xxs-12<mt:If name="__recent_layout__" eq="1カラム"> echo-l-grid-col-lg-6</mt:If>">
+            <div class="echo-l-grid-col echo-l-grid-col-xxs-12">
                 <div class="echo-c-media-wraper">
                     <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">
                         <div class="echo-c-media-object">
@@ -52,9 +52,9 @@
                                     </mt:EntryAssets>
                                 </mt:If>
                                 <mt:If name="__image_url__">
-                                    <img alt="" src="<mt:Var name="__image_url__" />" width="480">
+                                    <img alt="" src="<mt:Var name="__image_url__" />" width="240">
                                 <mt:Else>
-                                    <img alt="" src="<mt:Var name="__blog_noimage_url__" />" width="480">
+                                    <img alt="" src="<mt:Var name="__blog_noimage_url__" />" width="240">
                                 </mt:If>
                             </figure><!-- /.echo-m-thumbnail -->
                         </div><!-- /.echo-c-media-object -->
