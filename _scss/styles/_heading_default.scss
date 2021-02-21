@@ -6,7 +6,7 @@
 
 .#{$pr}#{$be} {
 
-    h1:not(.#{$pr}#{$m}title) {
+    h1:not([class*="title"]) {
         font-size: ( 28/16 ) + rem;
         text-align: center;
 
@@ -16,7 +16,7 @@
 
     }
 
-    h2:not(.#{$pr}#{$m}title) {
+    h2:not([class*="title"]) {
         font-size: ( 24/16 ) + rem;
         text-align: center;
 
@@ -26,7 +26,7 @@
 
     }
 
-    h3:not(.#{$pr}#{$m}title) {
+    h3:not([class*="title"]) {
         font-size: ( 20/16 ) + rem;
         text-align: center;
 
@@ -36,7 +36,7 @@
 
     }
 
-    h4:not(.#{$pr}#{$m}title) {
+    h4:not([class*="title"]) {
         font-size: ( 18/16 ) + rem;
 
         @include media-breakpoint-up(lg) {
@@ -45,7 +45,7 @@
 
     }
 
-    h5:not(.#{$pr}#{$m}title) {
+    h5:not([class*="title"]) {
         font-size: ( 17/16 ) + rem;
 
         @include media-breakpoint-up(lg) {
@@ -54,7 +54,7 @@
 
     }
 
-    h6:not(.#{$pr}#{$m}title) {
+    h6:not([class*="title"]) {
         font-size: ( 16/16 ) + rem;
     }
 

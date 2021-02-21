@@ -405,60 +405,60 @@ time.echo-c-card-meta {
 .echo-mt-be > Heading element (without .echo-m-title)
 --------------------
 */
-.echo-mt-be h1:not(.echo-m-title) {
+.echo-mt-be h1:not([class*="title"]) {
   font-size: 1.75rem;
   text-align: center;
 }
 
 @media (min-width: 1000px) {
-  .echo-mt-be h1:not(.echo-m-title) {
+  .echo-mt-be h1:not([class*="title"]) {
     font-size: 2rem;
   }
 }
 
-.echo-mt-be h2:not(.echo-m-title) {
+.echo-mt-be h2:not([class*="title"]) {
   font-size: 1.5rem;
   text-align: center;
 }
 
 @media (min-width: 1000px) {
-  .echo-mt-be h2:not(.echo-m-title) {
+  .echo-mt-be h2:not([class*="title"]) {
     font-size: 1.75rem;
   }
 }
 
-.echo-mt-be h3:not(.echo-m-title) {
+.echo-mt-be h3:not([class*="title"]) {
   font-size: 1.25rem;
   text-align: center;
 }
 
 @media (min-width: 1000px) {
-  .echo-mt-be h3:not(.echo-m-title) {
+  .echo-mt-be h3:not([class*="title"]) {
     font-size: 1.5rem;
   }
 }
 
-.echo-mt-be h4:not(.echo-m-title) {
+.echo-mt-be h4:not([class*="title"]) {
   font-size: 1.125rem;
 }
 
 @media (min-width: 1000px) {
-  .echo-mt-be h4:not(.echo-m-title) {
+  .echo-mt-be h4:not([class*="title"]) {
     font-size: 1.25rem;
   }
 }
 
-.echo-mt-be h5:not(.echo-m-title) {
+.echo-mt-be h5:not([class*="title"]) {
   font-size: 1.0625rem;
 }
 
 @media (min-width: 1000px) {
-  .echo-mt-be h5:not(.echo-m-title) {
+  .echo-mt-be h5:not([class*="title"]) {
     font-size: 1.125rem;
   }
 }
 
-.echo-mt-be h6:not(.echo-m-title) {
+.echo-mt-be h6:not([class*="title"]) {
   font-size: 1rem;
 }
 
@@ -542,6 +542,70 @@ time.echo-c-media-meta {
 .echo-p-widget
 --------------------
 */
+.echo-p-widget-title {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.echo-p-widget:not(.echo-p-widget-sm) .echo-p-widget-title {
+  text-align: center;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 1000px) {
+  .echo-p-widget:not(.echo-p-widget-sm) .echo-p-widget-title {
+    font-size: 1.75rem;
+  }
+}
+
+.echo-p-widget:not(.echo-p-widget-sm) .echo-p-widget-title:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 3em;
+  height: 3px;
+  background-color: #333;
+}
+
+.echo-p-widget.echo-p-widget-sm .echo-p-widget-title {
+  margin-bottom: .5em;
+  font-size: 1.0625rem;
+}
+
+@media (min-width: 1000px) {
+  .echo-p-widget.echo-p-widget-sm .echo-p-widget-title {
+    font-size: 1.125rem;
+  }
+}
+
+.echo-p-widget-card .echo-c-card-title {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.125em;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.echo-p-widget-media .echo-c-media-title {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.125em;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
 .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn {
   color: #fff;
   background-color: transparent;

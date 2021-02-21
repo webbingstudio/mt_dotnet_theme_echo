@@ -1,0 +1,90 @@
+/*
+--------------------
+.#{$pr}#{$widget}#{$c3}card
+--------------------
+*/
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
+
+    .#{$pr}#{$widget}#{$c1}contents {
+        width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        max-width: map-get( $be-max-widths, 'xl' );
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .#{$pr}#{$c}card#{$c1}contents {
+
+        @include media-breakpoint-down(md) {
+            font-size: $font-size-xs;
+        }
+
+    }
+
+    .#{$pr}#{$row} {
+        margin-bottom: ( map-get($grid-gutter-widths, md) * -1 );
+
+        @include media-breakpoint-down(sm) {
+            margin-left: (map-get($grid-gutter-widths, md) / -4);
+            margin-right: (map-get($grid-gutter-widths, md) / -4);
+            margin-bottom: ( map-get($grid-gutter-widths, md) / -2 );
+        }
+
+    }
+
+    [class*="#{$pr}#{$col}"] {
+        margin-bottom: map-get($grid-gutter-widths, md);
+
+        @include media-breakpoint-down(sm) {
+            padding-left: (map-get($grid-gutter-widths, md) / 4);
+            padding-right: (map-get($grid-gutter-widths, md) / 4);
+            margin-bottom: (map-get($grid-gutter-widths, md) / 2);
+        }
+
+    }
+
+    .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+            max-width: map-get( $be-max-widths, 'md' );
+        }
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+
+    }
+
+    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+
+            @include media-breakpoint-up(lg) {
+                width: 100%;
+            }
+
+        }
+
+    }
+
+    .#{$pr}#{$be}-group.#{$pr}#{$be}-alignfull & {
+
+    }
+
+    &.#{$pr}#{$widget}#{$c3}sm {
+
+    }
+
+    &.#{$pr}#{$widget}#{$c3}pages {
+
+        .#{$pr}#{$c}card#{$c1}object + .#{$pr}#{$c}card#{$c1}contents {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: 12;
+        }
+
+    }
+
+}

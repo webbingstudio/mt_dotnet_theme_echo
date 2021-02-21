@@ -1,0 +1,27 @@
+/*
+--------------------
+.#{$pr}#{$widget}#{$c3}folders
+--------------------
+*/
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}folders {
+
+    .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}pages + & {
+        position: relative;
+        padding-top: ( $spacer * 1.5 );
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 50%;
+            width: 100%;
+            max-width: map-get( $be-max-widths, 'md' );
+            height: 1px;
+            background-color: $gray-milder;
+            transform: translate( -50%, 0 );
+        }
+
+    }
+
+}

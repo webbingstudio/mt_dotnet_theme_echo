@@ -10,7 +10,7 @@
         font-size: $font-size-sm;
     }
 
-    p:not(.#{$pr}#{$m}title) {
+    p:not([class*="title"]) {
         line-height: $line-height-lg;
     }
 
