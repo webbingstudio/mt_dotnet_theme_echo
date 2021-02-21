@@ -1,0 +1,50 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-カテゴリー一覧
+# 
+# vars:
+#   __categories_layout__
+#   __categories_title_tag__
+#   __categories_title_text__(require)
+# 
+# vars(extend):
+#   __post_category_basename__
+# 
+# =======================
+</mt:Ignore>
+<mt:Unless name="__categories_title_tag__">
+    <mt:SetVar name="__categories_title_tag__" value="h2" />
+</mt:Unless>
+<mt:Unless name="__categories_layout__">
+    <mt:SetVar name="__categories_layout__" value="1カラム" />
+</mt:Unless>
+
+<mt:Ignore>カテゴリーがない場合は何も表示しない</mt:Ignore>
+<mt:If tag="BlogCategoryCount" ne="0">
+    <section class="echo-p-widget<mt:If name="__categories_layout__" eq="2カラム"> echo-p-widget-sm</mt:If> echo-p-widget-nav echo-p-widget-categories">
+        <div class="echo-p-widget-header">
+            <<mt:Var name="__categories_title_tag__" /> class="echo-m-title echo-m-title-level-5 echo-m-title-style-a"><mt:Var name="__categories_title_text__" /></<mt:Var name="__categories_title_tag__" />>
+        </div><!-- /.echo-p-widget-header -->
+        <div class="echo-p-widget-contents">
+            <nav class="echo-m-nav echo-m-nav-vertical">
+            <mt:SubCategories top="1">
+                <ul class="echo-m-nav-list<mt:HasParentCategory> echo-m-nav-children</mt:HasParentCategory>">
+
+                <mt:If tag="CategoryCount">
+                    <li class="echo-m-nav-item<mt:If tag="CategoryBasename" eq="$__post_category_basename__"> is-current</mt:If>">
+                        <a href="<mt:CategoryArchiveLink />" class="echo-m-nav-label<mt:If tag="CategoryBasename" eq="$__post_category_basename__"> is-current</mt:If>"><mt:CategoryLabel encode_html="1" /><span class="echo-m-label"><mt:CategoryCount /></span></a>
+                <mt:Else>
+                    <li class="echo-m-nav-item<mt:If tag="CategoryBasename" eq="$__post_category_basename__"> is-current</mt:If>"><span class="echo-m-nav-label<mt:If tag="CategoryBasename" eq="$__post_category_basename__"> is-current</mt:If>"><mt:CategoryLabel encode_html="1" /></span>
+                </mt:If>
+
+                </li>
+
+                <mt:SubCatsRecurse />
+
+                </ul>
+            </mt:SubCategories>
+            </nav><!-- /.echo-m-nav -->
+        </div><!-- /.echo-p-widget-contents -->
+    </section><!-- /.echo-p-widget -->
+</mt:If>
