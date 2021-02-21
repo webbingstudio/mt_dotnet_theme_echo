@@ -77,7 +77,7 @@ $border-table-section-width:     ( $border-width * 2 ) !default;
 $border-table-section-color:     $border-color !default;
 $border-thumbnail-width:         0 !default;
 $border-alert-width:             $border-width !default;
-$border-box-width:               ( $border-width * 2 ) !default;
+$border-box-width:               $border-width !default;
 
 
 // UI ( Default Button, Nav, Pager, Form )
@@ -132,7 +132,7 @@ $font-family-mono:             'Consolas', 'Liberation Mono', 'Menlo', 'Courier'
 $font-family-root:             'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '-apple-system', 'BlinkMacSystemFont', 'Meiryo', sans-serif !default;
 $font-weight-root:             300 !default;
 $font-family-bold-root:        $font-family-root;
-$font-weight-bold-root:        700 !default;
+$font-weight-bold-root:        600 !default;
 
 // first: title
 $font-family-first:            $font-family-root;
@@ -144,13 +144,13 @@ $font-weight-bold-first:       $font-weight-bold-root;
 $font-family-second:           'Helvetica', 'Roboto', '-apple-system', 'Open Sans', 'Arial', sans-serif !default;
 $font-weight-second:           300 !default;
 $font-family-bold-second:      $font-family-second;
-$font-weight-bold-second:      700 !default;
+$font-weight-bold-second:      600 !default;
 
 // third: display
 $font-family-third:            '游明朝', 'Yu Mincho', '游明朝体', 'YuMincho', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝', 'MS PMincho', 'Bookman Old Style', 'Times New Roman', '-apple-system', 'BlinkMacSystemFont', serif !default;
 $font-weight-third:            300 !default;
 $font-family-bold-third:       $font-family-third;
-$font-weight-bold-third:       700 !default;
+$font-weight-bold-third:       600 !default;
 
 
 // Font size
@@ -162,6 +162,7 @@ $font-size-sm:              .875rem !default;
 $font-size-md:              1rem !default;
 $font-size-lg:              1.125rem !default;
 $font-size-xl:              1.25rem !default;
+$font-size-xxl:             1.5rem !default;
 
 
 // Line height
@@ -185,6 +186,9 @@ $border-radius-lg:  5px;
 // -----------------------------------------
 
 $btn-border-radius:    $border-radius-md;
+
+// component > flip, component > hero
+$btn-font-size-sm:     .75rem !default;
 
 $btn-font-size-md:     .875rem !default;
 $btn-padding-x-md:     1rem !default;
