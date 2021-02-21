@@ -64,11 +64,8 @@
 
             @include media-breakpoint-up(lg) {
                 flex-grow: 1;
-                position: sticky;
-                top: map-get( $grid-gutter-widths, 'md' );
                 width: map-get( $sub-widths, 'lg' );
                 padding-top: ( $spacer * 3 );
-                z-index: 51;
             }
 
             @include media-breakpoint-up(xl) {
@@ -80,3 +77,15 @@
     }
 
 }
+
+// stickey nav
+body.page-type-page .#{$pr}#{$p}content.#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub {
+
+    @include media-breakpoint-up(lg) {
+        position: sticky;
+        top: map-get( $grid-gutter-widths, 'md' );
+        z-index: 51;
+    }
+
+}
+

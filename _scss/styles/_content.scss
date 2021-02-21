@@ -4,19 +4,11 @@
 --------------------
 */
 
-.#{$pr}#{$p}content {
+body.page-type-page .#{$pr}#{$p}content.#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub {
 
-    &.#{$pr}#{$p}content#{$c3}2col {
-
-        .#{$pr}#{$p}content#{$c1}sub {
-
-            // 42px = header height
-            @include media-breakpoint-up(lg) {
-                top: 42px + ( $spacer * 3 );
-            }
-
-        }
-
+    // 42px = header height
+    @include media-breakpoint-up(lg) {
+        top: 42px + ( $spacer * 3 );
     }
 
 }

@@ -319,7 +319,7 @@ echo-p-content
 --------------------
 */
 @media (min-width: 1000px) {
-  .echo-p-content.echo-p-content-2col .echo-p-content-sub {
+  body.page-type-page .echo-p-content.echo-p-content-2col .echo-p-content-sub {
     top: 72px;
   }
 }
