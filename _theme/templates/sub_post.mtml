@@ -5,3 +5,10 @@
 # 
 # =======================
 </mt:Ignore>
+<aside class="echo-p-widgetarea echo-p-widgetarea-sub echo-p-widgetarea-post" role="complementary">
+    <mt:If tag="CustomFieldValue" identifier="EchoBlogPostsNavType" like="日付＋タイトル">
+        <mt:Include module="モジュール-記事新着-headline-小" __recent_title_text__="新着記事" __recent_layout__="$__folder_layout__" />
+    <mt:Else>
+        <mt:Include module="モジュール-記事新着-media-小" __recent_title_text__="新着記事" __recent_layout__="$__folder_layout__" />
+    </mt:If>
+</aside><!-- /.echo-p-widgetarea -->

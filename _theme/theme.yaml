@@ -254,12 +254,18 @@ elements:
           module_recent_card:
             filename: module_recent_card.mtml
             label: モジュール-記事新着-card
-          module_recent_headline:
-            filename: module_recent_headline.mtml
-            label: モジュール-記事新着-headline
+          module_recent_headline_l:
+            filename: module_recent_headline_l.mtml
+            label: モジュール-記事新着-headline-大
+          module_recent_headline_s:
+            filename: module_recent_headline_s.mtml
+            label: モジュール-記事新着-headline-小
           module_recent_media_l:
             filename: module_recent_media_l.mtml
-            label: モジュール-記事新着-media_大
+            label: モジュール-記事新着-media-大
+          module_recent_media_s:
+            filename: module_recent_media_s.mtml
+            label: モジュール-記事新着-media-小
           module_posts_card:
             filename: module_posts_card.mtml
             label: モジュール-記事一覧-card

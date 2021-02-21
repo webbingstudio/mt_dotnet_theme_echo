@@ -17,7 +17,7 @@
 
 <mt:BlockEditorBlocks>
 <mt:If name="type" eq="sixapart-input">
-    <mt:SetVarBlock name="__recent_title_text__"><mt:Var name="__value__"  /></mt:SetVarBlock>
+    <mt:SetVarBlock name="__recent_title_text__"><mt:Var name="__value__" decode_html="1"  /></mt:SetVarBlock>
 <mt:ElseIf name="type" eq="sixapart-select">
     <mt:If name="__value__" like="タイプ:">
         <mt:SetVarBlock name="__recent_type__"><mt:Var name="__value__" /></mt:SetVarBlock>
@@ -37,5 +37,5 @@
 <mt:ElseIf name="__recent_type__" like="画像上＋タイトル下">
     <mt:Include module="モジュール-記事新着-card" __recent_layout__="$__folder_layout__" __recent_title_text__="$__recent_title_text__" __recent_wrapclass__="echo-mt-be-recent echo-mt-be-recent-card echo-mt-be-block-custom" __recent_more__="$__recent_more__" />
 <mt:Else>
-    <mt:Include module="モジュール-記事新着-headline" __recent_layout__="$__folder_layout__" __recent_title_text__="$__recent_title_text__" __recent_wrapclass__="echo-mt-be-recent echo-mt-be-recent-headline echo-mt-be-block-custom" __recent_more__="$__recent_more__" />
+    <mt:Include module="モジュール-記事新着-headline-大" __recent_layout__="$__folder_layout__" __recent_title_text__="$__recent_title_text__" __recent_wrapclass__="echo-mt-be-recent echo-mt-be-recent-headline echo-mt-be-block-custom" __recent_more__="$__recent_more__" />
 </mt:If>
