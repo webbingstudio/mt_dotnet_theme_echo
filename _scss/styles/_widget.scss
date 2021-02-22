@@ -53,6 +53,19 @@
 // inverse
 .#{$pr}#{$be}-has-bg:not(.#{$pr}#{$u}bg-third):not(.#{$pr}#{$u}bg-fade) {
 
+    .#{$pr}#{$be} &,
+    .#{$pr}#{$p}widgetarea#{$c3}main & {
+
+        .#{$pr}#{$widget}#{$c1}title {
+
+            &:after {
+                background-color: $body-inverse-color;
+            }
+
+        }
+
+    }
+
     .#{$pr}#{$widget}#{$c1}footer {
 
         .#{$pr}#{$m}btn {

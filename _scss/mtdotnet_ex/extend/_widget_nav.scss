@@ -7,6 +7,7 @@
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}nav {
 
     .#{$pr}#{$widget}#{$c1}contents {
+        width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
         max-width: map-get( $be-max-widths, 'md' );
         margin-left: auto;
         margin-right: auto;
@@ -17,10 +18,6 @@
     }
 
     .#{$pr}#{$p}widgetarea#{$c3}sub & {
-
-        .#{$pr}#{$widget}#{$c1}contents {
-            width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
-        }
 
         .#{$pr}#{$m}nav#{$c1}label {
             font-size: ( 15 / 16 ) + rem;

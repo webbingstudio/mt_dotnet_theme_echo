@@ -561,6 +561,11 @@ time.echo-c-headline-header {
   }
 }
 
+.echo-mt-be .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-title:after,
+.echo-p-widgetarea-main .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-title:after {
+  background-color: #fff;
+}
+
 .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn {
   color: #fff;
   background-color: transparent;
