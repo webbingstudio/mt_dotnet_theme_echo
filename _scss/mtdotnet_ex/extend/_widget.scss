@@ -6,6 +6,20 @@
 
 .#{$pr}#{$widget} {
 
+    .#{$pr}#{$be} &,
+    .#{$pr}#{$p}widgetarea#{$c3}main & {
+        margin-bottom: ( $spacer * 3 );
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: ( $spacer * 4.5 );
+        }
+
+    }
+
+    .#{$pr}#{$p}widgetarea#{$c3}sub & {
+        margin-bottom: ( $spacer * 3 );
+    }
+
     &:last-child {
         margin-bottom: 0;
     }
