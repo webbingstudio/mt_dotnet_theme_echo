@@ -52,7 +52,7 @@
 
     }
 
-    &.#{$pr}#{$m}btn:not(.#{$pr}#{$m}btn#{$c3}bordered) {
+    &:not(.#{$pr}#{$m}btn#{$c3}bordered) {
 
         &:not(:hover):not(:focus):not(:active) {
 
@@ -80,7 +80,7 @@
 
     }
 
-    &.#{$pr}#{$m}btn.#{$pr}#{$m}btn#{$c3}inverse {
+    &.#{$pr}#{$m}btn#{$c3}inverse {
 
         &:after {
             border-top-color: $body-inverse-color;

@@ -31,9 +31,10 @@ card > thumbnail
 */
 
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
-    @include thumbnail-clip( 2 / 3 );
 
-    &:not(.#{$pr}#{$widget}#{$c3}sm) {
+    .#{$pr}#{$be} &,
+    .#{$pr}#{$p}widgetarea#{$c3}main & {
+        @include thumbnail-clip( 2 / 3 );
 
         .#{$pr}#{$m}thumbnail {
 
@@ -45,12 +46,17 @@ card > thumbnail
 
     }
 
-    &.#{$pr}#{$widget}#{$c3}sm {
+    .#{$pr}#{$p}widgetarea#{$c3}sub & {
+        @include thumbnail-clip( 9 / 16 );
 
-        .#{$pr}#{$m}thumbnail {
+        &.#{$pr}#{$widget}#{$c3}pages {
 
-            @include media-breakpoint-up(lg) {
-                padding-bottom: percentage( 9 / 16 );
+            .#{$pr}#{$m}thumbnail {
+
+                @include media-breakpoint-down(md) {
+                    padding-bottom: percentage( 2 / 3 );
+                }
+
             }
 
         }
@@ -95,11 +101,7 @@ media > thumbnail
             width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
 
             @include media-breakpoint-only(md) {
-                width: 120px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-            }
-
-            @include media-breakpoint-up(lg) {
-                width: 80px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+                width: 90px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
             }
 
         }

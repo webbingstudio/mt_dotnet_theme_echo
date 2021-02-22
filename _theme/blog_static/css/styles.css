@@ -320,7 +320,7 @@ echo-p-content
 */
 @media (min-width: 1000px) {
   body.page-type-page .echo-p-content.echo-p-content-2col .echo-p-content-sub {
-    top: 72px;
+    top: 42px;
   }
 }
 
@@ -355,7 +355,7 @@ echo-p-content
   height: 11px;
 }
 
-.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn:not(.echo-m-btn-bordered):not(:hover):not(:focus):not(:active):after {
+.echo-m-btn[class*="echo-m-btn-arrowed"]:not(.echo-m-btn-bordered):not(:hover):not(:focus):not(:active):after {
   border-top-color: #fff;
   border-left-color: #fff;
 }
@@ -365,12 +365,12 @@ echo-p-content
   border-left-color: #fff;
 }
 
-.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn.echo-m-btn-inverse:after {
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-inverse:after {
   border-top-color: #fff;
   border-left-color: #fff;
 }
 
-.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn.echo-m-btn-inverse:hover:after, .echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn.echo-m-btn-inverse:focus:after, .echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn.echo-m-btn-inverse:active:after {
+.echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-inverse:hover:after, .echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-inverse:focus:after, .echo-m-btn[class*="echo-m-btn-arrowed"].echo-m-btn-inverse:active:after {
   border-top-color: #333;
   border-left-color: #333;
 }
@@ -560,44 +560,6 @@ time.echo-c-headline-header {
   }
 }
 
-.echo-p-widget-card .echo-c-card-title {
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1em;
-  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
-  font-weight: 300;
-}
-
-.echo-p-widget-card a:hover .echo-c-card-title,
-.echo-p-widget-card a:focus .echo-c-card-title,
-.echo-p-widget-card a:active .echo-c-card-title {
-  text-decoration: underline;
-}
-
-.echo-p-widget-media .echo-c-media-title {
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.14286em;
-  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
-  font-weight: 300;
-}
-
-.echo-p-widget-media.echo-p-widget-recent .echo-c-media-title {
-  font-weight: 600;
-}
-
-.echo-p-widget-media a .echo-c-media-title {
-  text-decoration: underline;
-}
-
-.echo-p-widget-media a:hover .echo-c-media-title,
-.echo-p-widget-media a:focus .echo-c-media-title,
-.echo-p-widget-media a:active .echo-c-media-title {
-  text-decoration: none;
-}
-
 .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn {
   color: #fff;
   background-color: transparent;
@@ -633,39 +595,14 @@ a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-w
   border-color: transparent;
 }
 
-.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media {
-  color: #fff;
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn[class*="echo-m-btn-arrowed"]:after {
+  border-top-color: #fff;
+  border-left-color: #fff;
 }
 
-.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media:hover, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) a.echo-c-media:focus {
-  color: #fff;
-}
-
-.echo-p-widget.echo-p-widget-card .echo-c-card-object + .echo-c-card-contents {
-  background-color: rgba(255, 255, 255, 0.75);
-  transition: background-color .3s;
-}
-
-.echo-p-widget.echo-p-widget-card a.echo-c-card-inner:hover .echo-c-card-contents, .echo-p-widget.echo-p-widget-card a.echo-c-card-inner:focus .echo-c-card-contents, .echo-p-widget.echo-p-widget-card a.echo-c-card-inner:active .echo-c-card-contents {
-  background-color: white;
-}
-
-.echo-p-widget.echo-p-widget-card .echo-c-card.is-current .echo-c-card-title {
-  font-weight: bold;
-}
-
-.echo-p-widget.echo-p-widget-media .echo-c-media.is-current .echo-c-media-title {
-  font-weight: bold;
-}
-
-.echo-p-widget.echo-p-widget-media .echo-c-media-category .echo-m-label {
-  color: #fff;
-  background-color: #333;
-}
-
-.echo-p-widget.echo-p-widget-media time.echo-c-media-meta {
-  font-family: "Helvetica", "Roboto", "-apple-system", "Open Sans", "Arial", sans-serif;
-  letter-spacing: .03em;
+.echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn[class*="echo-m-btn-arrowed"]:hover:after, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn[class*="echo-m-btn-arrowed"]:focus:after, .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-widget-footer .echo-m-btn[class*="echo-m-btn-arrowed"]:active:after {
+  border-top-color: #333;
+  border-left-color: #333;
 }
 
 .echo-p-widget.echo-p-widget-nav .echo-m-nav-label {
@@ -695,6 +632,34 @@ a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-w
 
 .echo-p-widget.echo-p-widget-nav .echo-m-nav-children .echo-m-nav-children .echo-m-nav-label.is-current:before {
   left: 4em;
+}
+
+/*
+--------------------
+.echo-p-widget-card
+--------------------
+*/
+.echo-p-widget.echo-p-widget-card .echo-c-card-title {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1em;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "-apple-system", "BlinkMacSystemFont", "Meiryo", sans-serif;
+  font-weight: 300;
+}
+
+.echo-p-widget.echo-p-widget-card a.echo-c-card-inner:hover .echo-c-card-title, .echo-p-widget.echo-p-widget-card a.echo-c-card-inner:focus .echo-c-card-title, .echo-p-widget.echo-p-widget-card a.echo-c-card-inner:active .echo-c-card-title {
+  text-decoration: underline;
+}
+
+.echo-p-widget.echo-p-widget-card .echo-c-card.is-current .echo-c-card-title {
+  font-weight: 600;
+}
+
+.echo-p-widget.echo-p-widget-card.echo-p-widget-pages .echo-c-card-contents {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 /*
@@ -759,13 +724,15 @@ a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-w
 --------------------
 card > thumbnail
 */
-.echo-p-widget.echo-p-widget-card .echo-m-thumbnail {
+.echo-mt-be .echo-p-widget.echo-p-widget-card .echo-m-thumbnail,
+.echo-p-widgetarea-main .echo-p-widget.echo-p-widget-card .echo-m-thumbnail {
   width: 100%;
   height: 0;
   padding-bottom: 66.66667%;
 }
 
-.echo-p-widget.echo-p-widget-card .echo-m-thumbnail img {
+.echo-mt-be .echo-p-widget.echo-p-widget-card .echo-m-thumbnail img,
+.echo-p-widgetarea-main .echo-p-widget.echo-p-widget-card .echo-m-thumbnail img {
   position: absolute;
   top: 0;
   left: 0;
@@ -775,14 +742,30 @@ card > thumbnail
 }
 
 @media (min-width: 768px) {
-  .echo-p-widget.echo-p-widget-card:not(.echo-p-widget-sm) .echo-m-thumbnail {
+  .echo-mt-be .echo-p-widget.echo-p-widget-card .echo-m-thumbnail,
+  .echo-p-widgetarea-main .echo-p-widget.echo-p-widget-card .echo-m-thumbnail {
     padding-bottom: 50%;
   }
 }
 
-@media (min-width: 1000px) {
-  .echo-p-widget.echo-p-widget-card.echo-p-widget-sm .echo-m-thumbnail {
-    padding-bottom: 56.25%;
+.echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-card .echo-m-thumbnail {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-card .echo-m-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 999.9px) {
+  .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-card.echo-p-widget-pages .echo-m-thumbnail {
+    padding-bottom: 66.66667%;
   }
 }
 
@@ -830,13 +813,7 @@ media > thumbnail
 
 @media (min-width: 768px) and (max-width: 999.9px) {
   .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
-    width: 130px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
-    width: 90px;
+    width: 100px;
   }
 }
 

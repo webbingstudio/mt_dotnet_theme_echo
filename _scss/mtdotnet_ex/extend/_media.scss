@@ -8,14 +8,6 @@
     position: relative;
 }
 
-.#{$pr}#{$c}media#{$c1}object {
-
-    @include media-breakpoint-up(md) {
-        position: relative;
-    }
-
-}
-
 time.#{$pr}#{$c}media#{$c1}meta {
     display: block;
 }

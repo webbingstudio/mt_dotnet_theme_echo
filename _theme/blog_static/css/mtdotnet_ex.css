@@ -1615,7 +1615,7 @@ echo-p-content
 @media (min-width: 1000px) {
   body.page-type-page .echo-p-content.echo-p-content-2col .echo-p-content-sub {
     position: sticky;
-    top: 20px;
+    top: 0;
     z-index: 51;
   }
 }
@@ -1987,12 +1987,6 @@ time.echo-c-card-meta {
   position: relative;
 }
 
-@media (min-width: 768px) {
-  .echo-c-media-object {
-    position: relative;
-  }
-}
-
 time.echo-c-media-meta {
   display: block;
 }
@@ -2037,19 +2031,6 @@ time.echo-c-media-meta {
 .echo-p-widget-card
 --------------------
 */
-.echo-p-widget.echo-p-widget-card .echo-p-widget-contents {
-  width: calc( 100% - 20px);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 999.9px) {
-  .echo-p-widget.echo-p-widget-card .echo-c-card-contents {
-    font-size: 0.75rem;
-  }
-}
-
 .echo-p-widget.echo-p-widget-card .echo-l-grid-row {
   margin-bottom: -20px;
 }
@@ -2074,14 +2055,42 @@ time.echo-c-media-meta {
   }
 }
 
-.echo-p-content-sub .echo-p-widget.echo-p-widget-card .echo-p-widget-contents {
-  max-width: 720px;
+.echo-p-widget.echo-p-widget-card .echo-p-widget-contents {
+  width: calc( 100% - 20px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (min-width: 1000px) {
-  .echo-p-content-2col .echo-p-content-sub .echo-p-widget.echo-p-widget-card .echo-p-widget-contents {
-    width: 100%;
+.echo-p-widget.echo-p-widget-card .echo-c-card-contents {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be .echo-p-widget.echo-p-widget-card .echo-c-card-contents,
+  .echo-p-widgetarea-main .echo-p-widget.echo-p-widget-card .echo-c-card-contents {
+    font-size: 0.875rem;
   }
+}
+
+@media (min-width: 768px) {
+  .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-card .echo-l-grid-row {
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: -10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-card [class*="echo-l-grid-col"] {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+.echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-card .echo-p-widget-contents {
+  max-width: 720px;
 }
 
 .echo-p-widget.echo-p-widget-card.echo-p-widget-pages .echo-c-card-object + .echo-c-card-contents {

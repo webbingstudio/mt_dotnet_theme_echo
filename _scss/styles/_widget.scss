@@ -52,49 +52,6 @@
 
 }
 
-.#{$pr}#{$widget}#{$c3}card .#{$pr}#{$c}card#{$c3}title {
-    position: relative;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 1em;
-    @include font-family-weight( 'first', 'normal' );
-}
-
-.#{$pr}#{$widget}#{$c3}card a:hover .#{$pr}#{$c}card#{$c3}title,
-.#{$pr}#{$widget}#{$c3}card a:focus .#{$pr}#{$c}card#{$c3}title,
-.#{$pr}#{$widget}#{$c3}card a:active .#{$pr}#{$c}card#{$c3}title {
-    text-decoration: underline;
-}
-
-.#{$pr}#{$widget}#{$c3}media .#{$pr}#{$c}media#{$c3}title {
-    position: relative;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: ( 16 / 14 ) + em;
-    @include font-family-weight( 'first', 'normal' );
-}
-
-.#{$pr}#{$widget}#{$c3}media.#{$pr}#{$widget}#{$c3}recent .#{$pr}#{$c}media#{$c3}title {
-    font-weight: $font-weight-bold-first;
-}
-
-.#{$pr}#{$widget}#{$c3}media a .#{$pr}#{$c}media#{$c3}title {
-    text-decoration: underline;
-}
-
-.#{$pr}#{$widget}#{$c3}media a:hover .#{$pr}#{$c}media#{$c3}title,
-.#{$pr}#{$widget}#{$c3}media a:focus .#{$pr}#{$c}media#{$c3}title,
-.#{$pr}#{$widget}#{$c3}media a:active .#{$pr}#{$c}media#{$c3}title {
-    text-decoration: none;
-}
-
-
-
-
-
-
-
-
 // inverse
 .#{$pr}#{$be}-has-bg:not(.#{$pr}#{$u}bg-third):not(.#{$pr}#{$u}bg-fade) {
 
@@ -111,81 +68,26 @@
             );
         }
 
-    }
+        .#{$pr}#{$m}btn[class*="#{$pr}#{$m}btn#{$c2}arrowed"] {
 
-    a.#{$pr}#{$c}media {
-        color: #fff;
+            &:after {
+                border-top-color: $body-inverse-color;
+                border-left-color: $body-inverse-color;
+            }
 
-        &:hover,
-        &:focus {
-            color: #fff;
-        }
+            &:hover,
+            &:focus,
+            &:active {
 
-    }
+                &:after {
+                    border-top-color: $body-color;
+                    border-left-color: $body-color;
+                }
 
-}
-
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
-
-    .#{$pr}#{$c}card#{$c1}object + .#{$pr}#{$c}card#{$c1}contents {
-        background-color: rgba( $body-bg, .75 );
-        transition: background-color .3s;
-    }
-
-    a.#{$pr}#{$c}card#{$c1}inner {
-
-        &:hover,
-        &:focus,
-        &:active {
-
-            .#{$pr}#{$c}card#{$c1}contents {
-                background-color: rgba( $body-bg, 1 );
             }
 
         }
 
-    }
-
-    .#{$pr}#{$c}card {
-
-        &.#{$nav-current} {
-
-            .#{$pr}#{$c}card#{$c1}title {
-                font-weight: bold;
-            }
-
-        }
-
-    }
-
-}
-
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
-
-    .#{$pr}#{$c}media {
-
-        &.#{$nav-current} {
-
-            .#{$pr}#{$c}media#{$c1}title {
-                font-weight: bold;
-            }
-
-        }
-
-    }
-
-    .#{$pr}#{$c}media#{$c1}category {
-
-        .#{$pr}#{$m}label {
-            color: $ui-inverse-color;
-            background-color: $gray;
-        }
-
-    }
-
-    time.#{$pr}#{$c}media#{$c1}meta {
-        font-family: $font-family-second;
-        letter-spacing: .03em;
     }
 
 }

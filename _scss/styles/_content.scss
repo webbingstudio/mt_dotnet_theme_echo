@@ -8,7 +8,7 @@ body.page-type-page .#{$pr}#{$p}content.#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p
 
     // 42px = header height
     @include media-breakpoint-up(lg) {
-        top: 42px + ( $spacer * 3 );
+        top: 42px;
     }
 
 }

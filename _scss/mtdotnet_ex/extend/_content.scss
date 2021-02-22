@@ -83,7 +83,7 @@ body.page-type-page .#{$pr}#{$p}content.#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p
 
     @include media-breakpoint-up(lg) {
         position: sticky;
-        top: map-get( $grid-gutter-widths, 'md' );
+        top: 0;
         z-index: 51;
     }
 
