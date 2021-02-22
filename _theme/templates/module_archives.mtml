@@ -1,0 +1,41 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-アーカイブ一覧
+# 
+# vars:
+#   __archives_layout__
+#   __archives_title_tag__
+#   __archives_title_text__(require)
+# 
+# =======================
+</mt:Ignore>
+<mt:Unless name="__archives_title_tag__">
+    <mt:SetVar name="__archives_title_tag__" value="h2" />
+</mt:Unless>
+<mt:Unless name="__archives_layout__">
+    <mt:SetVar name="__archives_layout__" value="1カラム" />
+</mt:Unless>
+
+<mt:Ignore>アーカイブがない場合は何も表示しない</mt:Ignore>
+<mt:IfArchiveTypeEnabled archive_type="Yearly">
+<mt:ArchiveList archive_type="Yearly">
+<mt:ArchiveListHeader>
+    <section class="echo-p-widget echo-p-widget-nav echo-p-widget-archives">
+        <div class="echo-p-widget-header">
+            <<mt:Var name="__archives_title_tag__" /> class="echo-p-widget-title"><mt:Var name="__archives_title_text__" /></<mt:Var name="__archives_title_tag__" />>
+        </div><!-- /.echo-p-widget-header -->
+        <div class="echo-p-widget-contents">
+            <nav class="echo-m-nav echo-m-nav-vertical">
+                <ul class="echo-m-nav-list">
+</mt:ArchiveListHeader>
+                    <li class="echo-m-nav-item">
+                        <a href="<mt:ArchiveLink />" class="echo-m-nav-label"><mt:ArchiveTitle encode_html="1" /><span class="echo-m-label"><mt:ArchiveCount /></span></a></li>
+<mt:ArchiveListFooter>
+                </ul>
+            </nav><!-- /.echo-m-nav -->
+        </div><!-- /.echo-p-widget-contents -->
+    </section><!-- /.echo-p-widget -->
+</mt:ArchiveListFooter>
+</mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>

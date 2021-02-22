@@ -888,6 +888,11 @@ a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-w
   padding-right: 0;
 }
 
+.echo-p-widget.echo-p-widget-nav .echo-m-nav-label:hover .echo-m-label, .echo-p-widget.echo-p-widget-nav .echo-m-nav-label:focus .echo-m-label, .echo-p-widget.echo-p-widget-nav .echo-m-nav-label:active .echo-m-label {
+  color: #fff;
+  background-color: #333;
+}
+
 .echo-p-widget.echo-p-widget-nav .echo-m-nav-children .echo-m-nav-label {
   padding-left: 2em;
 }

@@ -35,6 +35,17 @@
             padding-right: 0;
         }
 
+        &:hover,
+        &:focus,
+        &:active {
+
+            .#{$pr}#{$m}label {
+                color: $ui-inverse-color;
+                background-color: $gray;
+            }
+
+        }
+
     }
 
     .#{$pr}#{$m}nav#{$c1}children {

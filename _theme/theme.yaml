@@ -242,6 +242,12 @@ elements:
           module_pagenate:
             filename: module_pagenate.mtml
             label: モジュール-ページ送り
+          module_categories:
+            filename: module_categories.mtml
+            label: モジュール-カテゴリー一覧
+          module_archives:
+            filename: module_archives.mtml
+            label: モジュール-アーカイブ一覧
           vars_common:
             filename: vars_common.mtml
             label: 変数-共通
