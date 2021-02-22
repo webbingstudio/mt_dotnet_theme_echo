@@ -12,27 +12,15 @@
         margin-right: auto;
     }
 
-    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+    .#{$pr}#{$m}nav#{$c1}label {
+        position: relative;
+    }
+
+    .#{$pr}#{$p}widgetarea#{$c3}sub & {
 
         .#{$pr}#{$widget}#{$c1}contents {
             width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
         }
-
-    }
-
-    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
-
-        .#{$pr}#{$widget}#{$c1}contents {
-
-            @include media-breakpoint-down(md) {
-                width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
-            }
-
-        }
-
-    }
-
-    &.#{$pr}#{$widget}#{$c3}sm {
 
         .#{$pr}#{$m}nav#{$c1}label {
             font-size: ( 15 / 16 ) + rem;

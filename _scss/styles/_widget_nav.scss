@@ -1,0 +1,74 @@
+/*
+--------------------
+.#{$pr}#{$widget}#{$c3}nav
+--------------------
+*/
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}nav {
+
+    .#{$pr}#{$m}nav#{$c1}label {
+        padding-left: 0;
+
+        &.#{$nav-current} {
+            color: $ui-color;
+            background-color: transparent;
+            font-weight: bold;
+            padding-left: .5em;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 3px;
+                height: 1em;
+                left: 0;
+                top: 50%;
+                transform: translate( 0, -50% );
+                background-color: $ui-current-bg;
+            }
+
+        }
+
+        .#{$pr}#{$m}label {
+            min-width: 2em;
+            margin: 0 0 0 .5em;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+    }
+
+    .#{$pr}#{$m}nav#{$c1}children {
+
+        .#{$pr}#{$m}nav#{$c1}label {
+            padding-left: 2em;
+
+            &.#{$nav-current} {
+
+                &:before {
+                    left: 1.5em;
+                }
+
+            }
+
+        }
+
+        .#{$pr}#{$m}nav#{$c1}children {
+
+            .#{$pr}#{$m}nav#{$c1}label {
+                padding-left: 3em;
+
+                &.#{$nav-current} {
+
+                    &:before {
+                        left: 2.5em;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
