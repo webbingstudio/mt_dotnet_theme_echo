@@ -47,3 +47,15 @@
     padding-bottom: 0;
 }
 
+.#{$pr}#{$widget}#{$c1}footer {
+
+    .#{$pr}#{$p}content#{$c1}main & {
+
+        @include media-breakpoint-up(lg) {
+            padding-top: ( $spacer * 3 );
+        }
+
+    }
+
+}
+

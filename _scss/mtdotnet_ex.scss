@@ -29,18 +29,20 @@
 @import "mtdotnet_ex/blockeditor/_recent";
 
 // extend: Additional CSS that does not depend on theme style
+@import "mtdotnet_ex/extend/_btn";
+@import "mtdotnet_ex/extend/_card";
+@import "mtdotnet_ex/extend/_cta";
+@import "mtdotnet_ex/extend/_headline";
+@import "mtdotnet_ex/extend/_media";
+
 @import "mtdotnet_ex/extend/_header";
 @import "mtdotnet_ex/extend/_footer";
 @import "mtdotnet_ex/extend/_spmenu";
 @import "mtdotnet_ex/extend/_content";
 @import "mtdotnet_ex/extend/_pagehead";
 @import "mtdotnet_ex/extend/_topicpath";
+@import "mtdotnet_ex/extend/_pagenate";
 
-@import "mtdotnet_ex/extend/_btn";
-@import "mtdotnet_ex/extend/_card";
-@import "mtdotnet_ex/extend/_cta";
-@import "mtdotnet_ex/extend/_headline";
-@import "mtdotnet_ex/extend/_media";
 @import "mtdotnet_ex/extend/_widget";
 @import "mtdotnet_ex/extend/_widget_card";
 @import "mtdotnet_ex/extend/_widget_folders";

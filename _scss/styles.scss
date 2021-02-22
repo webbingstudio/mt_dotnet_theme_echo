@@ -10,23 +10,25 @@
 
 @import "_config_mtdotnet";
 
+@import "styles/_heading_default";
+@import "styles/_btn";
+@import "styles/_card";
+@import "styles/_cta";
+@import "styles/_headline";
+@import "styles/_title";
+
 @import "styles/_header";
 @import "styles/_footer";
 @import "styles/_spmenu";
 @import "styles/_pagehead";
 @import "styles/_content";
+@import "styles/_pagenate";
 
-@import "styles/_btn";
-@import "styles/_card";
-@import "styles/_heading_default";
-@import "styles/_headline";
-@import "styles/_title";
+@import "styles/_thumbnail";
+@import "styles/_object-fit-images";
+
 @import "styles/_widget";
 @import "styles/_widget_card";
 @import "styles/_widget_headline";
 @import "styles/_widget_media";
 @import "styles/_widget_nav";
-@import "styles/_cta";
-
-@import "styles/_thumbnail";
-@import "styles/_object-fit-images";
