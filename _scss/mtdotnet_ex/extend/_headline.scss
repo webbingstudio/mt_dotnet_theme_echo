@@ -4,6 +4,10 @@
 --------------------
 */
 
+.#{$pr}#{$c}headline#{$c1}header {
+    min-width: auto;
+}
+
 .#{$pr}#{$be} {
 
     .#{$pr}#{$c}headline#{$c1}inner {
@@ -15,22 +19,6 @@
                 line-height: $font-size-sm * $line-height-sm;
             }
 
-        }
-
-    }
-
-}
-
-.#{$pr}#{$c}headline#{$c1}header {
-    min-width: auto;
-}
-
-.#{$pr}#{$c}headline#{$c1}category {
-
-    .#{$pr}#{$m}label {
-
-        @include media-breakpoint-up(md) {
-            width: 10em;
         }
 
     }

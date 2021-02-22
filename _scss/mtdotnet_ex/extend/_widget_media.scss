@@ -116,6 +116,14 @@
             margin-right: .5em;
         }
 
+        .#{$pr}#{$c}media#{$c1}object {
+            padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+        }
+
+        .#{$pr}#{$c}media#{$c1}contents {
+            padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+        }
+
         .#{$pr}#{$c}media#{$c1}meta,
         .#{$pr}#{$c}media#{$c1}category {
             display: inline-block;

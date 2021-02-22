@@ -13,14 +13,73 @@
         margin-right: auto;
     }
 
-    .#{$pr}#{$p}content#{$c3}1col .#{$pr}#{$p}content#{$c1}sub & {
+    .#{$pr}#{$c}headline#{$c1}category {
+
+        .#{$pr}#{$m}label {
+            min-width: auto;
+            padding: .25em .5em;
+            transform: translate( 0, -.1em );
+        }
 
     }
 
-    .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
+    .#{$pr}#{$be} &,
+    .#{$pr}#{$p}widgetarea#{$c3}main & {
+
+        .#{$pr}#{$widget}#{$c3}headline {
+            font-size: $font-size-sm;
+
+            // 相対値ではなくremで統一する
+            line-height: $font-size-sm * $line-height-sm;
+
+            @include media-breakpoint-up(md) {
+                font-size: $font-size-md;
+                line-height: $font-size-md * $line-height-sm;
+            }
+
+        }
+
+        .#{$pr}#{$c}headline#{$c1}category {
+
+            .#{$pr}#{$m}label {
+
+                @include media-breakpoint-up(md) {
+                    width: 10em;
+                }
+
+            }
+
+        }
+
     }
 
-    .#{$pr}#{$be}-group.#{$pr}#{$be}-alignfull & {
+    .#{$pr}#{$p}widgetarea#{$c3}sub & {
+
+        .#{$pr}#{$c}headline {
+            font-size: $font-size-xs;
+
+            // 相対値ではなくremで統一する
+            line-height: $font-size-xs * $line-height-sm;
+
+            @include media-breakpoint-up(md) {
+                font-size: $font-size-sm;
+                line-height: $font-size-sm * $line-height-sm;
+            }
+
+        }
+
+        .#{$pr}#{$c}headline#{$c1}inner {
+
+            & > .#{$pr}#{$c}headline#{$c1}title {
+
+                @include media-breakpoint-up(lg) {
+                    margin-left: 0;
+                    flex-basis: 100%;
+                }
+
+            }
+
+        }
 
     }
 

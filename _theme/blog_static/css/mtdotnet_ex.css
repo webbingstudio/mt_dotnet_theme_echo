@@ -1811,13 +1811,6 @@ echo-p-topicpath
   vertical-align: bottom;
   margin-right: 0;
   padding-left: 10px;
-  font-size: 0.625rem;
-}
-
-@media (min-width: 1000px) {
-  .echo-c-card-category .echo-m-label {
-    font-size: 0.75rem;
-  }
 }
 
 time.echo-c-card-meta {
@@ -1958,6 +1951,10 @@ time.echo-c-card-meta {
 .echo-c-headline
 --------------------
 */
+.echo-c-headline-header {
+  min-width: auto;
+}
+
 .echo-mt-be .echo-c-headline-inner > p[class*="echo-c-headline-"] {
   line-height: 1.5rem;
 }
@@ -1965,16 +1962,6 @@ time.echo-c-card-meta {
 @media (max-width: 999.9px) {
   .echo-mt-be .echo-c-headline-inner > p[class*="echo-c-headline-"] {
     line-height: 1.3125rem;
-  }
-}
-
-.echo-c-headline-header {
-  min-width: auto;
-}
-
-@media (min-width: 768px) {
-  .echo-c-headline-category .echo-m-label {
-    width: 10em;
   }
 }
 
@@ -2135,6 +2122,52 @@ time.echo-c-media-meta {
   margin-right: auto;
 }
 
+.echo-p-widget.echo-p-widget-headline .echo-c-headline-category .echo-m-label {
+  min-width: auto;
+  padding: .25em .5em;
+  transform: translate(0, -0.1em);
+}
+
+.echo-mt-be .echo-p-widget.echo-p-widget-headline .echo-p-widget-headline,
+.echo-p-widgetarea-main .echo-p-widget.echo-p-widget-headline .echo-p-widget-headline {
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be .echo-p-widget.echo-p-widget-headline .echo-p-widget-headline,
+  .echo-p-widgetarea-main .echo-p-widget.echo-p-widget-headline .echo-p-widget-headline {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .echo-mt-be .echo-p-widget.echo-p-widget-headline .echo-c-headline-category .echo-m-label,
+  .echo-p-widgetarea-main .echo-p-widget.echo-p-widget-headline .echo-c-headline-category .echo-m-label {
+    width: 10em;
+  }
+}
+
+.echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-headline .echo-c-headline {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-headline .echo-c-headline {
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-headline .echo-c-headline-inner > .echo-c-headline-title {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+}
+
 /*
 --------------------
 .echo-p-widget-media
@@ -2237,6 +2270,14 @@ time.echo-c-media-meta {
 
 .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-media .echo-c-media-meta {
   margin-right: .5em;
+}
+
+.echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
+  padding-right: 5px;
+}
+
+.echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-media .echo-c-media-contents {
+  padding-left: 5px;
 }
 
 .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-media .echo-c-media-meta,

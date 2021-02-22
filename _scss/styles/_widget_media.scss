@@ -40,7 +40,21 @@
 
     }
 
-    &.#{$pr}#{$widget}#{$c3}recent {
+
+    .#{$pr}#{$be} &,
+    .#{$pr}#{$p}widgetarea#{$c3}main & {
+
+        &.#{$pr}#{$widget}#{$c3}recent {
+
+            .#{$pr}#{$c}media#{$c3}title {
+                font-weight: $font-weight-bold-first;
+            }
+
+        }
+
+    }
+
+    &.#{$pr}#{$widget}#{$c3}posts {
 
         .#{$pr}#{$c}media#{$c3}title {
             font-weight: $font-weight-bold-first;

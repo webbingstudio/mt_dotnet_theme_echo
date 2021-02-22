@@ -101,7 +101,7 @@ media > thumbnail
             width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
 
             @include media-breakpoint-only(md) {
-                width: 90px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
+                width: 90px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
             }
 
         }

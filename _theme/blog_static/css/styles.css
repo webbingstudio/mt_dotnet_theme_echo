@@ -524,10 +524,10 @@ time.echo-c-headline-header {
 
 .echo-mt-be .echo-p-widget .echo-p-widget-title,
 .echo-p-widgetarea-main .echo-p-widget .echo-p-widget-title {
-  text-align: center;
   margin-bottom: 1.5em;
   padding-bottom: 1em;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 @media (min-width: 1000px) {
@@ -550,13 +550,14 @@ time.echo-c-headline-header {
 }
 
 .echo-p-widgetarea-sub .echo-p-widget .echo-p-widget-title {
-  margin-bottom: .5em;
-  font-size: 1.125rem;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  text-align: left;
 }
 
 @media (min-width: 1000px) {
-  .echo-p-content-2col .echo-p-widgetarea-sub .echo-p-widget .echo-p-widget-title {
-    font-size: 1rem;
+  .echo-p-widgetarea-sub .echo-p-widget .echo-p-widget-title {
+    font-size: 1.125rem;
   }
 }
 
@@ -688,7 +689,12 @@ a:active .echo-mt-be-has-bg:not(.echo-u-bg-third):not(.echo-u-bg-fade) .echo-p-w
   font-weight: 600;
 }
 
-.echo-p-widget.echo-p-widget-media.echo-p-widget-recent .echo-c-media-title {
+.echo-mt-be .echo-p-widget.echo-p-widget-media.echo-p-widget-recent .echo-c-media-title,
+.echo-p-widgetarea-main .echo-p-widget.echo-p-widget-media.echo-p-widget-recent .echo-c-media-title {
+  font-weight: 600;
+}
+
+.echo-p-widget.echo-p-widget-media.echo-p-widget-posts .echo-c-media-title {
   font-weight: 600;
 }
 
@@ -813,7 +819,7 @@ media > thumbnail
 
 @media (min-width: 768px) and (max-width: 999.9px) {
   .echo-p-widgetarea-sub .echo-p-widget.echo-p-widget-media .echo-c-media-object {
-    width: 100px;
+    width: 95px;
   }
 }
 

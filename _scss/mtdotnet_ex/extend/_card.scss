@@ -14,12 +14,6 @@
         vertical-align: bottom;
         margin-right: 0;
         padding-left: $spacer;
-        font-size: $font-size-xxs;
-
-        @include media-breakpoint-up(lg) {
-            font-size: $font-size-xs;
-        }
-
     }
 
 }
