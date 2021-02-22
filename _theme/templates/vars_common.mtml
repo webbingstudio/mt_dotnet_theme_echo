@@ -12,7 +12,6 @@
 # 
 #   __blog_posts_url__
 #   __blog_posts_layout__
-#   __blog_posts_nav_type__
 #   __blog_posts_header_image_lg__
 #   __blog_posts_header_image_sm__
 #   __blog_posts_header_effect__
@@ -51,16 +50,12 @@
 <mt:CustomFieldValue identifier="EchoFolderHeaderBlend" setvar="__blog_posts_header_blend__" />
 <mt:Ignore>記事一覧のレイアウト・ナビゲーション</mt:Ignore>
 <mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__blog_posts_layout__" />
-<mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__blog_posts_nav_type__" />
 </mt:If>
 </mt:Folders>
 
-<mt:Ignore>レイアウト・ナビゲーション:自動なら初期値</mt:Ignore>
+<mt:Ignore>レイアウト:自動なら初期値</mt:Ignore>
 <mt:If name="__blog_posts_layout__" eq="自動">
 <mt:SetVar name="__blog_posts_layout__" value="1カラム" />
-</mt:If>
-<mt:If name="__blog_posts_nav_type__" eq="自動">
-<mt:SetVar name="__blog_posts_nav_type__" value="表示しない" />
 </mt:If>
 
 <mt:If tag="CustomFieldValue" identifier="EchoBlogNoImage">
