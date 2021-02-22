@@ -1,0 +1,80 @@
+/*
+--------------------
+.#{$pr}#{$widget}#{$c3}media
+--------------------
+*/
+
+.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
+
+    .#{$pr}#{$c}media#{$c3}title {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: ( 16 / 14 ) + em;
+        @include font-family-weight( 'first', 'normal' );
+    }
+
+    a.#{$pr}#{$c}media {
+
+        .#{$pr}#{$c}media#{$c3}title {
+            text-decoration: underline;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+
+            .#{$pr}#{$c}media#{$c3}title {
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
+    .#{$pr}#{$c}media.#{$nav-current} {
+
+        .#{$pr}#{$c}media#{$c1}title {
+            font-weight: $font-weight-bold-first;
+        }
+
+    }
+
+    &.#{$pr}#{$widget}#{$c3}recent {
+
+        .#{$pr}#{$c}media#{$c3}title {
+            font-weight: $font-weight-bold-first;
+        }
+
+    }
+
+    .#{$pr}#{$c}media#{$c1}category {
+
+        .#{$pr}#{$m}label {
+            color: $ui-inverse-color;
+            background-color: $gray;
+        }
+
+    }
+
+    time.#{$pr}#{$c}media#{$c1}meta {
+        font-family: $font-family-second;
+        letter-spacing: .03em;
+    }
+
+}
+
+// inverse
+.#{$pr}#{$be}-has-bg:not(.#{$pr}#{$u}bg-third):not(.#{$pr}#{$u}bg-fade) {
+
+    a.#{$pr}#{$c}media {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+        }
+
+    }
+
+}

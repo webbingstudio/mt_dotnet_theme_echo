@@ -31,10 +31,5 @@
 
 .#{$pr}#{$widget}#{$c1}header {
     padding-bottom: 0;
-
-    .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}sm & {
-        padding-bottom: 0;
-    }
-
 }
 

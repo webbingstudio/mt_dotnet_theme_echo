@@ -48,7 +48,8 @@
         font-size: $font-size-xs;
     }
 
-    &:not(.#{$pr}#{$widget}#{$c3}sm) {
+    .#{$pr}#{$be} &,
+    .#{$pr}#{$p}widgetarea#{$c3}main & {
 
         .#{$pr}#{$row} {
 
@@ -68,8 +69,26 @@
 
         .#{$pr}#{$c}media#{$c1}contents {
 
-            @include media-breakpoint-up(lg) {
+            @include media-breakpoint-up(md) {
                 font-size: $font-size-sm;
+            }
+
+        }
+
+        .#{$pr}#{$c}media#{$c1}meta,
+        .#{$pr}#{$c}media#{$c1}category {
+
+            @include media-breakpoint-down(sm) {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+        }
+
+        .#{$pr}#{$c}media#{$c1}category + .#{$pr}#{$c}media#{$c1}title {
+
+            @include media-breakpoint-down(sm) {
+                margin-top: .25em;
             }
 
         }
@@ -87,7 +106,11 @@
 
     }
 
-    &.#{$pr}#{$widget}#{$c3}sm {
+    .#{$pr}#{$p}widgetarea#{$c3}sub & {
+
+        .#{$pr}#{$widget}#{$c1}contents {
+            max-width: map-get( $be-max-widths, 'md' );
+        }
 
         .#{$pr}#{$c}media#{$c1}meta {
             margin-right: .5em;
@@ -101,14 +124,6 @@
 
         .#{$pr}#{$c}media#{$c1}category + .#{$pr}#{$c}media#{$c1}title {
             margin-top: .25em;
-        }
-
-    }
-
-    .#{$pr}#{$p}content#{$c1}sub & {
-
-        .#{$pr}#{$widget}#{$c1}contents {
-            max-width: map-get( $be-max-widths, 'md' );
         }
 
     }

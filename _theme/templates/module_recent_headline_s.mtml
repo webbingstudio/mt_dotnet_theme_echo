@@ -4,15 +4,11 @@
 # モジュール-記事新着-headline-小
 # 
 # vars:
-#   __recent_title_tag__
 #   __recent_title_text__(require)
 #   __recent_layout__
 # 
 # =======================
 </mt:Ignore>
-<mt:Unless name="__recent_title_tag__">
-    <mt:SetVar name="__recent_title_tag__" value="h2" />
-</mt:Unless>
 <mt:Unless name="__recent_layout__">
     <mt:SetVar name="__recent_layout__" value="1カラム" />
 </mt:Unless>
@@ -21,7 +17,7 @@
 <mt:EntriesHeader>
 <section class="echo-p-widget echo-p-widget-headline echo-p-widget-recent">
     <div class="echo-p-widget-header">
-        <<mt:Var name="__recent_title_tag__" /> class="echo-p-widget-title"><mt:Var name="__recent_title_text__" /></<mt:Var name="__recent_title_tag__" />>
+        <h2 class="echo-p-widget-title"><mt:Var name="__recent_title_text__" /></h2>
     </div><!-- /.echo-p-widget-header -->
 
     <div class="echo-p-widget-contents">

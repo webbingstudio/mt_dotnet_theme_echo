@@ -49,7 +49,7 @@
 
             <mt:setVar name="__image_url__" value="" />
             <div class="echo-l-grid-col echo-l-grid-col-xxs-12<mt:If name="__recent_layout__" eq="1カラム"> echo-l-grid-col-lg-6</mt:If>">
-                <div class="echo-c-media-wraper">
+                <div class="echo-c-media-wrapper">
                     <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">
                         <div class="echo-c-media-object">
                             <figure class="echo-m-thumbnail">
@@ -68,19 +68,19 @@
                                     <img alt="" src="<mt:Var name="__blog_noimage_url__" />" width="480">
                                 </mt:If>
                             </figure><!-- /.echo-m-thumbnail -->
+                        </div><!-- /.echo-c-media-object -->
+                        <div class="echo-c-media-contents">
+                            <time class="echo-c-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
                             <mt:EntryCategories type="primary">
                             <p class="echo-c-media-category">
                                 <span class="echo-m-label echo-m-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></span>
                             </p>
                             </mt:EntryCategories>
-                        </div><!-- /.echo-c-media-object -->
-                        <div class="echo-c-media-contents">
-                            <time class="echo-c-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
                             <p class="echo-c-media-title"><mt:EntryTitle encode_html="1" /></p>
                             <p class="echo-c-media-body"><mt:EntryExcerpt words="58" /></p>
                         </div>
                     </a>
-                </div><!-- /.echo-c-media-wraper -->
+                </div><!-- /.echo-c-media-wrapper -->
             </div><!-- /.echo-l-grid-col -->
 
 <mt:EntriesFooter>

@@ -18,15 +18,6 @@
     }
 
     .#{$pr}#{$p}content#{$c3}2col .#{$pr}#{$p}content#{$c1}sub & {
-
-        .#{$pr}#{$widget}#{$c1}contents {
-
-            @include media-breakpoint-up(lg) {
-                width: 100%;
-            }
-
-        }
-
     }
 
     .#{$pr}#{$be}-group.#{$pr}#{$be}-alignfull & {

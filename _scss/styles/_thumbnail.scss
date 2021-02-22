@@ -67,16 +67,13 @@ media > thumbnail
 .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
     @include thumbnail-clip( 1 / 1 );
 
-    &:not(.#{$pr}#{$widget}#{$c3}sm) {
+    .#{$pr}#{$be} &,
+    .#{$pr}#{$p}widgetarea#{$c3}main & {
 
         .#{$pr}#{$c}media#{$c1}object {
-            width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
+            width: 120px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
 
             @include media-breakpoint-up(md) {
-                width: 120px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-            }
-
-            @include media-breakpoint-up(lg) {
                 width: 180px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
             }
 
@@ -92,7 +89,7 @@ media > thumbnail
 
     }
 
-    &.#{$pr}#{$widget}#{$c3}sm {
+    .#{$pr}#{$p}widgetarea#{$c3}sub & {
 
         .#{$pr}#{$c}media#{$c1}object {
             width: 60px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
@@ -103,19 +100,6 @@ media > thumbnail
 
             @include media-breakpoint-up(lg) {
                 width: 80px + ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-            }
-
-        }
-
-    }
-
-    // recent: large sm-down
-    &.#{$pr}#{$widget}#{$c3}recent {
-
-        .#{$pr}#{$c}media#{$c1}object {
-
-            @include media-breakpoint-down(sm) {
-                width: 100px + ( map-get( $grid-gutter-widths, 'md' ) / 4 );
             }
 
         }
