@@ -10,6 +10,7 @@
 #   __blog_entry_time__
 #   __blog_noimage_url__
 # 
+#   __blog_posts_label__
 #   __blog_posts_url__
 #   __blog_posts_layout__
 #   __blog_posts_header_image_lg__
@@ -36,8 +37,10 @@
 
 <mt:Ignore>記事一覧に指定されているフォルダ:なければ初期値</mt:Ignore>
 <mt:SetVarBlock name="__blog_posts_url__"><mt:WebsiteRelativeURL />blog/</mt:SetVarBlock>
+<mt:SetVar name="__blog_posts_label__" value="ブログ" />
 <mt:Folders>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderIsPosts" value="1">
+<mt:FolderLabel encode_html="1" setvar="__blog_posts_label__" />
 <mt:SetVarBlock name="__blog_posts_url__"><mt:BlogRelativeURL /><mt:FolderPath />/</mt:SetVarBlock>
 <mt:Ignore>記事一覧のページタイトル</mt:Ignore>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderHeaderImage">
