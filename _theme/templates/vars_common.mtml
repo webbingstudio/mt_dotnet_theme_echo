@@ -55,6 +55,14 @@
 </mt:If>
 </mt:Folders>
 
+<mt:Ignore>レイアウト・ナビゲーション:自動なら初期値</mt:Ignore>
+<mt:If name="__blog_posts_layout__" eq="自動">
+<mt:SetVar name="__blog_posts_layout__" value="1カラム" />
+</mt:If>
+<mt:If name="__blog_posts_nav_type__" eq="自動">
+<mt:SetVar name="__blog_posts_nav_type__" value="表示しない" />
+</mt:If>
+
 <mt:If tag="CustomFieldValue" identifier="EchoBlogNoImage">
 <mt:CustomFieldAsset identifier="EchoBlogNoImage"><mt:AssetThumbnailURL width="480" setvar="__blog_noimage_url__" /></mt:CustomFieldAsset>
 <mt:Else>
