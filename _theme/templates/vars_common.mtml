@@ -9,7 +9,14 @@
 #   __blog_entry_date__
 #   __blog_entry_time__
 #   __blog_noimage_url__
+# 
 #   __blog_posts_url__
+#   __blog_posts_layout__
+#   __blog_posts_nav_type__
+#   __blog_posts_header_image_lg__
+#   __blog_posts_header_image_sm__
+#   __blog_posts_header_effect__
+#   __blog_posts_header_blend__
 # 
 #   __svg_mail__
 #   __svg_tel__
@@ -33,6 +40,18 @@
 <mt:Folders>
 <mt:If tag="CustomFieldValue" identifier="EchoFolderIsPosts" value="1">
 <mt:SetVarBlock name="__blog_posts_url__"><mt:BlogRelativeURL /><mt:FolderPath />/</mt:SetVarBlock>
+<mt:Ignore>記事一覧のページタイトル</mt:Ignore>
+<mt:If tag="CustomFieldValue" identifier="EchoFolderHeaderImage">
+<mt:CustomFieldAsset identifier="EchoFolderHeaderImage">
+<mt:AssetThumbnailURL width="1200" setvar="__blog_posts_header_image_lg__" />
+<mt:AssetThumbnailURL width="800" setvar="__blog_posts_header_image_sm__" />
+</mt:CustomFieldAsset>
+</mt:If>
+<mt:CustomFieldValue identifier="EchoFolderHeaderEffect" setvar="__blog_posts_header_effect__" />
+<mt:CustomFieldValue identifier="EchoFolderHeaderBlend" setvar="__blog_posts_header_blend__" />
+<mt:Ignore>記事一覧のレイアウト・ナビゲーション</mt:Ignore>
+<mt:CustomFieldValue identifier="EchoFolderLayout" setvar="__blog_posts_layout__" />
+<mt:CustomFieldValue identifier="EchoFolderNavType" setvar="__blog_posts_nav_type__" />
 </mt:If>
 </mt:Folders>
 
