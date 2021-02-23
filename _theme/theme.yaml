@@ -196,10 +196,10 @@ elements:
                 preferred: 1
           archive_datebased:
             filename: archive_datebased.mtml
-            label: アーカイブ-年別
+            label: アーカイブ-時系列アーカイブ
             mappings:
               monthly:
-                archive_type: Monthly
+                archive_type: Yearly
                 file_template: archives/%y/%i
                 preferred: 1
         index:
@@ -242,6 +242,9 @@ elements:
           module_topicpath_category:
             filename: module_topicpath_category.mtml
             label: モジュール-パンくずリスト-カテゴリー
+          module_topicpath_datebased:
+            filename: module_topicpath_datebased.mtml
+            label: モジュール-パンくずリスト-時系列アーカイブ
           module_pagenate:
             filename: module_pagenate.mtml
             label: モジュール-ページ送り
