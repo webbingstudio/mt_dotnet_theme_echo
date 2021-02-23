@@ -41,7 +41,7 @@
 # -----------------------
 </mt:Ignore>
 
-<mt:Ignore>現在のカテゴリー情報(1)</mt:Ignore>
+<mt:Ignore>現在のカテゴリー情報</mt:Ignore>
 <mt:CategoryBasename setvar="__category_basename__" />
 <mt:CategoryLabel encode_html="1" setvar="__category_label__" />
 <mt:CategoryArchiveLink setvar="__category_url__" />
@@ -69,7 +69,7 @@
 # -----------------------
 </mt:Ignore>
 
-<mt:SetVarBlock name="__category_meta_title__"><mt:Var name="__category_label__" /><mt:If name="__category_basename__" ne="$__category_parent_basename__"> | <mt:Var name="__category_parent_label__" /></mt:If><mt:If name="__category_basename__" ne="$__category_ancestor_basename__"> | <mt:Var name="__category_ancestor_label__" /></mt:If> | <mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
+<mt:SetVarBlock name="__category_meta_title__"><mt:Var name="__category_label__" /><mt:If name="__category_basename__" ne="$__category_parent_basename__"> | <mt:Var name="__category_parent_label__" /></mt:If><mt:If name="__category_basename__" ne="$__category_ancestor_basename__"> | <mt:Var name="__category_ancestor_label__" /></mt:If> | <mt:Var name="__blog_posts_label__" /> | <mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
 
 <mt:Ignore>
 # -----------------------
