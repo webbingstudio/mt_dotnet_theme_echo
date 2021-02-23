@@ -186,21 +186,21 @@ elements:
       base_path: templates
       templates:
         archive:
-          archive:
-            filename: archive.mtml
-            label: アーカイブ
+          archive_category:
+            filename: archive_category.mtml
+            label: アーカイブ-カテゴリー
             mappings:
               category:
                 archive_type: Category
-                file_template: blog/%-c/%i
+                file_template: category/%-c/%i
                 preferred: 1
           archive_datebased:
             filename: archive_datebased.mtml
-            label: アーカイブ-年月別
+            label: アーカイブ-年別
             mappings:
               monthly:
                 archive_type: Monthly
-                file_template: blog/%y/%m/%i
+                file_template: archives/%y/%i
                 preferred: 1
         index:
           home:
@@ -254,6 +254,9 @@ elements:
           vars_page:
             filename: vars_page.mtml
             label: 変数-ページ
+          vars_category:
+            filename: vars_category.mtml
+            label: 変数-カテゴリー
           widget_page_flip:
             filename: widget_page_flip.mtml
             label: ウィジェット-ページ指定-flip
