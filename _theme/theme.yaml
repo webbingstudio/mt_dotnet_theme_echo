@@ -239,6 +239,9 @@ elements:
           module_topicpath_page:
             filename: module_topicpath_page.mtml
             label: モジュール-パンくずリスト-ページ
+          module_topicpath_category:
+            filename: module_topicpath_category.mtml
+            label: モジュール-パンくずリスト-カテゴリー
           module_pagenate:
             filename: module_pagenate.mtml
             label: モジュール-ページ送り
