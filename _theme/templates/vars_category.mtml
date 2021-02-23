@@ -1,0 +1,85 @@
+<mt:Unless strip_linefeeds="1"><mt:Ignore>
+# =======================
+# 
+# 変数-カテゴリー
+# 
+# vars(page specified in posts):
+#   __blog_posts_label__
+#   __blog_posts_basename__
+#   __blog_posts_url__
+#   __blog_posts_layout__
+#   __blog_posts_header_image_lg__
+#   __blog_posts_header_image_sm__
+#   __blog_posts_header_effect__
+#   __blog_posts_header_blend__
+# 
+# vars:
+#   __category_basename__
+#   __category_label__
+#   __category_url__
+#   __category_parent_basename__
+#   __category_parent_label__
+#   __category_parent_url__
+#   __category_ancestor_basename__
+#   __category_ancestor_label__
+#   __category_ancestor_url__
+#   __category_meta_title__
+#   __category_meta_description__
+#   __category_eyecatch_url__
+#   __category_eyecatch_width__
+#   __category_eyecatch_height__
+#
+# vars(extend):
+#   __blog_suffix__
+# 
+# =======================
+</mt:Ignore>
+
+<mt:Ignore>
+# -----------------------
+# categories
+# -----------------------
+</mt:Ignore>
+
+<mt:Ignore>現在のカテゴリー情報(1)</mt:Ignore>
+<mt:CategoryBasename setvar="__category_basename__" />
+<mt:CategoryLabel encode_html="1" setvar="__category_label__" />
+<mt:CategoryArchiveLink setvar="__category_url__" />
+
+<mt:Ignore>親・先祖カテゴリー情報を一旦現在の情報と同一にする</mt:Ignore>
+<mt:SetVar name="__category_parent_basename__" value="$__category_basename__" /><mt:SetVar name="__category_parent_label__" value="$__category_label__" /><mt:SetVar name="__category_parent_url__" value="$__category_url__" /><mt:SetVar name="__category_ancestor_basename__" value="$__category_basename__" /><mt:SetVar name="__category_ancestor_label__" value="$__category_label__" /><mt:SetVar name="__category_ancestor_url__" value="$__category_url__" />
+
+<mt:TopLevelParent><mt:Ignore>先祖のカテゴリー情報</mt:Ignore>
+<mt:Ignore>カテゴリー情報を取得</mt:Ignore>
+<mt:CategoryBasename setvar="__category_ancestor_basename__" />
+<mt:CategoryLabel encode_html="1" setvar="__category_ancestor_label__" />
+<mt:CategoryArchiveLink setvar="__category_ancestor_url__" />
+</mt:TopLevelParent>
+
+<mt:ParentCategory><mt:Ignore>親のカテゴリー情報</mt:Ignore>
+<mt:Ignore>カテゴリー情報を取得</mt:Ignore>
+<mt:CategoryBasename setvar="__category_parent_basename__" />
+<mt:CategoryLabel encode_html="1" setvar="__category_parent_label__" />
+<mt:CategoryArchiveLink setvar="__category_parent_url__" />
+</mt:ParentCategory>
+
+<mt:Ignore>
+# -----------------------
+# title
+# -----------------------
+</mt:Ignore>
+
+<mt:SetVarBlock name="__category_meta_title__"><mt:Var name="__category_label__" /><mt:If name="__category_basename__" ne="$__category_parent_basename__"> | <mt:Var name="__category_parent_label__" /></mt:If><mt:If name="__category_basename__" ne="$__category_ancestor_basename__"> | <mt:Var name="__category_ancestor_label__" /></mt:If> | <mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
+
+<mt:Ignore>
+# -----------------------
+# others
+# -----------------------
+</mt:Ignore>
+
+<mt:SetVarBlock name="__category_meta_description__"><mt:Var name="__blog_posts_label__" />のカテゴリー「<mt:Var name="__category_label__" />」の一覧です。</mt:SetVarBlock>
+<mt:If tag="CustomFieldValue" identifier="EchoBlogEyecatch">
+<mt:CustomFieldAsset identifier="EchoPageEyecatch"><mt:AssetURL setvar="__category_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__category_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__category_eyecatch_height__" /></mt:CustomFieldAsset>
+</mt:If>
+
+</mt:Unless>
