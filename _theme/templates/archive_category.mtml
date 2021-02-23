@@ -36,8 +36,7 @@
 #   __category_eyecatch_width__
 #   __category_eyecatch_height__
 #
-# vars(local):
-#   __pagehead_tag__
+# vars:
 #   __posts_pagenate__
 # 
 # =======================
@@ -76,16 +75,16 @@
         <div class="echo-p-widgetarea echo-p-widgetarea-main echo-p-widgetarea-posts">
 
             <mt:If tag="CustomFieldValue" identifier="EchoBlogPostsNavType" like="日付＋タイトル">
-                <mt:Include module="モジュール-記事一覧-headline" __posts_pagenate__="15" />
+                <mt:Include module="モジュール-記事一覧-headline" __posts_title_text__="$__category_label__" __posts_pagenate__="15" />
             <mt:ElseIf tag="CustomFieldValue" identifier="EchoBlogPostsNavType" like="画像上＋タイトル下">
-                <mt:Include module="モジュール-記事一覧-card" __posts_pagenate__="12" __posts_layout__="$__blog_posts_layout__" />
+                <mt:Include module="モジュール-記事一覧-card" __posts_title_text__="$__category_label__" __posts_pagenate__="12" __posts_layout__="$__blog_posts_layout__" />
             <mt:Else>
                 <mt:If name="__blog_posts_layout__" eq="2カラム">
                     <mt:SetVar name="__posts_pagenate__" value="8" />
                 <mt:Else>
                     <mt:SetVar name="__posts_pagenate__" value="12" />
                 </mt:If>
-                <mt:Include module="モジュール-記事一覧-media" __posts_pagenate__="$__posts_pagenate__" __posts_layout__="$__blog_posts_layout__" />
+                <mt:Include module="モジュール-記事一覧-media" __posts_title_text__="$__category_label__" __posts_pagenate__="$__posts_pagenate__" __posts_layout__="$__blog_posts_layout__" />
             </mt:If>
 
         </div><!-- /.echo-p-widgetarea -->

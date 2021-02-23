@@ -6,6 +6,8 @@
 # vars:
 #   __posts_pagenate__
 #   __posts_layout__
+#   __posts_title_tag__
+#   __posts_title_text__
 # 
 # vars(extend):
 #   __blog_noimage_url__
@@ -15,6 +17,9 @@
 # 
 # =======================
 </mt:Ignore>
+<mt:Unless name="__posts_title_tag__">
+    <mt:SetVar name="__posts_title_tag__" value="h1" />
+</mt:Unless>
 <mt:Unless name="__posts_pagenate__">
     <mt:SetVar name="__posts_pagenate__" value="10" />
 </mt:Unless>
@@ -25,6 +30,11 @@
 <mt:Entries sort_by="authored_on" sort_order="descend" paginate_by="$__posts_pagenate__">
 <mt:EntriesHeader>
 <section class="echo-p-widget echo-p-widget-card echo-p-widget-posts">
+    <mt:If name="__posts_title_text__">
+    <div class="echo-p-widget-header">
+        <<mt:Var name="__posts_title_tag__" /> class="echo-m-title echo-m-title-level-3 echo-m-title-style-b"><mt:Var name="__posts_title_text__" /></<mt:Var name="__posts_title_tag__" />>
+    </div><!-- /.echo-p-widget-header -->
+    </mt:If>
     <div class="echo-p-widget-contents">
         <div class="echo-l-grid-row">
 </mt:EntriesHeader>
