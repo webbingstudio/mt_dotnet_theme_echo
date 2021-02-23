@@ -62,7 +62,7 @@
 <meta property="article:modified_time" content="<mt:Entries lastn="1"><mt:EntryDate format_name="iso8601" /></mt:Entries>">
 </mt:SetVarBlock>
 
-<mt:SetVarBlock name="__body-class__">archive archive-category category-id-<mt:CategoryID /> <mt:Var name="__blog_posts_basename__" /><mt:If name="__blog_posts_layout__" eq="2カラム"> layout-2col<mt:Else> layout-1col</mt:If></mt:SetVarBlock>
+<mt:SetVarBlock name="__body-class__">archive archive-<mt:ArchiveType lower_case="1" /> category-id-<mt:CategoryID /> <mt:Var name="__blog_posts_basename__" /><mt:If name="__blog_posts_layout__" eq="2カラム"> layout-2col<mt:Else> layout-1col</mt:If></mt:SetVarBlock>
 
 <mt:SetVarBlock name="__main__">
 <mt:Include module="モジュール-ページタイトル" __pagehead_tag__="p" __pagehead_title__="$__blog_posts_label__" __pagehead_caption__="$__blog_posts_basename__" __pagehead_image_lg__="$__blog_posts_header_image_lg__" __pagehead_image_sm__="$__blog_posts_header_image_sm__" __pagehead_effect__="$__blog_posts_header_effect__" __pagehead_blend__="$__blog_posts_header_blend__" />
