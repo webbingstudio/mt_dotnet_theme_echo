@@ -1,0 +1,68 @@
+<mt:Unless strip_linefeeds="1"><mt:Ignore>
+# =======================
+# 
+# 変数-時系列アーカイブ
+# 
+# vars(page specified in posts):
+#   __blog_posts_label__
+#   __blog_posts_basename__
+#   __blog_posts_url__
+#   __blog_posts_layout__
+#   __blog_posts_header_image_lg__
+#   __blog_posts_header_image_sm__
+#   __blog_posts_header_effect__
+#   __blog_posts_header_blend__
+# 
+# vars:
+#   __datebased_basename__
+#   __datebased_label__
+#   __datebased_url__
+#   __datebased_parent_basename__
+#   __datebased_parent_label__
+#   __datebased_parent_url__
+#   __datebased_ancestor_basename__
+#   __datebased_ancestor_label__
+#   __datebased_ancestor_url__
+#   __datebased_meta_title__
+#   __datebased_meta_description__
+#   __datebased_eyecatch_url__
+#   __datebased_eyecatch_width__
+#   __datebased_eyecatch_height__
+#
+# vars(extend):
+#   __blog_suffix__
+# 
+# =======================
+</mt:Ignore>
+
+<mt:Ignore>
+# -----------------------
+# datebased
+# -----------------------
+</mt:Ignore>
+
+<mt:Ignore>現在の時系列情報</mt:Ignore>
+<mt:ArchiveType setvar="__datebased_basename__" lower_case="1" />
+<mt:ArchiveTitle encode_html="1" setvar="__datebased_label__" />
+<mt:ArchiveLink setvar="__datebased_url__" />
+
+<mt:Ignore>
+# -----------------------
+# title
+# -----------------------
+</mt:Ignore>
+
+<mt:SetVarBlock name="__datebased_meta_title__"><mt:Var name="__datebased_label__" /> | <mt:Var name="__blog_posts_label__" /> | <mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
+
+<mt:Ignore>
+# -----------------------
+# others
+# -----------------------
+</mt:Ignore>
+
+<mt:SetVarBlock name="__datebased_meta_description__"><mt:Var name="__blog_posts_label__" />の<mt:Var name="__datebased_label__" />の記事一覧です。</mt:SetVarBlock>
+<mt:If tag="CustomFieldValue" identifier="EchoBlogEyecatch">
+<mt:CustomFieldAsset identifier="EchoPageEyecatch"><mt:AssetURL setvar="__datebased_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__datebased_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__datebased_eyecatch_height__" /></mt:CustomFieldAsset>
+</mt:If>
+
+</mt:Unless>

@@ -260,6 +260,9 @@ elements:
           vars_category:
             filename: vars_category.mtml
             label: 変数-カテゴリー
+          vars_archive_datebased:
+            filename: vars_archive_datebased.mtml
+            label: 変数-時系列アーカイブ
           widget_page_flip:
             filename: widget_page_flip.mtml
             label: ウィジェット-ページ指定-flip
