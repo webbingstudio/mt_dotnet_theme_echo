@@ -27,6 +27,9 @@
 #   __post_eyecatch_url__
 #   __post_eyecatch_width__
 #   __post_eyecatch_height__
+#   __post_ogp_url__
+#   __post_ogp_width__
+#   __post_ogp_height__
 #
 # vars(extend):
 #   __blog_suffix__
@@ -60,7 +63,6 @@
 <mt:SetVar name="__folder_parent_basename__" value="$__folder_basename__" /><mt:SetVar name="__folder_parent_label__" value="$__folder_label__" /><mt:SetVar name="__folder_parent_path__" value="$__folder_path__" /><mt:SetVar name="__folder_ancestor_basename__" value="$__folder_basename__" /><mt:SetVar name="__folder_ancestor_label__" value="$__folder_label__" /><mt:SetVar name="__folder_ancestor_path__" value="$__folder_path__" />
 
 <mt:TopLevelFolder><mt:Ignore>先祖のフォルダ情報</mt:Ignore>
-<mt:Ignore>フォルダ情報を取得</mt:Ignore>
 <mt:FolderBasename setvar="__folder_ancestor_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_ancestor_label__" />
 <mt:SetVarBlock name="__folder_ancestor_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
@@ -79,7 +81,6 @@
 </mt:TopLevelFolder>
 
 <mt:ParentFolder><mt:Ignore>親のフォルダ情報</mt:Ignore>
-<mt:Ignore>フォルダ情報を取得</mt:Ignore>
 <mt:FolderBasename setvar="__folder_parent_basename__" />
 <mt:FolderLabel encode_html="1" setvar="__folder_parent_label__" />
 <mt:SetVarBlock name="__folder_parent_path__"><mt:BlogRelativeURL /><mt:FolderPath /></mt:SetVarBlock>
@@ -131,6 +132,28 @@
 
 <mt:Ignore>
 # -----------------------
+# og:image
+# -----------------------
+</mt:Ignore>
+
+<mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
+<mt:CustomFieldAsset identifier="EchoPageEyecatch"><mt:AssetURL setvar="__post_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__post_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__post_eyecatch_height__" /></mt:CustomFieldAsset>
+</mt:If>
+
+<mt:If tag="CustomFieldValue" identifier="EchoPageOgp">
+<mt:CustomFieldAsset identifier="EchoPageOgp"><mt:AssetURL setvar="__post_ogp_url__" /><mt:AssetProperty property="image_width" setvar="__post_ogp_width__" /><mt:AssetProperty property="image_height" setvar="__post_ogp_height__" /></mt:CustomFieldAsset>
+<mt:Else>
+<mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
+<mt:var name="__post_eyecatch_url__" setvar="__post_ogp_url__" /><mt:var name="__post_eyecatch_url__" setvar="__post_ogp_width__" /><mt:var name="__post_eyecatch_url__" setvar="__post_ogp_height__" />
+<mt:Else>
+<mt:If tag="CustomFieldValue" identifier="EchoBlogOgp">
+<mt:CustomFieldAsset identifier="EchoBlogOgp"><mt:AssetURL setvar="__post_ogp_url__" /><mt:AssetProperty property="image_width" setvar="__post_ogp_width__" /><mt:AssetProperty property="image_height" setvar="__post_ogp_height__" /></mt:CustomFieldAsset>
+</mt:If>
+</mt:If>
+</mt:If>
+
+<mt:Ignore>
+# -----------------------
 # others
 # -----------------------
 </mt:Ignore>
@@ -138,12 +161,5 @@
 <mt:PageID setvar="__post_id__" />
 <mt:PageBasename setvar="__post_basename__" />
 <mt:PageExcerpt encode_html="1" strip_linefeeds="1" words="120" setvar="__post_meta_description__" />
-<mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
-<mt:CustomFieldAsset identifier="EchoPageEyecatch"><mt:AssetURL setvar="__post_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__post_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__post_eyecatch_height__" /></mt:CustomFieldAsset>
-<mt:Else>
-<mt:If tag="CustomFieldValue" identifier="EchoBlogEyecatch">
-<mt:CustomFieldAsset identifier="EchoBlogEyecatch"><mt:AssetURL setvar="__post_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__post_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__post_eyecatch_height__" /></mt:CustomFieldAsset>
-</mt:If>
-</mt:If>
 
 </mt:Unless>
