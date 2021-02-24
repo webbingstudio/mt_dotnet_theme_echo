@@ -77,7 +77,7 @@
 <mt:Ignore>METAのタイトルが別途指定されている場合</mt:Ignore>
 <mt:CustomFieldValue identifier="EchoEntryMetaTitle" encode_html="1" setvar="__post_meta_title__" />
 <mt:Else>
-<mt:SetVarBlock name="__post_meta_title__"><mt:EntryTitle encode_html="1" /><mt:If name="__category_basename__"> | <mt:Var name="__category_label__" /></mt:If><mt:If name="__category_basename__" ne="$__category_ancestor_basename__"> | <mt:Var name="__category_ancestor_label__" /></mt:If> | <mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
+<mt:SetVarBlock name="__post_meta_title__"><mt:EntryTitle encode_html="1" /><mt:If name="__category_basename__"> | <mt:Var name="__category_label__" /></mt:If><mt:If name="__category_basename__" ne="$__category_ancestor_basename__"> | <mt:Var name="__category_ancestor_label__" /></mt:If> | <mt:Var name="__blog_posts_label__" /> | <mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
 </mt:If>
 
 <mt:Ignore>
