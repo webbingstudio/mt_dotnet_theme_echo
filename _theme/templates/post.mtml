@@ -34,8 +34,6 @@
 #   __post_meta_title__
 #   __post_meta_description__
 #   __post_eyecatch_url__
-#   __post_eyecatch_width__
-#   __post_eyecatch_height__
 #   __post_ogp_url__
 #   __post_ogp_width__
 #   __post_ogp_height__
@@ -78,7 +76,7 @@
 
 <mt:SetVarBlock name="__main__">
 
-<mt:Include module="モジュール-ページタイトル" __pagehead_tag__="p" __pagehead_title__="$__category_ancestor_label__" __pagehead_caption__="$__category_ancestor_basename__" __pagehead_image_lg__="$__blog_posts_header_image_lg__" __pagehead_image_sm__="$__blog_posts_header_image_sm__" __pagehead_effect__="$__blog_posts_header_effect__" __pagehead_blend__="$__blog_posts_header_blend__" />
+<mt:Include module="モジュール-ページタイトル" __pagehead_tag__="p" __pagehead_title__="$__blog_posts_label__" __pagehead_caption__="$__blog_posts_basename__" __pagehead_image_lg__="$__blog_posts_header_image_lg__" __pagehead_image_sm__="$__blog_posts_header_image_sm__" __pagehead_effect__="$__blog_posts_header_effect__" __pagehead_blend__="$__blog_posts_header_blend__" />
 
 <div class="echo-p-content<mt:If name="__blog_posts_layout__" eq="2カラム"> echo-p-content-2col<mt:Else> echo-p-content-1col</mt:If>">
 
