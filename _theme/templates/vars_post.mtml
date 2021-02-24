@@ -27,12 +27,10 @@
 #   __post_basename__
 #   __post_meta_title__
 #   __post_meta_description__
+#   __post_eyecatch_url__
 #   __post_ogp_url__
 #   __post_ogp_width__
 #   __post_ogp_height__
-#   __post_eyecatch_url__
-#   __post_eyecatch_width__
-#   __post_eyecatch_height__
 #
 # vars(extend):
 #   __blog_suffix__
@@ -87,14 +85,14 @@
 </mt:Ignore>
 
 <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
-<mt:CustomFieldAsset identifier="EchoEntryEyecatch"><mt:AssetURL setvar="__post_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__post_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__post_eyecatch_height__" /></mt:CustomFieldAsset>
+<mt:CustomFieldAsset identifier="EchoEntryEyecatch"><mt:AssetURL setvar="__post_eyecatch_url__" /></mt:CustomFieldAsset>
 </mt:If>
 
 <mt:If tag="CustomFieldValue" identifier="EchoEntryOgp">
 <mt:CustomFieldAsset identifier="EchoEntryOgp"><mt:AssetURL setvar="__post_ogp_url__" /><mt:AssetProperty property="image_width" setvar="__post_ogp_width__" /><mt:AssetProperty property="image_height" setvar="__post_ogp_height__" /></mt:CustomFieldAsset>
 <mt:Else>
 <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
-<mt:var name="__post_eyecatch_url__" setvar="__post_ogp_url__" /><mt:var name="__post_eyecatch_url__" setvar="__post_ogp_width__" /><mt:var name="__post_eyecatch_url__" setvar="__post_ogp_height__" />
+<mt:var name="__post_eyecatch_url__" setvar="__post_ogp_url__" /><mt:CustomFieldAsset identifier="EchoEntryEyecatch"><mt:AssetProperty property="image_width" setvar="__post_ogp_width__" /><mt:AssetProperty property="image_height" setvar="__post_ogp_height__" /></mt:CustomFieldAsset>
 <mt:Else>
 <mt:If tag="CustomFieldValue" identifier="EchoBlogOgp">
 <mt:CustomFieldAsset identifier="EchoBlogOgp"><mt:AssetURL setvar="__post_ogp_url__" /><mt:AssetProperty property="image_width" setvar="__post_ogp_width__" /><mt:AssetProperty property="image_height" setvar="__post_ogp_height__" /></mt:CustomFieldAsset>
