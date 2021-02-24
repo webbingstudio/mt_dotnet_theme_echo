@@ -83,12 +83,12 @@
     <main class="echo-p-main echo-p-content-main" role="main">
         <mt:Include module="モジュール-パンくずリスト-記事" />
 
-        <section class="echo-c-post echo-c-post-post">
-            <div class="echo-c-post-header">
-                <h1 class="echo-c-post-title echo-m-title echo-m-title-style-a echo-m-title-level-3">
-                    <mt:EntryTitle encode_html="1" />
-                </h1>
-            </div><!-- /.echo-c-post-header -->
+        <section class="echo-c-post">
+            <mt:If name="__post_eyecatch_url__">
+                <mt:Include module="モジュール-記事ヘッダ-画像あり" />
+            <mt:Else>
+                <mt:Include module="モジュール-記事ヘッダ-画像なし" />
+            </mt:If>
 
             <div class="echo-c-post-contents echo-mt-be">
                 <mt:BlockEditorBlocks tag="EntryBody">

@@ -1,0 +1,26 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-記事ヘッダ-画像なし
+# 
+# =======================
+</mt:Ignore>
+<div class="echo-c-post-header">
+    <h1 class="echo-c-post-title echo-m-title echo-m-title-style-a echo-m-title-level-3">
+        <mt:EntryTitle encode_html="1" />
+    </h1>
+
+    <div class="echo-c-post-meta">
+        <time class="echo-c-post-date" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
+
+        <mt:If name="__category_basename__">
+        <p class="echo-c-post-category">
+            <a href="<mt:Var name="__category_url__" />" class="post-category-label echo-c-post-category-label-primary echo-m-label"><mt:Var name="__category_label__" /></a>
+
+        <mt:EntryAdditionalCategories>
+            <a href="<mt:CategoryArchiveLink />" class="post-category-label post-category-label-secondary echo-m-label"><mt:CategoryLabel encode_html="1" /></a>
+        </mt:EntryAdditionalCategories>
+        </p>
+        </mt:If>
+    </div><!-- /.echo-c-post-meta -->
+</div><!-- /.echo-c-post-header -->
