@@ -102,9 +102,39 @@
                     </mt:BlockEditorBlocks>
                 </div><!-- /.echo-c-post-more -->
             </mt:If>
-
             </div><!-- /.echo-c-post-contents -->
-        </section><!-- /.echo-c-post -->
+
+            <div class="echo-c-post-footer">
+            <mt:If name="__category_basename__">
+                <p class="echo-c-post-category echo-c-post-category-all">
+                    <dfn class="echo-c-post-category-header">カテゴリー</dfn>
+                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-c-post-category-label-primary echo-m-label"><mt:Var name="__category_label__" /></a>
+
+                <mt:EntryAdditionalCategories>
+                    <a href="<mt:CategoryArchiveLink />" class="echo-post-category-label echo-post-category-label-secondary echo-m-label"><mt:CategoryLabel encode_html="1" /></a>
+                </mt:EntryAdditionalCategories>
+                </p>
+            </mt:If>
+
+                <div class="echo-p-serial">
+                    <nav class="echo-m-nav">
+                        <ul class="echo-m-nav-list">
+                            <mt:EntryPrevious>
+                            <li class="echo-m-nav-item prev">
+                                <a href="<mt:EntryPermalink />" class="echo-m-nav-label" aria-label="prev"><mt:EntryTitle encode_html="1" trim_to="32+…" /></a>
+                            </li>
+                            </mt:EntryPrevious>
+                            <mt:EntryNext>
+                            <li class="echo-m-nav-item next">
+                                <a href="<mt:EntryPermalink />" class="echo-m-nav-label" aria-label="next"><mt:EntryTitle encode_html="1" trim_to="32+…" /></a>
+                            </li>
+                            </mt:EntryNext>
+                        </ul><!-- /.echo-m-nav-list -->
+                    </nav><!-- /.echo-m-nav -->
+                </div><!-- /.echo-p-pagenate -->
+
+            </div><!-- /.echo-c-post-footer -->
+        </section><!-- /.echo-c-serial -->
 
     </main><!-- /.echo-p-main -->
 
