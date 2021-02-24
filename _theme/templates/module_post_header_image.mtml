@@ -1,0 +1,47 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-記事ヘッダ-画像あり
+# 
+# =======================
+</mt:Ignore>
+<div class="echo-c-post-header">
+    <div class="echo-c-card">
+        <div class="echo-c-card-inner">
+
+        <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
+            <div class="echo-c-card-object">
+                <mt:Ignore>サムネイルの縦横比は可変（画面幅により変動する）</mt:Ignore>
+                <figure class="echo-m-thumbnail">
+                    <picture>
+                        <mt:CustomFieldAsset identifier="EchoEntryEyecatch">
+                            <source
+                                media="(max-width:480px)"
+                                srcset="<mt:AssetThumbnailURL width="480" /> 480w"
+                                sizes="100vw">
+                            <source
+                                srcset="<mt:AssetThumbnailURL width="800" /> 800w"
+                                sizes="(max-width:800px) 100vw">
+                            <img src="<mt:AssetThumbnailURL width="800" />" alt="">
+                        </mt:CustomFieldAsset>
+                    </picture>
+                </figure>
+            </div><!-- /.echo-c-card-object -->
+        </mt:If>
+
+            <div class="echo-c-card-contents">
+                <h1 class="echo-c-card-title echo-m-title echo-m-title-style-a echo-m-title-level-3">
+                    <mt:EntryTitle encode_html="1" />
+                </h1>
+
+                <time class="echo-c-card-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
+
+                <mt:If name="__category_basename__">
+                <p class="echo-c-card-category">
+                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-c-post-category-label-primary echo-m-label"><mt:Var name="__category_label__" /></a>
+                </p>
+                </mt:If>
+            </div><!-- /.echo-c-card-contents -->
+        </div><!-- /.echo-c-card-inner -->
+    </div><!-- /.echo-c-card -->
+</div><!-- /.echo-c-post-header -->
