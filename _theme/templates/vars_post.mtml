@@ -1,0 +1,115 @@
+<mt:Unless strip_linefeeds="1"><mt:Ignore>
+# =======================
+# 
+# 変数-記事
+# 
+# vars(page specified in posts):
+#   __blog_posts_label__
+#   __blog_posts_basename__
+#   __blog_posts_url__
+#   __blog_posts_layout__
+#   __blog_posts_header_image_lg__
+#   __blog_posts_header_image_sm__
+#   __blog_posts_header_effect__
+#   __blog_posts_header_blend__
+# 
+# vars:
+#   __category_basename__
+#   __category_label__
+#   __category_url__
+#   __category_parent_basename__
+#   __category_parent_label__
+#   __category_parent_path__
+#   __category_ancestor_basename__
+#   __category_ancestor_label__
+#   __category_ancestor_path__
+#   __post_id__
+#   __post_basename__
+#   __post_meta_title__
+#   __post_meta_description__
+#   __post_ogp_url__
+#   __post_ogp_width__
+#   __post_ogp_height__
+#   __post_eyecatch_url__
+#   __post_eyecatch_width__
+#   __post_eyecatch_height__
+#
+# vars(extend):
+#   __blog_suffix__
+# 
+# =======================
+</mt:Ignore>
+
+<mt:Ignore>
+# -----------------------
+# categories
+# -----------------------
+</mt:Ignore>
+
+<mt:EntryPrimaryCategory><mt:Ignore>現在のカテゴリー情報</mt:Ignore>
+<mt:CategoryBasename setvar="__category_basename__" />
+<mt:CategoryLabel encode_html="1" setvar="__category_label__" />
+<mt:CategoryArchiveLink setvar="__category_url__" />
+</mt:EntryPrimaryCategory>
+
+<mt:Ignore>親・先祖カテゴリー情報を一旦現在の情報と同一にする</mt:Ignore>
+<mt:SetVar name="__category_parent_basename__" value="$__category_basename__" /><mt:SetVar name="__category_parent_label__" value="$__category_label__" /><mt:SetVar name="__category_parent_path__" value="$__category_url__" /><mt:SetVar name="__category_ancestor_basename__" value="$__category_basename__" /><mt:SetVar name="__category_ancestor_label__" value="$__category_label__" /><mt:SetVar name="__category_ancestor_path__" value="$__category_url__" />
+
+<mt:TopLevelParent><mt:Ignore>先祖のカテゴリー情報</mt:Ignore>
+<mt:CategoryBasename setvar="__category_ancestor_basename__" />
+<mt:CategoryLabel encode_html="1" setvar="__category_ancestor_label__" />
+<mt:CategoryArchiveLink setvar="__category_ancestor_url__" />
+</mt:TopLevelParent>
+
+<mt:ParentCategory><mt:Ignore>親のカテゴリー情報</mt:Ignore>
+<mt:CategoryBasename setvar="__category_parent_basename__" />
+<mt:CategoryLabel encode_html="1" setvar="__category_parent_label__" />
+<mt:CategoryArchiveLink setvar="__category_parent_url__" />
+</mt:ParentCategory>
+
+<mt:Ignore>
+# -----------------------
+# title
+# -----------------------
+</mt:Ignore>
+
+<mt:If tag="CustomFieldValue" identifier="EchoEntryMetaTitle">
+<mt:Ignore>METAのタイトルが別途指定されている場合</mt:Ignore>
+<mt:CustomFieldValue identifier="EchoEntryMetaTitle" encode_html="1" setvar="__post_meta_title__" />
+<mt:Else>
+<mt:SetVarBlock name="__post_meta_title__"><mt:EntryTitle encode_html="1" /><mt:If name="__category_basename__"> | <mt:Var name="__category_label__" /></mt:If><mt:If name="__category_basename__" ne="$__category_ancestor_basename__"> | <mt:Var name="__category_ancestor_label__" /></mt:If> | <mt:Var name="__blog_suffix__" /></mt:SetVarBlock>
+</mt:If>
+
+<mt:Ignore>
+# -----------------------
+# og:image
+# -----------------------
+</mt:Ignore>
+
+<mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
+<mt:CustomFieldAsset identifier="EchoEntryEyecatch"><mt:AssetURL setvar="__post_eyecatch_url__" /><mt:AssetProperty property="image_width" setvar="__post_eyecatch_width__" /><mt:AssetProperty property="image_height" setvar="__post_eyecatch_height__" /></mt:CustomFieldAsset>
+</mt:If>
+
+<mt:If tag="CustomFieldValue" identifier="EchoEntryOgp">
+<mt:CustomFieldAsset identifier="EchoEntryOgp"><mt:AssetURL setvar="__post_ogp_url__" /><mt:AssetProperty property="image_width" setvar="__post_ogp_width__" /><mt:AssetProperty property="image_height" setvar="__post_ogp_height__" /></mt:CustomFieldAsset>
+<mt:Else>
+<mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
+<mt:var name="__post_eyecatch_url__" setvar="__post_ogp_url__" /><mt:var name="__post_eyecatch_url__" setvar="__post_ogp_width__" /><mt:var name="__post_eyecatch_url__" setvar="__post_ogp_height__" />
+<mt:Else>
+<mt:If tag="CustomFieldValue" identifier="EchoBlogOgp">
+<mt:CustomFieldAsset identifier="EchoBlogOgp"><mt:AssetURL setvar="__post_ogp_url__" /><mt:AssetProperty property="image_width" setvar="__post_ogp_width__" /><mt:AssetProperty property="image_height" setvar="__post_ogp_height__" /></mt:CustomFieldAsset>
+</mt:If>
+</mt:If>
+</mt:If>
+
+<mt:Ignore>
+# -----------------------
+# others
+# -----------------------
+</mt:Ignore>
+
+<mt:EntryID setvar="__post_id__" />
+<mt:EntryBasename setvar="__post_basename__" />
+<mt:EntryExcerpt encode_html="1" strip_linefeeds="1" words="120" setvar="__post_meta_description__" />
+
+</mt:Unless>
