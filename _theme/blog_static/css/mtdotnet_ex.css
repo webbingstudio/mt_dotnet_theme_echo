@@ -1920,6 +1920,11 @@ echo-p-topicpath
   }
 }
 
+.echo-p-content-1col .echo-p-topicpath {
+  width: calc( 100% - 20px);
+  max-width: 740px;
+}
+
 .echo-p-topicpath:after {
   content: "";
   position: absolute;
@@ -2011,6 +2016,19 @@ echo-p-pagenate
 
 .echo-p-pagenate .echo-m-nav-item {
   flex-grow: 0;
+}
+
+/*
+--------------------
+echo-c-post
+--------------------
+*/
+.echo-c-post-header,
+.echo-c-post-footer {
+  width: calc( 100% - 20px);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*

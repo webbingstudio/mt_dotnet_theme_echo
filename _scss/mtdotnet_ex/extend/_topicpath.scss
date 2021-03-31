@@ -18,6 +18,11 @@
         font-size: $font-size-xs;
     }
 
+    .#{$pr}#{$p}content#{$c3}1col & {
+        width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
+        max-width: ( map-get( $be-max-widths, 'md' ) + map-get( $grid-gutter-widths, 'md' ) );
+    }
+
     &:after {
         content: "";
         position: absolute;
