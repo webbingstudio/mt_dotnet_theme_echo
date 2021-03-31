@@ -1,0 +1,58 @@
+/*
+--------------------
+#{$pr}#{$c}post
+--------------------
+*/
+
+.#{$pr}#{$c}post#{$c1}header {
+    margin-bottom: ( $spacer * 4.5 );
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: ( $spacer * 6 );
+    }
+
+    .#{$pr}#{$c}post#{$c1}meta {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: ( $spacer * 3 );
+        align-items: center;
+        justify-content: space-between;
+
+        .#{$pr}#{$c}post#{$c1}category {
+            flex-grow: 0;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .#{$pr}#{$c}post#{$c1}date {
+            flex-grow: 0;
+            margin: 0;
+            line-height: 1;
+        }
+
+    }
+
+}
+
+.#{$pr}#{$c}post#{$c1}footer {
+    margin-top: ( $spacer * 4.5 );
+
+    @include media-breakpoint-up(lg) {
+        margin-top: ( $spacer * 6 );
+    }
+
+    .#{$pr}#{$c}post#{$c1}category {
+        margin: 0;
+    }
+
+    .#{$pr}#{$c}post#{$c1}category#{$c1}header {
+        margin-right: .5em;
+    }
+
+    .#{$pr}#{$p}serial {
+        margin-top: ( $spacer * 1.5 );
+    }
+
+}
+
+

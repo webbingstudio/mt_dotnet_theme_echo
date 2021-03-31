@@ -8,19 +8,17 @@
 
     .#{$pr}#{$m}nav {
         display: block;
+        width: 100%;
     }
 
     .#{$pr}#{$m}nav#{$c1}list {
-
-        @include media-breakpoint-down(sm) {
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     .#{$pr}#{$m}nav#{$c1}label {
         font-size: $font-size-xs;
+        line-height: $line-height-xs;
 
         @include media-breakpoint-up(md) {
             font-size: $font-size-sm;
@@ -29,12 +27,7 @@
     }
 
     .#{$pr}#{$m}nav#{$c1}item {
-        flex-grow: 0;
-
-        @include media-breakpoint-up(md) {
-            width: 50%;
-        }
-
+        flex-grow: 1;
     }
 
     .#{$pr}#{$m}nav#{$c1}item.#{$pager-prev} {
@@ -49,17 +42,8 @@
     .#{$pr}#{$m}nav#{$c1}item.#{$pager-next} {
 
         .#{$pr}#{$m}nav#{$c1}label {
-
-            @include media-breakpoint-down(sm) {
-                justify-content: flex-start;
-                text-align: left;
-            }
-
-            @include media-breakpoint-up(md) {
-                justify-content: flex-end;
-                text-align: right;
-            }
-
+            justify-content: flex-end;
+            text-align: right;
         }
 
     }

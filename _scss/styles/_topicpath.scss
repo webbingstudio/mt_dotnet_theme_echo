@@ -1,0 +1,33 @@
+/*
+--------------------
+#{$pr}#{$p}topicpath
+--------------------
+*/
+
+.#{$pr}#{$p}topicpath {
+    margin-bottom: ( $spacer * 4.5 );
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: ( $spacer * 6 );
+    }
+
+    .#{$pr}#{$m}list {
+
+        .#{$pr}#{$m}list#{$c1}item {
+
+            &:not(:first-child) {
+
+                &:before {
+                    flex-grow: 0;
+                    content: ">";
+                    color: $gray-mild;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+

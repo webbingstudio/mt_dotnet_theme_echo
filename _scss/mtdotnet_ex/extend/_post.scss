@@ -11,3 +11,35 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.#{$pr}#{$c}post#{$c1}date {
+    font-size: $font-size-xs;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-sm;
+    }
+
+}
+
+.#{$pr}#{$c}post#{$c1}category {
+    font-size: $font-size-xs;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-sm;
+    }
+
+    .#{$pr}#{$c}post#{$c1}header & {
+
+        .#{$pr}#{$m}label {
+            font-size: .875em;
+        }
+
+    }
+
+}
+
+.#{$pr}#{$c}post#{$c1}category#{$c1}header {
+    display: inline-block;
+    font-style: normal;
+    vertical-align: middle;
+}
