@@ -2033,6 +2033,61 @@ echo-c-post
 
 /*
 --------------------
+echo-p-serial
+--------------------
+*/
+.echo-p-serial .echo-m-nav {
+  display: block;
+}
+
+@media (max-width: 767.9px) {
+  .echo-p-serial .echo-m-nav-list {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+.echo-p-serial .echo-m-nav-label {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .echo-p-serial .echo-m-nav-label {
+    font-size: 0.875rem;
+  }
+}
+
+.echo-p-serial .echo-m-nav-item {
+  flex-grow: 0;
+}
+
+@media (min-width: 768px) {
+  .echo-p-serial .echo-m-nav-item {
+    width: 50%;
+  }
+}
+
+.echo-p-serial .echo-m-nav-item.prev .echo-m-nav-label {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+@media (max-width: 767.9px) {
+  .echo-p-serial .echo-m-nav-item.next .echo-m-nav-label {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .echo-p-serial .echo-m-nav-item.next .echo-m-nav-label {
+    justify-content: flex-end;
+    text-align: right;
+  }
+}
+
+/*
+--------------------
 .echo-p-widget
 --------------------
 */

@@ -555,6 +555,46 @@ echo-p-pagenate
 
 /*
 --------------------
+echo-p-serial
+--------------------
+*/
+.echo-p-serial .echo-m-nav-item.prev .echo-m-nav-label, .echo-p-serial .echo-m-nav-item.next .echo-m-nav-label {
+  position: relative;
+}
+
+.echo-p-serial .echo-m-nav-item.prev .echo-m-nav-label:after, .echo-p-serial .echo-m-nav-item.next .echo-m-nav-label:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transform-origin: center center;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #333;
+  border-left: 2px solid #333;
+  border-radius: 2px;
+}
+
+.echo-p-serial .echo-m-nav-item.prev .echo-m-nav-label {
+  padding-left: 20px;
+}
+
+.echo-p-serial .echo-m-nav-item.prev .echo-m-nav-label:after {
+  left: 5px;
+  transform: translate(0, -50%) rotate(-45deg);
+}
+
+.echo-p-serial .echo-m-nav-item.next .echo-m-nav-label {
+  padding-right: 20px;
+}
+
+.echo-p-serial .echo-m-nav-item.next .echo-m-nav-label:after {
+  right: 5px;
+  transform: translate(0, -50%) rotate(135deg);
+}
+
+/*
+--------------------
 .echo-m-thumbnail
 --------------------
 */
