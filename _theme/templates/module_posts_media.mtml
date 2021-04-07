@@ -32,7 +32,7 @@
 <section class="echo-p-widget echo-p-widget-media echo-p-widget-posts">
     <mt:If name="__posts_title_text__">
     <div class="echo-p-widget-header">
-        <<mt:Var name="__posts_title_tag__" /> class="echo-m-title echo-m-title-level-3 echo-m-title-style-b"><mt:Var name="__posts_title_text__" /></<mt:Var name="__posts_title_tag__" />>
+        <<mt:Var name="__posts_title_tag__" /> class="echo-p-widget-title echo-m-title"><mt:Var name="__posts_title_text__" /></<mt:Var name="__posts_title_tag__" />>
     </div><!-- /.echo-p-widget-header -->
     </mt:If>
     <div class="echo-p-widget-contents">
@@ -68,7 +68,7 @@
                         </div><!-- /.echo-c-media-object -->
                         <div class="echo-c-media-contents">
                             <time class="echo-c-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
-                            <h2 class="echo-c-media-title"><mt:EntryTitle encode_html="1" /></h2>
+                            <h2 class="echo-c-media-title echo-m-title"><mt:EntryTitle encode_html="1" /></h2>
                             <p class="echo-c-media-body"><mt:EntryExcerpt words="58" /></p>
                         </div>
                     </a>
