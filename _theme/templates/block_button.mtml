@@ -36,18 +36,18 @@
 </mt:If>
 </mt:BlockEditorBlocks>
 
-<mt:If name="__button_type__" like="メイン">
+<mt:If name="__button_type__" like="カラー1">
     <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-first</mt:SetVarBlock>
-<mt:ElseIf name="__button_type__" like="サブ1">
+<mt:ElseIf name="__button_type__" like="カラー2">
     <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-second</mt:SetVarBlock>
-<mt:ElseIf name="__button_type__" like="サブ2">
+<mt:ElseIf name="__button_type__" like="カラー3">
     <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-third</mt:SetVarBlock>
 <mt:Else>
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-gray</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-default</mt:SetVarBlock>
 </mt:If>
 
-<mt:If name="__button_type__" like="（線）">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-bordered</mt:SetVarBlock>
+<mt:If name="__button_type__" like="（副）">
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-secondary</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__button_arrow__" like="右">
