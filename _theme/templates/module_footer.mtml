@@ -17,16 +17,16 @@
     <div class="echo-p-footer-contents">
 
         <mt:Ignore>ナビゲーション1階層</mt:Ignore>
-        <nav class="echo-p-footer-nav" role="navigation">
-            <ul class="echo-list echo-list-horizontal">
+        <nav class="echo-p-footer-nav echo-nav echo-nav-sm" role="navigation">
+            <ul class="echo-nav-list">
 
             <mt:If name="__is_home__">
-                <li class="echo-list-item is-current">
-                    <span class="echo-p-footer-nav-label is-current" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></span>
+                <li class="echo-nav-item is-current">
+                    <span class="echo-nav-label is-current" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></span>
                 </li>
             <mt:Else>
-                <li class="echo-list-item">
-                    <a href="<mt:BlogRelativeURL />" class="echo-p-footer-nav-label"><mt:var name="__blog_topicpath_home__" /></a>
+                <li class="echo-nav-item">
+                    <a href="<mt:BlogRelativeURL />" class="echo-nav-label"><mt:var name="__blog_topicpath_home__" /></a>
                 </li>
             </mt:If>
 
@@ -38,8 +38,8 @@
                     <mt:If tag="PageBasename" eq="index">
                         <mt:If tag="CustomFieldValue" identifier="EchoPageShowFoNav">
                             <mt:If tag="PageID" eq="$__post_id__">
-                                <li class="echo-list-item is-current">
-                                    <span class="echo-p-footer-nav-label is-current">
+                                <li class="echo-nav-item is-current">
+                                    <span class="echo-nav-label is-current">
                                     <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                                         <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                                     <mt:Else>
@@ -48,8 +48,8 @@
                                     </span>
                                 </li>
                             <mt:Else>
-                                <li class="echo-list-item">
-                                    <a href="<mt:PagePermalink />" class="echo-p-footer-nav-label">
+                                <li class="echo-nav-item">
+                                    <a href="<mt:PagePermalink />" class="echo-nav-label">
                                     <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                                         <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                                     <mt:Else>
@@ -69,8 +69,8 @@
             <mt:Pages no_folder="1" sort_order="ascend" limit="100">
             <mt:If tag="CustomFieldValue" identifier="EchoPageShowFoNav">
                 <mt:If tag="PageID" eq="$__post_id__">
-                    <li class="echo-list-item is-current">
-                        <span class="echo-p-footer-nav-label is-current">
+                    <li class="echo-nav-item is-current">
+                        <span class="echo-nav-label is-current">
                         <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                             <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                         <mt:Else>
@@ -79,8 +79,8 @@
                         </span>
                     </li>
                 <mt:Else>
-                    <li class="echo-list-item">
-                        <a href="<mt:PagePermalink />" class="echo-p-footer-nav-label">
+                    <li class="echo-nav-item">
+                        <a href="<mt:PagePermalink />" class="echo-nav-label">
                         <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                             <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                         <mt:Else>
@@ -125,15 +125,15 @@
 
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogTwitter">
                     <li class="echo-list-item echo-p-footer-btn-twitter">
-                        <a href="https://twitter.com/<mt:CustomFieldValue identifier="EchoBlogTwitter" />" target="_blank" class="echo-btn echo-btn-square">
+                        <a href="https://twitter.com/<mt:CustomFieldValue identifier="EchoBlogTwitter" />" target="_blank" class="echo-btn echo-btn-lg echo-btn-square">
                             <mt:Var name="__svg_twitter__">
                             <span class="echo-p-footer-btn-text">Twitter</span>
                         </a><!-- /.echo-btn -->
-                    </li><!-- /.echo-list-item -->
+                    </li><!-- /.echo-nav-item -->
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogFacebook">
                     <li class="echo-list-item echo-p-footer-btn-facebook">
-                        <a href="<mt:CustomFieldValue identifier="EchoBlogFacebook" />" target="_blank" class="echo-btn echo-btn-square">
+                        <a href="<mt:CustomFieldValue identifier="EchoBlogFacebook" />" target="_blank" class="echo-btn echo-btn-lg echo-btn-square">
                             <mt:Var name="__svg_facebook__">
                             <span class="echo-p-footer-btn-text">Facebookページ</span>
                         </a><!-- /.echo-btn -->
@@ -141,7 +141,7 @@
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogInstagram">
                     <li class="echo-list-item echo-p-footer-btn-instagram">
-                        <a href="https://www.instagram.com/<mt:CustomFieldValue identifier="EchoBlogInstagram" />/" target="_blank" class="echo-btn echo-btn-square">
+                        <a href="https://www.instagram.com/<mt:CustomFieldValue identifier="EchoBlogInstagram" />/" target="_blank" class="echo-btn echo-btn-lg echo-btn-square">
                             <mt:Var name="__svg_instagram__">
                             <span class="echo-p-footer-btn-text">Instagram</span>
                         </a><!-- /.echo-btn -->
@@ -149,7 +149,7 @@
                 </mt:If>
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogYouTube">
                     <li class="echo-list-item echo-p-footer-btn-youtube">
-                        <a href="<mt:CustomFieldValue identifier="EchoBlogYouTube" />" target="_blank" class="echo-btn echo-btn-square">
+                        <a href="<mt:CustomFieldValue identifier="EchoBlogYouTube" />" target="_blank" class="echo-btn echo-btn-lg echo-btn-square">
                             <mt:Var name="__svg_youtube__">
                             <span class="echo-p-footer-btn-text">YouTubeチャンネル</span>
                         </a><!-- /.echo-btn -->
