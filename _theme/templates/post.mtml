@@ -83,58 +83,58 @@
     <main class="echo-p-main echo-p-content-main" role="main">
         <mt:Include module="モジュール-パンくずリスト-記事" />
 
-        <section class="echo-c-post">
+        <section class="echo-p-post">
             <mt:If name="__post_eyecatch_url__">
                 <mt:Include module="モジュール-記事ヘッダ-画像あり" />
             <mt:Else>
                 <mt:Include module="モジュール-記事ヘッダ-画像なし" />
             </mt:If>
 
-            <div class="echo-c-post-contents echo-mt-be">
+            <div class="echo-p-post-contents echo-mt-be">
                 <mt:BlockEditorBlocks tag="EntryBody">
                 <mt:Include module="モジュール-ブロックエディタ" />
                 </mt:BlockEditorBlocks>
 
             <mt:If tag="EntryMore">
-                <div id="more" class="echo-c-post-more">
+                <div id="more" class="echo-p-post-more">
                     <mt:BlockEditorBlocks tag="EntryMore">
                     <mt:Include module="モジュール-ブロックエディタ" />
                     </mt:BlockEditorBlocks>
-                </div><!-- /.echo-c-post-more -->
+                </div><!-- /.echo-p-post-more -->
             </mt:If>
-            </div><!-- /.echo-c-post-contents -->
+            </div><!-- /.echo-p-post-contents -->
 
-            <div class="echo-c-post-footer">
+            <div class="echo-p-post-footer">
             <mt:If name="__category_basename__">
-                <p class="echo-c-post-category echo-c-post-category-all">
-                    <dfn class="echo-c-post-category-header">カテゴリー</dfn>
-                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-c-post-category-label-primary echo-m-label"><mt:Var name="__category_label__" /></a>
+                <p class="echo-p-post-category echo-p-post-category-all">
+                    <dfn class="echo-p-post-category-header">カテゴリー</dfn>
+                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-p-post-category-label-primary echo-label"><mt:Var name="__category_label__" /></a>
 
                 <mt:EntryAdditionalCategories>
-                    <a href="<mt:CategoryArchiveLink />" class="echo-post-category-label echo-post-category-label-secondary echo-m-label"><mt:CategoryLabel encode_html="1" /></a>
+                    <a href="<mt:CategoryArchiveLink />" class="echo-post-category-label echo-post-category-label-secondary echo-label"><mt:CategoryLabel encode_html="1" /></a>
                 </mt:EntryAdditionalCategories>
                 </p>
             </mt:If>
 
-                <div class="echo-p-serial">
-                    <nav class="echo-m-nav">
-                        <ul class="echo-m-nav-list">
+                <div class="echo-serial">
+                    <nav class="echo-nav">
+                        <ul class="echo-nav-list">
                             <mt:EntryPrevious>
-                            <li class="echo-m-nav-item prev">
-                                <a href="<mt:EntryPermalink />" class="echo-m-nav-label" aria-label="prev"><mt:EntryTitle encode_html="1" trim_to="32+…" /></a>
+                            <li class="echo-nav-item prev">
+                                <a href="<mt:EntryPermalink />" class="echo-nav-label" aria-label="prev"><mt:EntryTitle encode_html="1" trim_to="32+…" /></a>
                             </li>
                             </mt:EntryPrevious>
                             <mt:EntryNext>
-                            <li class="echo-m-nav-item next">
-                                <a href="<mt:EntryPermalink />" class="echo-m-nav-label" aria-label="next"><mt:EntryTitle encode_html="1" trim_to="32+…" /></a>
+                            <li class="echo-nav-item next">
+                                <a href="<mt:EntryPermalink />" class="echo-nav-label" aria-label="next"><mt:EntryTitle encode_html="1" trim_to="32+…" /></a>
                             </li>
                             </mt:EntryNext>
-                        </ul><!-- /.echo-m-nav-list -->
-                    </nav><!-- /.echo-m-nav -->
-                </div><!-- /.echo-p-pagenate -->
+                        </ul><!-- /.echo-nav-list -->
+                    </nav><!-- /.echo-nav -->
+                </div><!-- /.echo-serial -->
 
-            </div><!-- /.echo-c-post-footer -->
-        </section><!-- /.echo-c-serial -->
+            </div><!-- /.echo-p-post-footer -->
+        </section><!-- /.echo-p-post -->
 
     </main><!-- /.echo-p-main -->
 
