@@ -18,11 +18,11 @@
     <mt:SetVar name="__pagehead_tag__" value="p" />
 </mt:Unless>
 <mt:If name="__pagehead_blend__">
-<style>.echo-p-pagehead .echo-c-hero-image:after {background-color: <mt:Var name="__pagehead_blend__" />}</style>
+<style>.echo-p-pagehead .echo-hero-image:after {background-color: <mt:Var name="__pagehead_blend__" />}</style>
 </mt:If>
 <div class="echo-p-pagehead<mt:If name="__pagehead_image_lg__"> echo-p-pagehead-displayed</mt:If><mt:If name="__pagehead_effect__" like="明るく"> echo-p-pagehead-lighten</mt:If><mt:If name="__pagehead_effect__" like="暗く"> echo-p-pagehead-darken</mt:If><mt:If name="__pagehead_effect__" like="ぼかす"> echo-p-pagehead-blur</mt:If><mt:If name="__pagehead_blend__"> echo-p-pagehead-blended</mt:If>">
-    <div class="echo-c-hero echo-c-hero-fit<mt:If name="__pagehead_effect__" like="暗く"> echo-c-hero-inverse</mt:If>">
-        <div class="echo-c-hero-image">
+    <div class="echo-hero echo-hero-fit<mt:If name="__pagehead_effect__" like="暗く"> echo-hero-inverse</mt:If>">
+        <div class="echo-hero-image">
         <mt:If name="__pagehead_image_lg__">
             <mt:If name="__pagehead_image_sm__">
                 <picture>
@@ -39,14 +39,14 @@
                 <img src="<mt:Var name="__pagehead_image_lg__" />" alt="">
             </mt:If>
         </mt:If>
-        </div><!-- /.echo-c-hero-image -->
-        <div class="echo-c-hero-contents">
-            <div class="echo-c-hero-contents-inner">
-                <<mt:Var name="__pagehead_tag__" /> class="echo-c-hero-title echo-m-title echo-u-font-first"><span class="echo-c-hero-title-text"><mt:Var name="__pagehead_title__" /></span></<mt:Var name="__pagehead_tag__" />>
+        </div><!-- /.echo-hero-image -->
+        <div class="echo-hero-contents">
+            <div class="echo-hero-contents-inner">
+                <<mt:Var name="__pagehead_tag__" /> class="echo-hero-title echo-title echo-font-first"><span class="echo-hero-title-text"><mt:Var name="__pagehead_title__" /></span></<mt:Var name="__pagehead_tag__" />>
             <mt:If name="__pagehead_caption__">
-                <div class="echo-c-hero-caption"><mt:Var name="__pagehead_caption__" /></div>
+                <div class="echo-hero-caption"><mt:Var name="__pagehead_caption__" /></div>
             </mt:If>
-            </div><!-- /.echo-c-hero-contents-inner -->
-        </div><!-- /.echo-c-hero-contents -->
-    </div><!-- /.echo-c-hero -->
+            </div><!-- /.echo-hero-contents-inner -->
+        </div><!-- /.echo-hero-contents -->
+    </div><!-- /.echo-hero -->
 </div><!-- /.echo-p-pagehead -->

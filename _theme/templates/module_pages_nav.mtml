@@ -18,19 +18,19 @@
 <section class="echo-p-widget echo-p-widget-pages echo-p-widget-nav">
     <mt:If name="__pages_title_text__">
     <div class="echo-p-widget-header">
-        <h2 class="echo-p-widget-title echo-m-title"><mt:Var name="__pages_title_text__" /></h2>
+        <h2 class="echo-p-widget-title echo-title"><mt:Var name="__pages_title_text__" /></h2>
     </div><!-- /.echo-p-widget-header -->
     </mt:If>
 
     <div class="echo-p-widget-contents">
-        <nav class="echo-m-nav echo-m-nav-vertical">
+        <nav class="echo-nav echo-nav-vertical">
         <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
             <mt:PagesHeader>
-            <ul class="echo-m-nav-list">
+            <ul class="echo-nav-list">
             </mt:PagesHeader>
             <mt:If tag="PageID" eq="$__pages_current_id__">
-                <li class="echo-m-nav-item is-current">
-                    <span class="echo-m-nav-label is-current">
+                <li class="echo-nav-item is-current">
+                    <span class="echo-nav-label is-current">
                     <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                         <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                     <mt:Else>
@@ -42,8 +42,8 @@
                     </mt:If>
                     </span>
             <mt:Else>
-                <li class="echo-m-nav-item">
-                    <a href="<mt:PagePermalink />" class="echo-m-nav-label">
+                <li class="echo-nav-item">
+                    <a href="<mt:PagePermalink />" class="echo-nav-label">
                     <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                         <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                     <mt:Else>
@@ -56,6 +56,6 @@
                     </a>
             </mt:If>
         </mt:Pages>
-        </nav><!-- /.echo-m-nav -->
+        </nav><!-- /.echo-nav -->
     </div><!-- /.echo-p-widget-contents -->
 </section><!-- /.echo-p-widget -->

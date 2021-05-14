@@ -13,11 +13,11 @@
 <mt:PagesHeader>
 <section class="echo-mt-be-card echo-mt-be-block-custom">
 </mt:PagesHeader>
-    <div class="echo-c-card">
-        <a href="<mt:PagePermalink />" class="echo-c-card-inner">
+    <div class="echo-card">
+        <a href="<mt:PagePermalink />" class="echo-card-inner">
             <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
-            <div class="echo-c-card-object">
-                <figure class="echo-m-thumbnail echo-m-thumbnail-16to9">
+            <div class="echo-card-object">
+                <figure class="echo-thumbnail echo-thumbnail-16to9">
                     <picture>
                         <mt:CustomFieldAsset identifier="EchoPageEyecatch">
                             <source
@@ -30,11 +30,11 @@
                             <img src="<mt:AssetThumbnailURL width="480" />" alt="">
                         </mt:CustomFieldAsset>
                     </picture>
-                </figure><!-- /.echo-m-thumbnail -->
-            </div><!-- /.echo-c-card-object -->
+                </figure><!-- /.echo-thumbnail -->
+            </div><!-- /.echo-card-object -->
             </mt:If>
-            <div class="echo-c-card-contents">
-                <<mt:Var name="__page_tagname__" /> class="echo-c-card-title echo-m-title">
+            <div class="echo-card-contents">
+                <<mt:Var name="__page_tagname__" /> class="echo-card-title echo-title">
                 <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                     <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                 <mt:Else>
@@ -48,11 +48,11 @@
                 </mt:If>
                 </<mt:Var name="__page_tagname__" />>
                 <mt:If tag="CustomFieldValue" identifier="EchoPageSummary">
-                <div class="echo-c-card-body"><mt:CustomFieldValue identifier="EchoPageSummary" /></div>
+                <div class="echo-card-body"><mt:CustomFieldValue identifier="EchoPageSummary" /></div>
                 </mt:If>
-            </div><!-- /.echo-c-card-contents -->
-        </a><!-- /.echo-c-card-innner -->
-    </div><!-- /.echo-c-card -->
+            </div><!-- /.echo-card-contents -->
+        </a><!-- /.echo-card-innner -->
+    </div><!-- /.echo-card -->
 <mt:PagesFooter>
 </section><!-- /.echo-mt-be-hero -->
 </mt:PagesFooter>

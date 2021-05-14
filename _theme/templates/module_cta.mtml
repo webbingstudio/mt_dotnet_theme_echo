@@ -25,7 +25,7 @@
         <div class="echo-p-cta-inner">
         <mt:If tag="CustomFieldValue" identifier="EchoBlogCtaTitle">
             <div class="echo-p-cta-header">
-                <p class="echo-p-cta-title echo-m-title"><mt:CustomFieldValue identifier="EchoBlogCtaTitle" /></p>
+                <p class="echo-p-cta-title echo-title"><mt:CustomFieldValue identifier="EchoBlogCtaTitle" /></p>
             </div><!-- /.echo-p-cta-header -->
         </mt:If>
         <mt:If name="__cta_image_lg__">
@@ -47,7 +47,7 @@
                     <mt:CustomFieldValue identifier="EchoBlogCtaBody" />
                 </div><!-- /.echo-p-cta-body -->
                 <p class="echo-p-cta-link">
-                    <a href="<mt:If tag="CustomFieldValue" identifier="EchoBlogCtaUrl"><mt:CustomFieldValue identifier="EchoBlogCtaUrl" /><mt:Else><mt:BlogRelativeURL />/contact/</mt:If>" class="echo-m-btn echo-m-btn-block echo-m-btn-default echo-m-btn-primary">
+                    <a href="<mt:If tag="CustomFieldValue" identifier="EchoBlogCtaUrl"><mt:CustomFieldValue identifier="EchoBlogCtaUrl" /><mt:Else><mt:BlogRelativeURL />/contact/</mt:If>" class="echo-btn echo-btn-block echo-btn-default echo-btn-primary">
                     <mt:If tag="CustomFieldValue" identifier="EchoBlogCtaButton">
                         <mt:CustomFieldValue identifier="EchoBlogCtaButton" />
                     <mt:Else>

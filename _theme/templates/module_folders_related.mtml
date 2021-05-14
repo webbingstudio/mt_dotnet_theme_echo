@@ -31,10 +31,10 @@
 <mt:If name="__has_hierarchy__" eq="true">
     <section class="echo-p-widget echo-p-widget-nav echo-p-widget-folders">
         <div class="echo-p-widget-contents">
-            <nav class="echo-m-nav echo-m-nav-vertical">
+            <nav class="echo-nav echo-nav-vertical">
                 <mt:SubFolders top="1">
                 <mt:FolderHeader>
-                <ul class="echo-m-nav-list<mt:HasParentFolder> echo-m-nav-children</mt:HasParentFolder>">
+                <ul class="echo-nav-list<mt:HasParentFolder> echo-nav-children</mt:HasParentFolder>">
                 </mt:FolderHeader>
                 <mt:HasNoParentFolder>
                 <mt:If tag="FolderBasename" eq="$__pages_ancestor_basename__">
@@ -46,10 +46,10 @@
 
                 <mt:If name="__is_ancestor__" eq="true">
                     <mt:If tag="FolderCount">
-                        <li class="echo-m-nav-item<mt:If tag="FolderBasename" eq="$__pages_folder_basename__"> is-current</mt:If>">
-                            <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-m-nav-label<mt:If tag="FolderBasename" eq="$__pages_folder_basename__"> is-current</mt:If>"><mt:FolderLabel encode_html="1" /></a>
+                        <li class="echo-nav-item<mt:If tag="FolderBasename" eq="$__pages_folder_basename__"> is-current</mt:If>">
+                            <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-nav-label<mt:If tag="FolderBasename" eq="$__pages_folder_basename__"> is-current</mt:If>"><mt:FolderLabel encode_html="1" /></a>
                     <mt:Else>
-                        <li class="echo-m-nav-item<mt:If tag="FolderBasename" eq="$__pages_folder_basename__"> is-current</mt:If>"><span class="echo-m-nav-label<mt:If tag="FolderBasename" eq="$__pages_folder_basename__"> is-current</mt:If>"><mt:FolderLabel encode_html="1" /></span>
+                        <li class="echo-nav-item<mt:If tag="FolderBasename" eq="$__pages_folder_basename__"> is-current</mt:If>"><span class="echo-nav-label<mt:If tag="FolderBasename" eq="$__pages_folder_basename__"> is-current</mt:If>"><mt:FolderLabel encode_html="1" /></span>
                     </mt:If>
                 </mt:If>
 
@@ -60,7 +60,7 @@
                 </ul>
                 </mt:FolderFooter>
                 </mt:SubFolders>
-            </nav><!-- /.echo-m-nav -->
+            </nav><!-- /.echo-nav -->
         </div><!-- /.echo-p-widget-contents -->
     </section><!-- /.echo-p-widget -->
 </mt:If>

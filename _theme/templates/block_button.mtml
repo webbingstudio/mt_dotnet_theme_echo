@@ -37,33 +37,33 @@
 </mt:BlockEditorBlocks>
 
 <mt:If name="__button_type__" like="カラー1">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-first</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-first</mt:SetVarBlock>
 <mt:ElseIf name="__button_type__" like="カラー2">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-second</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-second</mt:SetVarBlock>
 <mt:ElseIf name="__button_type__" like="カラー3">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-third</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-third</mt:SetVarBlock>
 <mt:Else>
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-default</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-default</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__button_type__" like="（副）">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-secondary</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-secondary</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__button_arrow__" like="右">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-arrowed-right</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-arrowed-right</mt:SetVarBlock>
 <mt:ElseIf name="__button_arrow__" like="左">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-arrowed-left</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-arrowed-left</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__button_size__" like="小">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-lg</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-lg</mt:SetVarBlock>
     <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-btn-sm</mt:SetVarBlock>
 <mt:ElseIf name="__button_size__" like="中">
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-xl</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-xl</mt:SetVarBlock>
     <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-btn-md</mt:SetVarBlock>
 <mt:Else>
-    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-m-btn-xxl</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-btn-xxl</mt:SetVarBlock>
     <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-btn-lg</mt:SetVarBlock>
 </mt:If>
 
@@ -74,7 +74,7 @@
 </mt:If>
 
 <div class="echo-mt-be-btn<mt:Var name="__button_wrapclass__" />">
-    <a href="<mt:Var name="__button_url__" strip_linefeeds="1" remove_html="1" />"<mt:Var name="__button_target__" /> class="echo-m-btn echo-m-btn-block<mt:Var name="__button_class__" />">
+    <a href="<mt:Var name="__button_url__" strip_linefeeds="1" remove_html="1" />"<mt:Var name="__button_target__" /> class="echo-btn echo-btn-block<mt:Var name="__button_class__" />">
         <mt:Var name="__button_label__" strip_linefeeds="1" remove_html="1" />
     </a>
 </div><!-- /.echo-mt-be-btn -->

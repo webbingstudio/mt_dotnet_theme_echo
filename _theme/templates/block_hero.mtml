@@ -64,7 +64,7 @@
     <mt:SetVarBlock name="__hero_wrapclass__"><mt:Var name="__hero_wrapclass__" /> echo-mt-be-hero-lighten</mt:SetVarBlock>
 <mt:ElseIf name="__hero_effect__" like="暗く">
     <mt:SetVarBlock name="__hero_wrapclass__"><mt:Var name="__hero_wrapclass__" /> echo-mt-be-hero-darken</mt:SetVarBlock>
-    <mt:SetVar name="__hero_class__" value=" echo-c-hero-inverse" />
+    <mt:SetVar name="__hero_class__" value=" echo-hero-inverse" />
 </mt:If>
 <mt:If name="__hero_effect__" like="ぼかす">
     <mt:SetVarBlock name="__hero_wrapclass__"><mt:Var name="__hero_wrapclass__" /> echo-mt-be-hero-blur</mt:SetVarBlock>
@@ -75,9 +75,9 @@
 </mt:If>
 
 <mt:If name="__hero_type__" like="テキスト左">
-    <mt:SetVarBlock name="__hero_class__"><mt:Var name="__hero_class__" /> echo-c-hero-left</mt:SetVarBlock>
+    <mt:SetVarBlock name="__hero_class__"><mt:Var name="__hero_class__" /> echo-hero-left</mt:SetVarBlock>
 <mt:ElseIf name="__hero_type__" like="テキスト右">
-    <mt:SetVarBlock name="__hero_class__"><mt:Var name="__hero_class__" /> echo-c-hero-right</mt:SetVarBlock>
+    <mt:SetVarBlock name="__hero_class__"><mt:Var name="__hero_class__" /> echo-hero-right</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__hero_size__" like="大">
@@ -103,8 +103,8 @@
 </mt:If>
 
 <section class="echo-mt-be-hero echo-mt-be-block-custom<mt:Var name="__hero_wrapclass__" />">
-    <div class="echo-c-hero echo-c-hero-fit<mt:Var name="__hero_class__" />">
-        <div class="echo-c-hero-image">
+    <div class="echo-hero echo-hero-fit<mt:Var name="__hero_class__" />">
+        <div class="echo-hero-image">
         <mt:If name="__hero_image_lg_src__">
             <mt:If name="__hero_image_sm_src__">
                 <picture>
@@ -122,14 +122,14 @@
             </mt:If>
         </mt:If>
             <div class="echo-mt-be-hero-blend"<mt:If name="__hero_blend__" neq=""> style="background-color: <mt:Var name="__hero_blend__" />"</mt:If>></div>
-        </div><!-- /.echo-c-hero-image -->
-        <div class="echo-c-hero-contents">
-            <div class="echo-c-hero-contents-inner">
-                <<mt:Var name="__hero_tagname__" /> class="echo-c-hero-title echo-m-title echo-u-font-first<mt:Var name="__hero_titleclass__" />"><mt:Var name="__hero_title__" /></<mt:Var name="__hero_tagname__" />>
+        </div><!-- /.echo-hero-image -->
+        <div class="echo-hero-contents">
+            <div class="echo-hero-contents-inner">
+                <<mt:Var name="__hero_tagname__" /> class="echo-hero-title echo-title echo-font-first<mt:Var name="__hero_titleclass__" />"><mt:Var name="__hero_title__" /></<mt:Var name="__hero_tagname__" />>
                 <mt:If name="__hero_body__" neq="">
-                <div class="echo-c-hero-body"><mt:Var name="__hero_body__" /></div>
+                <div class="echo-hero-body"><mt:Var name="__hero_body__" /></div>
                 </mt:If>
-            </div><!-- /.echo-c-hero-contents-inner -->
-        </div><!-- /.echo-c-hero-contents -->
-    </div><!-- /.echo-c-hero -->
+            </div><!-- /.echo-hero-contents-inner -->
+        </div><!-- /.echo-hero-contents -->
+    </div><!-- /.echo-hero -->
 </section><!-- /.echo-mt-be-hero -->

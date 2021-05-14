@@ -1,0 +1,191 @@
+<mt:Ignore>
+# =======================
+# 
+# モジュール-スマートフォンメニュー
+# 
+# vars(extend):
+#   __is_home__
+#   __folder_label__
+#   __folder_parent_label__
+#   __folder_ancestor_label__
+#   __post_id__
+# 
+# vars(local):
+#   __spnav_children__
+# 
+# =======================
+</mt:Ignore>
+<div class="echo-p-spmenu">
+
+    <mt:Ignore>ナビゲーション1階層</mt:Ignore>
+    <nav class="echo-p-spmenu-nav-main echo-nav" role="navigation">
+        <ul class="echo-nav-list">
+
+        <mt:If name="__is_home__">
+            <li class="echo-nav-item is-current">
+                <span class="echo-nav-label is-current" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></span>
+            </li>
+        <mt:Else>
+            <li class="echo-nav-item">
+                <a href="<mt:BlogRelativeURL />" class="echo-nav-label"><mt:var name="__blog_topicpath_home__" /></a>
+            </li>
+        </mt:If>
+
+        <mt:pages field:EchoPageShowSpMainNav="1" sort_order="ascend" limit="100">
+        <mt:Ignore>スマートフォンメインナビゲーションに追加するページがあれば表示</mt:Ignore>
+        <mt:If tag="PageID" eq="$__post_id__">
+            <li class="echo-nav-item is-current">
+                <span class="echo-nav-label is-current">
+                <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                    <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                <mt:Else>
+                    <mt:PageTitle encode_html="1" />
+                </mt:If>
+                </span>
+            </li>
+        <mt:Else>
+            <li class="echo-nav-item<mt:PageFolder><mt:If tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-current</mt:If></mt:PageFolder>">
+                <a href="<mt:PagePermalink />" class="echo-nav-label<mt:PageFolder><mt:If tag="FolderLabel" encode_html="1" eq="$__folder_label__"> is-current</mt:If></mt:PageFolder>">
+                <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                    <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                <mt:Else>
+                    <mt:PageTitle encode_html="1" />
+                </mt:If>
+                </a>
+            </li>
+        </mt:If>
+        </mt:Pages>
+
+            <mt:Ignore>すべてのメニューを表示するボタン</mt:Ignore>
+            <li class="echo-p-spmenu-toggle echo-nav-item">
+                <button class="echo-toggle js-toggle" data-toggle-target="#spmenu-more" aria-expanded="false" aria-label="Menu"><span class="echo-toggle-line"></span><span class="echo-sr">メニュー</span></button>
+            </li>
+        </ul>
+    </nav><!-- /.echo-p-spmenu-nav-main -->
+
+    <div class="echo-p-spmenu-more echo-overlay" id="spmenu-more" aria-expanded="false">
+        <div class="echo-overlay-bg"></div>
+        <div class="echo-overlay-contents">
+
+            <nav class="echo-p-spmenu-nav-sub echo-nav" role="navigation">
+
+                <mt:Ignore>ナビゲーション2階層:ここから</mt:Ignore>
+                <ul class="echo-nav-list">
+
+                <mt:If name="__is_home__">
+                    <li class="echo-nav-item is-current">
+                        <span class="echo-nav-label is-current" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></span>
+                    </li>
+                <mt:Else>
+                    <li class="echo-nav-item">
+                        <a class="echo-nav-label" href="<mt:BlogRelativeURL />"><mt:var name="__blog_topicpath_home__" /></a>
+                    </li>
+                </mt:If>
+
+                <mt:SubFolders top="1">
+                <mt:HasNoParentFolder>
+
+                <mt:If tag="FolderCount">
+                    <mt:Ignore>インデックスページのリンクを表示</mt:Ignore>
+                    <li class="echo-nav-item<mt:If tag="FolderLabel" encode_html="1" eq="$__folder_label__"><mt:If name="__post_basename__" eq="index"> is-current</mt:If></mt:If>">
+                        <a href="<mt:BlogRelativeURL /><mt:FolderPath />/" class="echo-nav-label<mt:If tag="FolderLabel" encode_html="1" eq="$__folder_label__"><mt:If name="__post_basename__" eq="index"> is-current</mt:If></mt:If>"><mt:FolderLabel encode_html="1" /></a>
+
+                    <mt:Ignore>インデックス以外の子ページ一覧</mt:Ignore>
+                    <mt:Pages sort_order="ascend" limit="100">
+                    <mt:PagesHeader>
+                    <mt:SetVar name="__spnav_children__" value="" />
+                    </mt:PagesHeader>
+
+                    <mt:If tag="PageBasename" ne="index">
+                        <mt:If tag="CustomFieldValue" identifier="EchoPageShowSpSubNav">
+                            <mt:Ignore>表示する子ページを取得</mt:Ignore>
+                            <mt:SetVarBlock name="__spnav_children__">
+                            <mt:Var name="__spnav_children__" />
+                            <mt:If tag="PageID" eq="$__post_id__">
+                                <li class="echo-nav-item is-current">
+                                    <span class="echo-nav-label is-current">
+                                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                    <mt:Else>
+                                        <mt:PageTitle encode_html="1" />
+                                    </mt:If>
+                                    </span></li>
+                            <mt:Else>
+                                <li class="echo-nav-item">
+                                    <a href="<mt:PagePermalink />" class="echo-nav-label">
+                                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                    <mt:Else>
+                                        <mt:PageTitle encode_html="1" />
+                                    </mt:If>
+                                    </a></li>
+                            </mt:If>
+                            </mt:SetVarBlock>
+                        </mt:If>
+                    </mt:If>
+                    </mt:Pages>
+
+                    <mt:Ignore>子フォルダのインデックスページ一覧</mt:Ignore>
+                    <mt:SubFolders>
+                    <mt:Pages sort_order="ascend" limit="100">
+                    <mt:If tag="PageBasename" eq="index">
+                        <mt:If tag="CustomFieldValue" identifier="EchoPageShowSpSubNav">
+                            <mt:SetVarBlock name="__spnav_children__">
+                            <mt:Var name="__spnav_children__" />
+                            <mt:If tag="PageID" eq="$__post_id__">
+                                <li class="echo-nav-item is-current">
+                                    <span class="echo-nav-label is-current">
+                                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                    <mt:Else>
+                                        <mt:FolderLabel encode_html="1" />
+                                    </mt:If>
+                                    </span></li>
+                            <mt:Else>
+                                <li class="echo-nav-item">
+                                    <a href="<mt:PagePermalink />" class="echo-nav-label">
+                                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
+                                    <mt:Else>
+                                        <mt:FolderLabel encode_html="1" />
+                                    </mt:If>
+                                    </a></li>
+                            </mt:If>
+                            </mt:SetVarBlock>
+                        </mt:If>
+                    </mt:If>
+                    </mt:Pages>
+                    <mt:SubFolderRecurse />
+                    </mt:SubFolders>
+
+                    <mt:If name="__spnav_children__">
+                        <mt:Ignore>子ページが1件でもあれば表示</mt:Ignore>
+                        <ul class="echo-nav-list echo-nav-children">
+                            <mt:Var name="__spnav_children__" />
+                        </ul>
+                    </mt:If>
+
+                </li>
+                </mt:If>
+
+                </mt:HasNoParentFolder>
+                </mt:SubFolders>
+
+                <mt:Ignore>フォルダに含まれないページ一覧</mt:Ignore>
+                <mt:Pages no_folder="1" sort_order="ascend" limit="100">
+                <mt:If tag="CustomFieldValue" identifier="EchoPageShowSpSubNav">
+                    <mt:If tag="PageID" eq="$__post_id__">
+                        <li class="echo-nav-item is-current"><span class="echo-nav-label is-current"><mt:PageTitle encode_html="1" /></span></li>
+                    <mt:Else>
+                        <li class="echo-nav-item"><a href="<mt:PagePermalink />" class="echo-nav-label"><mt:PageTitle encode_html="1" /></a></li>
+                    </mt:If>
+                </mt:If>
+                </mt:Pages>
+                <mt:Ignore>ナビゲーション2階層:ここまで</mt:Ignore>
+
+                </ul>
+            </nav><!-- /.echo-p-spmenu-nav-sub -->
+
+        </div><!-- /.echo-overlay-contents -->
+    </div><!-- /.echo-overlay -->
+</div><!-- /.echo-p-spmenu -->

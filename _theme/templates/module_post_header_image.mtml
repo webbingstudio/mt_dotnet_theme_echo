@@ -5,14 +5,14 @@
 # 
 # =======================
 </mt:Ignore>
-<div class="echo-c-post-header">
-    <div class="echo-c-card">
-        <div class="echo-c-card-inner">
+<div class="echo-post-header">
+    <div class="echo-card">
+        <div class="echo-card-inner">
 
         <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
-            <div class="echo-c-card-object">
+            <div class="echo-card-object">
                 <mt:Ignore>サムネイルの縦横比は可変（画面幅により変動する）</mt:Ignore>
-                <figure class="echo-m-thumbnail">
+                <figure class="echo-thumbnail">
                     <picture>
                         <mt:CustomFieldAsset identifier="EchoEntryEyecatch">
                             <source
@@ -26,22 +26,22 @@
                         </mt:CustomFieldAsset>
                     </picture>
                 </figure>
-            </div><!-- /.echo-c-card-object -->
+            </div><!-- /.echo-card-object -->
         </mt:If>
 
-            <div class="echo-c-card-contents">
-                <h1 class="echo-c-card-title echo-m-title">
+            <div class="echo-card-contents">
+                <h1 class="echo-card-title echo-title">
                     <mt:EntryTitle encode_html="1" />
                 </h1>
 
-                <time class="echo-c-card-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
+                <time class="echo-card-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
 
                 <mt:If name="__category_basename__">
-                <p class="echo-c-card-category">
-                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-c-post-category-label-primary echo-m-label"><mt:Var name="__category_label__" /></a>
+                <p class="echo-card-category">
+                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-post-category-label-primary echo-label"><mt:Var name="__category_label__" /></a>
                 </p>
                 </mt:If>
-            </div><!-- /.echo-c-card-contents -->
-        </div><!-- /.echo-c-card-inner -->
-    </div><!-- /.echo-c-card -->
-</div><!-- /.echo-c-post-header -->
+            </div><!-- /.echo-card-contents -->
+        </div><!-- /.echo-card-inner -->
+    </div><!-- /.echo-card -->
+</div><!-- /.echo-post-header -->

@@ -8,7 +8,7 @@
 # 
 # =======================
 </mt:Ignore>
-<section class="echo-c-post echo-c-post-page">
+<section class="echo-post echo-post-page">
     <mt:If tag="CustomFieldValue" identifier="EchoPageShowTitle" eq="1">
     <mt:Ignore>先祖フォルダのインデックスページはページタイトルがh2</mt:Ignore>
     <mt:SetVar name="__post_title_tag__" value="h1" />
@@ -17,14 +17,14 @@
             <mt:SetVar name="__post_title_tag__" value="h2" />
         </mt:If>
     </mt:If>
-    <div class="echo-c-post-header">
-        <<mt:Var name="__post_title_tag__" /> class="echo-c-post-title echo-m-title">
+    <div class="echo-post-header">
+        <<mt:Var name="__post_title_tag__" /> class="echo-post-title echo-title">
             <mt:PageTitle encode_html="1" />
         </<mt:Var name="__post_title_tag__" />>
-    </div><!-- /.echo-c-post-header -->
+    </div><!-- /.echo-post-header -->
     </mt:If>
 
-    <div class="echo-c-post-contents echo-mt-be">
+    <div class="echo-post-contents echo-mt-be">
 
         <mt:BlockEditorBlocks tag="PageBody">
         <mt:Include module="モジュール-ブロックエディタ" />
@@ -34,5 +34,5 @@
         <mt:Include module="モジュール-ブロックエディタ" />
         </mt:BlockEditorBlocks>
 
-    </div><!-- /.echo-c-post-contents -->
-</section><!-- /.echo-c-post -->
+    </div><!-- /.echo-post-contents -->
+</section><!-- /.echo-post -->

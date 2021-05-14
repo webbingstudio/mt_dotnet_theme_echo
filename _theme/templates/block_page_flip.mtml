@@ -14,20 +14,20 @@
 <mt:PagesHeader>
 <section class="echo-mt-be-flip echo-mt-be-block-custom">
 </mt:PagesHeader>
-    <div class="echo-c-flip echo-c-flip-half<mt:Var name="__page_class__" />">
+    <div class="echo-flip echo-flip-half<mt:Var name="__page_class__" />">
 
         <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
             <mt:CustomFieldAsset identifier="EchoPageEyecatch">
-                <div class="echo-c-flip-cover" style="background-image:url(<mt:AssetThumbnailURL width="1200" />)"></div>
+                <div class="echo-flip-cover" style="background-image:url(<mt:AssetThumbnailURL width="1200" />)"></div>
             </mt:CustomFieldAsset>
         <mt:Else>
-            <div class="echo-c-flip-cover" style="background-image:url(/images/common/noimage_large.jpg)"></div>
+            <div class="echo-flip-cover" style="background-image:url(/images/common/noimage_large.jpg)"></div>
         </mt:If>
-        <div class="echo-c-flip-container">
-            <div class="echo-c-flip-contents">
-                <div class="echo-c-flip-contents-inner">
+        <div class="echo-flip-container">
+            <div class="echo-flip-contents">
+                <div class="echo-flip-contents-inner">
 
-                    <<mt:Var name="__page_tagname__" /> class="echo-c-flip-title echo-m-title echo-u-font-first">
+                    <<mt:Var name="__page_tagname__" /> class="echo-flip-title echo-title echo-font-first">
                     <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                         <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                     <mt:Else>
@@ -42,15 +42,15 @@
                     </<mt:Var name="__page_tagname__" />>
 
                     <mt:If tag="CustomFieldValue" identifier="EchoPageSummary">
-                    <div class="echo-c-flip-body"><mt:CustomFieldValue identifier="EchoPageSummary" /></div>
+                    <div class="echo-flip-body"><mt:CustomFieldValue identifier="EchoPageSummary" /></div>
                     </mt:If>
-                    <p class="echo-c-flip-link">
-                        <a href="<mt:PagePermalink />" class="echo-m-btn echo-m-btn-block echo-m-btn-default echo-m-btn-secondary">詳しくはこちら</a>
+                    <p class="echo-flip-link">
+                        <a href="<mt:PagePermalink />" class="echo-btn echo-btn-block echo-btn-default echo-btn-secondary">詳しくはこちら</a>
                     </p>
-                </div><!-- /.echo-c-flip-contents-inner -->
-            </div><!-- /.echo-c-flip-contents -->
-        </div><!-- /.echo-c-flip-container -->
-    </div><!-- /.echo-c-flip -->
+                </div><!-- /.echo-flip-contents-inner -->
+            </div><!-- /.echo-flip-contents -->
+        </div><!-- /.echo-flip-container -->
+    </div><!-- /.echo-flip -->
 <mt:PagesFooter>
 </section><!-- /.echo-mt-be-flip -->
 </mt:PagesFooter>

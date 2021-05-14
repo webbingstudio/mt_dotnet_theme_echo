@@ -32,19 +32,19 @@
 <section class="echo-p-widget echo-p-widget-media echo-p-widget-posts">
     <mt:If name="__posts_title_text__">
     <div class="echo-p-widget-header">
-        <<mt:Var name="__posts_title_tag__" /> class="echo-p-widget-title echo-m-title"><mt:Var name="__posts_title_text__" /></<mt:Var name="__posts_title_tag__" />>
+        <<mt:Var name="__posts_title_tag__" /> class="echo-p-widget-title echo-title"><mt:Var name="__posts_title_text__" /></<mt:Var name="__posts_title_tag__" />>
     </div><!-- /.echo-p-widget-header -->
     </mt:If>
     <div class="echo-p-widget-contents">
-        <div class="echo-l-grid-row">
+        <div class="echo-grid-row">
 </mt:EntriesHeader>
 
             <mt:setVar name="__image_url__" value="" />
-            <div class="echo-l-grid-col echo-l-grid-col-xxs-12<mt:If name="__posts_layout__" eq="1カラム"> echo-l-grid-col-lg-6</mt:If>">
-                <article class="echo-c-media-wraper">
-                    <a href="<mt:EntryPermalink />" class="echo-c-media echo-c-media-entry">
-                        <div class="echo-c-media-object">
-                            <figure class="echo-m-thumbnail">
+            <div class="echo-grid-col echo-grid-col-xxs-12<mt:If name="__posts_layout__" eq="1カラム"> echo-grid-col-lg-6</mt:If>">
+                <article class="echo-media-wraper">
+                    <a href="<mt:EntryPermalink />" class="echo-media echo-media-entry">
+                        <div class="echo-media-object">
+                            <figure class="echo-thumbnail">
                                 <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
                                     <mt:CustomFieldAsset identifier="EchoEntryEyecatch">
                                     <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
@@ -59,24 +59,24 @@
                                 <mt:Else>
                                     <img alt="" src="<mt:Var name="__blog_noimage_url__" />" width="480">
                                 </mt:If>
-                            </figure><!-- /.echo-m-thumbnail -->
+                            </figure><!-- /.echo-thumbnail -->
                             <mt:EntryCategories type="primary">
-                            <p class="echo-c-media-category">
-                                <span class="echo-m-label echo-m-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></span>
+                            <p class="echo-media-category">
+                                <span class="echo-label echo-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></span>
                             </p>
                             </mt:EntryCategories>
-                        </div><!-- /.echo-c-media-object -->
-                        <div class="echo-c-media-contents">
-                            <time class="echo-c-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
-                            <h2 class="echo-c-media-title echo-m-title"><mt:EntryTitle encode_html="1" /></h2>
-                            <p class="echo-c-media-body"><mt:EntryExcerpt words="58" /></p>
+                        </div><!-- /.echo-media-object -->
+                        <div class="echo-media-contents">
+                            <time class="echo-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
+                            <h2 class="echo-media-title echo-title"><mt:EntryTitle encode_html="1" /></h2>
+                            <p class="echo-media-body"><mt:EntryExcerpt words="58" /></p>
                         </div>
                     </a>
-                </article><!-- /.echo-c-media-wraper -->
-            </div><!-- /.echo-l-grid-col -->
+                </article><!-- /.echo-media-wraper -->
+            </div><!-- /.echo-grid-col -->
 
 <mt:EntriesFooter>
-        </div><!-- /.echo-l-grid-row -->
+        </div><!-- /.echo-grid-row -->
     </div><!-- /.echo-p-widget-contents -->
 
     <div class="echo-p-widget-footer">

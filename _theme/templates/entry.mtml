@@ -1,0 +1,149 @@
+<mt:Unless strip_linefeeds="1"><mt:Ignore>
+# =======================
+# 
+# アーカイブ-記事
+#
+# vars(layout):
+#   __meta-first__
+#   __meta-last__
+#   __link__
+#   __script__
+#   __head-last__
+#   __body-class__
+#   __main__
+#
+# vars(extend):
+#   __category_basename__
+#   __category_label__
+#   __category_path__
+#   __category_parent_basename__
+#   __category_parent_label__
+#   __category_parent_path__
+#   __category_ancestor_basename__
+#   __category_ancestor_label__
+#   __category_ancestor_path__
+#   __blog_posts_label__
+#   __blog_posts_basename__
+#   __blog_posts_url__
+#   __blog_posts_layout__
+#   __blog_posts_header_image_lg__
+#   __blog_posts_header_image_sm__
+#   __blog_posts_header_effect__
+#   __blog_posts_header_blend__
+#   __post_id__
+#   __post_meta_title__
+#   __post_meta_description__
+#   __post_eyecatch_url__
+#   __post_ogp_url__
+#   __post_ogp_width__
+#   __post_ogp_height__
+#
+# vars(local):
+#   __pagehead_tag__
+# 
+# =======================
+</mt:Ignore>
+<mt:Include module="変数-共通" />
+<mt:Include module="変数-記事" />
+
+<mt:SetVarBlock name="__meta-first__">
+<title><mt:Var name="__post_meta_title__" /></title>
+<meta name="description" content="<mt:Var name="__post_meta_description__" />">
+</mt:SetVarBlock>
+
+<mt:SetVarBlock name="__meta-last__">
+<meta property="og:type" content="article">
+<meta property="og:title" content="<mt:Var name="__post_meta_title__" />">
+<meta property="og:description" content="<mt:Var name="__post_meta_description__" />">
+<meta property="og:url" content="<mt:PagePermalink />">
+<mt:If name="__post_ogp_url__">
+<meta property="og:image" content="<mt:Var name="__post_ogp_url__" />">
+<meta property="og:image:width" content="<mt:Var name="__post_ogp_width__" />"> 
+<meta property="og:image:height" content="<mt:Var name="__post_ogp_height__" />">
+</mt:If>
+<meta property="article:modified_time" content="<mt:EntryDate format_name="iso8601" />">
+</mt:SetVarBlock>
+
+<mt:SetVarBlock name="__script__">
+<script>var echo_slider_id = 0;</script>
+</mt:SetVarBlock>
+
+<mt:SetVarBlock name="__head-last__">
+<mt:CustomFieldValue identifier="EchoEntryExHead" />
+</mt:SetVarBlock>
+
+<mt:SetVarBlock name="__body-class__">post post-id-<mt:Var name="__post_id__" /><mt:If name="__post_eyecatch_url__"> post-has-eyecatch</mt:If><mt:If name="__category_basename__"> category-<mt:Var name="__category_basename__" /></mt:If><mt:If name="__category_parent_basename__" ne="$__category_basename__"> category-<mt:Var name="__category_parent_basename__" /></mt:If><mt:If name="__category_ancestor_basename__" ne="$__category_parent_basename__"> category-<mt:Var name="__category_ancestor_basename__" /></mt:If><mt:If name="__category_layout__" eq="2カラム"> layout-2col<mt:Else> layout-1col</mt:If></mt:SetVarBlock>
+
+<mt:SetVarBlock name="__main__">
+
+<mt:Include module="モジュール-ページタイトル" __pagehead_tag__="p" __pagehead_title__="$__blog_posts_label__" __pagehead_caption__="$__blog_posts_basename__" __pagehead_image_lg__="$__blog_posts_header_image_lg__" __pagehead_image_sm__="$__blog_posts_header_image_sm__" __pagehead_effect__="$__blog_posts_header_effect__" __pagehead_blend__="$__blog_posts_header_blend__" />
+
+<div class="echo-p-content<mt:If name="__blog_posts_layout__" eq="2カラム"> echo-p-content-2col<mt:Else> echo-p-content-1col</mt:If>">
+
+    <main class="echo-p-main echo-p-content-main" role="main">
+        <mt:Include module="モジュール-パンくずリスト-記事" />
+
+        <section class="echo-post">
+            <mt:If name="__post_eyecatch_url__">
+                <mt:Include module="モジュール-記事ヘッダ-画像あり" />
+            <mt:Else>
+                <mt:Include module="モジュール-記事ヘッダ-画像なし" />
+            </mt:If>
+
+            <div class="echo-post-contents echo-mt-be">
+                <mt:BlockEditorBlocks tag="EntryBody">
+                <mt:Include module="モジュール-ブロックエディタ" />
+                </mt:BlockEditorBlocks>
+
+            <mt:If tag="EntryMore">
+                <div id="more" class="echo-post-more">
+                    <mt:BlockEditorBlocks tag="EntryMore">
+                    <mt:Include module="モジュール-ブロックエディタ" />
+                    </mt:BlockEditorBlocks>
+                </div><!-- /.echo-post-more -->
+            </mt:If>
+            </div><!-- /.echo-post-contents -->
+
+            <div class="echo-post-footer">
+            <mt:If name="__category_basename__">
+                <p class="echo-post-category echo-post-category-all">
+                    <dfn class="echo-post-category-header">カテゴリー</dfn>
+                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-post-category-label-primary echo-label"><mt:Var name="__category_label__" /></a>
+
+                <mt:EntryAdditionalCategories>
+                    <a href="<mt:CategoryArchiveLink />" class="echo-post-category-label echo-post-category-label-secondary echo-label"><mt:CategoryLabel encode_html="1" /></a>
+                </mt:EntryAdditionalCategories>
+                </p>
+            </mt:If>
+
+                <div class="echo-p-serial">
+                    <nav class="echo-nav">
+                        <ul class="echo-nav-list">
+                            <mt:EntryPrevious>
+                            <li class="echo-nav-item prev">
+                                <a href="<mt:EntryPermalink />" class="echo-nav-label" aria-label="prev"><mt:EntryTitle encode_html="1" trim_to="32+…" /></a>
+                            </li>
+                            </mt:EntryPrevious>
+                            <mt:EntryNext>
+                            <li class="echo-nav-item next">
+                                <a href="<mt:EntryPermalink />" class="echo-nav-label" aria-label="next"><mt:EntryTitle encode_html="1" trim_to="32+…" /></a>
+                            </li>
+                            </mt:EntryNext>
+                        </ul><!-- /.echo-nav-list -->
+                    </nav><!-- /.echo-nav -->
+                </div><!-- /.echo-p-pagenate -->
+
+            </div><!-- /.echo-post-footer -->
+        </section><!-- /.echo-serial -->
+
+    </main><!-- /.echo-p-main -->
+
+    <div class="echo-p-sub echo-p-content-sub">
+        <mt:Include module="サブカラム-記事" />
+    </div><!-- /.echo-p-sub -->
+
+</div><!-- /.echo-p-content -->
+</mt:SetVarBlock>
+
+<mt:Include module="レイアウト-基本" />
+</mt:Unless>

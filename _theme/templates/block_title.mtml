@@ -30,31 +30,31 @@
 </mt:BlockEditorBlocks>
 
 <mt:If name="__title_type__" like="装飾なし中央寄せ">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-style-b</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-style-b</mt:SetVarBlock>
 <mt:ElseIf name="__title_type__" like="下線左寄せ">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-style-d</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-style-d</mt:SetVarBlock>
 <mt:ElseIf name="__title_type__" like="下線中央寄せ">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-style-c</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-style-c</mt:SetVarBlock>
 <mt:ElseIf name="__title_type__" like="網掛け">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-style-e</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-style-e</mt:SetVarBlock>
 <mt:ElseIf name="__title_type__" like="先頭マーク付き">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-style-f</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-style-f</mt:SetVarBlock>
 <mt:Else>
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-style-a</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-style-a</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__title_size__" like="極々小">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-level-6</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-level-6</mt:SetVarBlock>
 <mt:ElseIf name="__title_size__" like="極小">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-level-5</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-level-5</mt:SetVarBlock>
 <mt:ElseIf name="__title_size__" like="小">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-level-4</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-level-4</mt:SetVarBlock>
 <mt:ElseIf name="__title_size__" like="極大">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-level-1</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-level-1</mt:SetVarBlock>
 <mt:ElseIf name="__title_size__" like="大">
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-level-2</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-level-2</mt:SetVarBlock>
 <mt:Else>
-    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-m-title-level-3</mt:SetVarBlock>
+    <mt:SetVarBlock name="__title_class__"><mt:Var name="__title_class__" /> echo-title-level-3</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__title_tag__" like="h1">
@@ -74,5 +74,5 @@
 </mt:If>
 
 <div class="echo-mt-be-title">
-    <<mt:Var name="__title_tagname__" /> class="echo-m-title<mt:Var name="__title_class__" />"><mt:Var name="__title_label__" strip_linefeeds="1" remove_html="1" /></<mt:Var name="__title_tagname__" />>
+    <<mt:Var name="__title_tagname__" /> class="echo-title<mt:Var name="__title_class__" />"><mt:Var name="__title_label__" strip_linefeeds="1" remove_html="1" /></<mt:Var name="__title_tagname__" />>
 </div><!-- /.echo-mt-be-title -->
