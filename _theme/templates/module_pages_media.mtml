@@ -25,25 +25,25 @@
     <div class="echo-p-widget-contents">
         <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
         <mt:PagesHeader>
-        <div class="echo-grid-row">
+        <div class="echo-medias">
         </mt:PagesHeader>
 
-            <div class="echo-grid-col echo-grid-col-xxs-12 echo-grid-col-sm-6<mt:If name="__pages_layout__" eq="2カラム"> echo-grid-col-lg-12</mt:If>">
-                <div class="echo-media-wrapper<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
+            <div class="echo-medias-item">
+                <div class="echo-media echo-media-middle echo-media-entry<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
 
                     <mt:If tag="PageID" eq="$__pages_current_id__">
-                    <span class="echo-media echo-media-middle echo-media-entry<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
+                    <span class="echo-media-inner">
                     <mt:Else>
-                    <a href="<mt:PagePermalink />" class="echo-media echo-media-middle echo-media-entry">
+                    <a href="<mt:PagePermalink />" class="echo-media-inner">
                     </mt:If>
                         <div class="echo-media-object">
-                            <figure class="echo-thumbnail">
+                            <figure class="echo-thumbnail echo-thumbnail-square">
                                 <mt:If tag="CustomFieldValue" identifier="EchoPageEyecatch">
                                 <mt:CustomFieldAsset identifier="EchoPageEyecatch">
                                 <img src="<mt:AssetThumbnailURL width="240" square="1" />" alt="" width="240" height="240">
                                 </mt:CustomFieldAsset>
                                 <mt:Else>
-                                <img alt="" src="/images/common/noimage_small.jpg" width="240" height="240">
+                                <img alt="" src="<mt:Var name="__blog_noimage_url__" />" width="240" height="240">
                                 </mt:If>
                             </figure><!-- /.echo-thumbnail -->
                         </div><!-- /.echo-media-object -->
@@ -61,15 +61,15 @@
                             </p>
                         </div>
                     <mt:If tag="PageID" eq="$__pages_current_id__">
-                    </span><!-- /.echo-media -->
+                    </span><!-- /.echo-media-inner -->
                     <mt:Else>
-                    </a><!-- /.echo-media -->
+                    </a><!-- /.echo-media-inner -->
                     </mt:If>
-                </div><!-- /.echo-media-wrapper -->
-            </div><!-- /.echo-grid-col -->
+                </div><!-- /.echo-media -->
+            </div><!-- /.echo-medias-item -->
 
         <mt:PagesFooter>
-        </div><!-- /.echo-grid-row -->
+        </div><!-- /.echo-medias -->
         </mt:PagesFooter>
         </mt:Pages>
     </div><!-- /.echo-p-widget-contents -->
