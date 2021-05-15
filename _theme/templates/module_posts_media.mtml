@@ -36,15 +36,15 @@
     </div><!-- /.echo-p-widget-header -->
     </mt:If>
     <div class="echo-p-widget-contents">
-        <div class="echo-grid-row">
+        <div class="echo-medias">
 </mt:EntriesHeader>
 
             <mt:setVar name="__image_url__" value="" />
-            <div class="echo-grid-col echo-grid-col-xxs-12<mt:If name="__posts_layout__" eq="1カラム"> echo-grid-col-lg-6</mt:If>">
-                <article class="echo-media-wraper">
-                    <a href="<mt:EntryPermalink />" class="echo-media echo-media-entry">
+            <div class="echo-medias-item">
+                <article class="echo-media echo-media-entry">
+                    <a href="<mt:EntryPermalink />" class="echo-media-inner">
                         <div class="echo-media-object">
-                            <figure class="echo-thumbnail">
+                            <figure class="echo-thumbnail echo-thumbnail-square">
                                 <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
                                     <mt:CustomFieldAsset identifier="EchoEntryEyecatch">
                                     <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
@@ -70,13 +70,13 @@
                             <time class="echo-media-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
                             <h2 class="echo-media-title echo-title"><mt:EntryTitle encode_html="1" /></h2>
                             <p class="echo-media-body"><mt:EntryExcerpt words="58" /></p>
-                        </div>
-                    </a>
-                </article><!-- /.echo-media-wraper -->
-            </div><!-- /.echo-grid-col -->
+                        </div><!-- /.echo-media-contents -->
+                    </a><!-- /.echo-media-inner -->
+                </article><!-- /.echo-media -->
+            </div><!-- /.echo-medias-item -->
 
 <mt:EntriesFooter>
-        </div><!-- /.echo-grid-row -->
+        </div><!-- /.echo-medias -->
     </div><!-- /.echo-p-widget-contents -->
 
     <div class="echo-p-widget-footer">

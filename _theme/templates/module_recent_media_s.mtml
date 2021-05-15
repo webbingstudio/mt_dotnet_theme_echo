@@ -27,22 +27,22 @@
     </div><!-- /.echo-p-widget-header -->
 
     <div class="echo-p-widget-contents">
-        <div class="echo-grid-row">
+        <div class="echo-medias">
 </mt:EntriesHeader>
 
             <mt:setVar name="__image_url__" value="" />
-            <div class="echo-grid-col echo-grid-col-xxs-12">
-                <div class="echo-media-wraper">
-                    <a href="<mt:EntryPermalink />" class="echo-media echo-media-entry">
+            <div class="echo-medias-item">
+                <div class="echo-media echo-media-fixed echo-media-entry">
+                    <a href="<mt:EntryPermalink />" class="echo-media-inner">
                         <div class="echo-media-object">
-                            <figure class="echo-thumbnail">
+                            <figure class="echo-thumbnail echo-thumbnail-square">
                                 <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
                                     <mt:CustomFieldAsset identifier="EchoEntryEyecatch">
-                                    <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
+                                    <mt:AssetThumbnailURL width="240" setvar="__image_url__" />
                                     </mt:CustomFieldAsset>
                                 <mt:Else>
                                     <mt:EntryAssets type="image" limit="1" sort_order="ascend" sort_by="created_on">
-                                    <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
+                                    <mt:AssetThumbnailURL width="240" setvar="__image_url__" />
                                     </mt:EntryAssets>
                                 </mt:If>
                                 <mt:If name="__image_url__">
@@ -60,13 +60,13 @@
                             </p>
                             </mt:EntryCategories>
                             <h3 class="echo-media-title echo-title"><mt:EntryTitle encode_html="1" /></h3>
-                        </div>
-                    </a>
-                </div><!-- /.echo-media-wraper -->
-            </div><!-- /.echo-grid-col -->
+                        </div><!-- /.echo-media-contents -->
+                    </a><!-- /.echo-media-inner -->
+                </div><!-- /.echo-media -->
+            </div><!-- /.echo-medias-item -->
 
 <mt:EntriesFooter>
-        </div><!-- /.echo-grid-row -->
+        </div><!-- /.echo-medias -->
     </div><!-- /.echo-p-widget-contents -->
 
 </section><!-- /.echo-p-widget -->
