@@ -19,15 +19,15 @@
 </mt:If>
 </mt:BlockEditorBlocks>
 
-<mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-md" />
+<mt:SetVar name="__spacer_class__" value=" echo-margin-y-lg" />
 <mt:If name="__spacer_size__" like="極小">
-    <mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-xs" />
+    <mt:SetVar name="__spacer_class__" value=" echo-margin-y-sm" />
 <mt:ElseIf name="__spacer_size__" like="極大">
-    <mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-xl" />
+    <mt:SetVar name="__spacer_class__" value=" echo-margin-y-xxl" />
 <mt:ElseIf name="__spacer_size__" like="小">
-    <mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-sm" />
+    <mt:SetVar name="__spacer_class__" value=" echo-margin-y-md" />
 <mt:ElseIf name="__spacer_size__" like="大">
-    <mt:SetVar name="__spacer_class__" value=" echo-mt-be-spacer-lg" />
+    <mt:SetVar name="__spacer_class__" value=" echo-margin-y-xl" />
 </mt:If>
 
 <div class="echo-mt-be-spacer<mt:Var name="__spacer_class__" /> echo-mt-be-block-custom"><hr></div>
