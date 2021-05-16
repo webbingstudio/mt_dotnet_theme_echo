@@ -21,7 +21,7 @@
 # 
 # =======================
 </mt:Ignore>
-<mt:SetVar name="__hero_wrapclass__" value="" /><mt:SetVar name="__hero_class__" value="" /><mt:SetVar name="__hero_titleclass__" value="" /><mt:SetVar name="__hero_title__" value="" /><mt:SetVar name="__hero_body__" value="" /><mt:SetVar name="__hero_type__" value="" /><mt:SetVar name="__hero_blend__" value="" /><mt:SetVar name="__hero_effect__" value="" /><mt:SetVar name="__hero_size__" value="" /><mt:SetVar name="__hero_tag__" value="" /><mt:SetVar name="__hero_tagname__" value="" /><mt:SetVar name="__hero_image_lg_src__" value="" /><mt:SetVar name="__hero_image_lg_width__" value="" /><mt:SetVar name="__hero_image_sm_width__" value="" />
+<mt:SetVar name="__hero_wrapclass__" value="" /><mt:SetVar name="__hero_class__" value="" /><mt:SetVar name="__hero_titleclass__" value=" echo-title-level-3" /><mt:SetVar name="__hero_title__" value="" /><mt:SetVar name="__hero_body__" value="" /><mt:SetVar name="__hero_type__" value="" /><mt:SetVar name="__hero_blend__" value="" /><mt:SetVar name="__hero_effect__" value="" /><mt:SetVar name="__hero_size__" value="" /><mt:SetVar name="__hero_tag__" value="" /><mt:SetVar name="__hero_tagname__" value="" /><mt:SetVar name="__hero_image_lg_src__" value="" /><mt:SetVar name="__hero_image_lg_width__" value="" /><mt:SetVar name="__hero_image_sm_width__" value="" />
 
 <mt:BlockEditorBlocks>
     <mt:If name="type" eq="sixapart-select">
@@ -81,9 +81,9 @@
 </mt:If>
 
 <mt:If name="__hero_size__" like="大">
-    <mt:SetVarBlock name="__hero_titleclass__"> echo-mt-be-hero-title-lg</mt:SetVarBlock>
+    <mt:SetVarBlock name="__hero_titleclass__"> echo-title-level-1</mt:SetVarBlock>
 <mt:ElseIf name="__hero_size__" like="小">
-    <mt:SetVarBlock name="__hero_titleclass__"> echo-mt-be-hero-title-sm</mt:SetVarBlock>
+    <mt:SetVarBlock name="__hero_titleclass__"> echo-title-level-4</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__hero_tag__" like="h1">
@@ -109,8 +109,8 @@
             <mt:If name="__hero_image_sm_src__">
                 <picture>
                     <source
-                        media="(max-width:750px)"
-                        srcset="<mt:Var name="__hero_image_sm_src__" /> 750w"
+                        media="(max-width:767px)"
+                        srcset="<mt:Var name="__hero_image_sm_src__" /> 767w"
                         sizes="100vw">
                     <source
                         srcset="<mt:Var name="__hero_image_lg_src__" /> 1200w"
@@ -125,9 +125,13 @@
         </div><!-- /.echo-hero-image -->
         <div class="echo-hero-contents">
             <div class="echo-hero-contents-inner">
-                <<mt:Var name="__hero_tagname__" /> class="echo-hero-title echo-title echo-font-first<mt:Var name="__hero_titleclass__" />"><mt:Var name="__hero_title__" /></<mt:Var name="__hero_tagname__" />>
+                <div class="echo-hero-header">
+                    <<mt:Var name="__hero_tagname__" /> class="echo-hero-title echo-title echo-font-first<mt:Var name="__hero_titleclass__" />"><mt:Var name="__hero_title__" /></<mt:Var name="__hero_tagname__" />>
+                </div><!-- /.echo-hero-header -->
                 <mt:If name="__hero_body__" neq="">
-                <div class="echo-hero-body"><mt:Var name="__hero_body__" /></div>
+                <div class="echo-hero-body">
+                    <mt:Var name="__hero_body__" />
+                </div><!-- /.echo-hero-body -->
                 </mt:If>
             </div><!-- /.echo-hero-contents-inner -->
         </div><!-- /.echo-hero-contents -->

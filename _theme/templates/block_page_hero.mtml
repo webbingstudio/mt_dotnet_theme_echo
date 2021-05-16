@@ -20,8 +20,8 @@
             <picture>
                 <mt:CustomFieldAsset identifier="EchoPageEyecatch">
                     <source
-                        media="(max-width:750px)"
-                        srcset="<mt:AssetThumbnailURL width="800" /> 750w"
+                        media="(max-width:767px)"
+                        srcset="<mt:AssetThumbnailURL width="800" /> 767w"
                         sizes="100vw">
                     <source
                         srcset="<mt:AssetThumbnailURL width="1200" /> 1200w"
@@ -35,25 +35,33 @@
         </mt:If>
         <div class="echo-hero-contents">
             <div class="echo-hero-contents-inner">
-                <<mt:Var name="__page_tagname__" /> class="echo-hero-title echo-title echo-font-first">
-                <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
-                    <mt:CustomFieldValue identifier="EchoPageNavLabel" />
-                <mt:Else>
-                    <mt:If tag="PageBasename" eq="index">
-                        <mt:PageFolder>
-                        <mt:FolderLabel encode_html="1" />
-                        </mt:PageFolder>
+                <div class="echo-hero-header">
+                    <<mt:Var name="__page_tagname__" /> class="echo-hero-title echo-title echo-title-style-b echo-title-level-1 echo-font-first">
+                    <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
+                        <mt:CustomFieldValue identifier="EchoPageNavLabel" />
                     <mt:Else>
-                        <mt:PageTitle encode_html="1" />
+                        <mt:If tag="PageBasename" eq="index">
+                            <mt:PageFolder>
+                            <mt:FolderLabel encode_html="1" />
+                            </mt:PageFolder>
+                        <mt:Else>
+                            <mt:PageTitle encode_html="1" />
+                        </mt:If>
                     </mt:If>
-                </mt:If>
-                </<mt:Var name="__page_tagname__" />>
+                    </<mt:Var name="__page_tagname__" />>
+                </div><!-- /.echo-hero-header -->
                 <mt:If tag="CustomFieldValue" identifier="EchoPageSummary">
-                <div class="echo-hero-body"><mt:CustomFieldValue identifier="EchoPageSummary" /></div>
+                <div class="echo-hero-body">
+                    <mt:CustomFieldValue identifier="EchoPageSummary" />
+                </div><!-- /.echo-hero-body -->
                 </mt:If>
-                <p class="echo-hero-link">
-                    <a href="<mt:PagePermalink />" class="echo-btn echo-btn-block echo-btn-default echo-btn-secondary">詳しくはこちら</a>
-                </p>
+                <div class="echo-hero-link">
+                    <div class="echo-buttons">
+                        <div class="echo-buttons-item">
+                            <a href="<mt:PagePermalink />" class="echo-button echo-button-style-b echo-button-icon-arrow<mt:If name="__page_class__" like="-inverse"> echo-button-inverse</mt:If>">詳しくはこちら</a>
+                        </div><!-- /.echo-buttons-item -->
+                    </div><!-- /.echo-buttons -->
+                </div><!-- /.echo-hero-link -->
             </div><!-- /.echo-hero-contents-inner -->
         </div><!-- /.echo-hero-contents -->
     </div><!-- /.echo-hero -->
