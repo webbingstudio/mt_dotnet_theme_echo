@@ -36,44 +36,44 @@
     </div><!-- /.echo-p-widget-header -->
     </mt:If>
     <div class="echo-p-widget-contents">
-        <div class="echo-grid-row">
+        <div class="echo-cards">
 </mt:EntriesHeader>
 
             <mt:setVar name="__image_url__" value="" />
-            <div class="echo-grid-col-6<mt:If name="__posts_layout__" eq="2カラム"> echo-grid-col-lg-4<mt:Else> echo-grid-col-lg-3</mt:If>">
-                <article class="echo-card echo-card-entry">
+            <div class="echo-cards-item">
+                <article class="echo-card echo-card-sm echo-card-entry">
                     <a href="<mt:EntryPermalink />" class="echo-card-inner">
                         <div class="echo-card-object">
-                            <figure class="echo-thumbnail">
+                            <figure class="echo-thumbnail echo-thumbnail-ogimage">
                                 <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
                                     <mt:CustomFieldAsset identifier="EchoEntryEyecatch">
-                                    <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
+                                    <mt:AssetThumbnailURL width="240" setvar="__image_url__" />
                                     </mt:CustomFieldAsset>
                                 <mt:Else>
                                     <mt:EntryAssets type="image" limit="1" sort_order="ascend" sort_by="created_on">
-                                    <mt:AssetThumbnailURL width="480" setvar="__image_url__" />
+                                    <mt:AssetThumbnailURL width="240" setvar="__image_url__" />
                                     </mt:EntryAssets>
                                 </mt:If>
                                 <mt:If name="__image_url__">
-                                    <img alt="" src="<mt:Var name="__image_url__" />" width="480">
+                                    <img alt="" src="<mt:Var name="__image_url__" />" width="240">
                                 <mt:Else>
-                                    <img alt="" src="<mt:Var name="__blog_noimage_url__" />" width="480">
+                                    <img alt="" src="<mt:Var name="__blog_noimage_url__" />" width="240">
                                 </mt:If>
                             </figure><!-- /.echo-thumbnail -->
                         </div><!-- /.echo-card-object -->
                         <div class="echo-card-contents">
                             <time class="echo-card-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
                             <mt:EntryCategories type="primary">
-                            <p class="echo-card-category"><span class="echo-label echo-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></span> </p>
+                            <p class="echo-card-category"><span class="echo-label echo-label-<mt:CategoryBasename separator="bar" />"><mt:CategoryLabel encode_html="1" /></span></p>
                             </mt:EntryCategories>
                             <h2 class="echo-card-title echo-title"><mt:EntryTitle encode_html="1" /></h2>
                         </div><!-- /.echo-card-contents -->
                     </a><!-- /.echo-card-inner -->
                 </article><!-- /.echo-card -->
-            </div><!-- /.echo-grid-col -->
+            </div><!-- /.echo-cards-item -->
 
 <mt:EntriesFooter>
-        </div><!-- /.echo-grid-row -->
+        </div><!-- /.echo-cards -->
     </div><!-- /.echo-p-widget-contents -->
 
     <div class="echo-p-widget-footer">

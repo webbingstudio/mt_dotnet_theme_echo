@@ -25,14 +25,14 @@
     <div class="echo-p-widget-contents">
         <mt:Pages folders="$__pages_folder__" sort_order="ascend" sort_by="authored_on" sort_order="ascend" limit="100">
         <mt:PagesHeader>
-        <div class="echo-grid-row">
+        <div class="echo-cards">
         </mt:PagesHeader>
 
-            <div class="echo-grid-col echo-grid-col-xxs-6 echo-grid-col-md-4<mt:If name="__pages_layout__" eq="2カラム"> echo-grid-col-lg-12</mt:If>">
+            <div class="echo-cards-item">
             
-                <article class="echo-card<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
+                <article class="echo-card echo-card-sm<mt:If tag="PageID" eq="$__pages_current_id__"> is-current</mt:If>">
                     <mt:If tag="PageID" eq="$__pages_current_id__">
-                    <span class="echo-card-inner is-current">
+                    <span class="echo-card-inner">
                     <mt:Else>
                     <a href="<mt:PagePermalink />" class="echo-card-inner">
                     </mt:If>
@@ -46,7 +46,7 @@
                             </figure><!-- /.echo-thumbnail -->
                         </div><!-- /.echo-card-object -->
                         </mt:If>
-                        <div class="echo-card-contents">
+                        <div class="echo-card-footer">
                             <p class="echo-card-title echo-title">
                             <mt:If tag="CustomFieldValue" identifier="EchoPageNavLabel">
                                 <mt:CustomFieldValue identifier="EchoPageNavLabel" />
@@ -58,17 +58,17 @@
                                 </mt:If>
                             </mt:If>
                             </p>
-                        </div><!-- /.echo-card-contents -->
+                        </div><!-- /.echo-card-footer -->
                     <mt:If tag="PageID" eq="$__pages_current_id__">
                     </span><!-- /.echo-card-innner -->
                     <mt:Else>
                     </a><!-- /.echo-card-innner -->
                     </mt:If>
                 </article><!-- /.echo-card -->
-            </div><!-- /.echo-grid-col -->
+            </div><!-- /.echo-cards-item -->
 
         <mt:PagesFooter>
-        </div><!-- /.echo-grid-row -->
+        </div><!-- /.echo-cards -->
         </mt:PagesFooter>
         </mt:Pages>
     </div><!-- /.echo-p-widget-contents -->
