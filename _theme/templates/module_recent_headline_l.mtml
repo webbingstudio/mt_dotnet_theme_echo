@@ -60,9 +60,11 @@
 
     <mt:If name="__recent_more__" eq="true">
     <div class="echo-p-widget-footer">
-        <p class="echo-p-widget-link">
-            <a href="<mt:Var name="__blog_posts_url__" />" class="echo-btn echo-btn-block echo-btn-default echo-btn-secondary"><mt:Var name="__recent_more_text__" /></a>
-        </p>
+        <div class="echo-p-widget-buttons echo-buttons">
+            <div class="echo-buttons-item">
+                <a href="<mt:Var name="__blog_posts_url__" />" class="echo-button echo-button-lg echo-button-style-b echo-button-icon-arrow"><mt:Var name="__recent_more_text__" /></a>
+            </div><!-- /.echo-buttons-item -->
+        </div><!-- /.echo-p-widget-buttons -->
     </div><!-- /.echo-p-widget-footer -->
     </mt:If>
 

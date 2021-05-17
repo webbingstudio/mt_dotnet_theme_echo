@@ -46,15 +46,17 @@
                 <div class="echo-p-cta-body">
                     <mt:CustomFieldValue identifier="EchoBlogCtaBody" />
                 </div><!-- /.echo-p-cta-body -->
-                <p class="echo-p-cta-link">
-                    <a href="<mt:If tag="CustomFieldValue" identifier="EchoBlogCtaUrl"><mt:CustomFieldValue identifier="EchoBlogCtaUrl" /><mt:Else><mt:BlogRelativeURL />/contact/</mt:If>" class="echo-btn echo-btn-block echo-btn-default echo-btn-primary">
-                    <mt:If tag="CustomFieldValue" identifier="EchoBlogCtaButton">
-                        <mt:CustomFieldValue identifier="EchoBlogCtaButton" />
-                    <mt:Else>
-                        メールで問い合わせる
-                    </mt:If>
-                    </a>
-                </p>
+                <div class="echo-p-cta-buttons echo-buttons">
+                    <div class="echo-buttons-item">
+                        <a href="<mt:If tag="CustomFieldValue" identifier="EchoBlogCtaUrl"><mt:CustomFieldValue identifier="EchoBlogCtaUrl" /><mt:Else><mt:BlogRelativeURL />/contact/</mt:If>" class="echo-button echo-button-oval echo-button-style-a echo-button-icon-arrow">
+                            <mt:If tag="CustomFieldValue" identifier="EchoBlogCtaButton">
+                                <mt:CustomFieldValue identifier="EchoBlogCtaButton" />
+                            <mt:Else>
+                                メールで問い合わせる
+                            </mt:If>
+                        </a>
+                    </div><!-- /.echo-buttons-item -->
+                </div><!-- /.echo-p-cta-buttons -->
             </div><!-- /.echo-p-cta-contents -->
         </div><!-- /.echo-p-cta-inner -->
     </div><!-- /.echo-p-cta -->
