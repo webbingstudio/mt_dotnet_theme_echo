@@ -1,12 +1,12 @@
 /*
 --------------------
-.#{$pr}#{$be}-btn
+.#{$pr}#{$be}-button
 --------------------
 */
 
-.#{$pr}#{$be}-btn {
+.#{$pr}#{$be}-button {
 
-    &.#{$pr}#{$be}-btn-sm {
+    &.#{$pr}#{$be}-button-sm {
         margin-top: $spacer;
         margin-bottom: $spacer;
 
@@ -15,7 +15,7 @@
             margin-bottom: ( $spacer * 1.5 );
         }
 
-        .#{$pr}#{$m}btn {
+        .#{$pr}#{$m}button {
 
             @include media-breakpoint-down(md) {
                 padding-top: .5rem;
@@ -27,7 +27,7 @@
 
     }
 
-    &.#{$pr}#{$be}-btn-md {
+    &.#{$pr}#{$be}-button-md {
         margin-top: ( $spacer * 1.5 );
         margin-bottom: ( $spacer * 1.5 );
 
@@ -38,7 +38,7 @@
 
     }
 
-    &.#{$pr}#{$be}-btn-lg {
+    &.#{$pr}#{$be}-button-lg {
         margin-top: ( $spacer * 2 );
         margin-bottom: ( $spacer * 2 );
 

@@ -1,10 +1,10 @@
 /*
 --------------------
-.#{$pr}#{$be}-btns
+.#{$pr}#{$be}-buttons
 --------------------
 */
 
-.#{$pr}#{$be}-btns {
+.#{$pr}#{$be}-buttons {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -20,7 +20,7 @@
         align-items: center;
     }
 
-    > .#{$pr}#{$be}-btn {
+    > .#{$pr}#{$be}-button {
 
         @include media-breakpoint-down(md) {
             margin: 0 0 ( $spacer * 1.5 );
@@ -35,7 +35,7 @@
 
     }
 
-    .#{$pr}#{$m}btn {
+    .#{$pr}#{$m}button {
 
         @include media-breakpoint-up(lg) {
             max-width: none;
