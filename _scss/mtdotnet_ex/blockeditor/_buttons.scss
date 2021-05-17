@@ -9,13 +9,20 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    margin-top: ( $spacer * 2 );
-    margin-bottom: ( $spacer * 2 );
     width: 100%;
 
+    @include responsive-spacing(
+        'margin-top',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
+    @include responsive-spacing(
+        'margin-bottom',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
+
     @include media-breakpoint-up(lg) {
-        margin-top: ( $spacer * 3 );
-        margin-bottom: ( $spacer * 3 );
         flex-direction: row;
         align-items: center;
     }
@@ -23,7 +30,7 @@
     > .#{$pr}#{$be}-button {
 
         @include media-breakpoint-down(md) {
-            margin: 0 0 ( $spacer * 1.5 );
+            margin: 0 0 map-get( $grid-gutter-widths, md );
         }
 
         @include media-breakpoint-up(lg) {

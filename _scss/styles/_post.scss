@@ -5,16 +5,16 @@
 */
 
 .#{$pr}#{$c}post#{$c1}header {
-    margin-bottom: ( $spacer * 4.5 );
-
-    @include media-breakpoint-up(lg) {
-        margin-bottom: ( $spacer * 6 );
-    }
+    @include responsive-spacing(
+        'padding-bottom',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
 
     .#{$pr}#{$c}post#{$c1}meta {
         display: flex;
         flex-wrap: wrap;
-        margin-top: ( $spacer * 3 );
+        margin-top: map-get( $grid-gutter-widths, 'lg' );
         align-items: center;
         justify-content: space-between;
 
@@ -35,11 +35,11 @@
 }
 
 .#{$pr}#{$c}post#{$c1}footer {
-    margin-top: ( $spacer * 4.5 );
-
-    @include media-breakpoint-up(lg) {
-        margin-top: ( $spacer * 6 );
-    }
+    @include responsive-spacing(
+        'padding-top',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
 
     .#{$pr}#{$c}post#{$c1}category {
         margin: 0;
@@ -50,7 +50,7 @@
     }
 
     .#{$pr}#{$p}serial {
-        margin-top: ( $spacer * 1.5 );
+        margin-top: map-get( $grid-gutter-widths, 'lg' );
     }
 
 }

@@ -5,21 +5,27 @@
 */
 
 .#{$pr}#{$be}-slider {
-    margin-top: ( $spacer * 2 );
-    margin-bottom: ( $spacer * 2 );
+    @include responsive-spacing(
+        'margin-top',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
+    @include responsive-spacing(
+        'margin-bottom',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
+
     line-height: 1;
 
-    @include media-breakpoint-up(lg) {
-        margin-top: ( $spacer * 3 );
-        margin-bottom: ( $spacer * 3 );
-    }
-
     &.slick-dotted {
-        margin-bottom: calc( #{( $spacer * 3 )} + 1.5rem );
-
-        @include media-breakpoint-up(lg) {
-            margin-bottom: calc( #{( $spacer * 4.5 )} + 1.5rem );
-        }
+        position: relative;
+        top: -1.5rem;
+        @include responsive-spacing(
+            'margin-bottom',
+            map-get( $responsive-spacing-min, 'lg' ),
+            map-get( $responsive-spacing-max, 'lg' )
+        );
 
     }
 

@@ -44,7 +44,7 @@
 }
 
 .#{$pr}#{$p}spmenu#{$c1}nav#{$c3}sub {
-    padding-bottom: ( 44px + ( $spacer * 3 ) );
+    padding-bottom: ( 2.75rem + map-get( $grid-gutter-widths, 'md' ) );
     background-color: #fff;
 
     > .#{$pr}#{$m}nav#{$c1}list {

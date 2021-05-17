@@ -6,85 +6,11 @@
 
 .#{$pr}#{$be}-hero {
 
-    .#{$pr}#{$m}title {
-
-        &.#{$pr}#{$be}-hero-title-sm {
-            font-size: 1.3125rem;
-
-            @include media-breakpoint-up(xs) {
-                font-size: 1.5rem;
-            }
-
-            @include media-breakpoint-up(sm) {
-                font-size: 1.75rem;
-            }
-
-            @include media-breakpoint-up(md) {
-                font-size: 2rem;
-            }
-
-            @include media-breakpoint-up(lg) {
-                font-size: 2.125rem;
-            }
-
-            @include media-breakpoint-up(xl) {
-                font-size: 2.5rem;
-            }
-
-            @include media-breakpoint-up(xxl) {
-                font-size: 2.625rem;
-            }
-        }
-
-        &.#{$pr}#{$be}-hero-title-lg {
-            font-size: 2rem;
- 
-            @include media-breakpoint-up(sm) {
-                font-size: 2.5rem;
-            }
-
-            @include media-breakpoint-up(md) {
-                font-size: 3rem;
-            }
-
-            @include media-breakpoint-up(lg) {
-                font-size: 3.5rem;
-            }
-
-            @include media-breakpoint-up(xl) {
-                font-size: 4rem;
-            }
-
-            @include media-breakpoint-up(xxl) {
-                font-size: 4.5rem;
-            }
- 
-        }
-
-    }
-
-    .#{$pr}#{$c}hero#{$c1}body {
-        font-size: .75rem;
-
-        @include media-breakpoint-up(sm) {
-            font-size: .875rem;
-        }
-
-        @include media-breakpoint-up(lg) {
-            font-size: 1rem;
-        }
-
-        @include media-breakpoint-up(xxl) {
-            font-size: 1.125rem;
-        }
-
-    }
-
     .#{$pr}#{$c}hero#{$c1}image {
         overflow: hidden;
+        animation: pageHeadImageLazy 3s linear 1 forwards;
 
         img {
-            animation: pageHeadImageLazy 3s linear 1 forwards;
         }
 
     }
@@ -103,24 +29,6 @@
 
     .#{$pr}#{$c}hero#{$c1}contents#{$c1}inner {
         background-color: rgba( 255, 255, 255, .3 );
-        padding: $spacer;
-
-        @include media-breakpoint-up(md) {
-            padding: ( $spacer * 2 );
-        }
-
-        @include media-breakpoint-down(md) {
-            flex-basis: 480px;
-        }
-
-        @include media-breakpoint-down(sm) {
-            flex-basis: 360px;
-        }
-
-        @include media-breakpoint-down(xs) {
-            flex-basis: 270px;
-        }
-
     }
 
     .#{$pr}#{$c}hero.#{$pr}#{$c}hero#{$c3}inverse {

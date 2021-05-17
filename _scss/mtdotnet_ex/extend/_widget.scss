@@ -1,23 +1,27 @@
 /*
 --------------------
-.#{$pr}#{$widget}
+.#{$pr}widget
 --------------------
 */
 
-.#{$pr}#{$widget} {
+.#{$pr}widget {
 
-    .#{$pr}#{$be} &,
-    .#{$pr}#{$p}widgetarea#{$c3}main & {
-        margin-bottom: ( $spacer * 3 );
-
-        @include media-breakpoint-up(lg) {
-            margin-bottom: ( $spacer * 4.5 );
-        }
+    .#{$pr}#{$be} > &,
+    .#{$pr}#{$p}widgetarea#{$c3}main > & {
+        @include responsive-spacing(
+            'margin-bottom',
+            map-get( $responsive-spacing-min, 'lg' ),
+            map-get( $responsive-spacing-max, 'lg' )
+        );
 
     }
 
-    .#{$pr}#{$p}widgetarea#{$c3}sub & {
-        margin-bottom: ( $spacer * 3 );
+    .#{$pr}#{$p}widgetarea#{$c3}sub > & {
+        @include responsive-spacing(
+            'margin-bottom',
+            map-get( $responsive-spacing-min, 'md' ),
+            map-get( $responsive-spacing-max, 'md' )
+        );
     }
 
     &:last-child {
@@ -26,8 +30,8 @@
 
 }
 
-.#{$pr}#{$widget}#{$c1}header,
-.#{$pr}#{$widget}#{$c1}footer {
+.#{$pr}widget#{$c1}header,
+.#{$pr}widget#{$c1}footer {
     width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
     max-width: map-get( $be-max-widths, 'md' );
     margin-left: auto;
@@ -43,17 +47,27 @@
 
 }
 
-.#{$pr}#{$widget}#{$c1}header {
+.#{$pr}widget#{$c1}header {
     padding-bottom: 0;
 }
 
-.#{$pr}#{$widget}#{$c1}footer {
+.#{$pr}widget#{$c1}footer {
 
     .#{$pr}#{$p}content#{$c1}main & {
+        @include responsive-spacing(
+            'padding-top',
+            map-get( $responsive-spacing-min, 'lg' ),
+            map-get( $responsive-spacing-max, 'lg' )
+        );
 
-        @include media-breakpoint-up(lg) {
-            padding-top: ( $spacer * 3 );
-        }
+    }
+
+    .#{$pr}#{$p}content#{$c1}sub & {
+        @include responsive-spacing(
+            'padding-top',
+            map-get( $responsive-spacing-min, 'sm' ),
+            map-get( $responsive-spacing-max, 'sm' )
+        );
 
     }
 

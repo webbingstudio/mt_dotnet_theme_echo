@@ -1,12 +1,12 @@
 /*
 --------------------
-.#{$pr}#{$widget}#{$c3}folders
+.#{$pr}widget#{$c3}folders
 --------------------
 */
 
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}pages + .#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}folders {
+.#{$pr}widget.#{$pr}widget#{$c3}pages + .#{$pr}widget.#{$pr}widget#{$c3}folders {
     position: relative;
-    padding-top: ( $spacer * 1.5 );
+    padding-top: map-get( $grid-gutter-widths, 'md' );
 
     &:before {
         position: absolute;
@@ -16,22 +16,15 @@
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
         max-width: map-get( $be-max-widths, 'md' );
         height: 1px;
-        background-color: $gray-milder;
+        background-color: $ui-color;
         transform: translate( -50%, 0 );
     }
 
     .#{$pr}#{$be} &,
     .#{$pr}#{$p}widgetarea#{$c3}main & {
-        margin-top: ( $spacer * -1.5 );
-
-        @include media-breakpoint-up(lg) {
-            margin-bottom: ( $spacer * -3 );
-        }
-
     }
 
     .#{$pr}#{$p}widgetarea#{$c3}sub & {
-        margin-top: ( $spacer * -1.5 );
     }
 
 }

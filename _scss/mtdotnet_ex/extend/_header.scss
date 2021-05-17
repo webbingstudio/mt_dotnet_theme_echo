@@ -68,7 +68,7 @@
 
 }
 
-.#{$pr}#{$p}header#{$c1}btn {
+.#{$pr}#{$p}header#{$c1}button {
     flex-grow: 0;
 
     @include media-breakpoint-up(md) {
@@ -97,13 +97,13 @@
 
     }
 
-    .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+    .#{$pr}#{$p}header#{$c1}button#{$c1}text {
         margin-left: .5em;
     }
 
     .#{$pr}#{$m}nav#{$c1}item {
 
-        &.#{$pr}#{$p}header#{$c1}btn#{$c3}xs {
+        &.#{$pr}#{$p}header#{$c1}button#{$c3}xs {
 
             .#{$pr}#{$m}nav#{$c1}label {
 
@@ -114,7 +114,7 @@
 
             }
 
-            .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+            .#{$pr}#{$p}header#{$c1}button#{$c1}text {
                 overflow: hidden;
                 width: 1px;
                 margin-left: -1px;
@@ -123,7 +123,7 @@
 
         }
 
-        &.#{$pr}#{$p}header#{$c1}btn#{$c3}sm {
+        &.#{$pr}#{$p}header#{$c1}button#{$c3}sm {
 
             .#{$pr}#{$m}nav#{$c1}label {
 
@@ -134,7 +134,7 @@
 
             }
 
-            .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+            .#{$pr}#{$p}header#{$c1}button#{$c1}text {
                 font-size: ( 12 / 14 ) + em;
 
                 @include media-breakpoint-up(lg) {
@@ -152,9 +152,9 @@
 
         }
 
-        &.#{$pr}#{$p}header#{$c1}btn#{$c3}lg {
+        &.#{$pr}#{$p}header#{$c1}button#{$c3}lg {
 
-            .#{$pr}#{$p}header#{$c1}btn#{$c1}text {
+            .#{$pr}#{$p}header#{$c1}button#{$c1}text {
 
                 @include media-breakpoint-up(lg) {
                     font-size: ( 15 / 14 ) + em;

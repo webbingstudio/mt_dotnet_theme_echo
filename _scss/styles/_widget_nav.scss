@@ -1,10 +1,10 @@
 /*
 --------------------
-.#{$pr}#{$widget}#{$c3}nav
+.#{$pr}widget#{$c3}nav
 --------------------
 */
 
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}nav {
+.#{$pr}widget.#{$pr}widget#{$c3}nav {
 
     .#{$pr}#{$m}nav#{$c1}label {
         padding-left: 0;
@@ -41,7 +41,7 @@
 
             .#{$pr}#{$m}label {
                 color: $ui-inverse-color;
-                background-color: $gray;
+                background-color: $default;
             }
 
         }

@@ -27,37 +27,9 @@
 .#{$pr}#{$p}footer#{$c1}nav {
     flex-grow: 1;
     width: 100%;
-    padding-top: ( $spacer * 1.5 );
-    padding-bottom: ( $spacer * 1.5 );
-    margin-bottom: ( $spacer * 1.5 );
-    font-size: $font-size-xxs;
-    line-height: 1;
 
     @include media-breakpoint-up(lg) {
-        font-size: $font-size-xs;
-        margin-bottom: ( $spacer * 3 );
-    }
-
-    .#{$pr}#{$m}list#{$c1}item {
-        display: inline-block;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .#{$pr}#{$p}footer#{$c1}nav#{$c1}label {
-        display: inline-block;
-        padding: .5em ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-        vertical-align: middle;
-    }
-
-    a.#{$pr}#{$p}footer#{$c1}nav#{$c1}label {
-        color: $ui-color;
-
-        &:hover,
-        &:focus {
-            color: $nav-hover-color;
-        }
-
+        margin-bottom: map-get( $grid-gutter-widths, md );
     }
 
 }
@@ -73,11 +45,11 @@
     img,
     svg {
         width: auto;
-        height: 36px;
+        height: 2.5rem;
         vertical-align: bottom;
 
         @include media-breakpoint-up(lg) {
-            height: 44px;
+            height: 2.75rem;
         }
 
     }
@@ -92,32 +64,21 @@
 
     @include media-breakpoint-down(md) {
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
-        margin: ( $spacer * 1.5 ) auto 0;
+        margin: map-get( $grid-gutter-widths, 'md' ) auto 0;
         text-align: center;
     }
 
     @include media-breakpoint-down(sm) {
-        max-width: ( 14 * 20 ) + px;
+        max-width: map-get( $object-max-widths, 'sm' );
     }
 
     @include media-breakpoint-only(md) {
-        max-width: ( 14 * 40 ) + px;
+        max-width: map-get( $object-max-widths, 'md' );
     }
 
     @include media-breakpoint-up(lg) {
         font-size: $font-size-sm;
-        margin-left: ( $spacer * 6 );
-    }
-
-    a {
-        color: $ui-color;
-
-        &:hover,
-        &:focus {
-            color: $nav-hover-color;
-            text-decoration: none;
-        }
-
+        margin-left: ( #{map-get( $grid-gutter-widths, 'xl' )} * 1.5 );
     }
 
     svg {
@@ -162,20 +123,20 @@
 
 }
 
-.#{$pr}#{$p}footer#{$c1}btn {
+.#{$pr}#{$p}footer#{$c1}button {
     flex-grow: 0;
 
     @include media-breakpoint-down(md) {
         width: 100%;
-        margin-top: ( $spacer * 2 );
+        margin-top: map-get( $grid-gutter-widths, 'md' );
         text-align: center;
     }
 
     @include media-breakpoint-up(lg) {
-        margin-left: ( $spacer * 6 );
+        margin-left: ( #{map-get( $grid-gutter-widths, 'xl' )} * 1.5 );
     }
 
-    .#{$pr}#{$m}btn {
+    .#{$pr}#{$m}button {
         position: relative;
         border: 0 none;
 
@@ -191,18 +152,16 @@
         &:hover,
         &:focus,
         &:active {
-            color: $body-inverse-color;
-            background-color: $body-color;
 
             svg {
-                fill: $body-inverse-color;
+                fill: currentcolor;
             }
 
         }
 
     }
 
-    .#{$pr}#{$p}footer#{$c1}btn#{$c1}text {
+    .#{$pr}#{$p}footer#{$c1}button#{$c1}text {
         display: inline-block;
         overflow: hidden;
         width: 1px;
@@ -221,13 +180,19 @@
 .#{$pr}#{$p}footer#{$c1}copyright {
     flex-grow: 1;
     width: 100%;
-    margin: ( $spacer * 1.5 ) 0 0;
+    margin: 0;
+
+    @include responsive-spacing(
+        'margin-top',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
+
     padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
     padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
     font-size: $font-size-xxs;
 
     @include media-breakpoint-up(lg) {
-        margin-top: ( $spacer * 3 );
         font-size: $font-size-xs;
     }
 

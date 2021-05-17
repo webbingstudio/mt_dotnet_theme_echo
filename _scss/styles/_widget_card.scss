@@ -1,10 +1,10 @@
 /*
 --------------------
-.#{$pr}#{$widget}#{$c3}card
+.#{$pr}widget#{$c3}card
 --------------------
 */
 
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
+.#{$pr}widget.#{$pr}widget#{$c3}card {
 
     .#{$pr}#{$c}card#{$c3}title {
         position: relative;
@@ -36,7 +36,7 @@
 
     }
 
-    &.#{$pr}#{$widget}#{$c3}pages {
+    &.#{$pr}widget#{$c3}pages {
 
         .#{$pr}#{$c}card#{$c1}contents {
             padding-top: .5em;

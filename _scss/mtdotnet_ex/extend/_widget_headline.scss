@@ -1,12 +1,12 @@
 /*
 --------------------
-.#{$pr}#{$widget}#{$c3}headline
+.#{$pr}widget#{$c3}headline
 --------------------
 */
 
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}headline {
+.#{$pr}widget.#{$pr}widget#{$c3}headline {
 
-    .#{$pr}#{$widget}#{$c1}contents {
+    .#{$pr}widget#{$c1}contents {
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
         max-width: map-get( $be-max-widths, 'md' );
         margin-left: auto;
@@ -26,7 +26,7 @@
     .#{$pr}#{$be} &,
     .#{$pr}#{$p}widgetarea#{$c3}main & {
 
-        .#{$pr}#{$widget}#{$c3}headline {
+        .#{$pr}widget#{$c3}headline {
             font-size: $font-size-sm;
 
             // 相対値ではなくremで統一する

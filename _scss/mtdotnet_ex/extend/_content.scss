@@ -13,21 +13,19 @@
     &.#{$pr}#{$p}content#{$c3}1col {
 
         .#{$pr}#{$p}content#{$c1}main {
-            padding-bottom: ( $spacer * 4.5 );
-
-            @include media-breakpoint-up(lg) {
-                padding-bottom: ( $spacer * 6 );
-            }
-
+            @include responsive-spacing(
+                'padding-bottom',
+                map-get( $responsive-spacing-min, 'xl' ),
+                map-get( $responsive-spacing-max, 'xl' )
+            );
         }
 
         .#{$pr}#{$p}content#{$c1}sub {
-            padding-bottom: ( $spacer * 4.5 );
-
-            @include media-breakpoint-up(lg) {
-                padding-bottom: ( $spacer * 6 );
-            }
-
+            @include responsive-spacing(
+                'padding-bottom',
+                map-get( $responsive-spacing-min, 'xl' ),
+                map-get( $responsive-spacing-max, 'xl' )
+            );
         }
 
     }
@@ -45,27 +43,29 @@
         }
 
         .#{$pr}#{$p}content#{$c1}main {
-            padding-bottom: ( $spacer * 4.5 );
+            @include responsive-spacing(
+                'padding-bottom',
+                map-get( $responsive-spacing-min, 'xl' ),
+                map-get( $responsive-spacing-max, 'xl' )
+            );
 
             @include media-breakpoint-up(lg) {
                 flex-grow: 0;
-                width: calc( 100% - #{map-get( $sub-widths, 'lg' )} - #{( $spacer * 3 )} );
-                padding-bottom: ( $spacer * 6 );
+                width: calc( 100% - #{map-get( $sub-widths, 'lg' )} - #{map-get( $grid-gutter-widths, xl )} );
             }
 
             @include media-breakpoint-up(xl) {
-                width: calc( 100% - #{map-get( $sub-widths, 'xl' )} - #{( $spacer * 6 )} );
+                width: calc( 100% - #{map-get( $sub-widths, 'xl' )} - #{map-get( $grid-gutter-widths, xl ) * 1.5} );
             }
 
         }
 
         .#{$pr}#{$p}content#{$c1}sub {
-            padding-bottom: ( $spacer * 4.5 );
+            padding-bottom: map-get( $responsive-spacing-min, 'xl' );
 
             @include media-breakpoint-up(lg) {
                 flex-grow: 0;
                 width: map-get( $sub-widths, 'lg' );
-                padding-top: ( $spacer * 3 );
             }
 
             @include media-breakpoint-up(xl) {

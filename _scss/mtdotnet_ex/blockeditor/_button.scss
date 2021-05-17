@@ -6,14 +6,29 @@
 
 .#{$pr}#{$be}-button {
 
-    &.#{$pr}#{$be}-button-sm {
-        margin-top: $spacer;
-        margin-bottom: $spacer;
+    @include responsive-spacing(
+        'margin-top',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
+    @include responsive-spacing(
+        'margin-bottom',
+        map-get( $responsive-spacing-min, 'lg' ),
+        map-get( $responsive-spacing-max, 'lg' )
+    );
 
-        @include media-breakpoint-up(lg) {
-            margin-top: ( $spacer * 1.5 );
-            margin-bottom: ( $spacer * 1.5 );
-        }
+    &.#{$pr}#{$be}-button-sm {
+
+        @include responsive-spacing(
+            'margin-top',
+            map-get( $responsive-spacing-min, 'md' ),
+            map-get( $responsive-spacing-max, 'md' )
+        );
+        @include responsive-spacing(
+            'margin-bottom',
+            map-get( $responsive-spacing-min, 'md' ),
+            map-get( $responsive-spacing-max, 'md' )
+        );
 
         .#{$pr}#{$m}button {
 
@@ -28,24 +43,20 @@
     }
 
     &.#{$pr}#{$be}-button-md {
-        margin-top: ( $spacer * 1.5 );
-        margin-bottom: ( $spacer * 1.5 );
-
-        @include media-breakpoint-up(lg) {
-            margin-top: ( $spacer * 2.25 );
-            margin-bottom: ( $spacer * 2.25 );
-        }
-
     }
 
     &.#{$pr}#{$be}-button-lg {
-        margin-top: ( $spacer * 2 );
-        margin-bottom: ( $spacer * 2 );
 
-        @include media-breakpoint-up(lg) {
-            margin-top: ( $spacer * 3 );
-            margin-bottom: ( $spacer * 3 );
-        }
+        @include responsive-spacing(
+            'margin-top',
+            map-get( $responsive-spacing-min, 'xl' ),
+            map-get( $responsive-spacing-max, 'xl' )
+        );
+        @include responsive-spacing(
+            'margin-bottom',
+            map-get( $responsive-spacing-min, 'xl' ),
+            map-get( $responsive-spacing-max, 'xl' )
+        );
 
     }
 

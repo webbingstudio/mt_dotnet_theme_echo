@@ -1,10 +1,10 @@
 /*
 --------------------
-.#{$pr}#{$widget}#{$c3}card
+.#{$pr}widget#{$c3}card
 --------------------
 */
 
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}card {
+.#{$pr}widget.#{$pr}widget#{$c3}card {
 
     .#{$pr}#{$row} {
         margin-bottom: ( map-get($grid-gutter-widths, md) * -1 );
@@ -28,7 +28,7 @@
 
     }
 
-    .#{$pr}#{$widget}#{$c1}contents {
+    .#{$pr}widget#{$c1}contents {
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
         max-width: map-get( $be-max-widths, 'xl' );
         margin-left: auto;
@@ -74,13 +74,13 @@
 
         }
 
-        .#{$pr}#{$widget}#{$c1}contents {
+        .#{$pr}widget#{$c1}contents {
             max-width: map-get( $be-max-widths, 'md' );
         }
 
     }
 
-    &.#{$pr}#{$widget}#{$c3}pages {
+    &.#{$pr}widget#{$c3}pages {
 
         .#{$pr}#{$c}card#{$c1}object + .#{$pr}#{$c}card#{$c1}contents {
             position: absolute;

@@ -1,10 +1,10 @@
 /*
 --------------------
-.#{$pr}#{$widget}#{$c3}media
+.#{$pr}widget#{$c3}media
 --------------------
 */
 
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
+.#{$pr}widget.#{$pr}widget#{$c3}media {
 
     .#{$pr}#{$row} {
         margin-bottom: ( map-get($grid-gutter-widths, md) * -1 );
@@ -26,7 +26,7 @@
 
     }
 
-    .#{$pr}#{$widget}#{$c1}contents {
+    .#{$pr}widget#{$c1}contents {
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
         max-width: map-get( $be-max-widths, 'xl' );
         margin-left: auto;
@@ -108,7 +108,7 @@
 
     .#{$pr}#{$p}widgetarea#{$c3}sub & {
 
-        .#{$pr}#{$widget}#{$c1}contents {
+        .#{$pr}widget#{$c1}contents {
             max-width: map-get( $be-max-widths, 'md' );
         }
 

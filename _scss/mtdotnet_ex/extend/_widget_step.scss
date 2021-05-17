@@ -1,12 +1,12 @@
 /*
 --------------------
-.#{$pr}#{$widget}#{$c3}step
+.#{$pr}widget#{$c3}step
 --------------------
 */
 
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}step {
+.#{$pr}widget.#{$pr}widget#{$c3}step {
 
-    .#{$pr}#{$widget}#{$c1}contents {
+    .#{$pr}widget#{$c1}contents {
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
         max-width: map-get( $be-max-widths, 'md' );
         margin-left: auto;

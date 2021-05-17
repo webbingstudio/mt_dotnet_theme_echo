@@ -1,10 +1,10 @@
 /*
 --------------------
-.#{$pr}#{$widget}#{$c3}media
+.#{$pr}widget#{$c3}media
 --------------------
 */
 
-.#{$pr}#{$widget}.#{$pr}#{$widget}#{$c3}media {
+.#{$pr}widget.#{$pr}widget#{$c3}media {
 
     .#{$pr}#{$c}media#{$c3}title {
         position: relative;
@@ -44,7 +44,7 @@
     .#{$pr}#{$be} &,
     .#{$pr}#{$p}widgetarea#{$c3}main & {
 
-        &.#{$pr}#{$widget}#{$c3}recent {
+        &.#{$pr}widget#{$c3}recent {
 
             .#{$pr}#{$c}media#{$c3}title {
                 font-weight: $font-weight-bold-first;
@@ -54,7 +54,7 @@
 
     }
 
-    &.#{$pr}#{$widget}#{$c3}posts {
+    &.#{$pr}widget#{$c3}posts {
 
         .#{$pr}#{$c}media#{$c3}title {
             font-weight: $font-weight-bold-first;
@@ -66,7 +66,7 @@
 
         .#{$pr}#{$m}label {
             color: $ui-inverse-color;
-            background-color: $gray;
+            background-color: $default;
         }
 
     }
