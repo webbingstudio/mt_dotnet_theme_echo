@@ -5,43 +5,47 @@
 # 
 # =======================
 </mt:Ignore>
-<div class="echo-post-header">
-    <div class="echo-card">
-        <div class="echo-card-inner">
+<div class="echo-p-pagehead echo-p-pagehead-blog echo-p-pagehead-displayed echo-p-pagehead-darken echo-p-pagehead-blended">
+    <div class="echo-hero echo-hero-fit echo-hero-inverse">
+        <div class="echo-hero-image">
+            <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
+            <picture>
+            <mt:CustomFieldAsset identifier="EchoEntryEyecatch">
+                <source
+                    media="(max-width:640px)"
+                    srcset="<mt:AssetThumbnailURL width="640" /> 640w"
+                    sizes="100vw">
+                <source
+                    media="(max-width:800px)"
+                    srcset="<mt:AssetThumbnailURL width="800" /> 800w"
+                    sizes="100vw">
+                <source
+                    srcset="<mt:AssetThumbnailURL width="1200" /> 1200w"
+                    sizes="(max-width:1200px) 100vw">
+                <img src="<mt:AssetThumbnailURL width="1200" />" alt="">
+            </mt:CustomFieldAsset>
+            </picture>
+            </mt:If>
+        </div><!-- /.echo-hero-image -->
+        <div class="echo-hero-contents">
+            <div class="echo-hero-contents-inner">
+                <div class="echo-hero-header">
+                    <p class="echo-p-pagehead-title echo-hero-title echo-title">
+                        <span class="echo-p-pagehead-title-ja echo-font-first"><mt:Var name="__blog_posts_label__" /></span>
+                        <span class="echo-p-pagehead-title-en echo-font-second"><mt:Var name="__blog_posts_basename__" /></span>
+                    </p>
+                </div><!-- /.echo-hero-header -->
+                <div class="echo-hero-body">
+                    <h1 class="echo-p-pagehead-subtitle echo-title echo-title-style-a echo-title-level-3"><mt:EntryTitle encode_html="1" /></h1>
+                    <time class="echo-p-pagehead-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
 
-        <mt:If tag="CustomFieldValue" identifier="EchoEntryEyecatch">
-            <div class="echo-card-object">
-                <mt:Ignore>サムネイルの縦横比は可変（画面幅により変動する）</mt:Ignore>
-                <figure class="echo-thumbnail">
-                    <picture>
-                        <mt:CustomFieldAsset identifier="EchoEntryEyecatch">
-                            <source
-                                media="(max-width:480px)"
-                                srcset="<mt:AssetThumbnailURL width="480" /> 480w"
-                                sizes="100vw">
-                            <source
-                                srcset="<mt:AssetThumbnailURL width="800" /> 800w"
-                                sizes="(max-width:800px) 100vw">
-                            <img src="<mt:AssetThumbnailURL width="800" />" alt="">
-                        </mt:CustomFieldAsset>
-                    </picture>
-                </figure>
-            </div><!-- /.echo-card-object -->
-        </mt:If>
-
-            <div class="echo-card-contents">
-                <h1 class="echo-card-title echo-title">
-                    <mt:EntryTitle encode_html="1" />
-                </h1>
-
-                <time class="echo-card-meta" datetime="<mt:EntryDate format_name="iso8601" />"><mt:EntryDate language="en" format="$__blog_entry_date__" /></time>
-
-                <mt:If name="__category_basename__">
-                <p class="echo-card-category">
-                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-post-category-label-primary echo-label"><mt:Var name="__category_label__" /></a>
-                </p>
-                </mt:If>
-            </div><!-- /.echo-card-contents -->
-        </div><!-- /.echo-card-inner -->
-    </div><!-- /.echo-card -->
-</div><!-- /.echo-post-header -->
+                    <mt:If name="__category_basename__">
+                    <p class="echo-p-pagehead-category">
+                        <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-post-category-label-primary echo-label echo-label-style-a"><mt:Var name="__category_label__" /></a>
+                    </p>
+                    </mt:If>
+                </div><!-- /.echo-hero-body -->
+            </div><!-- /.echo-hero-contents-inner -->
+        </div><!-- /.echo-hero-contents -->
+    </div><!-- /.echo-hero -->
+</div><!-- /.echo-p-pagehead -->
