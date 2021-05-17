@@ -88,9 +88,9 @@
         <mt:Include module="モジュール-パンくずリスト-記事" />
 
         <section class="echo-post">
-            <mt:If name="__post_eyecatch_url__" eq="">
+            <mt:Unless name="__post_eyecatch_url__">
                 <mt:Include module="モジュール-記事ヘッダ-画像なし" />
-            </mt:If>
+            </mt:Unless>
 
             <div class="echo-post-contents echo-mt-be">
                 <mt:BlockEditorBlocks tag="EntryBody">
