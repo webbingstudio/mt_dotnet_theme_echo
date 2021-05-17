@@ -1,6 +1,351 @@
 // Config: advance
 // ========================================
 
+
+// Conjunction
+// -----------------------------------------
+
+$c1: '-' !default;   // to element
+$c2: '-' !default;   // to key
+$c3: '-' !default;   // to value
+
+@if ($rule == 'bem') {
+    $c1: '__';   // to element
+    $c2: '--';   // to key
+    $c3: '--';   // to value
+}
+
+
+// Code Optimize
+// -----------------------------------------
+
+// 使用頻度が少ないスタイル（小さすぎるグリッド等）を除外し、コードを最適化する
+// Optimize the code by excluding styles that are not used frequently (too small grids, etc.)
+$optimize: true !default;
+
+
+// Prefix
+// -----------------------------------------
+
+// layout group prefix
+// ex. l-, bl_ ...
+$l: "" !default;
+
+// module group prefix
+// ex. m-, bl_ ...
+$m: "" !default;
+
+// component group prefix
+// ex. c-, bl_ ...
+$c: "" !default;
+
+// utility(helper) group prefix
+// ex. u-, hp_, is- ...
+$u: "" !default;
+
+// project group prefix
+// ex. p-, pr_ ...
+$p: "p-" !default;
+
+
+// Selector
+// -----------------------------------------
+
+// utillity-wrap-selector
+// ユーティリティクラスの優先順位を上昇させるために、点数が30（0.0.3.0）以上になるようなセレクタを指定する
+// In order to raise the priority of the utility class, specify a selector whose score is 30 (0.0.3.0) or more
+$u-wrap:    "#" + $pr + "document" !default;
+
+
+// Name
+// -----------------------------------------
+
+// grid-wrap-name
+$grid: 'grid' !default;
+
+// grid-row-name
+// ex. row(bootstrap compatible)
+$row: $l + $grid + $c1 + 'row' !default;
+
+// grid-col-name
+// ex. col(bootstrap compatible)
+$col: $l + $grid + $c1 + 'col' !default;
+
+// nav-current-name
+// ex. is-active, active, current, cur, stay...
+$nav-current: "is-current" !default;
+
+// error-name
+// ex. is-error, error...
+$error: "is-error" !default;
+
+
+// Breakpoints
+// -----------------------------------------
+
+$grid-breakpoints: (
+    default: 0,
+    xxs:     20rem,
+    xs:      22.5rem,
+    sm:      26.75rem,
+    md:      48rem,
+    lg:      62.5rem,
+    xl:      80rem,
+    xxl:     90rem
+) !default;
+
+// 数値のみを単位「rem」で記述する
+// Describes only numeric value in units "rem"
+$responsive-breakpoints: (
+    min:    22.5,
+    max:    90
+) !default;
+
+
+// Spacing
+// -----------------------------------------
+
+$component-spacing-min: (
+    md:     8,
+    lg:     8,
+    xl:     8,
+) !default;
+
+$component-spacing-max: (
+    md:     16,
+    lg:     24,
+    xl:     40,
+) !default;
+
+// 数値のみを単位「rem」で記述する
+// Describes only numeric value in units "rem"
+$responsive-spacing-min: (
+    xs:     0.25,
+    sm:     0.5,
+    md:     1,
+    lg:     2,
+    xl:     3,
+    xxl:    4
+) !default;
+
+$responsive-spacing-max: (
+    xs:     map-get( $responsive-spacing-min, 'xs' ) * 1.5,
+    sm:     map-get( $responsive-spacing-min, 'sm' ) * 1.5,
+    md:     map-get( $responsive-spacing-min, 'md' ) * 1.5,
+    lg:     map-get( $responsive-spacing-min, 'lg' ) * 1.5,
+    xl:     map-get( $responsive-spacing-min, 'xl' ) * 1.5,
+    xxl:    map-get( $responsive-spacing-min, 'xxl' ) * 1.5
+) !default;
+
+
+// Container, Grid
+// -----------------------------------------
+
+$grid-gutter-widths: (
+    none:   0,
+    sm:     .5rem,
+    md:     1rem,
+    lg:     1.5rem,
+    xl:     3rem,
+) !default;
+
+$container-max-widths-xs: (
+    md: 48rem + map-get( $grid-gutter-widths, 'md' )
+) !default;
+
+$container-max-widths-sm: (
+    md: 48rem + map-get( $grid-gutter-widths, 'md' ),
+    lg: 60rem + map-get( $grid-gutter-widths, 'md' )
+) !default;
+
+$container-max-widths-md: (
+    md: 48rem + map-get( $grid-gutter-widths, 'md' ),
+    lg: 60rem + map-get( $grid-gutter-widths, 'md' ),
+    xl: 75rem + map-get( $grid-gutter-widths, 'md' )
+) !default;
+
+$container-max-widths-lg: (
+    md:  48rem + map-get( $grid-gutter-widths, 'md' ),
+    lg:  60rem + map-get( $grid-gutter-widths, 'md' ),
+    xl:  75rem + map-get( $grid-gutter-widths, 'md' ),
+    xxl: 90rem + map-get( $grid-gutter-widths, 'md' ),
+) !default;
+
+$grid-columns:        12 !default;
+$grid-columns-max:    $grid-columns - 1 !default;
+
+
+// Width (Button, Card ...)
+// -----------------------------------------
+
+$object-max-widths: (
+    sm:  16rem,
+    md:  20rem,
+    lg:  26rem,
+    xl:  37.5rem,
+    xxl: 48rem
+) !default;
+
+
+// Body
+// -----------------------------------------
+
+$body-min-font-sizes: (
+    md:  $font-size-sm
+) !default;
+
+$body-max-font-sizes: (
+    md:  $font-size-md
+) !default;
+
+
+
+// Button
+// -----------------------------------------
+
+$button-min-heights: (
+    sm:  2.25rem,
+    md:  2.5rem,
+    lg:  2.75rem,
+    xl:  3rem,
+    xxl: 3.25rem
+) !default;
+
+$button-max-heights: (
+    sm:  2.5rem,
+    md:  2.75rem,
+    lg:  3.125rem,
+    xl:  3.5rem,
+    xxl: 4rem
+) !default;
+
+$button-min-font-sizes: (
+    sm:  $font-size-xs,
+    md:  $font-size-sm,
+    lg:  $font-size-md,
+    xl:  $font-size-lg,
+    xxl: $font-size-xl
+) !default;
+
+$button-max-font-sizes: (
+    sm:  $font-size-sm,
+    md:  $font-size-md,
+    lg:  $font-size-lg,
+    xl:  $font-size-xl,
+    xxl: $font-size-xxl
+) !default;
+
+$button-min-widths: (
+    sm:  16rem,
+    md:  20rem,
+    lg:  26rem,
+    xl:  37.5rem,
+    xxl: 48rem
+) !default;
+
+$button-max-widths: (
+    sm:  map-get( $button-min-widths, 'sm' ),
+    md:  map-get( $button-min-widths, 'md' ),
+    lg:  map-get( $button-min-widths, 'lg' ),
+    xl:  map-get( $button-min-widths, 'xl' ),
+    xxl: map-get( $button-min-widths, 'xxl' )
+) !default;
+
+
+$button-circle-min-widths: (
+    sm:  map-get( $button-min-heights, 'sm' ),
+    md:  map-get( $button-min-heights, 'md' ),
+    lg:  map-get( $button-min-heights, 'lg' ),
+    xl:  map-get( $button-min-heights, 'xl' ),
+    xxl: map-get( $button-min-heights, 'xxl' )
+) !default;
+
+$button-circle-max-widths: (
+    sm:  map-get( $button-max-heights, 'sm' ),
+    md:  map-get( $button-max-heights, 'md' ),
+    lg:  map-get( $button-max-heights, 'lg' ),
+    xl:  map-get( $button-max-heights, 'xl' ),
+    xxl: map-get( $button-max-heights, 'xxl' )
+) !default;
+
+$button-square-min-widths: (
+    sm:  map-get( $button-min-heights, 'sm' ),
+    md:  map-get( $button-min-heights, 'md' ),
+    lg:  map-get( $button-min-heights, 'lg' ),
+    xl:  map-get( $button-min-heights, 'xl' ),
+    xxl: map-get( $button-min-heights, 'xxl' )
+) !default;
+
+$button-square-max-widths: (
+    sm:  map-get( $button-max-heights, 'sm' ),
+    md:  map-get( $button-max-heights, 'md' ),
+    lg:  map-get( $button-max-heights, 'lg' ),
+    xl:  map-get( $button-max-heights, 'xl' ),
+    xxl: map-get( $button-max-heights, 'xxl' )
+) !default;
+
+
+// Nav
+// -----------------------------------------
+
+$nav-min-heights: (
+    sm:  map-get( $button-min-heights, 'sm' ),
+    md:  map-get( $button-min-heights, 'md' ),
+    lg:  map-get( $button-min-heights, 'lg' )
+) !default;
+
+$nav-max-heights: (
+    sm:  map-get( $button-max-heights, 'sm' ),
+    md:  map-get( $button-max-heights, 'md' ),
+    lg:  map-get( $button-max-heights, 'lg' )
+) !default;
+
+$nav-min-font-sizes: (
+    sm:  map-get( $button-min-font-sizes, 'sm' ),
+    md:  map-get( $button-min-font-sizes, 'md' ),
+    lg:  map-get( $button-min-font-sizes, 'lg' )
+) !default;
+
+$nav-max-font-sizes: (
+    sm:  map-get( $button-max-font-sizes, 'sm' ),
+    md:  map-get( $button-max-font-sizes, 'md' ),
+    lg:  map-get( $button-max-font-sizes, 'lg' )
+) !default;
+
+
+// Title
+// -----------------------------------------
+
+$title-min-font-sizes: (
+    '6':  1em,
+    '5':  1.0625em,
+    '4':  1.25em,
+    '3':  1.5em,
+    '2':  1.75em,
+    '1':  2em
+) !default;
+
+$title-max-font-sizes: (
+    '6':  1.125em,
+    '5':  1.25em,
+    '4':  1.5em,
+    '3':  1.75em,
+    '2':  2em,
+    '1':  2.5em
+) !default;
+
+
+// Paginate
+// -----------------------------------------
+
+$paginate-border-width: 0 !default;
+$paginate-gutter:       0 !default;
+$paginate-prev:         "prev" !default;
+$paginate-next:         "next" !default;
+$paginate-ellipsis:     "ellipsis" !default;
+$paginate-current:      $nav-current !default;
+
+
 // Color
 // -----------------------------------------
 
@@ -24,28 +369,27 @@ $nav-inverse-current-bg:          $ui-inverse-current-bg !default;
 $nav-inverse-current-hover-color: $ui-inverse-current-hover-color !default;
 $nav-inverse-current-hover-bg:    $ui-inverse-current-hover-bg !default;
 
-// Pager
-$pager-border-width:                 $ui-btn-border-width !default;
-$pager-color:                        $ui-color !default;
-$pager-bg:                           $ui-bg !default;
-$pager-border-color:                 $ui-border-color !default;
-$pager-hover-color:                  $ui-hover-color !default;
-$pager-hover-bg:                     $ui-hover-bg !default;
-$pager-hover-border-color:           $ui-hover-border-color !default;
-$pager-current-color:                $ui-current-color !default;
-$pager-current-bg:                   $ui-current-bg !default;
-$pager-current-border-color:         $ui-current-border-color !default;
+// Paginate
+$paginate-color:                        $nav-color !default;
+$paginate-bg:                           $nav-bg !default;
+$paginate-border-color:                 $nav-color !default;
+$paginate-hover-color:                  $nav-hover-color !default;
+$paginate-hover-bg:                     $nav-hover-bg !default;
+$paginate-hover-border-color:           $paginate-border-color !default;
+$paginate-current-color:                $nav-current-color !default;
+$paginate-current-bg:                   $nav-current-bg !default;
+$paginate-current-border-color:         $paginate-border-color !default;
 
-// Pager (inverse)
-$pager-inverse-color:                $ui-inverse-color !default;
-$pager-inverse-bg:                   $ui-inverse-bg !default;
-$pager-inverse-border-color:         $ui-inverse-border-color !default;
-$pager-inverse-hover-color:          $ui-inverse-hover-color !default;
-$pager-inverse-hover-bg:             $ui-inverse-hover-bg !default;
-$pager-inverse-hover-border-color:   $ui-inverse-hover-border-color !default;
-$pager-inverse-current-color:        $ui-inverse-current-color !default;
-$pager-inverse-current-bg:           $ui-inverse-current-bg !default;
-$pager-inverse-current-border-color: $ui-inverse-current-border-color !default;
+// Paginate (inverse)
+$paginate-inverse-color:                $nav-inverse-color !default;
+$paginate-inverse-bg:                   $nav-inverse-bg !default;
+$paginate-inverse-border-color:         $nav-inverse-color !default;
+$paginate-inverse-hover-color:          $nav-inverse-hover-color !default;
+$paginate-inverse-hover-bg:             $nav-inverse-hover-bg !default;
+$paginate-inverse-hover-border-color:   $paginate-inverse-border-color !default;
+$paginate-inverse-current-color:        $nav-inverse-current-color !default;
+$paginate-inverse-current-bg:           $nav-inverse-current-bg !default;
+$paginate-inverse-current-border-color: $paginate-inverse-border-color !default;
 
 // Input
 $input-border-width:       $ui-border-width !default;
@@ -73,147 +417,3 @@ $radio-border-color:         $ui-border-color !default;
 $radio-checked-color:        $ui-icon-color !default;
 $radio-checked-bg:           $ui-bg !default;
 $radio-checked-border-color: $ui-icon-color !default;
-
-
-// Conjunction
-// -----------------------------------------
-
-$c1: '-' !default;   // to element
-$c2: '-' !default;   // to key
-$c3: '-' !default;   // to value
-
-@if ($rule == 'bem') {
-    $c1: '__';   // to element
-    $c2: '--';   // to key
-    $c3: '--';   // to value
-}
-
-
-// Spacer
-// -----------------------------------------
-
-$spacer: 10px !default;
-
-
-// Code Optimize
-// -----------------------------------------
-
-// 使用頻度が少ないスタイル（小さすぎるグリッド等）を除外し、コードを最適化する
-// Optimize the code by excluding styles that are not used frequently (too small grids, etc.)
-$optimize: true !default;
-
-
-// Prefix
-// -----------------------------------------
-
-// layout-group-prefix
-$l: "l-" !default;
-
-// module-group-prefix
-$m: "m-" !default;
-
-// component-group-prefix
-$c: "c-" !default;
-
-// utility-group-prefix
-$u: "u-" !default;
-
-// project-group-prefix
-$p: "p-" !default;
-
-
-// Selector
-// -----------------------------------------
-
-// utillity-wrap-selector
-// ユーティリティクラスの優先順位を上昇させるために、点数が30（0.0.3.0）以上になるようなセレクタを指定する
-// In order to raise the priority of the utility class, specify a selector whose score is 30 (0.0.3.0) or more
-$u-wrap:    "#document" !default;
-
-// icon-selector
-$icon:      '[class*="fa-"]' !default;
-
-
-// Name
-// -----------------------------------------
-
-// widget-name
-// ex. widget, module, box, view...
-$widget: $p + "widget" !default;
-
-// grid-row-name
-// ex. row(bootstrap compatible), wrap...
-$row: $l + 'grid' + $c1 + 'row' !default;
-
-// grid-col-name
-// ex. col(bootstrap compatible), cel...
-$col: $l + 'grid' + $c1 + 'col' !default;
-
-// nav-current-name
-// ex. is-active, active, current, cur, stay...
-$nav-current: "is-current" !default;
-
-// error-name
-// ex. is-error, error...
-$error: "is-error" !default;
-
-// pager-prev-name
-// ex. prev, previous, pagination-prev...
-$pager-prev: "prev" !default;
-
-// pager-next-name
-// ex. next, pagination-next...
-$pager-next: "next" !default;
-
-// pager-current-name
-// ex. $nav-current, current, pagination-current...
-$pager-current: $nav-current !default;
-
-// pager-ellipsis-name
-// ex. ellipsis, ommition...
-$pager-ellipsis: "ellipsis" !default;
-
-
-// Container, Grid
-// -----------------------------------------
-
-$grid-gutter-widths: (
-    none:   0,
-    sm:     $spacer,
-    md:     ($spacer * 2),
-    lg:     ($spacer * 4)
-) !default;
-
-$container-max-widths-sm: (
-    md: 740px + map-get( $grid-gutter-widths, 'md' ),
-    lg: 960px + map-get( $grid-gutter-widths, 'md' )
-) !default;
-
-$container-max-widths-md: (
-    md: 740px + map-get( $grid-gutter-widths, 'md' ),
-    lg: 960px + map-get( $grid-gutter-widths, 'md' ),
-    xl: 1200px + map-get( $grid-gutter-widths, 'md' )
-) !default;
-
-$container-max-widths-lg: (
-    md:  740px + map-get( $grid-gutter-widths, 'md' ),
-    lg:  960px + map-get( $grid-gutter-widths, 'md' ),
-    xl:  1200px + map-get( $grid-gutter-widths, 'md' ),
-    xxl: 1400px + map-get( $grid-gutter-widths, 'md' ),
-) !default;
-
-$grid-breakpoints: (
-    default: 0,
-    xxs:     320px,
-    xs:      360px,
-    sm:      425px,
-    md:      768px,
-    lg:      1000px,
-    xl:      1280px,
-    xxl:     1440px
-) !default;
-
-$grid-columns:        12 !default;
-$grid-columns-max:    $grid-columns - 1 !default;
-
-

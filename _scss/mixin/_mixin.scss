@@ -1,23 +1,29 @@
 @import "./_grid.scss";
 @import "./_text.scss";
+@import "./_responsive-spacing.scss";
 
 @mixin font-family-weight($family, $weight: null) {
 
     @if ($family == 'root') {
 
         @if ($weight == 'bold') {
-            @if (variable-exists(font-family-bold-root)) {
-                font-family: $font-family-bold-root;
-            }
-            @if (variable-exists(font-weight-bold-root)) {
-                font-weight: $font-weight-bold-root;
-            } @else {
+            @if ( $font-family-bold-root == $font-family-root ) {
                 font-weight: bold;
+            } @else {
+                @if (variable-exists(font-family-bold-root)) {
+                    font-family: $font-family-bold-root;
+                }
+                @if (variable-exists(font-weight-bold-root)) {
+                    font-weight: $font-weight-bold-root;
+                }
             }
 
         } @else {
             @if (variable-exists(font-family-root)) {
                 font-family: $font-family-root;
+            }
+            @if (variable-exists(font-weight-root)) {
+                font-weight: $font-weight-root;
             }
 
         }
@@ -36,18 +42,23 @@
     @if ($family == 'first') {
 
         @if ($weight == 'bold') {
-            @if (variable-exists(font-family-bold-first)) {
-                font-family: $font-family-bold-first;
-            }
-            @if (variable-exists(font-weight-bold-first)) {
-                font-weight: $font-weight-bold-first;
-            } @else {
+            @if ( $font-family-bold-first == $font-family-first ) {
                 font-weight: bold;
+            } @else {
+                @if (variable-exists(font-family-bold-first)) {
+                    font-family: $font-family-bold-first;
+                }
+                @if (variable-exists(font-weight-bold-first)) {
+                    font-weight: $font-weight-bold-first;
+                }
             }
 
         } @else {
             @if (variable-exists(font-family-first)) {
                 font-family: $font-family-first;
+            }
+            @if (variable-exists(font-weight-first)) {
+                font-weight: $font-weight-first;
             }
 
         }
@@ -66,18 +77,23 @@
     @if ($family == 'second') {
 
         @if ($weight == 'bold') {
-            @if (variable-exists(font-family-bold-second)) {
-                font-family: $font-family-bold-second;
-            }
-            @if (variable-exists(font-weight-bold-second)) {
-                font-weight: $font-weight-bold-second;
-            } @else {
+            @if ( $font-family-bold-second == $font-family-second ) {
                 font-weight: bold;
+            } @else {
+                @if (variable-exists(font-family-bold-second)) {
+                    font-family: $font-family-bold-second;
+                }
+                @if (variable-exists(font-weight-bold-second)) {
+                    font-weight: $font-weight-bold-second;
+                }
             }
 
         } @else {
             @if (variable-exists(font-family-second)) {
                 font-family: $font-family-second;
+            }
+            @if (variable-exists(font-weight-second)) {
+                font-weight: $font-weight-second;
             }
 
         }
@@ -96,18 +112,23 @@
     @if ($family == 'third') {
 
         @if ($weight == 'bold') {
-            @if (variable-exists(font-family-bold-third)) {
-                font-family: $font-family-bold-third;
-            }
-            @if (variable-exists(font-weight-bold-third)) {
-                font-weight: $font-weight-bold-third;
-            } @else {
+            @if ( $font-family-bold-third == $font-family-third ) {
                 font-weight: bold;
+            } @else {
+                @if (variable-exists(font-family-bold-third)) {
+                    font-family: $font-family-bold-third;
+                }
+                @if (variable-exists(font-weight-bold-third)) {
+                    font-weight: $font-weight-bold-third;
+                }
             }
 
         } @else {
             @if (variable-exists(font-family-third)) {
                 font-family: $font-family-third;
+            }
+            @if (variable-exists(font-weight-third)) {
+                font-weight: $font-weight-third;
             }
 
         }
@@ -122,46 +143,6 @@
         }
 
     }
-
-    @if ($family == 'mono') {
-        @if (variable-exists(font-family-mono)) {
-            font-family: $font-family-mono;
-        }
-    }
-
-}
-
-@mixin chevron( $rotate: 'right', $color: $body-color, $size: .375em, $border-width: 1px ) {
-    position: relative;
-
-    &:after {
-        content: "";
-        position: absolute;
-        width: $size;
-        height: $size;
-        border-top: $border-width solid $color;
-        border-right: $border-width solid $color;
-        transform-origin: center center;
-
-        @if ($rotate == 'up') {
-            transform: rotate(315deg);
-        }
-
-        @if ($rotate == 'right') {
-            transform: rotate(45deg);
-        }
-
-        @if ($rotate == 'down') {
-            transform: rotate(135deg);
-        }
-
-        @if ($rotate == 'left') {
-            transform: rotate(225deg);
-        }
-
-    }
-
-    @content;
 
 }
 
@@ -261,17 +242,27 @@
 
     &:hover,
     &:focus,
-    &:active,
-    &.active {
+    &:active {
         color: $hover-color;
         background-color: $hover-background;
         border-color: $hover-border;
     }
 
+    @at-root {
+
+        a:hover #{&},
+        a:focus #{&},
+        a:active #{&} {
+            color: $hover-color;
+            background-color: $hover-background;
+            border-color: $hover-border;
+        }
+
+    }
+
     &.disabled,
     &:disabled,
     fieldset[disabled] & {
-        opacity: .65;
 
         &:hover,
         &.hover,
@@ -284,11 +275,27 @@
 
     }
 
+}
+
+
+@mixin label-variant(
+    $color,
+    $background,
+    $border,
+    $hover-color,
+    $hover-background,
+    $hover-border
+) {
+
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
     @at-root {
 
-        a:hover &,
-        a:focus &,
-        a:active & {
+        a#{&}:hover,
+        a#{&}:focus,
+        a#{&}:active {
             color: $hover-color;
             background-color: $hover-background;
             border-color: $hover-border;
