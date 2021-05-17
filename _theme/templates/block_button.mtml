@@ -58,13 +58,13 @@
 
 <mt:If name="__button_size__" like="小">
     <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-button-lg</mt:SetVarBlock>
-    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-btn-sm</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-button-sm</mt:SetVarBlock>
 <mt:ElseIf name="__button_size__" like="中">
     <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-button-xl</mt:SetVarBlock>
-    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-btn-md</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-button-md</mt:SetVarBlock>
 <mt:Else>
     <mt:SetVarBlock name="__button_class__"><mt:Var name="__button_class__" /> echo-button-xxl</mt:SetVarBlock>
-    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-btn-lg</mt:SetVarBlock>
+    <mt:SetVarBlock name="__button_wrapclass__"> echo-mt-be-button-lg</mt:SetVarBlock>
 </mt:If>
 
 <mt:If name="__button_target__" like="新しい">
@@ -73,12 +73,8 @@
     <mt:SetVar name="__button_target__" value="" />
 </mt:If>
 
-<div class="echo-mt-be-btn<mt:Var name="__button_wrapclass__" />">
-    <div class="echo-buttons">
-        <div class="echo-buttons-item">
-            <a href="<mt:Var name="__button_url__" strip_linefeeds="1" remove_html="1" />"<mt:Var name="__button_target__" /> class="echo-button<mt:Var name="__button_class__" />">
-                <mt:Var name="__button_label__" strip_linefeeds="1" remove_html="1" />
-            </a>
-        </div><!-- /.echo-buttons-item -->
-    </div><!-- /.echo-buttons -->
-</div><!-- /.echo-mt-be-btn -->
+<div class="echo-mt-be-button<mt:Var name="__button_wrapclass__" />">
+    <a href="<mt:Var name="__button_url__" strip_linefeeds="1" remove_html="1" />"<mt:Var name="__button_target__" /> class="echo-button<mt:Var name="__button_class__" />">
+        <mt:Var name="__button_label__" strip_linefeeds="1" remove_html="1" />
+    </a>
+</div><!-- /.echo-mt-be-button -->
