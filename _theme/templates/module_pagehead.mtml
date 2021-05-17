@@ -42,10 +42,14 @@
         </div><!-- /.echo-hero-image -->
         <div class="echo-hero-contents">
             <div class="echo-hero-contents-inner">
-                <<mt:Var name="__pagehead_tag__" /> class="echo-hero-title echo-title echo-font-first"><span class="echo-hero-title-text"><mt:Var name="__pagehead_title__" /></span></<mt:Var name="__pagehead_tag__" />>
-            <mt:If name="__pagehead_caption__">
-                <div class="echo-hero-caption"><mt:Var name="__pagehead_caption__" /></div>
-            </mt:If>
+                <div class="echo-hero-header">
+                    <<mt:Var name="__pagehead_tag__" /> class="echo-p-pagehead-title echo-hero-title echo-title">
+                        <span class="echo-p-pagehead-title-ja echo-font-first"><mt:Var name="__pagehead_title__" /></span>
+                        <mt:If name="__pagehead_caption__">
+                            <span class="echo-p-pagehead-title-en echo-font-second"><mt:Var name="__pagehead_caption__" /></span>
+                        </mt:If>
+                    </<mt:Var name="__pagehead_tag__" />>
+                </div><!-- /.echo-hero-header -->
             </div><!-- /.echo-hero-contents-inner -->
         </div><!-- /.echo-hero-contents -->
     </div><!-- /.echo-hero -->
