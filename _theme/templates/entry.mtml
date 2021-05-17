@@ -39,7 +39,7 @@
 #   __post_ogp_height__
 #
 # vars(local):
-#   __pagehead_tag__
+#   __has_serial__
 # 
 # =======================
 </mt:Ignore>
@@ -108,16 +108,30 @@
 
             <div class="echo-post-footer">
             <mt:If name="__category_basename__">
-                <p class="echo-post-category echo-post-category-all">
-                    <dfn class="echo-post-category-header">カテゴリー</dfn>
-                    <a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-post-category-label-primary echo-label"><mt:Var name="__category_label__" /></a>
-
-                <mt:EntryAdditionalCategories>
-                    <a href="<mt:CategoryArchiveLink />" class="echo-post-category-label echo-post-category-label-secondary echo-label"><mt:CategoryLabel encode_html="1" /></a>
-                </mt:EntryAdditionalCategories>
-                </p>
+                <div class="echo-post-category echo-post-category-all">
+                    <nav class="echo-labels">
+                        <dl class="echo-labels-list">
+                            <dt class="echo-labels-header">カテゴリー</dt>
+                            <dd class="echo-labels-item"><a href="<mt:Var name="__category_url__" />" class="echo-post-category-label echo-post-category-label-primary echo-label echo-label-style-a"><mt:Var name="__category_label__" /></a></dd>
+                            <mt:EntryAdditionalCategories>
+                            <dd class="echo-labels-item">
+                                <a href="<mt:CategoryArchiveLink />" class="echo-post-category-label echo-post-category-label-secondary echo-label echo-label-style-b"><mt:CategoryLabel encode_html="1" /></a>
+                            </dd>
+                            </mt:EntryAdditionalCategories>
+                        </dl><!-- /.echo-labels-list -->
+                    </nav><!-- /.echo-labels -->
+                </div><!-- /.echo-post-category -->
             </mt:If>
 
+<mt:SetVar name="__has_serial__" value="false" />
+<mt:EntryPrevious>
+    <mt:SetVar name="__has_serial__" value="true" />
+</mt:EntryPrevious>
+<mt:EntryNext>
+    <mt:SetVar name="__has_serial__" value="true" />
+</mt:EntryNext>
+
+            <mt:If name="__has_serial__" eq="true">
                 <div class="echo-serial">
                     <nav class="echo-nav">
                         <ul class="echo-nav-list">
@@ -133,10 +147,11 @@
                             </mt:EntryNext>
                         </ul><!-- /.echo-nav-list -->
                     </nav><!-- /.echo-nav -->
-                </div><!-- /.echo-pagenate -->
+                </div><!-- /.echo-serial -->
+            </mt:If>
 
             </div><!-- /.echo-post-footer -->
-        </section><!-- /.echo-serial -->
+        </section><!-- /.echo-post -->
 
     </main><!-- /.echo-p-main -->
 
