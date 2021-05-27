@@ -1,8 +1,6 @@
 echo - MovableType.net theme framework
 ====================================
 
-<img alt="echo" src="https://echocss.webbingstudio.com/images/echo/logo.svg" height="60" />
-
 version 0.1.0 (under construction)
 
 Copyright 2021 WebbingStudio  
