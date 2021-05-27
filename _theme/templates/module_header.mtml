@@ -121,7 +121,7 @@
 
                 <mt:If name="__hnav_children__">
                     <mt:Ignore>子ページが1件でもあれば表示</mt:Ignore>
-                    <ul class="echo-nav-list echo-nav-children">
+                    <ul class="echo-nav-list echo-p-header-nav-children">
                         <mt:Var name="__hnav_children__" />
                     </ul>
                 </mt:If>
@@ -147,24 +147,24 @@
         </nav><!-- /.echo-p-header-nav -->
         <mt:Ignore>ナビゲーション2階層:ここまで</mt:Ignore>
 
-        <div class="echo-p-header-btn echo-nav">
+        <div class="echo-p-header-button echo-nav">
             <ul class="echo-nav-list">
                 <mt:If tag="CustomFieldValue" identifier="EchoBlogTel">
-                <li class="echo-nav-item echo-p-header-btn-lg echo-p-header-btn-tel">
+                <li class="echo-nav-item echo-p-header-button-lg echo-p-header-button-tel">
                     <a href="tel:<mt:CustomFieldValue identifier="EchoBlogTel" />" class="echo-nav-label">
                         <mt:Var name="__svg_tel__">
-                        <span class="echo-p-header-btn-text"><mt:CustomFieldValue identifier="EchoBlogTel" /></span>
+                        <span class="echo-p-header-button-text"><mt:CustomFieldValue identifier="EchoBlogTel" /></span>
                     </a><!-- /.echo-nav-label -->
                 </li><!-- /.echo-nav-item -->
                 </mt:If>
-                <li class="echo-nav-item echo-p-header-btn-sm echo-p-header-btn-mail">
+                <li class="echo-nav-item echo-p-header-button-sm echo-p-header-button-mail">
                     <a href="#" class="echo-nav-label">
                         <mt:Var name="__svg_mail__">
-                        <span class="echo-p-header-btn-text">お問い合わせ</span>
+                        <span class="echo-p-header-button-text">お問い合わせ</span>
                     </a><!-- /.echo-nav-label -->
                 </li><!-- /.echo-nav-item -->
             </ul><!-- /.echo-nav -->
-        </div><!-- /.echo-p-header-btn -->
+        </div><!-- /.echo-p-header-button -->
 
     </div><!-- /.echo-p-header-contents -->
 </header><!-- /.echo-p-header -->
