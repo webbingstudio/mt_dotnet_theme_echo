@@ -979,19 +979,26 @@ embed
 .echo-p-header
 --------------------
 */
+@media (min-width: 48rem) {
+  .echo-document {
+    padding-top: 4.25rem;
+  }
+}
+
 .echo-p-header {
   position: relative;
+  width: 100%;
   z-index: 998;
-  transition: padding .3s;
 }
 
 .echo-p-header.js-scrollswitch-active {
   position: fixed;
-  padding-top: 0;
-  padding-bottom: 0;
+  top: 0;
+  left: 0;
 }
 
 .echo-p-header-contents {
+  width: 100%;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
@@ -1010,30 +1017,37 @@ embed
 .echo-p-header-title svg,
 .echo-p-header-title img {
   width: auto;
-  height: 36px;
+  height: 1.5rem;
   vertical-align: bottom;
+}
+
+@media (min-width: 48rem) {
+  .echo-p-header-title svg,
+  .echo-p-header-title img {
+    height: 1.75rem;
+  }
 }
 
 .echo-p-header-nav {
   flex-grow: 0;
-  padding-right: 0;
 }
 
 .echo-p-header-nav .echo-nav-item {
   position: relative;
 }
 
-.echo-p-header-nav .echo-nav-children {
+.echo-p-header-nav .echo-p-header-nav-children {
   flex-direction: column;
   position: absolute;
-  width: 10em;
   top: 100%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
+  width: 10em;
 }
 
-.echo-p-header-nav .echo-nav-children .echo-nav-label {
+.echo-p-header-nav .echo-p-header-nav-children .echo-nav-label {
   padding-left: 1em;
+  min-height: 2.5rem;
 }
 
 .echo-p-header-button {
@@ -1042,7 +1056,7 @@ embed
 
 @media (min-width: 48rem) {
   .echo-p-header-button {
-    padding-right: 0;
+    padding-right: 0.5rem;
   }
 }
 
@@ -1054,6 +1068,7 @@ embed
 @media (max-width: 62.4rem) {
   .echo-p-header-button .echo-nav-label {
     padding: 0 .5em;
+    min-width: 2.5rem;
   }
 }
 
@@ -1096,28 +1111,12 @@ embed
   }
 }
 
-.echo-p-header-button .echo-nav-item.echo-p-header-button-sm .echo-p-header-button-text {
-  font-size: 0.85714em;
-}
-
-@media (min-width: 62.5rem) {
-  .echo-p-header-button .echo-nav-item.echo-p-header-button-sm .echo-p-header-button-text {
-    font-size: 0.92857em;
-  }
-}
-
 @media (max-width: 47.9rem) {
   .echo-p-header-button .echo-nav-item.echo-p-header-button-sm .echo-p-header-button-text {
     overflow: hidden;
     width: 1px;
     margin-left: -1px;
     text-indent: -999em;
-  }
-}
-
-@media (min-width: 62.5rem) {
-  .echo-p-header-button .echo-nav-item.echo-p-header-button-lg .echo-p-header-button-text {
-    font-size: 1.07143em;
   }
 }
 
