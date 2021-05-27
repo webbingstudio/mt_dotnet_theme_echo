@@ -8,11 +8,27 @@
     border-top: 1px solid $border-color;
 }
 
+.#{$pr}#{$p}footer#{$c1}nav {
+
+    .#{$pr}#{$m}nav#{$c1}label {
+
+        &.#{$nav-current} {
+            background-color: transparent;
+            color: $nav-color;
+            @include font-family-weight( 'root', 'bold' );
+        }
+
+    }
+
+}
+
+
 .#{$pr}#{$p}footer#{$c1}button {
 
     .#{$pr}#{$p}footer#{$c1}button#{$c3}twitter {
 
         .#{$pr}#{$m}button {
+            color: #fff;
 
             &:hover,
             &:focus,
@@ -28,6 +44,7 @@
     .#{$pr}#{$p}footer#{$c1}button#{$c3}facebook {
 
         .#{$pr}#{$m}button {
+            color: #fff;
 
             &:hover,
             &:focus,
@@ -43,6 +60,7 @@
     .#{$pr}#{$p}footer#{$c1}button#{$c3}instagram {
 
         .#{$pr}#{$m}button {
+            color: #fff;
 
             &:hover,
             &:focus,
@@ -57,6 +75,7 @@
 
 
     .#{$pr}#{$p}footer#{$c1}button#{$c3}line {
+        color: #fff;
 
         .#{$pr}#{$m}button {
 
@@ -74,6 +93,7 @@
     .#{$pr}#{$p}footer#{$c1}button#{$c3}youtube {
 
         .#{$pr}#{$m}button {
+            color: #fff;
 
             &:hover,
             &:focus,

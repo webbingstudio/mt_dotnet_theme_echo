@@ -5,6 +5,11 @@
 */
 
 .#{$pr}#{$p}footer {
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: 2.75rem + map-get( $grid-gutter-widths, 'lg' );
+    }
+
 }
 
 .#{$pr}#{$p}footer#{$c1}contents {
@@ -29,13 +34,25 @@
     width: 100%;
 
     @include media-breakpoint-up(lg) {
-        margin-bottom: map-get( $grid-gutter-widths, md );
+        margin-bottom: map-get( $grid-gutter-widths, lg );
+    }
+
+    .#{$pr}#{$m}nav#{$c1}list {
+        flex-wrap: wrap;
+    }
+
+    .#{$pr}#{$m}nav#{$c1}item {
+        flex-grow: 0;
     }
 
 }
 
 .#{$pr}#{$p}footer#{$c1}title {
     flex-grow: 0;
+
+    @include media-breakpoint-down(md) {
+        margin-top: map-get( $grid-gutter-widths, 'md' );
+    }
 
     a {
         display: inline-block;
@@ -45,11 +62,11 @@
     img,
     svg {
         width: auto;
-        height: 2.5rem;
+        height: 1.5rem;
         vertical-align: bottom;
 
         @include media-breakpoint-up(lg) {
-            height: 2.75rem;
+            height: 1.75rem;
         }
 
     }
@@ -61,6 +78,10 @@
     font-size: $font-size-xs;
     font-style: normal;
     line-height: $line-height-lg;
+
+    a {
+        color: $body-color;
+    }
 
     @include media-breakpoint-down(md) {
         width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
@@ -77,8 +98,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-        font-size: $font-size-sm;
-        margin-left: ( #{map-get( $grid-gutter-widths, 'xl' )} * 1.5 );
+        margin-left: map-get( $grid-gutter-widths, 'xl' );
     }
 
     svg {
@@ -133,19 +153,21 @@
     }
 
     @include media-breakpoint-up(lg) {
-        margin-left: ( #{map-get( $grid-gutter-widths, 'xl' )} * 1.5 );
+        margin-left: map-get( $grid-gutter-widths, 'xl' );
     }
 
     .#{$pr}#{$m}button {
         position: relative;
         border: 0 none;
+        transition:
+            background-color .3s,
+            border-color .3s,
+            color .3s;
+        background-color: transparent;
 
         svg {
-            display: inline-block;
             width: auto;
-            height: 2em;
-            margin-top: -.5em;
-            margin-bottom: -.5em;
+            height: 1.75rem;
             vertical-align: middle;
         }
 
@@ -167,30 +189,27 @@
         width: 1px;
         margin-left: -1px;
         text-indent: -999em;
-        float: right;
     }
 
     .#{$pr}#{$m}list#{$c1}item {
-        padding-left: .5em;
-        padding-right: .5em;
+        margin-left: .5em;
+        margin-right: .5em;
     }
 
 }
 
 .#{$pr}#{$p}footer#{$c1}copyright {
     flex-grow: 1;
-    width: 100%;
+    width: calc( 100% - #{map-get( $grid-gutter-widths, 'md' )} );
     margin: 0;
+    font-size: $font-size-xxs;
+    text-align: center;
 
     @include responsive-spacing(
         'margin-top',
         map-get( $responsive-spacing-min, 'lg' ),
         map-get( $responsive-spacing-max, 'lg' )
     );
-
-    padding-left: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-    padding-right: ( map-get( $grid-gutter-widths, 'md' ) / 2 );
-    font-size: $font-size-xxs;
 
     @include media-breakpoint-up(lg) {
         font-size: $font-size-xs;

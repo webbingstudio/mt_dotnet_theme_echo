@@ -231,6 +231,62 @@
 
 /*
 --------------------
+.echo-p-footer
+--------------------
+*/
+.echo-p-footer {
+  border-top: 1px solid #333;
+}
+
+.echo-p-footer-nav .echo-nav-label.is-current {
+  background-color: transparent;
+  color: #333;
+  font-weight: bold;
+}
+
+.echo-p-footer-button .echo-p-footer-button-twitter .echo-button {
+  color: #fff;
+}
+
+.echo-p-footer-button .echo-p-footer-button-twitter .echo-button:hover, .echo-p-footer-button .echo-p-footer-button-twitter .echo-button:focus, .echo-p-footer-button .echo-p-footer-button-twitter .echo-button:active {
+  background-color: #1d9bf0;
+}
+
+.echo-p-footer-button .echo-p-footer-button-facebook .echo-button {
+  color: #fff;
+}
+
+.echo-p-footer-button .echo-p-footer-button-facebook .echo-button:hover, .echo-p-footer-button .echo-p-footer-button-facebook .echo-button:focus, .echo-p-footer-button .echo-p-footer-button-facebook .echo-button:active {
+  background-color: #1878f2;
+}
+
+.echo-p-footer-button .echo-p-footer-button-instagram .echo-button {
+  color: #fff;
+}
+
+.echo-p-footer-button .echo-p-footer-button-instagram .echo-button:hover, .echo-p-footer-button .echo-p-footer-button-instagram .echo-button:focus, .echo-p-footer-button .echo-p-footer-button-instagram .echo-button:active {
+  background-color: #b53f9e;
+  background-image: linear-gradient(49deg, #fee331 0%, #b53f9e 50%);
+}
+
+.echo-p-footer-button .echo-p-footer-button-line {
+  color: #fff;
+}
+
+.echo-p-footer-button .echo-p-footer-button-line .echo-button:hover, .echo-p-footer-button .echo-p-footer-button-line .echo-button:focus, .echo-p-footer-button .echo-p-footer-button-line .echo-button:active {
+  background-color: #00b900;
+}
+
+.echo-p-footer-button .echo-p-footer-button-youtube .echo-button {
+  color: #fff;
+}
+
+.echo-p-footer-button .echo-p-footer-button-youtube .echo-button:hover, .echo-p-footer-button .echo-p-footer-button-youtube .echo-button:focus, .echo-p-footer-button .echo-p-footer-button-youtube .echo-button:active {
+  background-color: #ee0000;
+}
+
+/*
+--------------------
 .echo-thumbnail
 --------------------
 */
