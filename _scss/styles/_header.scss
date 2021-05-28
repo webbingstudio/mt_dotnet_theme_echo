@@ -6,6 +6,12 @@
 
 .#{$pr}#{$p}header {
 
+    &:after {
+        height: 100%;
+        top: 0;
+        background-color: transparent;
+    }
+
     @include media-breakpoint-up(md) {
         position: absolute;
         top: 0;
@@ -13,68 +19,58 @@
     }
 
     &.js-scrollswitch-active {
-        box-shadow: 0 2px 5px rgba( 0, 0, 0, 0.3 );
+
+        &:after {
+            box-shadow: 0 2px 5px rgba( 0, 0, 0, 0.3 );
+        }
+
     }
 
 }
 
 .#{$pr}#{$p}header#{$c1}nav {
 
-    .#{$pr}#{$m}nav#{$c1}label {
-        font-size: $font-size-sm;
-    }
+    > .#{$pr}#{$m}nav#{$c1}list {
 
-    .#{$pr}#{$p}header#{$c1}nav#{$c1}children {
-        height: 0;
-        transform:
-            translate( -50%, 0 )
-            scale( 1, 0 );
-        z-index: 61;
+        > .#{$pr}#{$m}nav#{$c1}item {
 
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.3 );
-            transform-origin: top center;
-            z-index: 62;
+            .#{$pr}#{$m}nav#{$c1}label {
+
+                &.is-parent {
+                    background-color: transparent;
+                    color: $nav-color;
+                    @include font-family-weight( 'root', 'bold' );
+
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        height: 3px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: $ui-current-bg;
+                    }
+
+                }
+
+            }
+
         }
 
-        .#{$pr}#{$m}nav#{$c1}item {
-            z-index: 63;
-        }
-
-        .#{$pr}#{$m}nav#{$c1}label {
-            font-size: $font-size-xs;
-        }
-    
     }
 
     .#{$pr}#{$m}nav#{$c1}item {
 
-        &.js-hoverswitch-ready {
-            // Do not use animation "reverse" for :not(:hover)
-            // (Because it play when the document loads).
-        }
-
         &.js-hoverswitch-in {
 
             .#{$pr}#{$p}header#{$c1}nav#{$c1}children {
-                transform:
-                    translate( -50%, 0 )
-                    scale( 1, 1 );
-                height: auto;
 
                 &:before {
-                    animation: headerNavChildrenListIn .3s linear 1 forwards;
+                    animation: headerNavChildrenListIn .3s ease-out 1 forwards;
                 }
 
                 .#{$pr}#{$m}nav#{$c1}item {
-                    animation: headerNavChildrenItemIn .6s linear 1 forwards;
+                    animation: headerNavChildrenItemIn .4s ease-out 1 forwards;
                 }
 
             }
@@ -82,41 +78,32 @@
         }
 
         &.js-hoverswitch-out {
-
+    
             .#{$pr}#{$p}header#{$c1}nav#{$c1}children {
-                transform:
-                    translate( -50%, 0 )
-                    scale( 1, 1 );
-                height: auto;
-                animation: headerNavChildrenListWrapOut 0s .4s linear 1 forwards;
+                animation: headerNavChildrenListWrapOut .2s linear 1 forwards;
 
                 &:before {
-                    animation: headerNavChildrenListOut .2s .2s linear 1 forwards;
+                    animation: headerNavChildrenListOut .2s ease-out 1 forwards;
                 }
 
                 .#{$pr}#{$m}nav#{$c1}item {
-                    animation: headerNavChildrenItemOut .2s linear 1 forwards;
+                    animation: headerNavChildrenItemOut .1s ease-out 1 forwards;
                 }
 
             }
 
         }
 
-        &.is-parent {
+    }
 
-            &:after {
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 3px;
-                bottom: 0;
-                left: 0;
-                background-color: $ui-current-bg;
-                z-index: 62;
-            }
+    .#{$pr}#{$p}header#{$c1}nav#{$c1}children {
 
+        &:before {
+            background-color: $body-bg;
+            box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.3 );
+            transform-origin: top center;
         }
-
+    
     }
 
 }
@@ -190,11 +177,11 @@
 @keyframes headerNavChildrenItemIn {
     0% {
         opacity: 0;
-        transform: translate( 0, -100% );
+        transform: translate( 0, -30% );
     }
-    50% {
-        opacity: .5;
-        transform: translate( 0, 0 );
+    75% {
+        opacity: 0;
+        transform: translate( 0, -30% );
     }
     100% {
         opacity: 1;
@@ -204,6 +191,12 @@
 
 @keyframes headerNavChildrenListWrapOut {
     0% {
+        transform:
+            translate( -50%, 0 )
+            scale( 1, 1 );
+        height: auto;
+    }
+    99% {
         transform:
             translate( -50%, 0 )
             scale( 1, 1 );
@@ -221,6 +214,9 @@
     0% {
         transform: scale( 1, 1 );
     }
+    50% {
+        transform: scale( 1, 1 );
+    }
     100% {
         transform: scale( 1, 0 );
     }
@@ -233,6 +229,6 @@
     }
     100% {
         opacity: 0;
-        transform: translate( 0, -10% );
+        transform: translate( 0, -30% );
     }
 }
