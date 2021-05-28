@@ -5,6 +5,7 @@
 */
 
 .#{$pr}#{$p}footer {
+    border-top: 1px solid $border-color;
 
     @include media-breakpoint-down(md) {
         padding-bottom: 2.75rem + map-get( $grid-gutter-widths, 'lg' );
