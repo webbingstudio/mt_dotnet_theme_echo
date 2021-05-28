@@ -22,9 +22,9 @@ body.js-toggle-active {
 .#{$pr}#{$p}spmenu#{$c1}nav#{$c3}main {
     position: fixed;
     width: 100%;
-    height: 44px;
     left: 0;
     bottom: 0;
+    background-color: $default-fade;
     z-index: 1001;
 
     .#{$pr}#{$m}nav#{$c1}item {

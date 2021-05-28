@@ -5,7 +5,7 @@
 */
 
 .#{$pr}#{$p}spmenu#{$c1}nav#{$c3}main {
-    background-color: #fff;
+    background-color: $body-bg;
     box-shadow: 0 -2px 5px rgba( 0, 0, 0, 0.3 );
 
     .#{$pr}#{$m}nav#{$c1}label {
@@ -36,9 +36,6 @@
 
     .#{$pr}#{$c}overlay#{$c1}bg {
         background-color: rgba( 0, 0, 0, .5 );
-    }
-
-    .#{$pr}#{$c}overlay#{$c1}contents {
     }
 
 }
